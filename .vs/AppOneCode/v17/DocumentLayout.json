@@ -1,53 +1,115 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\danny\\source\\repos\\AppOneCode\\",
+  "WorkspaceRootPath": "C:\\Users\\German G\\Desktop\\AppOneCode\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|c:\\users\\danny\\source\\repos\\apponecode\\apponecode\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|c:\\users\\german g\\desktop\\apponecode\\apponecode\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\danny\\source\\repos\\AppOneCode\\apponecode\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|c:\\users\\german g\\desktop\\apponecode\\apponecode\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|c:\\users\\german g\\desktop\\apponecode\\apponecode\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\German G\\Desktop\\AppOneCode\\apponecode\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|c:\\users\\german g\\desktop\\apponecode\\apponecode\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 256,
+      "VerticalTabListWidth": 100,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Form1.cs",
-              "RelativeDocumentMoniker": "AppOneCode\\Form1.cs",
-              "ToolTip": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Form1.cs",
-              "RelativeToolTip": "AppOneCode\\Form1.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowC0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T14:35:43.011Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Program.cs",
+              "RelativeDocumentMoniker": "AppOneCode\\Program.cs",
+              "ToolTip": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Program.cs",
+              "RelativeToolTip": "AppOneCode\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T18:02:15.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Form2.cs",
+              "RelativeDocumentMoniker": "AppOneCode\\Form2.cs",
+              "ToolTip": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Form2.cs",
+              "RelativeToolTip": "AppOneCode\\Form2.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAArwCUAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T17:53:03.543Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Form1.cs",
+              "Title": "Form2.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Form2.cs",
+              "RelativeDocumentMoniker": "AppOneCode\\Form2.cs",
+              "ToolTip": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Form2.cs [Dise\u00F1o]",
+              "RelativeToolTip": "AppOneCode\\Form2.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T17:01:44.23Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Form1.cs",
               "RelativeDocumentMoniker": "AppOneCode\\Form1.cs",
-              "ToolTip": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Form1.cs [Design]",
-              "RelativeToolTip": "AppOneCode\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Form1.cs",
+              "RelativeToolTip": "AppOneCode\\Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADgvxYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T14:35:43.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Form1.cs",
+              "RelativeDocumentMoniker": "AppOneCode\\Form1.cs",
+              "ToolTip": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "AppOneCode\\Form1.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-10T14:20:59.516Z",
-              "EditorCaption": " [Design]"
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
