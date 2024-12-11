@@ -46,25 +46,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Vista\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmPrimerUso.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\FrmPrimerUso.Designer.cs">
       <DependentUpon>FrmPrimerUso.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\FrmVentanaPrincipal.cs">
+    <Compile Include="Vista\FrmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\FrmVentanaPrincipal.Designer.cs">
-      <DependentUpon>FrmVentanaPrincipal.cs</DependentUpon>
+    <Compile Include="Vista\FrmInicio.Designer.cs">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Vista\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmPrimerUso.resx">
       <DependentUpon>FrmPrimerUso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\FrmVentanaPrincipal.resx">
-      <DependentUpon>FrmVentanaPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\FrmInicio.resx">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

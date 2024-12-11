@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AppOneCode
 {
-    public partial class FrmVentanaPrincipal : Form
+    public partial class FrmInicio : Form
     {
-        public FrmVentanaPrincipal()
+        public FrmInicio()
         {
             InitializeComponent();
         }
@@ -39,6 +39,11 @@ namespace AppOneCode
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

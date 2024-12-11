@@ -20,3 +20,15 @@ C:\Users\danny\source\repos\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.Co
 C:\Users\danny\source\repos\AppOneCode\AppOneCode\obj\Debug\AppOneCode.exe
 C:\Users\danny\source\repos\AppOneCode\AppOneCode\obj\Debug\AppOneCode.pdb
 C:\Users\danny\source\repos\AppOneCode\AppOneCode\bin\Debug\AppOneCode.pdb
+C:\Users\Hp\Desktop\AppOneCode\AppOneCode\bin\Debug\AppOneCode.exe.config
+C:\Users\Hp\Desktop\AppOneCode\AppOneCode\bin\Debug\AppOneCode.exe
+C:\Users\Hp\Desktop\AppOneCode\AppOneCode\bin\Debug\AppOneCode.pdb
+C:\Users\Hp\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.AssemblyReference.cache
+C:\Users\Hp\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmPrimerUso.resources
+C:\Users\Hp\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Properties.Resources.resources
+C:\Users\Hp\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.GenerateResource.cache
+C:\Users\Hp\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.exe
+C:\Users\Hp\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.pdb
+C:\Users\Hp\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmLogin.resources
+C:\Users\Hp\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmInicio.resources

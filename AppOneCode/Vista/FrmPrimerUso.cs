@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AppOneCode.Vista;
 
 namespace AppOneCode
 {
@@ -98,14 +99,13 @@ namespace AppOneCode
 
         private void label1_Click_1(object sender, EventArgs e)
         {
-            // Crear una instancia de FrmVentanaPrincipal
-            FrmVentanaPrincipal ventanaPrincipal = new FrmVentanaPrincipal();
+            // Crear una instancia de FrmInicioSesion
+
+            FrmLogin InicioSesion = new FrmLogin();
+
+            InicioSesion.Show();
 
             this.Hide();
-
-            // Mostrar la nueva ventana
-
-            ventanaPrincipal.Show();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
