@@ -34,11 +34,35 @@ namespace AppOneCode.Vista
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            FrmInicio ventanaPrincipal = new FrmInicio();
 
-            ventanaPrincipal.Show();
+            try
+            {
+                // Validar que los campos coincidan con el usuario y la contraseña esperados
+                string usuarioEsperado = "marcela";
+                string contrasenaEsperada = "marcela";
 
-            this.Hide();
+                if (txtNombreUsuario.Text == usuarioEsperado && txtContrasenaUsuario.Text == contrasenaEsperada)
+                {
+                    // Si las credenciales son correctas, abrir la ventana principal
+                    FrmInicio ventanaPrincipal = new FrmInicio();
+                    ventanaPrincipal.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    // Mostrar mensaje de error si los datos son incorrectos
+                    MessageBox.Show("Datos Incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Mostrar el mensaje de error de la excepción
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
+
 
 
         }

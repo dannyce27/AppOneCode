@@ -141,6 +141,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.MaximizeBox = false;
             this.Name = "FrmLogin";
             this.Text = "Inicio de Sesión";
             this.Load += new System.EventHandler(this.FrmInicioSesion_Load);
