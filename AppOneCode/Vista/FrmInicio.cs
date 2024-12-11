@@ -47,5 +47,15 @@ namespace AppOneCode
         {
 
         }
+
+        private void pictureBox20_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox19_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

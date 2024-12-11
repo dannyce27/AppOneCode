@@ -58,12 +58,6 @@ namespace AppOneCode
 
         }
 
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void label11_Click(object sender, EventArgs e)
         {
 
@@ -210,6 +204,16 @@ namespace AppOneCode
         private void label19_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox20_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox19_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

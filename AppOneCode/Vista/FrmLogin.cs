@@ -12,6 +12,7 @@ namespace AppOneCode.Vista
 {
     public partial class FrmLogin : Form
     {
+        private bool showPassword = false;
         public FrmLogin()
         {
             InitializeComponent();
@@ -75,6 +76,33 @@ namespace AppOneCode.Vista
         private void txtContrasenaUsuario_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            showPassword = !showPassword;
+            if (showPassword)
+            {
+                // Mostrar contraseña
+                txtContrasenaUsuario.PasswordChar = '\0';
+                pictureBox7.Image = AppOneCode.Properties.Resources.icons8_hide_50;
+            }
+            else
+            {
+                // Ocultar contraseña
+                txtContrasenaUsuario.PasswordChar = '*';
+                pictureBox7.Image = AppOneCode.Properties.Resources.icons8_show_50;
+            }
         }
     }
 }

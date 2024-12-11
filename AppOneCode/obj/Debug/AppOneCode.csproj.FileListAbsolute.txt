@@ -3,8 +3,6 @@ C:\Users\German G\Desktop\AppOneCode\AppOneCode\bin\Debug\AppOneCode.exe.config
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\bin\Debug\AppOneCode.exe
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\bin\Debug\AppOneCode.pdb
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.AssemblyReference.cache
-C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Form1.resources
-C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Form2.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Properties.Resources.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.GenerateResource.cache
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.CoreCompileInputs.cache
@@ -32,3 +30,6 @@ C:\Users\Hp\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.exe
 C:\Users\Hp\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.pdb
 C:\Users\Hp\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmLogin.resources
 C:\Users\Hp\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmInicio.resources
+C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmLogin.resources
+C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmPrimerUso.resources
+C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmInicio.resources

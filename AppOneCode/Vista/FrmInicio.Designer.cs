@@ -53,12 +53,16 @@
             this.lblinicio = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -100,6 +104,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pictureBox19);
+            this.panel1.Controls.Add(this.pictureBox20);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label2);
@@ -129,7 +135,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(2)))), ((int)(((byte)(78)))));
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(1037, 12);
+            this.pictureBox4.Location = new System.Drawing.Point(1060, 684);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(73, 62);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -231,7 +237,7 @@
             this.lblchat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(56)))), ((int)(((byte)(102)))));
             this.lblchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblchat.ForeColor = System.Drawing.Color.White;
-            this.lblchat.Location = new System.Drawing.Point(891, 30);
+            this.lblchat.Location = new System.Drawing.Point(934, 30);
             this.lblchat.Name = "lblchat";
             this.lblchat.Size = new System.Drawing.Size(43, 20);
             this.lblchat.TabIndex = 28;
@@ -240,7 +246,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(860, 21);
+            this.pictureBox2.Location = new System.Drawing.Point(898, 21);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(117, 43);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -253,7 +259,7 @@
             this.lblfaq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.lblfaq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfaq.ForeColor = System.Drawing.Color.White;
-            this.lblfaq.Location = new System.Drawing.Point(795, 30);
+            this.lblfaq.Location = new System.Drawing.Point(801, 30);
             this.lblfaq.Name = "lblfaq";
             this.lblfaq.Size = new System.Drawing.Size(42, 20);
             this.lblfaq.TabIndex = 26;
@@ -265,7 +271,7 @@
             this.lblrecursos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.lblrecursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblrecursos.ForeColor = System.Drawing.Color.White;
-            this.lblrecursos.Location = new System.Drawing.Point(692, 30);
+            this.lblrecursos.Location = new System.Drawing.Point(684, 30);
             this.lblrecursos.Name = "lblrecursos";
             this.lblrecursos.Size = new System.Drawing.Size(77, 20);
             this.lblrecursos.TabIndex = 25;
@@ -277,7 +283,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(444, 30);
+            this.label1.Location = new System.Drawing.Point(441, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 24;
@@ -289,7 +295,7 @@
             this.lblproyectos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.lblproyectos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblproyectos.ForeColor = System.Drawing.Color.White;
-            this.lblproyectos.Location = new System.Drawing.Point(571, 30);
+            this.lblproyectos.Location = new System.Drawing.Point(568, 30);
             this.lblproyectos.Name = "lblproyectos";
             this.lblproyectos.Size = new System.Drawing.Size(79, 20);
             this.lblproyectos.TabIndex = 23;
@@ -301,7 +307,7 @@
             this.lbltareas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.lbltareas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltareas.ForeColor = System.Drawing.Color.White;
-            this.lbltareas.Location = new System.Drawing.Point(351, 30);
+            this.lbltareas.Location = new System.Drawing.Point(348, 30);
             this.lbltareas.Name = "lbltareas";
             this.lbltareas.Size = new System.Drawing.Size(58, 20);
             this.lbltareas.TabIndex = 22;
@@ -313,7 +319,7 @@
             this.lblinicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.lblinicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblinicio.ForeColor = System.Drawing.Color.White;
-            this.lblinicio.Location = new System.Drawing.Point(276, 30);
+            this.lblinicio.Location = new System.Drawing.Point(270, 30);
             this.lblinicio.Name = "lblinicio";
             this.lblinicio.Size = new System.Drawing.Size(52, 20);
             this.lblinicio.TabIndex = 21;
@@ -332,12 +338,34 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(844, -31);
+            this.pictureBox3.Location = new System.Drawing.Point(1019, 664);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(289, 269);
+            this.pictureBox3.Size = new System.Drawing.Size(118, 132);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 36;
             this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Image = global::AppOneCode.Properties.Resources.icons8_minimize_window_30;
+            this.pictureBox19.Location = new System.Drawing.Point(1061, 0);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(32, 29);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox19.TabIndex = 91;
+            this.pictureBox19.TabStop = false;
+            this.pictureBox19.Click += new System.EventHandler(this.pictureBox19_Click);
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Image = global::AppOneCode.Properties.Resources.icons8_close_window_50;
+            this.pictureBox20.Location = new System.Drawing.Point(1098, 0);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(32, 29);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox20.TabIndex = 90;
+            this.pictureBox20.TabStop = false;
+            this.pictureBox20.Click += new System.EventHandler(this.pictureBox20_Click);
             // 
             // FrmInicio
             // 
@@ -350,6 +378,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "FrmInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -362,6 +391,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,5 +422,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox19;
+        private System.Windows.Forms.PictureBox pictureBox20;
     }
 }
