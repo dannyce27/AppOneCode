@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AppOneCode
 {
-    public partial class Form2 : Form
+    public partial class FrmVentanaPrincipal : Form
     {
-        public Form2()
+        public FrmVentanaPrincipal()
         {
             InitializeComponent();
         }
@@ -35,7 +35,12 @@ namespace AppOneCode
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblhora.Text = DateTime.Now.ToString("hh:mm:ss");
-            lblfecha.Text = DateTime.Now.ToString();
+            lblfecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,26 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\German G\\Desktop\\AppOneCode\\",
+  "WorkspaceRootPath": "C:\\Users\\danny\\source\\repos\\AppOneCode\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|c:\\users\\german g\\desktop\\apponecode\\apponecode\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|c:\\users\\danny\\source\\repos\\apponecode\\apponecode\\vista\\frmventanaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frmventanaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|c:\\users\\german g\\desktop\\apponecode\\apponecode\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|c:\\users\\danny\\source\\repos\\apponecode\\apponecode\\vista\\frmventanaprincipal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frmventanaprincipal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|c:\\users\\german g\\desktop\\apponecode\\apponecode\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\danny\\source\\repos\\AppOneCode\\apponecode\\vista\\frmventanaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frmventanaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\German G\\Desktop\\AppOneCode\\apponecode\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|c:\\users\\danny\\source\\repos\\apponecode\\apponecode\\modelo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\modelo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|c:\\users\\german g\\desktop\\apponecode\\apponecode\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\danny\\source\\repos\\AppOneCode\\apponecode\\vista\\frmprimeruso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frmprimeruso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\danny\\source\\repos\\AppOneCode\\apponecode\\vista\\frmprimeruso.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frmprimeruso.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\danny\\source\\repos\\AppOneCode\\apponecode\\vista\\frmprimeruso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frmprimeruso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +38,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmVentanaPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Vista\\FrmVentanaPrincipal.cs",
+              "RelativeDocumentMoniker": "AppOneCode\\Vista\\FrmVentanaPrincipal.cs",
+              "ToolTip": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Vista\\FrmVentanaPrincipal.cs",
+              "RelativeToolTip": "AppOneCode\\Vista\\FrmVentanaPrincipal.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAawAwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T20:16:12.152Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             },
             {
               "$type": "Bookmark",
@@ -50,66 +76,79 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Program.cs",
-              "RelativeDocumentMoniker": "AppOneCode\\Program.cs",
-              "ToolTip": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Program.cs",
-              "RelativeToolTip": "AppOneCode\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T18:02:15.026Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form2.cs",
-              "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Form2.cs",
-              "RelativeDocumentMoniker": "AppOneCode\\Form2.cs",
-              "ToolTip": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Form2.cs",
-              "RelativeToolTip": "AppOneCode\\Form2.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAArwCUAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T17:53:03.543Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form2.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Form2.cs",
-              "RelativeDocumentMoniker": "AppOneCode\\Form2.cs",
-              "ToolTip": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Form2.cs [Dise\u00F1o]",
-              "RelativeToolTip": "AppOneCode\\Form2.cs [Dise\u00F1o]",
+              "Title": "FrmVentanaPrincipal.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Vista\\FrmVentanaPrincipal.Designer.cs",
+              "RelativeDocumentMoniker": "AppOneCode\\Vista\\FrmVentanaPrincipal.Designer.cs",
+              "ToolTip": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Vista\\FrmVentanaPrincipal.Designer.cs",
+              "RelativeToolTip": "AppOneCode\\Vista\\FrmVentanaPrincipal.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T21:25:39.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmVentanaPrincipal.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Vista\\FrmVentanaPrincipal.cs",
+              "RelativeDocumentMoniker": "AppOneCode\\Vista\\FrmVentanaPrincipal.cs",
+              "ToolTip": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Vista\\FrmVentanaPrincipal.cs [Design]",
+              "RelativeToolTip": "AppOneCode\\Vista\\FrmVentanaPrincipal.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-10T17:01:44.23Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Form1.cs",
-              "RelativeDocumentMoniker": "AppOneCode\\Form1.cs",
-              "ToolTip": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Form1.cs",
-              "RelativeToolTip": "AppOneCode\\Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADgvxYAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T14:35:43.011Z",
-              "EditorCaption": ""
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Form1.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Form1.cs",
-              "RelativeDocumentMoniker": "AppOneCode\\Form1.cs",
-              "ToolTip": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Form1.cs [Dise\u00F1o]",
-              "RelativeToolTip": "AppOneCode\\Form1.cs [Dise\u00F1o]",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Modelo\\Program.cs",
+              "RelativeDocumentMoniker": "AppOneCode\\Modelo\\Program.cs",
+              "ToolTip": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Modelo\\Program.cs",
+              "RelativeToolTip": "AppOneCode\\Modelo\\Program.cs",
+              "ViewState": "AgIAAAAAAACA7lS7IQglwBUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T14:20:59.516Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-12-10T21:15:14.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FrmPrimerUso.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Vista\\FrmPrimerUso.Designer.cs",
+              "RelativeDocumentMoniker": "AppOneCode\\Vista\\FrmPrimerUso.Designer.cs",
+              "ToolTip": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Vista\\FrmPrimerUso.Designer.cs",
+              "RelativeToolTip": "AppOneCode\\Vista\\FrmPrimerUso.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T20:18:29.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FrmPrimerUso.cs",
+              "DocumentMoniker": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Vista\\FrmPrimerUso.cs",
+              "RelativeDocumentMoniker": "AppOneCode\\Vista\\FrmPrimerUso.cs",
+              "ToolTip": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Vista\\FrmPrimerUso.cs",
+              "RelativeToolTip": "AppOneCode\\Vista\\FrmPrimerUso.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAswBYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T20:05:22.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FrmPrimerUso.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Vista\\FrmPrimerUso.cs",
+              "RelativeDocumentMoniker": "AppOneCode\\Vista\\FrmPrimerUso.cs",
+              "ToolTip": "C:\\Users\\danny\\source\\repos\\AppOneCode\\AppOneCode\\Vista\\FrmPrimerUso.cs [Design]",
+              "RelativeToolTip": "AppOneCode\\Vista\\FrmPrimerUso.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T20:05:19.57Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
