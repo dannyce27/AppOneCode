@@ -51,10 +51,14 @@
             this.lbltareas = new System.Windows.Forms.Label();
             this.lblinicio = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -96,6 +100,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblfecha);
@@ -112,10 +117,11 @@
             this.panel1.Controls.Add(this.lbltareas);
             this.panel1.Controls.Add(this.lblinicio);
             this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1068, 782);
+            this.panel1.Size = new System.Drawing.Size(1133, 782);
             this.panel1.TabIndex = 14;
             // 
             // label8
@@ -124,7 +130,7 @@
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.label8.Font = new System.Drawing.Font("Poppins", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(193)))), ((int)(((byte)(136)))));
-            this.label8.Location = new System.Drawing.Point(483, 272);
+            this.label8.Location = new System.Drawing.Point(482, 272);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(375, 113);
             this.label8.TabIndex = 35;
@@ -136,7 +142,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.label2.Font = new System.Drawing.Font("Poppins", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(277, 272);
+            this.label2.Location = new System.Drawing.Point(276, 272);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(225, 113);
             this.label2.TabIndex = 34;
@@ -151,7 +157,7 @@
             this.lblfecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.lblfecha.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(186)))), ((int)(((byte)(23)))));
-            this.lblfecha.Location = new System.Drawing.Point(462, 680);
+            this.lblfecha.Location = new System.Drawing.Point(479, 680);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(93, 42);
             this.lblfecha.TabIndex = 33;
@@ -166,7 +172,7 @@
             this.lblhora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.lblhora.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblhora.ForeColor = System.Drawing.Color.White;
-            this.lblhora.Location = new System.Drawing.Point(415, 596);
+            this.lblhora.Location = new System.Drawing.Point(435, 596);
             this.lblhora.Name = "lblhora";
             this.lblhora.Size = new System.Drawing.Size(155, 84);
             this.lblhora.TabIndex = 32;
@@ -176,7 +182,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(125)))));
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(69, 454);
+            this.pictureBox5.Location = new System.Drawing.Point(86, 455);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(954, 108);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -189,7 +195,7 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.label7.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(240)))), ((int)(((byte)(1)))));
-            this.label7.Location = new System.Drawing.Point(389, 385);
+            this.label7.Location = new System.Drawing.Point(398, 385);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(331, 23);
             this.label7.TabIndex = 30;
@@ -201,7 +207,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.label3.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LightGray;
-            this.label3.Location = new System.Drawing.Point(388, 188);
+            this.label3.Location = new System.Drawing.Point(397, 188);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(332, 84);
             this.label3.TabIndex = 29;
@@ -211,18 +217,18 @@
             // 
             this.lblchat.AutoSize = true;
             this.lblchat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(56)))), ((int)(((byte)(102)))));
-            this.lblchat.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblchat.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblchat.ForeColor = System.Drawing.Color.White;
-            this.lblchat.Location = new System.Drawing.Point(954, 31);
+            this.lblchat.Location = new System.Drawing.Point(891, 30);
             this.lblchat.Name = "lblchat";
-            this.lblchat.Size = new System.Drawing.Size(52, 28);
+            this.lblchat.Size = new System.Drawing.Size(51, 28);
             this.lblchat.TabIndex = 28;
             this.lblchat.Text = "Chat";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(923, 22);
+            this.pictureBox2.Location = new System.Drawing.Point(860, 21);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(117, 43);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -233,11 +239,11 @@
             // 
             this.lblfaq.AutoSize = true;
             this.lblfaq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.lblfaq.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfaq.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfaq.ForeColor = System.Drawing.Color.White;
-            this.lblfaq.Location = new System.Drawing.Point(858, 31);
+            this.lblfaq.Location = new System.Drawing.Point(795, 30);
             this.lblfaq.Name = "lblfaq";
-            this.lblfaq.Size = new System.Drawing.Size(46, 28);
+            this.lblfaq.Size = new System.Drawing.Size(43, 28);
             this.lblfaq.TabIndex = 26;
             this.lblfaq.Text = "FAQ";
             // 
@@ -245,11 +251,11 @@
             // 
             this.lblrecursos.AutoSize = true;
             this.lblrecursos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.lblrecursos.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblrecursos.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblrecursos.ForeColor = System.Drawing.Color.White;
-            this.lblrecursos.Location = new System.Drawing.Point(755, 31);
+            this.lblrecursos.Location = new System.Drawing.Point(692, 30);
             this.lblrecursos.Name = "lblrecursos";
-            this.lblrecursos.Size = new System.Drawing.Size(88, 28);
+            this.lblrecursos.Size = new System.Drawing.Size(83, 28);
             this.lblrecursos.TabIndex = 25;
             this.lblrecursos.Text = "Recursos";
             // 
@@ -257,11 +263,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.label1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(507, 31);
+            this.label1.Location = new System.Drawing.Point(444, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 28);
+            this.label1.Size = new System.Drawing.Size(101, 28);
             this.label1.TabIndex = 24;
             this.label1.Text = "Dashboard";
             // 
@@ -269,11 +275,11 @@
             // 
             this.lblproyectos.AutoSize = true;
             this.lblproyectos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.lblproyectos.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblproyectos.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblproyectos.ForeColor = System.Drawing.Color.White;
-            this.lblproyectos.Location = new System.Drawing.Point(634, 31);
+            this.lblproyectos.Location = new System.Drawing.Point(571, 30);
             this.lblproyectos.Name = "lblproyectos";
-            this.lblproyectos.Size = new System.Drawing.Size(94, 28);
+            this.lblproyectos.Size = new System.Drawing.Size(90, 28);
             this.lblproyectos.TabIndex = 23;
             this.lblproyectos.Text = "Proyectos";
             // 
@@ -281,11 +287,11 @@
             // 
             this.lbltareas.AutoSize = true;
             this.lbltareas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.lbltareas.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltareas.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltareas.ForeColor = System.Drawing.Color.White;
-            this.lbltareas.Location = new System.Drawing.Point(414, 31);
+            this.lbltareas.Location = new System.Drawing.Point(351, 30);
             this.lbltareas.Name = "lbltareas";
-            this.lbltareas.Size = new System.Drawing.Size(69, 28);
+            this.lbltareas.Size = new System.Drawing.Size(66, 28);
             this.lbltareas.TabIndex = 22;
             this.lbltareas.Text = "Tareas";
             // 
@@ -295,7 +301,7 @@
             this.lblinicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.lblinicio.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblinicio.ForeColor = System.Drawing.Color.White;
-            this.lblinicio.Location = new System.Drawing.Point(329, 31);
+            this.lblinicio.Location = new System.Drawing.Point(276, 30);
             this.lblinicio.Name = "lblinicio";
             this.lblinicio.Size = new System.Drawing.Size(58, 28);
             this.lblinicio.TabIndex = 21;
@@ -311,13 +317,34 @@
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(844, -31);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(289, 269);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 36;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(2)))), ((int)(((byte)(78)))));
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(1037, 12);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(73, 62);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 37;
+            this.pictureBox4.TabStop = false;
+            // 
             // FrmVentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.ClientSize = new System.Drawing.Size(1068, 782);
+            this.ClientSize = new System.Drawing.Size(1133, 782);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -332,6 +359,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,5 +388,7 @@
         private System.Windows.Forms.Label lbltareas;
         private System.Windows.Forms.Label lblinicio;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

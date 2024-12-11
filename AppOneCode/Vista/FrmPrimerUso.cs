@@ -23,6 +23,7 @@ namespace AppOneCode
             label8.Cursor = Cursors.Hand; // Cambia el cursor a una mano
             label9.Cursor = Cursors.Hand;
             label1.Cursor = Cursors.Hand;
+            label2.Cursor = Cursors.Hand;
 
         }
 
@@ -74,36 +75,19 @@ namespace AppOneCode
 
         private void label8_Click(object sender, EventArgs e)
         {
-            // Abre el navegador con la URL
-            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
-            {
-                FileName = "https://e-mktcompany.com/",
-                UseShellExecute = true 
-            });
+          
         }
 
         private void label9_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
-            {
-                FileName = "https://e-mktcompany.com/#servicios",
-                UseShellExecute = true
-            });
+          
                 
-                    
+                  
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            // Crear una instancia de FrmVentanaPrincipal
-            FrmVentanaPrincipal ventanaPrincipal = new FrmVentanaPrincipal();
-
-            this.Hide();
-
-            // Mostrar la nueva ventana
-            
-            ventanaPrincipal.Show();
-
+         
 
         }
 
@@ -114,7 +98,14 @@ namespace AppOneCode
 
         private void label1_Click_1(object sender, EventArgs e)
         {
+            // Crear una instancia de FrmVentanaPrincipal
+            FrmVentanaPrincipal ventanaPrincipal = new FrmVentanaPrincipal();
 
+            this.Hide();
+
+            // Mostrar la nueva ventana
+
+            ventanaPrincipal.Show();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -159,7 +150,12 @@ namespace AppOneCode
 
         private void label8_Click_1(object sender, EventArgs e)
         {
-
+            // Abre el navegador con la URL
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = "https://e-mktcompany.com/",
+                UseShellExecute = true
+            });
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -169,7 +165,11 @@ namespace AppOneCode
 
         private void label9_Click_1(object sender, EventArgs e)
         {
-
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = "https://e-mktcompany.com/#servicios",
+                UseShellExecute = true
+            });
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -198,6 +198,16 @@ namespace AppOneCode
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
         {
 
         }
