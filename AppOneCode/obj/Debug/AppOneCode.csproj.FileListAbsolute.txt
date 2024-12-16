@@ -33,3 +33,4 @@ C:\Users\Hp\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmInicio.resourc
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmLogin.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmPrimerUso.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmInicio.resources
+C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.Frmregistro.resources
