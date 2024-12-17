@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\German G\\Desktop\\AppOneCode\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|c:\\users\\german g\\desktop\\apponecode\\apponecode\\vista\\frmregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\German G\\Desktop\\AppOneCode\\apponecode\\vista\\frmregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frmregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|c:\\users\\german g\\desktop\\apponecode\\apponecode\\vista\\frmregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\German G\\Desktop\\AppOneCode\\apponecode\\vista\\frmregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frmregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,46 +19,57 @@
       "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frmprimeruso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\German G\\Desktop\\AppOneCode\\apponecode\\vista\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\German G\\Desktop\\AppOneCode\\apponecode\\vista\\frminicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frminicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\German G\\Desktop\\AppOneCode\\apponecode\\vista\\frminicio.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frminicio.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\German G\\Desktop\\AppOneCode\\apponecode\\vista\\frmprimeruso.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frmprimeruso.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\German G\\Desktop\\AppOneCode\\apponecode\\vista\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\German G\\Desktop\\AppOneCode\\apponecode\\vista\\frmprimeruso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frmprimeruso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\German G\\Desktop\\AppOneCode\\apponecode\\vista\\frmprimeruso.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frmprimeruso.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|c:\\users\\german g\\desktop\\apponecode\\apponecode\\modelo\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\modelo\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|AppOneCode||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\German G\\Desktop\\AppOneCode\\apponecode\\modelo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\modelo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\German G\\Desktop\\AppOneCode\\apponecode\\vista\\frminicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frminicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|C:\\Users\\German G\\Desktop\\AppOneCode\\apponecode\\vista\\frminicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\vista\\frminicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|c:\\users\\german g\\desktop\\apponecode\\apponecode\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{60985487-59B2-4F39-91D3-D7FF408F61BE}|AppOneCode\\AppOneCode.csproj|solutionrelative:apponecode\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 100,
+      "VerticalTabListWidth": 161,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "FrmInicio.cs",
               "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Vista\\FrmInicio.cs",
               "RelativeDocumentMoniker": "AppOneCode\\Vista\\FrmInicio.cs",
@@ -88,13 +99,38 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Conexion.cs",
+              "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Modelo\\Conexion.cs",
+              "RelativeDocumentMoniker": "AppOneCode\\Modelo\\Conexion.cs",
+              "ToolTip": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Modelo\\Conexion.cs",
+              "RelativeToolTip": "AppOneCode\\Modelo\\Conexion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T14:26:54.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AppOneCode",
+              "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\AppOneCode.csproj",
+              "RelativeDocumentMoniker": "AppOneCode\\AppOneCode.csproj",
+              "ToolTip": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\AppOneCode.csproj",
+              "RelativeToolTip": "AppOneCode\\AppOneCode.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-17T14:08:36.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Frmregistro.cs",
               "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Vista\\Frmregistro.cs",
               "RelativeDocumentMoniker": "AppOneCode\\Vista\\Frmregistro.cs",
               "ToolTip": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Vista\\Frmregistro.cs",
               "RelativeToolTip": "AppOneCode\\Vista\\Frmregistro.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAjwB8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAArwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-16T11:04:32.197Z",
               "EditorCaption": ""
@@ -125,13 +161,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "FrmLogin.cs",
               "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Vista\\FrmLogin.cs",
               "RelativeDocumentMoniker": "AppOneCode\\Vista\\FrmLogin.cs",
               "ToolTip": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Vista\\FrmLogin.cs",
               "RelativeToolTip": "AppOneCode\\Vista\\FrmLogin.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAADgv2wAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEEAAAAAAAAAAAArwFcAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-11T15:12:04.268Z",
               "EditorCaption": ""
@@ -144,7 +180,7 @@
               "RelativeDocumentMoniker": "AppOneCode\\Vista\\FrmPrimerUso.cs",
               "ToolTip": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Vista\\FrmPrimerUso.cs",
               "RelativeToolTip": "AppOneCode\\Vista\\FrmPrimerUso.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAIA5wEMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAIA6wEMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-10T20:05:22.17Z",
               "EditorCaption": ""
@@ -163,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "FrmInicio.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Vista\\FrmInicio.cs",
               "RelativeDocumentMoniker": "AppOneCode\\Vista\\FrmInicio.cs",
@@ -188,7 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Modelo\\Program.cs",
               "RelativeDocumentMoniker": "AppOneCode\\Modelo\\Program.cs",
@@ -196,12 +232,11 @@
               "RelativeToolTip": "AppOneCode\\Modelo\\Program.cs",
               "ViewState": "AgIAAAAAAACA7lS7IQglwAIAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T21:15:14.153Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-10T21:15:14.153Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "FrmPrimerUso.Designer.cs",
               "DocumentMoniker": "C:\\Users\\German G\\Desktop\\AppOneCode\\AppOneCode\\Vista\\FrmPrimerUso.Designer.cs",
               "RelativeDocumentMoniker": "AppOneCode\\Vista\\FrmPrimerUso.Designer.cs",

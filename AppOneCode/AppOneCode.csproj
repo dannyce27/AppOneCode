@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modelo\Conexion.cs" />
     <Compile Include="Vista\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
