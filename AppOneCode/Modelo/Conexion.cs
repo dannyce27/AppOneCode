@@ -10,27 +10,27 @@ namespace AppOneCode.Modelo
     public class Conexion
     {
 
-         
 
 
-        private static string servidor = "DESKTOP-8FODO0C\\SQLEXPRESS02";
-        private static string baseDeDatos = "AppOnecodeDB";
-        private string cadena;
+        private SqlConnection connection;
+        private readonly string connectionString = "Server=DESKTOP-8FODO0C\\SQLEXPRESS02;Database=AppOnecodeDB;Trusted_Connection=True;";
 
-        public static SqlConnection Conectar()
+        public SqlConnection OpenConnection()
         {
-            string cadena =
-                $"Data Source={servidor};" +
-                $" Initial Catalog={baseDeDatos};" +
-                $" Integrated Security= true;";
+            if (connection == null)
+                connection = new SqlConnection(connectionString);
 
-            SqlConnection con = new SqlConnection(cadena);
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
 
-            con.Open();
-
-            return con;
+            return connection;
         }
 
+        public void CloseConnection()
+        {
+            if (connection != null && connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
+        }
 
     }
 }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmregistro));
-            this.txtContrasenaUsuario = new System.Windows.Forms.TextBox();
-            this.txtNombreUsuario = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtContrasenaUsuarioR = new System.Windows.Forms.TextBox();
+            this.txtemailR = new System.Windows.Forms.TextBox();
+            this.txtusuarioR = new System.Windows.Forms.TextBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -44,7 +44,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.btnIngresar = new System.Windows.Forms.Button();
+            this.BtnIngresarR = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -59,30 +59,32 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtContrasenaUsuario
+            // txtContrasenaUsuarioR
             // 
-            this.txtContrasenaUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtContrasenaUsuario.Location = new System.Drawing.Point(315, 348);
-            this.txtContrasenaUsuario.Name = "txtContrasenaUsuario";
-            this.txtContrasenaUsuario.PasswordChar = '*';
-            this.txtContrasenaUsuario.Size = new System.Drawing.Size(194, 20);
-            this.txtContrasenaUsuario.TabIndex = 14;
+            this.txtContrasenaUsuarioR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtContrasenaUsuarioR.Location = new System.Drawing.Point(315, 348);
+            this.txtContrasenaUsuarioR.Name = "txtContrasenaUsuarioR";
+            this.txtContrasenaUsuarioR.PasswordChar = '*';
+            this.txtContrasenaUsuarioR.Size = new System.Drawing.Size(194, 20);
+            this.txtContrasenaUsuarioR.TabIndex = 14;
+            this.txtContrasenaUsuarioR.TextChanged += new System.EventHandler(this.txtContrasenaUsuario_TextChanged);
             // 
-            // txtNombreUsuario
+            // txtemailR
             // 
-            this.txtNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombreUsuario.Location = new System.Drawing.Point(318, 263);
-            this.txtNombreUsuario.Name = "txtNombreUsuario";
-            this.txtNombreUsuario.Size = new System.Drawing.Size(194, 20);
-            this.txtNombreUsuario.TabIndex = 13;
+            this.txtemailR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtemailR.Location = new System.Drawing.Point(318, 263);
+            this.txtemailR.Name = "txtemailR";
+            this.txtemailR.Size = new System.Drawing.Size(194, 20);
+            this.txtemailR.TabIndex = 13;
+            this.txtemailR.TextChanged += new System.EventHandler(this.txtNombreUsuario_TextChanged);
             // 
-            // textBox1
+            // txtusuarioR
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(315, 191);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 20);
-            this.textBox1.TabIndex = 17;
+            this.txtusuarioR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtusuarioR.Location = new System.Drawing.Point(315, 191);
+            this.txtusuarioR.Name = "txtusuarioR";
+            this.txtusuarioR.Size = new System.Drawing.Size(194, 20);
+            this.txtusuarioR.TabIndex = 17;
             // 
             // pictureBox10
             // 
@@ -217,17 +219,17 @@
             this.pictureBox12.TabStop = false;
             this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
             // 
-            // btnIngresar
+            // BtnIngresarR
             // 
-            this.btnIngresar.BackColor = System.Drawing.Color.White;
-            this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.Location = new System.Drawing.Point(275, 395);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(261, 46);
-            this.btnIngresar.TabIndex = 23;
-            this.btnIngresar.Text = "Registrarse";
-            this.btnIngresar.UseVisualStyleBackColor = false;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            this.BtnIngresarR.BackColor = System.Drawing.Color.White;
+            this.BtnIngresarR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnIngresarR.Location = new System.Drawing.Point(275, 395);
+            this.BtnIngresarR.Name = "BtnIngresarR";
+            this.BtnIngresarR.Size = new System.Drawing.Size(261, 46);
+            this.BtnIngresarR.TabIndex = 23;
+            this.BtnIngresarR.Text = "Registrarse";
+            this.BtnIngresarR.UseVisualStyleBackColor = false;
+            this.BtnIngresarR.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // Frmregistro
             // 
@@ -235,17 +237,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(812, 495);
-            this.Controls.Add(this.btnIngresar);
+            this.Controls.Add(this.BtnIngresarR);
             this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtusuarioR);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.txtContrasenaUsuario);
-            this.Controls.Add(this.txtNombreUsuario);
+            this.Controls.Add(this.txtContrasenaUsuarioR);
+            this.Controls.Add(this.txtemailR);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox1);
@@ -276,17 +278,17 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.TextBox txtContrasenaUsuario;
-        private System.Windows.Forms.TextBox txtNombreUsuario;
+        private System.Windows.Forms.TextBox txtContrasenaUsuarioR;
+        private System.Windows.Forms.TextBox txtemailR;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtusuarioR;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.Button BtnIngresarR;
     }
 }

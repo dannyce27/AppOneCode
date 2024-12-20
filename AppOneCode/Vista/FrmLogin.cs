@@ -94,14 +94,14 @@ namespace AppOneCode.Vista
             if (showPassword)
             {
                 // Mostrar contraseña
-                txtContrasenaUsuario.PasswordChar = '\0';
-                pictureBox7.Image = AppOneCode.Properties.Resources.icons8_hide_50;
+              //  txtContrasenaUsuario.PasswordChar = '\0';
+               // pictureBox7.Image = AppOneCode..Resources.icons8_hide_50;
             }
             else
             {
                 // Ocultar contraseña
                 txtContrasenaUsuario.PasswordChar = '*';
-                pictureBox7.Image = AppOneCode.Properties.Resources.icons8_show_50;
+                //pictureBox7.Image = AppOneCode.Properties.Resources.icons8_show_50;
             }
         }
     }

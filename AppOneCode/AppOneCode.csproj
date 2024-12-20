@@ -73,6 +73,7 @@
     <Compile Include="Vista\Frmregistro.Designer.cs">
       <DependentUpon>Frmregistro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Usuario.cs" />
     <EmbeddedResource Include="Vista\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
