@@ -109,7 +109,13 @@ namespace AppOneCode
 
         private void label2_Click_1(object sender, EventArgs e)
         {
+            Frmregistro frmRegistroo = new Frmregistro();
 
+            frmRegistroo.Show();
+
+            this.Hide();
+
+          
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
