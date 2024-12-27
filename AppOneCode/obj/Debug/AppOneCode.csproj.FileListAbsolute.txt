@@ -34,3 +34,4 @@ C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmLo
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmPrimerUso.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmInicio.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.Frmregistro.resources
+C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Modelo.SplashScreen.resources

@@ -1,4 +1,5 @@
-﻿using AppOneCode.Vista;
+﻿using AppOneCode.Modelo;
+using AppOneCode.Vista;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace AppOneCode
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frmregistro());
+            Application.Run(new SplashScreen());
         }
     }
 }

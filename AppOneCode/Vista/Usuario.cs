@@ -13,7 +13,7 @@ public class Usuario
         int resultado = 0;
 
         // Hash de la contraseña
-        string hashedPassword = HashPassword(password);
+      //  string hashedPassword = HashPassword(password);
 
         using (SqlConnection Conn = new Conexion().OpenConnection())
         {
@@ -23,7 +23,7 @@ public class Usuario
             {
                 Comando.Parameters.Add(new SqlParameter("@Username", SqlDbType.NVarChar) { Value = usuario });
                 Comando.Parameters.Add(new SqlParameter("@Email", SqlDbType.NVarChar) { Value = email });
-                Comando.Parameters.Add(new SqlParameter("@Contrasenaa", SqlDbType.NVarChar) { Value = hashedPassword });
+                Comando.Parameters.Add(new SqlParameter("@Contrasenaa", SqlDbType.NVarChar) { Value = password });
 
                 try
                 {
@@ -43,17 +43,16 @@ public class Usuario
         return resultado;
     }
 
-    private static string HashPassword(string password)
-    {
-        using (SHA256 sha256 = SHA256.Create())
-        {
-            byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-            StringBuilder builder = new StringBuilder();
-            foreach (byte b in bytes)
-            {
-                builder.Append(b.ToString("x2"));
-            }
-            return builder.ToString();
+   // private static string HashPassword(string password)
+  //  {
+  //      using (SHA256 sha256 = SHA256.Create())
+     //   {
+       //     byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+        //    StringBuilder builder = new StringBuilder();
+        //    foreach (byte b in bytes)
+        //    {
+         //       builder.Append(b.ToString("x2"));
+        //    }
+           // return builder.ToString();
         }
-    }
-}
+    
