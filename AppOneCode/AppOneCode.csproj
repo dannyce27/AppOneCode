@@ -53,6 +53,12 @@
     <Compile Include="Modelo\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmCronometro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmCronometro.Designer.cs">
+      <DependentUpon>FrmCronometro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,9 +85,18 @@
     <Compile Include="Vista\Frmregistro.Designer.cs">
       <DependentUpon>Frmregistro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmTareas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmTareas.Designer.cs">
+      <DependentUpon>FrmTareas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Usuario.cs" />
     <EmbeddedResource Include="Modelo\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmCronometro.resx">
+      <DependentUpon>FrmCronometro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
