@@ -35,36 +35,43 @@ namespace AppOneCode.Vista
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-
             try
             {
-                // Validar que los campos coincidan con el usuario y la contraseña esperados
-                string usuarioEsperado = "marcela";
-                string contrasenaEsperada = "marcela";
+                // Obtener los datos ingresados por el usuario
+                string usuario = txtNombreUsuario.Text.Trim();
+                string contrasena = txtContrasenaUsuario.Text.Trim();
 
-                if (txtNombreUsuario.Text == usuarioEsperado && txtContrasenaUsuario.Text == contrasenaEsperada)
+                // Validar que los campos no estén vacíos
+                if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contrasena))
                 {
-                    // Si las credenciales son correctas, abrir la ventana principal
-                    FrmInicio ventanaPrincipal = new FrmInicio();
-                    ventanaPrincipal.Show();
+                    MessageBox.Show("Por favor, ingrese el usuario y la contraseña.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Llamar al método VerificarCuenta
+                bool inicioSesionExitoso = Usuario.VerificarCuenta(usuario, contrasena, this);
+
+                // Si las credenciales son correctas
+                if (inicioSesionExitoso)
+                {
+                    // Abrir la ventana principal
+                    FrmInicio frmInicio = new FrmInicio();
+                    frmInicio.Show();
+
+                    // Ocultar el formulario actual
                     this.Hide();
                 }
                 else
                 {
-                    // Mostrar mensaje de error si los datos son incorrectos
-                    MessageBox.Show("Datos Incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Si las credenciales son incorrectas, mostrar un mensaje de error
+                    MessageBox.Show("Usuario o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                // Mostrar el mensaje de error de la excepción
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Manejar cualquier error inesperado
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
-
-
 
         }
 
@@ -88,20 +95,23 @@ namespace AppOneCode.Vista
             this.WindowState = FormWindowState.Minimized;
         }
 
+
         private void pictureBox7_Click(object sender, EventArgs e)
         {
+            // Alternar el estado de visibilidad de la contraseña
             showPassword = !showPassword;
+
             if (showPassword)
             {
                 // Mostrar contraseña
-              //  txtContrasenaUsuario.PasswordChar = '\0';
-               // pictureBox7.Image = AppOneCode..Resources.icons8_hide_50;
+                txtContrasenaUsuario.PasswordChar = '\0'; // Muestra el texto de la contraseña
+                pictureBox7.Image = AppOneCode.Properties.Resources.icons8_hide_50; // Icono de ocultar
             }
             else
             {
                 // Ocultar contraseña
-                txtContrasenaUsuario.PasswordChar = '*';
-                //pictureBox7.Image = AppOneCode.Properties.Resources.icons8_show_50;
+                txtContrasenaUsuario.PasswordChar = '*'; // Oculta el texto de la contraseña
+                pictureBox7.Image = AppOneCode.Properties.Resources.icons8_show_50; // Icono de mostrar
             }
         }
     }

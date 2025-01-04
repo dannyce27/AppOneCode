@@ -18,6 +18,7 @@ namespace AppOneCode.Vista
 {
     public partial class Frmregistro : Form
     {
+        private bool showPassword = false;
         public Frmregistro()
         {
             InitializeComponent();
@@ -61,8 +62,8 @@ namespace AppOneCode.Vista
                 }
 
                 // Crear cuenta
-                int resultado = Usuario.Crearcuentas(txtusuarioR.Text, txtemailR.Text, txtContrasenaUsuarioR.Text);
-                if (resultado > 0)
+                bool resultado = Usuario.CrearCuentas(txtusuarioR.Text, txtemailR.Text, txtContrasenaUsuarioR.Text);
+                if (resultado = true)
                 {
                     MessageBox.Show("Cuenta creada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -81,6 +82,38 @@ namespace AppOneCode.Vista
         private void txtContrasenaUsuario_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
+
+            
+        }
+
+        private void txtusuarioR_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
+            showPassword = !showPassword;
+
+            if (showPassword)
+            {
+                // Mostrar contraseña
+                txtContrasenaUsuarioR.PasswordChar = '\0'; // Muestra el texto de la contraseña
+                pictureBox7.Image = AppOneCode.Properties.Resources.ojitoto; // Cambia al icono de "mostrar"
+            }
+            else
+            {
+                // Ocultar contraseña
+                txtContrasenaUsuarioR.PasswordChar = '*'; // Oculta el texto de la contraseña
+                pictureBox7.Image = AppOneCode.Properties.Resources.icons8_hide_50; // Cambia al icono de "ocultar"
+            }
         }
     }
 }

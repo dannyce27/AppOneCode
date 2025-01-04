@@ -64,19 +64,21 @@
             // txtNombreUsuario
             // 
             this.txtNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombreUsuario.Location = new System.Drawing.Point(496, 150);
+            this.txtNombreUsuario.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreUsuario.Location = new System.Drawing.Point(496, 149);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
-            this.txtNombreUsuario.Size = new System.Drawing.Size(194, 20);
+            this.txtNombreUsuario.Size = new System.Drawing.Size(194, 27);
             this.txtNombreUsuario.TabIndex = 5;
             this.txtNombreUsuario.TextChanged += new System.EventHandler(this.txtNombreUsuario_TextChanged);
             // 
             // txtContrasenaUsuario
             // 
             this.txtContrasenaUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtContrasenaUsuario.Location = new System.Drawing.Point(498, 248);
+            this.txtContrasenaUsuario.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenaUsuario.Location = new System.Drawing.Point(498, 245);
             this.txtContrasenaUsuario.Name = "txtContrasenaUsuario";
             this.txtContrasenaUsuario.PasswordChar = '*';
-            this.txtContrasenaUsuario.Size = new System.Drawing.Size(194, 20);
+            this.txtContrasenaUsuario.Size = new System.Drawing.Size(194, 27);
             this.txtContrasenaUsuario.TabIndex = 6;
             this.txtContrasenaUsuario.TextChanged += new System.EventHandler(this.txtContrasenaUsuario_TextChanged);
             // 
@@ -149,7 +151,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 91);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 109);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(342, 236);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -187,6 +189,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de Sesión";
             this.Load += new System.EventHandler(this.FrmInicioSesion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();

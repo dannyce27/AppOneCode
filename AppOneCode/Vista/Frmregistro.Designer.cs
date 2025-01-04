@@ -62,29 +62,33 @@
             // txtContrasenaUsuarioR
             // 
             this.txtContrasenaUsuarioR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtContrasenaUsuarioR.Location = new System.Drawing.Point(315, 348);
+            this.txtContrasenaUsuarioR.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenaUsuarioR.Location = new System.Drawing.Point(315, 341);
             this.txtContrasenaUsuarioR.Name = "txtContrasenaUsuarioR";
             this.txtContrasenaUsuarioR.PasswordChar = '*';
-            this.txtContrasenaUsuarioR.Size = new System.Drawing.Size(194, 20);
+            this.txtContrasenaUsuarioR.Size = new System.Drawing.Size(194, 27);
             this.txtContrasenaUsuarioR.TabIndex = 14;
             this.txtContrasenaUsuarioR.TextChanged += new System.EventHandler(this.txtContrasenaUsuario_TextChanged);
             // 
             // txtemailR
             // 
             this.txtemailR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtemailR.Location = new System.Drawing.Point(318, 263);
+            this.txtemailR.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtemailR.Location = new System.Drawing.Point(316, 258);
             this.txtemailR.Name = "txtemailR";
-            this.txtemailR.Size = new System.Drawing.Size(194, 20);
+            this.txtemailR.Size = new System.Drawing.Size(194, 27);
             this.txtemailR.TabIndex = 13;
             this.txtemailR.TextChanged += new System.EventHandler(this.txtNombreUsuario_TextChanged);
             // 
             // txtusuarioR
             // 
             this.txtusuarioR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtusuarioR.Location = new System.Drawing.Point(315, 191);
+            this.txtusuarioR.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtusuarioR.Location = new System.Drawing.Point(315, 184);
             this.txtusuarioR.Name = "txtusuarioR";
-            this.txtusuarioR.Size = new System.Drawing.Size(194, 20);
+            this.txtusuarioR.Size = new System.Drawing.Size(194, 27);
             this.txtusuarioR.TabIndex = 17;
+            this.txtusuarioR.TextChanged += new System.EventHandler(this.txtusuarioR_TextChanged);
             // 
             // BtnIngresarR
             // 
@@ -167,17 +171,19 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 16;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox7
             // 
-            this.pictureBox7.BackColor = System.Drawing.Color.White;
+            this.pictureBox7.BackColor = System.Drawing.Color.AliceBlue;
             this.pictureBox7.Image = global::AppOneCode.Properties.Resources.ojitoto;
-            this.pictureBox7.Location = new System.Drawing.Point(535, 335);
+            this.pictureBox7.Location = new System.Drawing.Point(535, 338);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(44, 45);
+            this.pictureBox7.Size = new System.Drawing.Size(44, 42);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 15;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // pictureBox2
             // 
@@ -256,6 +262,7 @@
             this.Controls.Add(this.pictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frmregistro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frmregistro";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();

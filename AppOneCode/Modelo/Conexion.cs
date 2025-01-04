@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
+using System.Windows.Forms;
 
-namespace AppOneCode.Modelo
+public class Conexion
 {
-    public class Conexion
+    private SqlConnection connection;
+    private readonly string connectionString = "Server=DESKTOP-8FODO0C\\SQLEXPRESS02;Database=AppOnecodeDB;Trusted_Connection=True;";
+
+    public SqlConnection OpenConnection()
     {
-
-
-
-        private SqlConnection connection;
-        private readonly string connectionString = "Server=DESKTOP-8FODO0C\\SQLEXPRESS02;Database=AppOnecodeDB;Trusted_Connection=True;";
-
-        public SqlConnection OpenConnection()
+        try
         {
             if (connection == null)
                 connection = new SqlConnection(connectionString);
@@ -25,12 +18,23 @@ namespace AppOneCode.Modelo
 
             return connection;
         }
+        catch (SqlException ex)
+        {
+            MessageBox.Show($"Error al abrir la conexión: {ex.Message}", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            throw; // Lanza la excepción para manejarla en niveles superiores
+        }
+    }
 
-        public void CloseConnection()
+    public void CloseConnection()
+    {
+        try
         {
             if (connection != null && connection.State == System.Data.ConnectionState.Open)
                 connection.Close();
         }
-
+        catch (SqlException ex)
+        {
+            MessageBox.Show($"Error al cerrar la conexión: {ex.Message}", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

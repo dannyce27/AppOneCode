@@ -72,7 +72,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(25, 53);
             this.pictureBox1.Name = "pictureBox1";
@@ -83,7 +83,7 @@
             // 
             // pbPlay
             // 
-            this.pbPlay.BackColor = System.Drawing.Color.White;
+            this.pbPlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.pbPlay.Image = ((System.Drawing.Image)(resources.GetObject("pbPlay.Image")));
             this.pbPlay.Location = new System.Drawing.Point(269, 150);
             this.pbPlay.Name = "pbPlay";
@@ -95,7 +95,7 @@
             // 
             // pbPause
             // 
-            this.pbPause.BackColor = System.Drawing.Color.White;
+            this.pbPause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.pbPause.Image = ((System.Drawing.Image)(resources.GetObject("pbPause.Image")));
             this.pbPause.Location = new System.Drawing.Point(387, 150);
             this.pbPause.Name = "pbPause";
@@ -107,7 +107,7 @@
             // 
             // pbStop
             // 
-            this.pbStop.BackColor = System.Drawing.Color.White;
+            this.pbStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.pbStop.Image = ((System.Drawing.Image)(resources.GetObject("pbStop.Image")));
             this.pbStop.Location = new System.Drawing.Point(503, 150);
             this.pbStop.Name = "pbStop";
@@ -121,6 +121,7 @@
             // 
             this.lblNumerosCrono.AutoSize = true;
             this.lblNumerosCrono.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumerosCrono.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblNumerosCrono.Location = new System.Drawing.Point(332, 81);
             this.lblNumerosCrono.Name = "lblNumerosCrono";
             this.lblNumerosCrono.Size = new System.Drawing.Size(188, 48);
@@ -135,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(664, 285);
             this.Controls.Add(this.lblNumerosCrono);
             this.Controls.Add(this.pbStop);
