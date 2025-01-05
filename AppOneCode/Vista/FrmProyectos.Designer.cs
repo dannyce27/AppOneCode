@@ -1,6 +1,6 @@
 ﻿namespace AppOneCode.Vista
 {
-    partial class FrmTareas
+    partial class FrmProyectos
     {
         /// <summary>
         /// Required designer variable.

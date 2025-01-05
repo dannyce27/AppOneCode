@@ -12,6 +12,7 @@ using System.Diagnostics.Eventing.Reader;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using AppOneCode.Vista;
 using AppOneCode.Modelo;
+using System.Text.RegularExpressions;
 
 
 namespace AppOneCode.Vista
@@ -61,14 +62,26 @@ namespace AppOneCode.Vista
                     return;
                 }
 
+                // Validar el formato del correo electrónico
+                string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+                if (!Regex.IsMatch(txtemailR.Text, emailPattern))
+                {
+                    MessageBox.Show("El correo electrónico no tiene un formato válido. Asegúrate de usar un formato como 'usuario@dominio.com o .sv'.",
+                       "Advertencia",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Warning);
+                    return;
+                }
+
                 // Crear cuenta
                 bool resultado = Usuario.CrearCuentas(txtusuarioR.Text, txtemailR.Text, txtContrasenaUsuarioR.Text);
                 if (resultado = true)
                 {
                     MessageBox.Show("Cuenta creada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                    FrmLogin frl = new FrmLogin();
-                    frl.ShowDialog();
                     this.Hide();
+                    frl.ShowDialog();
+                    
                    
 
                 }

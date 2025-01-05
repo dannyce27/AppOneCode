@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AppOneCode.Vista
 {
-    public partial class FrmTareas : Form
+    public partial class FrmProyectos : Form
     {
-        public FrmTareas()
+        public FrmProyectos()
         {
             InitializeComponent();
         }

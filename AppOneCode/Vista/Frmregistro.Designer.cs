@@ -45,6 +45,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -63,7 +64,7 @@
             // 
             this.txtContrasenaUsuarioR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContrasenaUsuarioR.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasenaUsuarioR.Location = new System.Drawing.Point(315, 341);
+            this.txtContrasenaUsuarioR.Location = new System.Drawing.Point(323, 287);
             this.txtContrasenaUsuarioR.Name = "txtContrasenaUsuarioR";
             this.txtContrasenaUsuarioR.PasswordChar = '*';
             this.txtContrasenaUsuarioR.Size = new System.Drawing.Size(194, 27);
@@ -74,7 +75,7 @@
             // 
             this.txtemailR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtemailR.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtemailR.Location = new System.Drawing.Point(316, 258);
+            this.txtemailR.Location = new System.Drawing.Point(324, 204);
             this.txtemailR.Name = "txtemailR";
             this.txtemailR.Size = new System.Drawing.Size(194, 27);
             this.txtemailR.TabIndex = 13;
@@ -84,7 +85,7 @@
             // 
             this.txtusuarioR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtusuarioR.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusuarioR.Location = new System.Drawing.Point(315, 184);
+            this.txtusuarioR.Location = new System.Drawing.Point(323, 130);
             this.txtusuarioR.Name = "txtusuarioR";
             this.txtusuarioR.Size = new System.Drawing.Size(194, 27);
             this.txtusuarioR.TabIndex = 17;
@@ -95,7 +96,7 @@
             this.BtnIngresarR.BackColor = System.Drawing.Color.White;
             this.BtnIngresarR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnIngresarR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnIngresarR.Location = new System.Drawing.Point(275, 395);
+            this.BtnIngresarR.Location = new System.Drawing.Point(283, 341);
             this.BtnIngresarR.Name = "BtnIngresarR";
             this.BtnIngresarR.Size = new System.Drawing.Size(261, 46);
             this.BtnIngresarR.TabIndex = 23;
@@ -131,7 +132,7 @@
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.White;
             this.pictureBox10.Image = global::AppOneCode.Properties.Resources.icons8_mail_50;
-            this.pictureBox10.Location = new System.Drawing.Point(276, 258);
+            this.pictureBox10.Location = new System.Drawing.Point(284, 204);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(34, 29);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -142,7 +143,7 @@
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.White;
             this.pictureBox9.Image = global::AppOneCode.Properties.Resources.icons8_user_64;
-            this.pictureBox9.Location = new System.Drawing.Point(276, 184);
+            this.pictureBox9.Location = new System.Drawing.Point(284, 130);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(33, 30);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -153,7 +154,7 @@
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.White;
             this.pictureBox8.Image = global::AppOneCode.Properties.Resources.icons8_password_24;
-            this.pictureBox8.Location = new System.Drawing.Point(276, 338);
+            this.pictureBox8.Location = new System.Drawing.Point(284, 284);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(33, 30);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -165,7 +166,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.White;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(268, 173);
+            this.pictureBox6.Location = new System.Drawing.Point(276, 119);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(261, 53);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -177,7 +178,7 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.AliceBlue;
             this.pictureBox7.Image = global::AppOneCode.Properties.Resources.ojitoto;
-            this.pictureBox7.Location = new System.Drawing.Point(535, 338);
+            this.pictureBox7.Location = new System.Drawing.Point(543, 284);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(44, 42);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -189,7 +190,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(268, 328);
+            this.pictureBox2.Location = new System.Drawing.Point(276, 274);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(261, 52);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -201,7 +202,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(268, 246);
+            this.pictureBox5.Location = new System.Drawing.Point(276, 192);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(261, 53);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -231,12 +232,24 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(206, 8);
+            this.pictureBox3.Location = new System.Drawing.Point(206, 12);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(407, 460);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.White;
+            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel1.Location = new System.Drawing.Point(350, 414);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(120, 13);
+            this.linkLabel1.TabIndex = 24;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "¿Ya tienes una cuenta?";
             // 
             // Frmregistro
             // 
@@ -244,6 +257,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(812, 495);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.BtnIngresarR);
             this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.pictureBox11);
@@ -298,5 +312,6 @@
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Button BtnIngresarR;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

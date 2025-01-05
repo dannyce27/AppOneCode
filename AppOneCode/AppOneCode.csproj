@@ -85,11 +85,11 @@
     <Compile Include="Vista\Frmregistro.Designer.cs">
       <DependentUpon>Frmregistro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\FrmTareas.cs">
+    <Compile Include="Vista\FrmProyectos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\FrmTareas.Designer.cs">
-      <DependentUpon>FrmTareas.cs</DependentUpon>
+    <Compile Include="Vista\FrmProyectos.Designer.cs">
+      <DependentUpon>FrmProyectos.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Usuario.cs" />
     <EmbeddedResource Include="Vista\SplashScreen.resx">
@@ -120,8 +120,8 @@
     <EmbeddedResource Include="Vista\Frmregistro.resx">
       <DependentUpon>Frmregistro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\FrmTareas.resx">
-      <DependentUpon>FrmTareas.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\FrmProyectos.resx">
+      <DependentUpon>FrmProyectos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

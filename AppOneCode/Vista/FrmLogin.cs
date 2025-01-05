@@ -114,5 +114,13 @@ namespace AppOneCode.Vista
                 pictureBox7.Image = AppOneCode.Properties.Resources.icons8_show_50; // Icono de mostrar
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Frmregistro fmR = new Frmregistro();
+            this.Hide();
+            fmR.ShowDialog();
+           
+        }
     }
 }
