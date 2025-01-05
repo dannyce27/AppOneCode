@@ -51,3 +51,5 @@ C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.CoreCom
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.exe
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.pdb
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmTareas.resources
+C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmCronometro.resources
+C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmTareas.resources

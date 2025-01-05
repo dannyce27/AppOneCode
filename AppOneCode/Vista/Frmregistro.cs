@@ -66,6 +66,11 @@ namespace AppOneCode.Vista
                 if (resultado = true)
                 {
                     MessageBox.Show("Cuenta creada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   FrmLogin frl = new FrmLogin();
+                    frl.ShowDialog();
+                    this.Hide();
+                   
+
                 }
                 else
                 {
