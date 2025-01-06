@@ -34,5 +34,10 @@ namespace AppOneCode.Modelo
         {
 
         }
+
+        private void SplashScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

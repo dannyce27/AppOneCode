@@ -10,11 +10,71 @@ using System.Windows.Forms;
 
 namespace AppOneCode.Vista
 {
-    public partial class FrmProyectos : Form
+    public partial class frmProyectos : Form
     {
-        public FrmProyectos()
+
+        private ToolTip toolTip1; 
+
+        public frmProyectos()
         {
+
             InitializeComponent();
+
+            toolTip1 = new ToolTip();
+
+
+        }
+
+        private void pictureBox20_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox5_DragEnter(object sender, DragEventArgs e)
+        {
+
+        }
+
+        private void pbAgregarProyecto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbAgregarProyecto_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip1.Show("Agregar Proyecto", pbAgregarProyecto);
+        }
+
+        private void pbAgregarProyecto_MouseLeave(object sender, EventArgs e)
+        {
+            toolTip1.Hide(pbAgregarProyecto);
+        }
+
+        private void pbEliminarProyecto_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip1.Show("Eliminar Proyecto", pbEliminarProyecto);
+
+        }
+
+        private void pbEliminarProyecto_MouseLeave(object sender, EventArgs e)
+        {
+            toolTip1.Hide(pbEliminarProyecto);
+        }
+
+        private void pbActualizarProyecto_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip1.Show("Actualizar Proyecto", pbActualizarProyecto);
+
+        }
+
+        private void pbActualizarProyecto_MouseLeave(object sender, EventArgs e)
+        {
+            toolTip1.Hide(pbActualizarProyecto);
+        }
+
+        private void pbEliminarProyecto_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

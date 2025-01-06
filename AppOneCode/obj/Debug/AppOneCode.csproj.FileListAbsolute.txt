@@ -53,3 +53,8 @@ C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.pdb
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmCronometro.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmTareas.resources
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmProyectos.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmTareas.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.UserControlTareas.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmAgregarTareas.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmDashboard.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.UserControlTareasPendientes.resources

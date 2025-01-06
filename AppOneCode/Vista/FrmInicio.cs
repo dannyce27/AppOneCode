@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AppOneCode.Vista;
 
 namespace AppOneCode
 {
@@ -56,6 +57,55 @@ namespace AppOneCode
         private void pictureBox19_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void lbltareas_Click(object sender, EventArgs e)
+        {
+            FrmTareas Ft = new FrmTareas();
+            this.Hide();
+            Ft.ShowDialog();
+        }
+
+        private void lblinicio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblproyectos_Click(object sender, EventArgs e)
+        {
+            frmProyectos frm = new frmProyectos();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void lblrecursos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblfaq_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblchat_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,96 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCronometro));
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbPlay = new System.Windows.Forms.PictureBox();
-            this.pbPause = new System.Windows.Forms.PictureBox();
-            this.pbStop = new System.Windows.Forms.PictureBox();
             this.lblNumerosCrono = new System.Windows.Forms.Label();
             this.tmrTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lbMarcasTiempo = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPause)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStop)).BeginInit();
+            this.notifyIconCronometro = new System.Windows.Forms.NotifyIcon(this.components);
+            this.pbStop = new System.Windows.Forms.PictureBox();
+            this.pbPause = new System.Windows.Forms.PictureBox();
+            this.pbPlay = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbMinimizeForm = new System.Windows.Forms.PictureBox();
+            this.pbCloseForm = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPause)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMinimizeForm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCloseForm)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox20
-            // 
-            this.pictureBox20.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox20.Image = global::AppOneCode.Properties.Resources.icons8_close_window_50;
-            this.pictureBox20.Location = new System.Drawing.Point(620, 12);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(32, 29);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox20.TabIndex = 89;
-            this.pictureBox20.TabStop = false;
-            this.pictureBox20.Click += new System.EventHandler(this.pictureBox20_Click);
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox19.Image = global::AppOneCode.Properties.Resources.icons8_minimize_window_30;
-            this.pictureBox19.Location = new System.Drawing.Point(573, 12);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(32, 29);
-            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox19.TabIndex = 90;
-            this.pictureBox19.TabStop = false;
-            this.pictureBox19.Click += new System.EventHandler(this.pictureBox19_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(25, 53);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(225, 177);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 91;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pbPlay
-            // 
-            this.pbPlay.BackColor = System.Drawing.Color.Silver;
-            this.pbPlay.Image = ((System.Drawing.Image)(resources.GetObject("pbPlay.Image")));
-            this.pbPlay.Location = new System.Drawing.Point(269, 150);
-            this.pbPlay.Name = "pbPlay";
-            this.pbPlay.Size = new System.Drawing.Size(86, 68);
-            this.pbPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbPlay.TabIndex = 92;
-            this.pbPlay.TabStop = false;
-            this.pbPlay.Click += new System.EventHandler(this.pbPlay_Click);
-            // 
-            // pbPause
-            // 
-            this.pbPause.BackColor = System.Drawing.Color.Silver;
-            this.pbPause.Image = ((System.Drawing.Image)(resources.GetObject("pbPause.Image")));
-            this.pbPause.Location = new System.Drawing.Point(387, 150);
-            this.pbPause.Name = "pbPause";
-            this.pbPause.Size = new System.Drawing.Size(87, 68);
-            this.pbPause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbPause.TabIndex = 93;
-            this.pbPause.TabStop = false;
-            this.pbPause.Click += new System.EventHandler(this.pbPause_Click);
-            // 
-            // pbStop
-            // 
-            this.pbStop.BackColor = System.Drawing.Color.Silver;
-            this.pbStop.Image = ((System.Drawing.Image)(resources.GetObject("pbStop.Image")));
-            this.pbStop.Location = new System.Drawing.Point(503, 150);
-            this.pbStop.Name = "pbStop";
-            this.pbStop.Size = new System.Drawing.Size(87, 68);
-            this.pbStop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbStop.TabIndex = 94;
-            this.pbStop.TabStop = false;
-            this.pbStop.Click += new System.EventHandler(this.pbStop_Click);
             // 
             // lblNumerosCrono
             // 
@@ -160,6 +90,7 @@
             // lbMarcasTiempo
             // 
             this.lbMarcasTiempo.BackColor = System.Drawing.Color.Silver;
+            this.lbMarcasTiempo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbMarcasTiempo.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMarcasTiempo.FormattingEnabled = true;
             this.lbMarcasTiempo.ItemHeight = 37;
@@ -168,6 +99,86 @@
             this.lbMarcasTiempo.Size = new System.Drawing.Size(608, 189);
             this.lbMarcasTiempo.TabIndex = 97;
             this.lbMarcasTiempo.SelectedIndexChanged += new System.EventHandler(this.lbMarcasTiempo_SelectedIndexChanged);
+            // 
+            // notifyIconCronometro
+            // 
+            this.notifyIconCronometro.Text = "Cronómetro en ejecución";
+            this.notifyIconCronometro.Visible = true;
+            this.notifyIconCronometro.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconCronometro_MouseDoubleClick);
+            // 
+            // pbStop
+            // 
+            this.pbStop.BackColor = System.Drawing.Color.Silver;
+            this.pbStop.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbStop.Image = ((System.Drawing.Image)(resources.GetObject("pbStop.Image")));
+            this.pbStop.Location = new System.Drawing.Point(503, 150);
+            this.pbStop.Name = "pbStop";
+            this.pbStop.Size = new System.Drawing.Size(87, 68);
+            this.pbStop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbStop.TabIndex = 94;
+            this.pbStop.TabStop = false;
+            this.pbStop.Click += new System.EventHandler(this.pbStop_Click);
+            // 
+            // pbPause
+            // 
+            this.pbPause.BackColor = System.Drawing.Color.Silver;
+            this.pbPause.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbPause.Image = ((System.Drawing.Image)(resources.GetObject("pbPause.Image")));
+            this.pbPause.Location = new System.Drawing.Point(387, 150);
+            this.pbPause.Name = "pbPause";
+            this.pbPause.Size = new System.Drawing.Size(87, 68);
+            this.pbPause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPause.TabIndex = 93;
+            this.pbPause.TabStop = false;
+            this.pbPause.Click += new System.EventHandler(this.pbPause_Click);
+            // 
+            // pbPlay
+            // 
+            this.pbPlay.BackColor = System.Drawing.Color.Silver;
+            this.pbPlay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbPlay.Image = ((System.Drawing.Image)(resources.GetObject("pbPlay.Image")));
+            this.pbPlay.Location = new System.Drawing.Point(269, 150);
+            this.pbPlay.Name = "pbPlay";
+            this.pbPlay.Size = new System.Drawing.Size(86, 68);
+            this.pbPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPlay.TabIndex = 92;
+            this.pbPlay.TabStop = false;
+            this.pbPlay.Click += new System.EventHandler(this.pbPlay_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Silver;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(25, 53);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(225, 177);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 91;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pbMinimizeForm
+            // 
+            this.pbMinimizeForm.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pbMinimizeForm.Image = global::AppOneCode.Properties.Resources.icons8_minimize_window_30;
+            this.pbMinimizeForm.Location = new System.Drawing.Point(573, 12);
+            this.pbMinimizeForm.Name = "pbMinimizeForm";
+            this.pbMinimizeForm.Size = new System.Drawing.Size(32, 29);
+            this.pbMinimizeForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMinimizeForm.TabIndex = 90;
+            this.pbMinimizeForm.TabStop = false;
+            this.pbMinimizeForm.Click += new System.EventHandler(this.pictureBox19_Click);
+            // 
+            // pbCloseForm
+            // 
+            this.pbCloseForm.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pbCloseForm.Image = global::AppOneCode.Properties.Resources.icons8_close_window_50;
+            this.pbCloseForm.Location = new System.Drawing.Point(620, 12);
+            this.pbCloseForm.Name = "pbCloseForm";
+            this.pbCloseForm.Size = new System.Drawing.Size(32, 29);
+            this.pbCloseForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCloseForm.TabIndex = 89;
+            this.pbCloseForm.TabStop = false;
+            this.pbCloseForm.Click += new System.EventHandler(this.pictureBox20_Click);
             // 
             // FrmCronometro
             // 
@@ -181,21 +192,22 @@
             this.Controls.Add(this.pbPause);
             this.Controls.Add(this.pbPlay);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox19);
-            this.Controls.Add(this.pictureBox20);
+            this.Controls.Add(this.pbMinimizeForm);
+            this.Controls.Add(this.pbCloseForm);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCronometro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCronometro";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCronometro_FormClosing);
             this.Load += new System.EventHandler(this.FrmCronometro_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPause)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStop)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbStop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPause)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMinimizeForm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCloseForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,8 +215,8 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox20;
-        private System.Windows.Forms.PictureBox pictureBox19;
+        private System.Windows.Forms.PictureBox pbCloseForm;
+        private System.Windows.Forms.PictureBox pbMinimizeForm;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pbPlay;
         private System.Windows.Forms.PictureBox pbPause;
@@ -214,5 +226,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListBox lbMarcasTiempo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NotifyIcon notifyIconCronometro;
     }
 }

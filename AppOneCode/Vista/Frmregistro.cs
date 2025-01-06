@@ -133,5 +133,12 @@ namespace AppOneCode.Vista
                 pictureBox7.Image = AppOneCode.Properties.Resources.icons8_hide_50; // Cambia al icono de "ocultar"
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmLogin fL = new FrmLogin();
+            this.Hide();
+            fL.ShowDialog();
+        }
     }
 }

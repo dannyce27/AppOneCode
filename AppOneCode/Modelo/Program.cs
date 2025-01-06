@@ -18,7 +18,7 @@ namespace AppOneCode
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmCronometro());
+            Application.Run(new frmProyectos());
         }
     }
 }

@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +49,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modelo\Conexion.cs" />
+    <Compile Include="Vista\FrmAgregarTareas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmAgregarTareas.Designer.cs">
+      <DependentUpon>FrmAgregarTareas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmDashboard.Designer.cs">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmTareas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmTareas.Designer.cs">
+      <DependentUpon>FrmTareas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,13 +105,34 @@
     <Compile Include="Vista\Frmregistro.Designer.cs">
       <DependentUpon>Frmregistro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\FrmProyectos.cs">
+    <Compile Include="Vista\frmProyectos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\FrmProyectos.Designer.cs">
-      <DependentUpon>FrmProyectos.cs</DependentUpon>
+    <Compile Include="Vista\frmProyectos.Designer.cs">
+      <DependentUpon>frmProyectos.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Usuario.cs" />
+    <Compile Include="Vista\UserControlTareas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\UserControlTareas.Designer.cs">
+      <DependentUpon>UserControlTareas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\UserControlTareasPendientes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\UserControlTareasPendientes.Designer.cs">
+      <DependentUpon>UserControlTareasPendientes.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vista\FrmAgregarTareas.resx">
+      <DependentUpon>FrmAgregarTareas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmDashboard.resx">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmTareas.resx">
+      <DependentUpon>FrmTareas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,8 +161,14 @@
     <EmbeddedResource Include="Vista\Frmregistro.resx">
       <DependentUpon>Frmregistro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\FrmProyectos.resx">
-      <DependentUpon>FrmProyectos.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\frmProyectos.resx">
+      <DependentUpon>frmProyectos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\UserControlTareas.resx">
+      <DependentUpon>UserControlTareas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\UserControlTareasPendientes.resx">
+      <DependentUpon>UserControlTareasPendientes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

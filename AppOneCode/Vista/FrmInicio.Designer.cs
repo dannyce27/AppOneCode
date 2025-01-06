@@ -35,24 +35,23 @@
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblfecha = new System.Windows.Forms.Label();
             this.lblhora = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblchat = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblfaq = new System.Windows.Forms.Label();
             this.lblrecursos = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblproyectos = new System.Windows.Forms.Label();
             this.lbltareas = new System.Windows.Forms.Label();
-            this.lblinicio = new System.Windows.Forms.Label();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -121,7 +120,6 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblproyectos);
             this.panel1.Controls.Add(this.lbltareas);
-            this.panel1.Controls.Add(this.lblinicio);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -130,39 +128,6 @@
             this.panel1.Size = new System.Drawing.Size(1133, 749);
             this.panel1.TabIndex = 14;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.Image = global::AppOneCode.Properties.Resources.icons8_minimize_window_30;
-            this.pictureBox19.Location = new System.Drawing.Point(1061, 0);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(32, 29);
-            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox19.TabIndex = 91;
-            this.pictureBox19.TabStop = false;
-            this.pictureBox19.Click += new System.EventHandler(this.pictureBox19_Click);
-            // 
-            // pictureBox20
-            // 
-            this.pictureBox20.Image = global::AppOneCode.Properties.Resources.icons8_close_window_50;
-            this.pictureBox20.Location = new System.Drawing.Point(1098, 0);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(32, 29);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox20.TabIndex = 90;
-            this.pictureBox20.TabStop = false;
-            this.pictureBox20.Click += new System.EventHandler(this.pictureBox20_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(2)))), ((int)(((byte)(78)))));
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(1060, 684);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(73, 62);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 37;
-            this.pictureBox4.TabStop = false;
             // 
             // label8
             // 
@@ -218,17 +183,6 @@
             this.lblhora.TabIndex = 32;
             this.lblhora.Text = "Hora";
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(125)))));
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(86, 455);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(954, 108);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 31;
-            this.pictureBox5.TabStop = false;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -264,16 +218,7 @@
             this.lblchat.Size = new System.Drawing.Size(43, 20);
             this.lblchat.TabIndex = 28;
             this.lblchat.Text = "Chat";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(898, 21);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(117, 43);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 27;
-            this.pictureBox2.TabStop = false;
+            this.lblchat.Click += new System.EventHandler(this.lblchat_Click);
             // 
             // lblfaq
             // 
@@ -286,6 +231,7 @@
             this.lblfaq.Size = new System.Drawing.Size(42, 20);
             this.lblfaq.TabIndex = 26;
             this.lblfaq.Text = "FAQ";
+            this.lblfaq.Click += new System.EventHandler(this.lblfaq_Click);
             // 
             // lblrecursos
             // 
@@ -298,6 +244,7 @@
             this.lblrecursos.Size = new System.Drawing.Size(77, 20);
             this.lblrecursos.TabIndex = 25;
             this.lblrecursos.Text = "Recursos";
+            this.lblrecursos.Click += new System.EventHandler(this.lblrecursos_Click);
             // 
             // label1
             // 
@@ -310,6 +257,7 @@
             this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 24;
             this.label1.Text = "Dashboard";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // lblproyectos
             // 
@@ -322,6 +270,7 @@
             this.lblproyectos.Size = new System.Drawing.Size(79, 20);
             this.lblproyectos.TabIndex = 23;
             this.lblproyectos.Text = "Proyectos";
+            this.lblproyectos.Click += new System.EventHandler(this.lblproyectos_Click);
             // 
             // lbltareas
             // 
@@ -334,18 +283,62 @@
             this.lbltareas.Size = new System.Drawing.Size(58, 20);
             this.lbltareas.TabIndex = 22;
             this.lbltareas.Text = "Tareas";
+            this.lbltareas.Click += new System.EventHandler(this.lbltareas_Click);
             // 
-            // lblinicio
+            // pictureBox19
             // 
-            this.lblinicio.AutoSize = true;
-            this.lblinicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.lblinicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblinicio.ForeColor = System.Drawing.Color.White;
-            this.lblinicio.Location = new System.Drawing.Point(270, 30);
-            this.lblinicio.Name = "lblinicio";
-            this.lblinicio.Size = new System.Drawing.Size(52, 20);
-            this.lblinicio.TabIndex = 21;
-            this.lblinicio.Text = "Inicio";
+            this.pictureBox19.Image = global::AppOneCode.Properties.Resources.icons8_minimize_window_30;
+            this.pictureBox19.Location = new System.Drawing.Point(1061, 0);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(32, 29);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox19.TabIndex = 91;
+            this.pictureBox19.TabStop = false;
+            this.pictureBox19.Click += new System.EventHandler(this.pictureBox19_Click);
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Image = global::AppOneCode.Properties.Resources.icons8_close_window_50;
+            this.pictureBox20.Location = new System.Drawing.Point(1098, 0);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(32, 29);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox20.TabIndex = 90;
+            this.pictureBox20.TabStop = false;
+            this.pictureBox20.Click += new System.EventHandler(this.pictureBox20_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(2)))), ((int)(((byte)(78)))));
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(1030, 665);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(73, 62);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 37;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(125)))));
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(86, 455);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(954, 108);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 31;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(898, 21);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(117, 43);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 27;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -356,13 +349,14 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1019, 664);
+            this.pictureBox3.Location = new System.Drawing.Point(938, 651);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(118, 132);
+            this.pictureBox3.Size = new System.Drawing.Size(195, 143);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 36;
             this.pictureBox3.TabStop = false;
@@ -418,7 +412,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblproyectos;
         private System.Windows.Forms.Label lbltareas;
-        private System.Windows.Forms.Label lblinicio;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
