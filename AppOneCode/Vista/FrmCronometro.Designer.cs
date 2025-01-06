@@ -39,8 +39,8 @@
             this.lblNumerosCrono = new System.Windows.Forms.Label();
             this.tmrTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbMarcasTiempo = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbMarcasTiempo = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -132,7 +132,6 @@
             this.lblNumerosCrono.Size = new System.Drawing.Size(188, 48);
             this.lblNumerosCrono.TabIndex = 95;
             this.lblNumerosCrono.Text = "00:00:00:00";
-            this.lblNumerosCrono.Click += new System.EventHandler(this.lblNumerosCrono_Click);
             // 
             // tmrTimer
             // 
@@ -148,6 +147,16 @@
             this.panel1.Size = new System.Drawing.Size(664, 564);
             this.panel1.TabIndex = 96;
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Silver;
+            this.label1.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(225, 317);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(209, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Marcas de Tiempo";
+            // 
             // lbMarcasTiempo
             // 
             this.lbMarcasTiempo.BackColor = System.Drawing.Color.Silver;
@@ -159,16 +168,6 @@
             this.lbMarcasTiempo.Size = new System.Drawing.Size(608, 189);
             this.lbMarcasTiempo.TabIndex = 97;
             this.lbMarcasTiempo.SelectedIndexChanged += new System.EventHandler(this.lbMarcasTiempo_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Silver;
-            this.label1.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(225, 317);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Marcas de Tiempo";
             // 
             // FrmCronometro
             // 

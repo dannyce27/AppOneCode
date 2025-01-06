@@ -14,6 +14,17 @@ CREATE TABLE Users (
     Contrasenaa NVARCHAR (250) NOT NULL
 );
 
+CREATE TABLE MarcasDeTiempo (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Fecha DATE NOT NULL,
+    Hora TIME NOT NULL,
+    Tiempo VARCHAR(50) NOT NULL
+);
+GO
+
+
+select  * from MarcasDeTiempo;
+
 select * From Users
 
 drop table	Users

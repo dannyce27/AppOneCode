@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -9,12 +9,14 @@ namespace AppOneCode.Vista
     {
         private string cronometro;
         private Stopwatch stopwatch;
+        private Conexion conexion;
 
         public FrmCronometro()
         {
             InitializeComponent();
             cronometro = "";
             stopwatch = new Stopwatch();
+            conexion = new Conexion();  // Inicializamos la conexión aquí
         }
 
         private void pictureBox19_Click(object sender, EventArgs e)
@@ -31,6 +33,9 @@ namespace AppOneCode.Vista
         {
             // Inicializar ListBox para que no dé errores
             lbMarcasTiempo.Items.Clear();
+
+            // Cargar las marcas de tiempo desde la base de datos
+            CargarMarcasDeTiempo();
         }
 
         private void pbPlay_Click(object sender, EventArgs e)
@@ -63,6 +68,9 @@ namespace AppOneCode.Vista
 
             // Agregar al ListBox
             lbMarcasTiempo.Items.Add(marcaTiempo);
+
+            // Guardar en la base de datos
+            GuardarMarcaDeTiempoEnBD(ahora, cronometro);
         }
 
         private void pbStop_Click(object sender, EventArgs e)
@@ -73,11 +81,6 @@ namespace AppOneCode.Vista
             lblNumerosCrono.Text = cronometro;
         }
 
-        private void lblNumerosCrono_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lbMarcasTiempo_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Opcional: Realiza alguna acción al seleccionar un elemento en el ListBox
@@ -85,6 +88,60 @@ namespace AppOneCode.Vista
             if (!string.IsNullOrEmpty(seleccion))
             {
                 MessageBox.Show($"Marca seleccionada:\n{seleccion}", "Información");
+            }
+        }
+
+        // Método para guardar las marcas de tiempo en la base de datos
+        private void GuardarMarcaDeTiempoEnBD(DateTime fechaHora, string cronometro)
+        {
+            try
+            {
+                using (SqlConnection connection = conexion.OpenConnection())
+                {
+                    string query = "INSERT INTO MarcasDeTiempo (Fecha, Hora, Tiempo) VALUES (@Fecha, @Hora, @Tiempo)";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Fecha", fechaHora.ToShortDateString());
+                        command.Parameters.AddWithValue("@Hora", fechaHora.ToLongTimeString());
+                        command.Parameters.AddWithValue("@Tiempo", cronometro);
+
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Marca de tiempo guardada correctamente.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar la marca de tiempo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Método para cargar las marcas de tiempo desde la base de datos
+        private void CargarMarcasDeTiempo()
+        {
+            try
+            {
+                using (SqlConnection connection = conexion.OpenConnection())
+                {
+                    string query = "SELECT Fecha, Hora, Tiempo FROM MarcasDeTiempo ORDER BY Fecha DESC, Hora DESC"; // Ordenar por fecha y hora
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        SqlDataReader reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            string fecha = reader["Fecha"].ToString();
+                            string hora = reader["Hora"].ToString();
+                            string tiempo = reader["Tiempo"].ToString();
+                            string marcaTiempo = $"Fecha: {fecha} Hora: {hora} | Tiempo: {tiempo}";
+
+                            lbMarcasTiempo.Items.Add(marcaTiempo);  // Agregar al ListBox
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar las marcas de tiempo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
