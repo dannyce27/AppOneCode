@@ -38,12 +38,16 @@
             this.pbStop = new System.Windows.Forms.PictureBox();
             this.lblNumerosCrono = new System.Windows.Forms.Label();
             this.tmrTimer = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbMarcasTiempo = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPause)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStop)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox20
@@ -72,7 +76,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.Silver;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(25, 53);
             this.pictureBox1.Name = "pictureBox1";
@@ -83,7 +87,7 @@
             // 
             // pbPlay
             // 
-            this.pbPlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.pbPlay.BackColor = System.Drawing.Color.Silver;
             this.pbPlay.Image = ((System.Drawing.Image)(resources.GetObject("pbPlay.Image")));
             this.pbPlay.Location = new System.Drawing.Point(269, 150);
             this.pbPlay.Name = "pbPlay";
@@ -95,7 +99,7 @@
             // 
             // pbPause
             // 
-            this.pbPause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.pbPause.BackColor = System.Drawing.Color.Silver;
             this.pbPause.Image = ((System.Drawing.Image)(resources.GetObject("pbPause.Image")));
             this.pbPause.Location = new System.Drawing.Point(387, 150);
             this.pbPause.Name = "pbPause";
@@ -107,7 +111,7 @@
             // 
             // pbStop
             // 
-            this.pbStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.pbStop.BackColor = System.Drawing.Color.Silver;
             this.pbStop.Image = ((System.Drawing.Image)(resources.GetObject("pbStop.Image")));
             this.pbStop.Location = new System.Drawing.Point(503, 150);
             this.pbStop.Name = "pbStop";
@@ -120,6 +124,7 @@
             // lblNumerosCrono
             // 
             this.lblNumerosCrono.AutoSize = true;
+            this.lblNumerosCrono.BackColor = System.Drawing.Color.Silver;
             this.lblNumerosCrono.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumerosCrono.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblNumerosCrono.Location = new System.Drawing.Point(332, 81);
@@ -127,17 +132,51 @@
             this.lblNumerosCrono.Size = new System.Drawing.Size(188, 48);
             this.lblNumerosCrono.TabIndex = 95;
             this.lblNumerosCrono.Text = "00:00:00:00";
+            this.lblNumerosCrono.Click += new System.EventHandler(this.lblNumerosCrono_Click);
             // 
             // tmrTimer
             // 
             this.tmrTimer.Tick += new System.EventHandler(this.tmrTimer_Tick);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(664, 564);
+            this.panel1.TabIndex = 96;
+            // 
+            // lbMarcasTiempo
+            // 
+            this.lbMarcasTiempo.BackColor = System.Drawing.Color.Silver;
+            this.lbMarcasTiempo.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMarcasTiempo.FormattingEnabled = true;
+            this.lbMarcasTiempo.ItemHeight = 37;
+            this.lbMarcasTiempo.Location = new System.Drawing.Point(25, 352);
+            this.lbMarcasTiempo.Name = "lbMarcasTiempo";
+            this.lbMarcasTiempo.Size = new System.Drawing.Size(608, 189);
+            this.lbMarcasTiempo.TabIndex = 97;
+            this.lbMarcasTiempo.SelectedIndexChanged += new System.EventHandler(this.lbMarcasTiempo_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Silver;
+            this.label1.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(225, 317);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(209, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Marcas de Tiempo";
+            // 
             // FrmCronometro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.ClientSize = new System.Drawing.Size(664, 285);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(664, 564);
+            this.Controls.Add(this.lbMarcasTiempo);
             this.Controls.Add(this.lblNumerosCrono);
             this.Controls.Add(this.pbStop);
             this.Controls.Add(this.pbPause);
@@ -145,8 +184,10 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox19);
             this.Controls.Add(this.pictureBox20);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCronometro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCronometro";
             this.Load += new System.EventHandler(this.FrmCronometro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
@@ -155,6 +196,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPause)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStop)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,5 +212,8 @@
         private System.Windows.Forms.PictureBox pbStop;
         private System.Windows.Forms.Label lblNumerosCrono;
         private System.Windows.Forms.Timer tmrTimer;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListBox lbMarcasTiempo;
+        private System.Windows.Forms.Label label1;
     }
 }
