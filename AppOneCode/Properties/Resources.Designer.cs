@@ -113,6 +113,16 @@ namespace AppOneCode.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_laptop_password_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-laptop-password-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_mail_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-mail-50", resourceCulture);
@@ -136,6 +146,36 @@ namespace AppOneCode.Properties {
         internal static System.Drawing.Bitmap icons8_password_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-password-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_password_reset_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-password-reset-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_password_reset_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-password-reset-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_password_reset_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-password-reset-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

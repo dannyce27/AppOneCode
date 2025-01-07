@@ -67,6 +67,12 @@
     <Compile Include="Vista\FrmPerfil.Designer.cs">
       <DependentUpon>FrmPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmRecuperacionC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmRecuperacionC.Designer.cs">
+      <DependentUpon>FrmRecuperacionC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmTareas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmPerfil.resx">
       <DependentUpon>FrmPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmRecuperacionC.resx">
+      <DependentUpon>FrmRecuperacionC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmTareas.resx">
       <DependentUpon>FrmTareas.cs</DependentUpon>
@@ -227,6 +236,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ojitoto.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-password-reset-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-password-reset-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-laptop-password-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-password-reset-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

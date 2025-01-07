@@ -47,7 +47,7 @@ namespace AppOneCode.Vista
         {
             FrmDashboard frmDashboard = new FrmDashboard();
             this.Close();
-            frmDashboard.ShowDialog();
+            frmDashboard.Show();
         }
 
         private void lblproyectos_Click(object sender, EventArgs e)
@@ -67,6 +67,11 @@ namespace AppOneCode.Vista
             frmProyectos frmProyectos = new frmProyectos();
             this.Close();
             frmProyectos.ShowDialog();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

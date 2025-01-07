@@ -57,11 +57,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(448, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 56);
+            this.label1.Size = new System.Drawing.Size(123, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tareas";
             // 
@@ -76,10 +76,10 @@
             // 
             // txtSearchProyect
             // 
-            this.txtSearchProyect.Font = new System.Drawing.Font("Poppins Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchProyect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchProyect.Location = new System.Drawing.Point(366, 448);
             this.txtSearchProyect.Name = "txtSearchProyect";
-            this.txtSearchProyect.Size = new System.Drawing.Size(364, 24);
+            this.txtSearchProyect.Size = new System.Drawing.Size(364, 20);
             this.txtSearchProyect.TabIndex = 129;
             // 
             // label7
@@ -95,18 +95,18 @@
             // 
             // txtEncargadoProyecto
             // 
-            this.txtEncargadoProyecto.Font = new System.Drawing.Font("Poppins Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEncargadoProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEncargadoProyecto.Location = new System.Drawing.Point(366, 119);
             this.txtEncargadoProyecto.Name = "txtEncargadoProyecto";
-            this.txtEncargadoProyecto.Size = new System.Drawing.Size(364, 24);
+            this.txtEncargadoProyecto.Size = new System.Drawing.Size(364, 20);
             this.txtEncargadoProyecto.TabIndex = 123;
             // 
             // txtNombreProyecto
             // 
-            this.txtNombreProyecto.Font = new System.Drawing.Font("Poppins Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreProyecto.Location = new System.Drawing.Point(276, -30);
             this.txtNombreProyecto.Name = "txtNombreProyecto";
-            this.txtNombreProyecto.Size = new System.Drawing.Size(364, 24);
+            this.txtNombreProyecto.Size = new System.Drawing.Size(364, 20);
             this.txtNombreProyecto.TabIndex = 122;
             // 
             // label6
@@ -263,6 +263,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAgregarTareas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FrmAgregarTareas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarProyectosI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbActualizarProyecto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminarProyecto)).EndInit();

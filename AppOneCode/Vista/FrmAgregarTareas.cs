@@ -16,5 +16,10 @@ namespace AppOneCode.Vista
         {
             InitializeComponent();
         }
+
+        private void FrmAgregarTareas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
