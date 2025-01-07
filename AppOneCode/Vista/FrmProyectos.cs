@@ -76,5 +76,31 @@ namespace AppOneCode.Vista
         {
 
         }
+
+        private void lblinicio_Click(object sender, EventArgs e)
+        {
+            FrmInicio frmInicio = new FrmInicio();
+            this.Close();
+            frmInicio.ShowDialog();
+        }
+
+        private void lbltareas_Click(object sender, EventArgs e)
+        {
+            FrmTareas frmTareas = new FrmTareas();
+            this.Close();
+            frmTareas.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            FrmDashboard frmDashboard = new FrmDashboard();
+            this.Close();
+            frmDashboard.ShowDialog();
+        }
+
+        private void lblrecursos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

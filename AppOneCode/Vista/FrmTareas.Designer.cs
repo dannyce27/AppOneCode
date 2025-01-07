@@ -259,6 +259,7 @@
             this.pbAgregarProyecto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbAgregarProyecto.TabIndex = 107;
             this.pbAgregarProyecto.TabStop = false;
+            this.pbAgregarProyecto.Click += new System.EventHandler(this.pbAgregarProyecto_Click);
             // 
             // pictureBox4
             // 

@@ -29,16 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProyectos));
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.lblchat = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblfaq = new System.Windows.Forms.Label();
             this.lblrecursos = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbltareas = new System.Windows.Forms.Label();
             this.lblinicio = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,45 +45,26 @@
             this.txtEncargadoProyecto = new System.Windows.Forms.TextBox();
             this.txtAreaTProyecto = new System.Windows.Forms.TextBox();
             this.txtDescProyecto = new System.Windows.Forms.TextBox();
-            this.pbAgregarProyecto = new System.Windows.Forms.PictureBox();
-            this.pbEliminarProyecto = new System.Windows.Forms.PictureBox();
-            this.pbActualizarProyecto = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSearchProyect = new System.Windows.Forms.TextBox();
             this.dgvMostrarProyectosI = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbActualizarProyecto = new System.Windows.Forms.PictureBox();
+            this.pbEliminarProyecto = new System.Windows.Forms.PictureBox();
+            this.pbAgregarProyecto = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarProyectosI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAgregarProyecto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEliminarProyecto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbActualizarProyecto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarProyectosI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEliminarProyecto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAgregarProyecto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.pictureBox19.Image = global::AppOneCode.Properties.Resources.icons8_minimize_window_30;
-            this.pictureBox19.Location = new System.Drawing.Point(1057, 3);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(32, 29);
-            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox19.TabIndex = 102;
-            this.pictureBox19.TabStop = false;
-            // 
-            // pictureBox20
-            // 
-            this.pictureBox20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.pictureBox20.Image = global::AppOneCode.Properties.Resources.icons8_close_window_50;
-            this.pictureBox20.Location = new System.Drawing.Point(1095, 3);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(32, 29);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox20.TabIndex = 101;
-            this.pictureBox20.TabStop = false;
-            this.pictureBox20.Click += new System.EventHandler(this.pictureBox20_Click);
             // 
             // lblchat
             // 
@@ -100,17 +77,6 @@
             this.lblchat.Size = new System.Drawing.Size(43, 20);
             this.lblchat.TabIndex = 100;
             this.lblchat.Text = "Chat";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(895, 18);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(117, 43);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 99;
-            this.pictureBox2.TabStop = false;
             // 
             // lblfaq
             // 
@@ -135,6 +101,7 @@
             this.lblrecursos.Size = new System.Drawing.Size(77, 20);
             this.lblrecursos.TabIndex = 97;
             this.lblrecursos.Text = "Recursos";
+            this.lblrecursos.Click += new System.EventHandler(this.lblrecursos_Click);
             // 
             // label1
             // 
@@ -147,6 +114,7 @@
             this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 96;
             this.label1.Text = "Dashboard";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbltareas
             // 
@@ -159,6 +127,7 @@
             this.lbltareas.Size = new System.Drawing.Size(58, 20);
             this.lbltareas.TabIndex = 94;
             this.lbltareas.Text = "Tareas";
+            this.lbltareas.Click += new System.EventHandler(this.lbltareas_Click);
             // 
             // lblinicio
             // 
@@ -171,17 +140,7 @@
             this.lblinicio.Size = new System.Drawing.Size(52, 20);
             this.lblinicio.TabIndex = 93;
             this.lblinicio.Text = "Inicio";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(258, 133);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 92;
-            this.pictureBox1.TabStop = false;
+            this.lblinicio.Click += new System.EventHandler(this.lblinicio_Click);
             // 
             // panel1
             // 
@@ -299,51 +258,6 @@
             this.txtDescProyecto.Size = new System.Drawing.Size(364, 24);
             this.txtDescProyecto.TabIndex = 111;
             // 
-            // pbAgregarProyecto
-            // 
-            this.pbAgregarProyecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.pbAgregarProyecto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbAgregarProyecto.Image = ((System.Drawing.Image)(resources.GetObject("pbAgregarProyecto.Image")));
-            this.pbAgregarProyecto.Location = new System.Drawing.Point(413, 421);
-            this.pbAgregarProyecto.Name = "pbAgregarProyecto";
-            this.pbAgregarProyecto.Size = new System.Drawing.Size(62, 52);
-            this.pbAgregarProyecto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAgregarProyecto.TabIndex = 104;
-            this.pbAgregarProyecto.TabStop = false;
-            this.pbAgregarProyecto.Click += new System.EventHandler(this.pbAgregarProyecto_Click);
-            this.pbAgregarProyecto.MouseEnter += new System.EventHandler(this.pbAgregarProyecto_MouseEnter);
-            this.pbAgregarProyecto.MouseLeave += new System.EventHandler(this.pbAgregarProyecto_MouseLeave);
-            // 
-            // pbEliminarProyecto
-            // 
-            this.pbEliminarProyecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.pbEliminarProyecto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbEliminarProyecto.Image = ((System.Drawing.Image)(resources.GetObject("pbEliminarProyecto.Image")));
-            this.pbEliminarProyecto.Location = new System.Drawing.Point(551, 421);
-            this.pbEliminarProyecto.Name = "pbEliminarProyecto";
-            this.pbEliminarProyecto.Size = new System.Drawing.Size(65, 52);
-            this.pbEliminarProyecto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbEliminarProyecto.TabIndex = 112;
-            this.pbEliminarProyecto.TabStop = false;
-            this.pbEliminarProyecto.Click += new System.EventHandler(this.pbEliminarProyecto_Click);
-            this.pbEliminarProyecto.MouseEnter += new System.EventHandler(this.pbEliminarProyecto_MouseEnter);
-            this.pbEliminarProyecto.MouseLeave += new System.EventHandler(this.pbEliminarProyecto_MouseLeave);
-            // 
-            // pbActualizarProyecto
-            // 
-            this.pbActualizarProyecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.pbActualizarProyecto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbActualizarProyecto.Image = ((System.Drawing.Image)(resources.GetObject("pbActualizarProyecto.Image")));
-            this.pbActualizarProyecto.Location = new System.Drawing.Point(698, 421);
-            this.pbActualizarProyecto.Name = "pbActualizarProyecto";
-            this.pbActualizarProyecto.Size = new System.Drawing.Size(65, 52);
-            this.pbActualizarProyecto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbActualizarProyecto.TabIndex = 113;
-            this.pbActualizarProyecto.TabStop = false;
-            this.pbActualizarProyecto.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox5_DragEnter);
-            this.pbActualizarProyecto.MouseEnter += new System.EventHandler(this.pbActualizarProyecto_MouseEnter);
-            this.pbActualizarProyecto.MouseLeave += new System.EventHandler(this.pbActualizarProyecto_MouseLeave);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -371,6 +285,96 @@
             this.dgvMostrarProyectosI.Size = new System.Drawing.Size(1131, 302);
             this.dgvMostrarProyectosI.TabIndex = 116;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(895, 18);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(117, 43);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 99;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(258, 133);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 92;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pbActualizarProyecto
+            // 
+            this.pbActualizarProyecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.pbActualizarProyecto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbActualizarProyecto.Image = ((System.Drawing.Image)(resources.GetObject("pbActualizarProyecto.Image")));
+            this.pbActualizarProyecto.Location = new System.Drawing.Point(698, 421);
+            this.pbActualizarProyecto.Name = "pbActualizarProyecto";
+            this.pbActualizarProyecto.Size = new System.Drawing.Size(65, 52);
+            this.pbActualizarProyecto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbActualizarProyecto.TabIndex = 113;
+            this.pbActualizarProyecto.TabStop = false;
+            this.pbActualizarProyecto.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox5_DragEnter);
+            this.pbActualizarProyecto.MouseEnter += new System.EventHandler(this.pbActualizarProyecto_MouseEnter);
+            this.pbActualizarProyecto.MouseLeave += new System.EventHandler(this.pbActualizarProyecto_MouseLeave);
+            // 
+            // pbEliminarProyecto
+            // 
+            this.pbEliminarProyecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.pbEliminarProyecto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbEliminarProyecto.Image = ((System.Drawing.Image)(resources.GetObject("pbEliminarProyecto.Image")));
+            this.pbEliminarProyecto.Location = new System.Drawing.Point(551, 421);
+            this.pbEliminarProyecto.Name = "pbEliminarProyecto";
+            this.pbEliminarProyecto.Size = new System.Drawing.Size(65, 52);
+            this.pbEliminarProyecto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbEliminarProyecto.TabIndex = 112;
+            this.pbEliminarProyecto.TabStop = false;
+            this.pbEliminarProyecto.Click += new System.EventHandler(this.pbEliminarProyecto_Click);
+            this.pbEliminarProyecto.MouseEnter += new System.EventHandler(this.pbEliminarProyecto_MouseEnter);
+            this.pbEliminarProyecto.MouseLeave += new System.EventHandler(this.pbEliminarProyecto_MouseLeave);
+            // 
+            // pbAgregarProyecto
+            // 
+            this.pbAgregarProyecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.pbAgregarProyecto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbAgregarProyecto.Image = ((System.Drawing.Image)(resources.GetObject("pbAgregarProyecto.Image")));
+            this.pbAgregarProyecto.Location = new System.Drawing.Point(413, 421);
+            this.pbAgregarProyecto.Name = "pbAgregarProyecto";
+            this.pbAgregarProyecto.Size = new System.Drawing.Size(62, 52);
+            this.pbAgregarProyecto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAgregarProyecto.TabIndex = 104;
+            this.pbAgregarProyecto.TabStop = false;
+            this.pbAgregarProyecto.Click += new System.EventHandler(this.pbAgregarProyecto_Click);
+            this.pbAgregarProyecto.MouseEnter += new System.EventHandler(this.pbAgregarProyecto_MouseEnter);
+            this.pbAgregarProyecto.MouseLeave += new System.EventHandler(this.pbAgregarProyecto_MouseLeave);
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.pictureBox20.Image = global::AppOneCode.Properties.Resources.icons8_close_window_50;
+            this.pictureBox20.Location = new System.Drawing.Point(1095, 3);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(32, 29);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox20.TabIndex = 101;
+            this.pictureBox20.TabStop = false;
+            this.pictureBox20.Click += new System.EventHandler(this.pictureBox20_Click);
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.pictureBox19.Image = global::AppOneCode.Properties.Resources.icons8_minimize_window_30;
+            this.pictureBox19.Location = new System.Drawing.Point(1057, 3);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(32, 29);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox19.TabIndex = 102;
+            this.pictureBox19.TabStop = false;
+            // 
             // frmProyectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,16 +390,16 @@
             this.Name = "frmProyectos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tareas";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAgregarProyecto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEliminarProyecto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbActualizarProyecto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarProyectosI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbActualizarProyecto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEliminarProyecto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAgregarProyecto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
