@@ -61,6 +61,12 @@
     <Compile Include="Vista\FrmDashboard.Designer.cs">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmPerfil.Designer.cs">
+      <DependentUpon>FrmPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmTareas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmPerfil.resx">
+      <DependentUpon>FrmPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmTareas.resx">
       <DependentUpon>FrmTareas.cs</DependentUpon>
