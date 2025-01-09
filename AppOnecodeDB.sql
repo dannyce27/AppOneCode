@@ -36,3 +36,16 @@ VALUES ('testUser', 'test@example.com', '123');
 SELECT COLUMN_NAME 
 FROM INFORMATION_SCHEMA.COLUMNS 
 WHERE TABLE_NAME = 'Users'
+
+
+
+CREATE TABLE Trabajo (
+    Id INT IDENTITY(1,1) PRIMARY KEY,     
+    Nombre NVARCHAR(100) NOT NULL,       
+    Encargado NVARCHAR(100) NOT NULL,    
+    AreaDeTrabajo NVARCHAR(100) NOT NULL, 
+    Descripcion NVARCHAR(MAX) NULL              
+);
+
+
+select * from Trabajo

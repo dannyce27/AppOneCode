@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modelo\Conexion.cs" />
+    <Compile Include="Modelo\Tareas.cs" />
     <Compile Include="Vista\FrmAgregarTareas.cs">
       <SubType>Form</SubType>
     </Compile>

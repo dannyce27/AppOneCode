@@ -1,28 +1,42 @@
-﻿using System;
+﻿using AppOneCode.Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace AppOneCode.Vista
 {
     public partial class frmProyectos : Form
     {
 
-        private ToolTip toolTip1; 
+        private ToolTip toolTip1;
 
         public frmProyectos()
         {
 
+
+
             InitializeComponent();
+            CargarTareas();
 
             toolTip1 = new ToolTip();
 
 
+        }
+
+        private void CargarTareas()
+
+        {
+            Tareas tareas = new Tareas();
+            List<Tareas> tareasList = tareas.CargarTareas();
+            dgvproyectos.DataSource = tareasList;
         }
 
         private void pictureBox20_Click(object sender, EventArgs e)
@@ -37,8 +51,27 @@ namespace AppOneCode.Vista
 
         private void pbAgregarProyecto_Click(object sender, EventArgs e)
         {
+            Tareas nuevaTarea = new Tareas
+            {
+                Nombre = txtNombreProyecto.Text,
+                Encargado = txtEncargadoProyecto.Text,
+                AreaDeTrabajo = txtAreaTProyecto.Text,
+                Descripcion = txtDescProyecto.Text
+            };
+
+            if (nuevaTarea.InsertarTarea()) // Asegúrate de que este método esté definido en la clase Tareas
+            {
+                MessageBox.Show("Tarea agregada exitosamente.");
+                CargarTareas(); // Recargar las tareas para mostrar la nueva
+            }
+
 
         }
+
+
+
+
+
 
         private void pbAgregarProyecto_MouseEnter(object sender, EventArgs e)
         {
@@ -74,7 +107,20 @@ namespace AppOneCode.Vista
 
         private void pbEliminarProyecto_Click(object sender, EventArgs e)
         {
+            if (dgvproyectos.CurrentRow != null)
+            {
+                Tareas tareaAEliminar = new Tareas
+                {
+                    Id = Convert.ToInt32(dgvproyectos.CurrentRow.Cells["Id"].Value)
+                };
 
+                if (tareaAEliminar.EliminarTarea())
+                {
+                    MessageBox.Show("Tarea eliminada exitosamente.");
+                    CargarTareas(); // Recargar las tareas para reflejar la eliminación
+                }
+            }
+        
         }
 
         private void lblinicio_Click(object sender, EventArgs e)
@@ -102,5 +148,62 @@ namespace AppOneCode.Vista
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pbActualizarProyecto_Click(object sender, EventArgs e)
+        {
+            if (dgvproyectos.CurrentRow != null)
+            {
+                Tareas tareaActualizada = new Tareas
+                {
+                    Id = Convert.ToInt32(dgvproyectos.CurrentRow.Cells["Id"].Value),
+                    Nombre = txtNombreProyecto.Text,
+                    Encargado = txtEncargadoProyecto.Text,
+                    AreaDeTrabajo = txtAreaTProyecto.Text,
+                    Descripcion = txtDescProyecto.Text
+                };
+
+                if (tareaActualizada.ActualizarTarea())
+                {
+                    MessageBox.Show("Tarea actualizada exitosamente.");
+                    CargarTareas(); // Recargar las tareas para mostrar los cambios
+                }
+            }
+        }
+
+        private void txtDescProyecto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvproyectos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            {
+                if (dgvproyectos.CurrentRow != null)
+                {
+                    txtNombreProyecto.Text = dgvproyectos.CurrentRow.Cells["Nombre"].Value.ToString();
+                    txtEncargadoProyecto.Text = dgvproyectos.CurrentRow.Cells["Encargado"].Value.ToString();
+                    txtAreaTProyecto.Text = dgvproyectos.CurrentRow.Cells["AreaDeTrabajo"].Value.ToString();
+                    txtDescProyecto.Text = dgvproyectos.CurrentRow.Cells["Descripcion"].Value.ToString();
+                }
+            }
+        }
+
+        private void pbBuscar_Click(object sender, EventArgs e)
+        {
+            String criterio = txtSearchProyect.Text.Trim(); 
+
+            Tareas tareas = new Tareas();
+            List<Tareas> tareasList = tareas.BuscarTareas(criterio);
+
+            dgvproyectos.DataSource = tareasList;
+        }
     }
 }
+    
+
+

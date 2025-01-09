@@ -64,3 +64,4 @@ C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmPe
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.frmProyectos.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.UserControlTareas.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.UserControlTareasPendientes.resources
+C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmRecuperacionC.resources
