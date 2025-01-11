@@ -35,7 +35,7 @@ namespace AppOneCode.Vista
 
         {
             Tareas tareas = new Tareas();
-            List<Tareas> tareasList = tareas.CargarTareas();
+            List<Tareas> tareasList = tareas.CargarProyecto();
             dgvproyectos.DataSource = tareasList;
         }
 
@@ -59,9 +59,9 @@ namespace AppOneCode.Vista
                 Descripcion = txtDescProyecto.Text
             };
 
-            if (nuevaTarea.InsertarTarea()) // Asegúrate de que este método esté definido en la clase Tareas
+            if (nuevaTarea.InsertarProyecto()) 
             {
-                MessageBox.Show("Tarea agregada exitosamente.");
+                MessageBox.Show("Proyecto agregado exitosamente.");
                 CargarTareas(); // Recargar las tareas para mostrar la nueva
             }
 
@@ -114,9 +114,9 @@ namespace AppOneCode.Vista
                     Id = Convert.ToInt32(dgvproyectos.CurrentRow.Cells["Id"].Value)
                 };
 
-                if (tareaAEliminar.EliminarTarea())
+                if (tareaAEliminar.EliminarProyecto())
                 {
-                    MessageBox.Show("Tarea eliminada exitosamente.");
+                    MessageBox.Show("Proyecto eliminado con exito.");
                     CargarTareas(); // Recargar las tareas para reflejar la eliminación
                 }
             }
@@ -167,9 +167,9 @@ namespace AppOneCode.Vista
                     Descripcion = txtDescProyecto.Text
                 };
 
-                if (tareaActualizada.ActualizarTarea())
+                if (tareaActualizada.ActualizarProyecto())
                 {
-                    MessageBox.Show("Tarea actualizada exitosamente.");
+                    MessageBox.Show("Proyecto actualizada exitosamente.");
                     CargarTareas(); // Recargar las tareas para mostrar los cambios
                 }
             }
@@ -198,7 +198,7 @@ namespace AppOneCode.Vista
             String criterio = txtSearchProyect.Text.Trim(); 
 
             Tareas tareas = new Tareas();
-            List<Tareas> tareasList = tareas.BuscarTareas(criterio);
+            List<Tareas> tareasList = tareas.BuscarProyecto(criterio);
 
             dgvproyectos.DataSource = tareasList;
         }

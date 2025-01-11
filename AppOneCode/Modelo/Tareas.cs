@@ -18,7 +18,7 @@ namespace AppOneCode.Modelo
         public string AreaDeTrabajo { get; set; }
         public string Descripcion { get; set; }
 
-        public bool InsertarTarea()
+        public bool InsertarProyecto()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -50,7 +50,7 @@ namespace AppOneCode.Modelo
         }
 
 
-        public List<Tareas> BuscarTareas(string criterio)
+        public List<Tareas> BuscarProyecto(string criterio)
         {
             List<Tareas> tareasList = new List<Tareas>();
 
@@ -93,7 +93,7 @@ namespace AppOneCode.Modelo
 
 
         // Método para cargar todas las tareas
-        public List<Tareas> CargarTareas()
+        public List<Tareas> CargarProyecto()
         {
             List<Tareas> tareasList = new List<Tareas>();
 
@@ -134,7 +134,7 @@ namespace AppOneCode.Modelo
         }
 
         // Método para actualizar una tarea
-        public bool ActualizarTarea()
+        public bool ActualizarProyecto()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -167,7 +167,7 @@ namespace AppOneCode.Modelo
         }
 
         // Método para eliminar una tarea
-        public bool EliminarTarea()
+        public bool EliminarProyecto()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {

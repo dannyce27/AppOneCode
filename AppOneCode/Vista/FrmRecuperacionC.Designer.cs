@@ -29,72 +29,47 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRecuperacionC));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.txtIngresarCorreo = new System.Windows.Forms.TextBox();
+            this.btnEnviarCorreo = new System.Windows.Forms.Button();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.txtemailR = new System.Windows.Forms.TextBox();
-            this.BtnIngresarR = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pbTextoInformativo = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtValidarCodigo = new System.Windows.Forms.TextBox();
+            this.btnValidarCodigo = new System.Windows.Forms.Button();
+            this.lblValidarCodigo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTextoInformativo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // txtIngresarCorreo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-124, 256);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(271, 270);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.txtIngresarCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIngresarCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIngresarCorreo.Location = new System.Drawing.Point(323, 251);
+            this.txtIngresarCorreo.Name = "txtIngresarCorreo";
+            this.txtIngresarCorreo.Size = new System.Drawing.Size(194, 22);
+            this.txtIngresarCorreo.TabIndex = 22;
+            this.txtIngresarCorreo.TextChanged += new System.EventHandler(this.txtIngresarCorreo_TextChanged);
             // 
-            // pictureBox2
+            // btnEnviarCorreo
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(646, -92);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(271, 270);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(202, -5);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(406, 443);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(246, 101);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(314, 101);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 9;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.White;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(272, 234);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(261, 53);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 12;
-            this.pictureBox5.TabStop = false;
+            this.btnEnviarCorreo.BackColor = System.Drawing.Color.Silver;
+            this.btnEnviarCorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviarCorreo.Location = new System.Drawing.Point(270, 318);
+            this.btnEnviarCorreo.Name = "btnEnviarCorreo";
+            this.btnEnviarCorreo.Size = new System.Drawing.Size(261, 46);
+            this.btnEnviarCorreo.TabIndex = 24;
+            this.btnEnviarCorreo.Text = "Enviar";
+            this.btnEnviarCorreo.UseVisualStyleBackColor = false;
+            this.btnEnviarCorreo.Click += new System.EventHandler(this.btnEnviarCorreo_Click);
             // 
             // pictureBox10
             // 
@@ -107,26 +82,92 @@
             this.pictureBox10.TabIndex = 21;
             this.pictureBox10.TabStop = false;
             // 
-            // txtemailR
+            // pictureBox5
             // 
-            this.txtemailR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtemailR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtemailR.Location = new System.Drawing.Point(323, 251);
-            this.txtemailR.Name = "txtemailR";
-            this.txtemailR.Size = new System.Drawing.Size(194, 22);
-            this.txtemailR.TabIndex = 22;
+            this.pictureBox5.BackColor = System.Drawing.Color.White;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(272, 234);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(261, 53);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabStop = false;
             // 
-            // BtnIngresarR
+            // pbTextoInformativo
             // 
-            this.BtnIngresarR.BackColor = System.Drawing.Color.Silver;
-            this.BtnIngresarR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnIngresarR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnIngresarR.Location = new System.Drawing.Point(270, 318);
-            this.BtnIngresarR.Name = "BtnIngresarR";
-            this.BtnIngresarR.Size = new System.Drawing.Size(261, 46);
-            this.BtnIngresarR.TabIndex = 24;
-            this.BtnIngresarR.Text = "Enviar";
-            this.BtnIngresarR.UseVisualStyleBackColor = false;
+            this.pbTextoInformativo.Image = ((System.Drawing.Image)(resources.GetObject("pbTextoInformativo.Image")));
+            this.pbTextoInformativo.Location = new System.Drawing.Point(246, 101);
+            this.pbTextoInformativo.Name = "pbTextoInformativo";
+            this.pbTextoInformativo.Size = new System.Drawing.Size(314, 101);
+            this.pbTextoInformativo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbTextoInformativo.TabIndex = 9;
+            this.pbTextoInformativo.TabStop = false;
+            this.pbTextoInformativo.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(202, -5);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(406, 443);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(646, -92);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(271, 270);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-124, 256);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(271, 270);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtValidarCodigo
+            // 
+            this.txtValidarCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtValidarCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValidarCodigo.Location = new System.Drawing.Point(323, 251);
+            this.txtValidarCodigo.Name = "txtValidarCodigo";
+            this.txtValidarCodigo.Size = new System.Drawing.Size(194, 22);
+            this.txtValidarCodigo.TabIndex = 25;
+            this.txtValidarCodigo.TextChanged += new System.EventHandler(this.txtValidarCodigo_TextChanged);
+            // 
+            // btnValidarCodigo
+            // 
+            this.btnValidarCodigo.BackColor = System.Drawing.Color.Silver;
+            this.btnValidarCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnValidarCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValidarCodigo.Location = new System.Drawing.Point(270, 318);
+            this.btnValidarCodigo.Name = "btnValidarCodigo";
+            this.btnValidarCodigo.Size = new System.Drawing.Size(261, 46);
+            this.btnValidarCodigo.TabIndex = 26;
+            this.btnValidarCodigo.Text = "Validar Codigo";
+            this.btnValidarCodigo.UseVisualStyleBackColor = false;
+            this.btnValidarCodigo.Click += new System.EventHandler(this.btnValidarCodigo_Click);
+            // 
+            // lblValidarCodigo
+            // 
+            this.lblValidarCodigo.AutoSize = true;
+            this.lblValidarCodigo.BackColor = System.Drawing.Color.White;
+            this.lblValidarCodigo.Font = new System.Drawing.Font("Poppins Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValidarCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblValidarCodigo.Location = new System.Drawing.Point(217, 142);
+            this.lblValidarCodigo.Name = "lblValidarCodigo";
+            this.lblValidarCodigo.Size = new System.Drawing.Size(365, 26);
+            this.lblValidarCodigo.TabIndex = 27;
+            this.lblValidarCodigo.Text = "Ingresa el codigo que recibiste atraves de gmail.";
             // 
             // FrmRecuperacionC
             // 
@@ -134,23 +175,26 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.BtnIngresarR);
-            this.Controls.Add(this.txtemailR);
+            this.Controls.Add(this.lblValidarCodigo);
+            this.Controls.Add(this.btnValidarCodigo);
+            this.Controls.Add(this.txtValidarCodigo);
+            this.Controls.Add(this.btnEnviarCorreo);
+            this.Controls.Add(this.txtIngresarCorreo);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pbTextoInformativo);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmRecuperacionC";
             this.Text = "FrmRecuperacionC";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTextoInformativo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,10 +205,13 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pbTextoInformativo;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.TextBox txtemailR;
-        private System.Windows.Forms.Button BtnIngresarR;
+        private System.Windows.Forms.TextBox txtIngresarCorreo;
+        private System.Windows.Forms.Button btnEnviarCorreo;
+        private System.Windows.Forms.TextBox txtValidarCodigo;
+        private System.Windows.Forms.Button btnValidarCodigo;
+        private System.Windows.Forms.Label lblValidarCodigo;
     }
 }

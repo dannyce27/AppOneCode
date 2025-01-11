@@ -65,3 +65,6 @@ C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.frmPr
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.UserControlTareas.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.UserControlTareasPendientes.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmRecuperacionC.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmPerfil.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmRecuperacionC.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmCambiarContraseña.resources

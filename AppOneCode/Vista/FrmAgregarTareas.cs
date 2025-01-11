@@ -21,5 +21,10 @@ namespace AppOneCode.Vista
         {
 
         }
+
+        private void pbAgregarProyecto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
