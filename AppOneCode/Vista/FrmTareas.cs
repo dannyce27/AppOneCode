@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AppOneCode.Modelo;
 
 namespace AppOneCode.Vista
 {
@@ -15,8 +16,14 @@ namespace AppOneCode.Vista
         public FrmTareas()
         {
             InitializeComponent();
+            LLenarTareas();
         }
 
+        private void LLenarTareas()
+        {
+            Tareas2 obj = new Tareas2();
+            obj.LLenarTareas(flowLayoutPanel1);
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             
@@ -65,11 +72,16 @@ namespace AppOneCode.Vista
         private void pbAgregarProyecto_Click(object sender, EventArgs e)
         {
             FrmAgregarTareas frmAggTareas = new FrmAgregarTareas();
-            this.Close();
+            this.Hide();
             frmAggTareas.Show();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

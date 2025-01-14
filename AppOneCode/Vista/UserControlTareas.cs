@@ -13,12 +13,42 @@ namespace AppOneCode.Vista
 {
     public partial class UserControlTareas : UserControl
     {
+
+        private int id = 0;
+        private string descripcion = "Descripcion Tarea";
+        private string prioridad;
+        private string estado;
         public UserControlTareas()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
             this.ResizeRedraw = true;
         }
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        public string Descripcion
+        {
+            get { return descripcion; }
+            set { descripcion = value; lblDescTarea.Text = value; }  // Aquí asignamos el valor a una etiqueta
+        }
+
+        public string Prioridad
+        {
+            get { return prioridad; }
+            set { prioridad = value; lblPrioridad.Text = value; }  // Aquí asignamos el valor a una etiqueta
+        }
+
+        public string Estado
+        {
+            get { return estado; }
+            set { estado = value; lblEstado.Text = value; }  // Aquí asignamos el valor a una etiqueta
+        }
+
 
         private void pbAgregarComent_Click(object sender, EventArgs e)
         {
@@ -29,7 +59,7 @@ namespace AppOneCode.Vista
         {
             base.OnPaint(e);
 
-            int radio = 90;
+            int radio = 27;
             var rect = this.ClientRectangle;
             rect.Width -= 1;
             rect.Height -= 1;
@@ -62,7 +92,7 @@ namespace AppOneCode.Vista
         {
             base.OnResize(e);
 
-            int radio = 90;
+            int radio = 27;
             var rect = this.ClientRectangle;
 
             using (GraphicsPath path = new GraphicsPath())

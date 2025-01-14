@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using AppOneCode.Vista;
 
 namespace AppOneCode.Modelo
 {
@@ -24,7 +26,7 @@ namespace AppOneCode.Modelo
                     INSERT INTO Tareas (Descripcion, UsuarioId, PrioridadId, EstadoId)
                     SELECT @Descripcion, U.Id, P.Id, E.Id
                     FROM Users U, Prioridad P, Estado E
-                    WHERE U.Username = @Usuario AND P.NombrePrioridad = @Prioridad AND E.Nombre = @Estado";
+                    WHERE U.Username = @Usuario AND P.NombrePrioridad = @Prioridad AND E.NombreEstado = @Estado";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Descripcion", Descripcion);
@@ -157,7 +159,7 @@ namespace AppOneCode.Modelo
                     SET Descripcion = @Descripcion,
                         UsuarioId = (SELECT Id FROM Users WHERE Username = @Usuario),
                         PrioridadId = (SELECT Id FROM Prioridad WHERE NombrePrioridad = @Prioridad),
-                        EstadoId = (SELECT Id FROM Estado WHERE Nombre = @Estado)
+                        EstadoId = (SELECT Id FROM Estado WHERE NombreEstado = @Estado)
                     WHERE Id = @Id";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -210,6 +212,61 @@ namespace AppOneCode.Modelo
                 {
                     MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
+                }
+            }
+        }
+
+        public void LLenarTareas(FlowLayoutPanel contenedor)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                // Consulta SQL con JOIN para obtener los nombres de Prioridad y Estado
+                string query = "SELECT t.Id, t.Descripcion, u.Username AS Usuario, p.NombrePrioridad AS Prioridad, e.NombreEstado AS Estado " +
+                               "FROM Tareas t " +
+                               "JOIN Users u ON t.UsuarioId = u.Id " +
+                               "JOIN Prioridad p ON t.PrioridadId = p.Id " +
+                               "JOIN Estado e ON t.EstadoId = e.Id";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.Text;
+
+                try
+                {
+                    conn.Open();
+                    SqlDataReader rd = cmd.ExecuteReader();
+
+                    while (rd.Read())
+                    {
+                        // Asegúrate de que los datos no sean null antes de asignarlos
+                        int id = rd["Id"] != DBNull.Value ? Convert.ToInt32(rd["Id"]) : 0;
+                        string descripcion = rd["Descripcion"] != DBNull.Value ? rd["Descripcion"].ToString() : string.Empty;
+                        string usuario = rd["Usuario"] != DBNull.Value ? rd["Usuario"].ToString() : string.Empty;
+                        string prioridad = rd["Prioridad"] != DBNull.Value ? rd["Prioridad"].ToString() : string.Empty;
+                        string estado = rd["Estado"] != DBNull.Value ? rd["Estado"].ToString() : string.Empty;
+
+                        // Crear un nuevo UserControlTareas
+                        UserControlTareas userControlTareas = new UserControlTareas
+                        {
+                            Id = id,
+                            Descripcion = descripcion,
+                            Prioridad = prioridad,
+                            Estado = estado
+                        };
+
+                        // Agregar el UserControl al contenedor (FlowLayoutPanel)
+                        contenedor.Controls.Add(userControlTareas);
+                    }
+
+                    conn.Close();
+                    conn.Dispose();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show($"Este es el error: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Se ha producido un error inesperado: {ex.Message}");
                 }
             }
         }

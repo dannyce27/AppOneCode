@@ -112,7 +112,7 @@ namespace AppOneCode.Vista
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT Id, Nombre FROM Estado"; // Ajusta 'Nombre' según el nombre real de tu columna.
+                string query = "SELECT Id, NombreEstado FROM Estado"; // Ajusta 'Nombre' según el nombre real de tu columna.
 
                 try
                 {

@@ -18,7 +18,7 @@ namespace AppOneCode
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmAgregarTareas());
+            Application.Run(new FrmTareas());
         }
     }
 }
