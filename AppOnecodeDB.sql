@@ -63,15 +63,16 @@ select * from Trabajo
 
 CREATE TABLE Estado(
 Id INT IDENTITY(1,1) PRIMARY KEY,
-Nombre NVARCHAR(50) NOT  NULL
+NombreEstado NVARCHAR(50) NOT  NULL
 );
 
 
-INSERT INTO Estado(Nombre) VALUES ('Trabajando');
 
-INSERT INTO Estado(Nombre) VALUES ('Pendiente');
+INSERT INTO Estado(NombreEstado) VALUES ('Trabajando');
 
-INSERT INTO Estado(Nombre) VALUES ('Completada');
+INSERT INTO Estado(NombreEstado) VALUES ('Pendiente');
+
+INSERT INTO Estado(NombreEstado) VALUES ('Completada');
 
 
 select * from Estado;
