@@ -55,11 +55,11 @@
             // 
             this.lblNumerosCrono.AutoSize = true;
             this.lblNumerosCrono.BackColor = System.Drawing.Color.Silver;
-            this.lblNumerosCrono.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumerosCrono.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumerosCrono.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblNumerosCrono.Location = new System.Drawing.Point(332, 81);
+            this.lblNumerosCrono.Location = new System.Drawing.Point(132, 25);
             this.lblNumerosCrono.Name = "lblNumerosCrono";
-            this.lblNumerosCrono.Size = new System.Drawing.Size(188, 48);
+            this.lblNumerosCrono.Size = new System.Drawing.Size(126, 34);
             this.lblNumerosCrono.TabIndex = 95;
             this.lblNumerosCrono.Text = "00:00:00:00";
             // 
@@ -70,20 +70,28 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.lblNumerosCrono);
+            this.panel1.Controls.Add(this.lbMarcasTiempo);
+            this.panel1.Controls.Add(this.pbCloseForm);
+            this.panel1.Controls.Add(this.pbMinimizeForm);
+            this.panel1.Controls.Add(this.pbStop);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pbPause);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pbPlay);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(664, 564);
+            this.panel1.Size = new System.Drawing.Size(377, 242);
             this.panel1.TabIndex = 96;
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Silver;
-            this.label1.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(225, 317);
+            this.label1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(134, 123);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 32);
+            this.label1.Size = new System.Drawing.Size(134, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Marcas de Tiempo";
             // 
@@ -91,12 +99,12 @@
             // 
             this.lbMarcasTiempo.BackColor = System.Drawing.Color.Silver;
             this.lbMarcasTiempo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbMarcasTiempo.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMarcasTiempo.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMarcasTiempo.FormattingEnabled = true;
-            this.lbMarcasTiempo.ItemHeight = 37;
-            this.lbMarcasTiempo.Location = new System.Drawing.Point(25, 352);
+            this.lbMarcasTiempo.ItemHeight = 22;
+            this.lbMarcasTiempo.Location = new System.Drawing.Point(91, 151);
             this.lbMarcasTiempo.Name = "lbMarcasTiempo";
-            this.lbMarcasTiempo.Size = new System.Drawing.Size(608, 189);
+            this.lbMarcasTiempo.Size = new System.Drawing.Size(198, 70);
             this.lbMarcasTiempo.TabIndex = 97;
             this.lbMarcasTiempo.SelectedIndexChanged += new System.EventHandler(this.lbMarcasTiempo_SelectedIndexChanged);
             // 
@@ -111,9 +119,9 @@
             this.pbStop.BackColor = System.Drawing.Color.Silver;
             this.pbStop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbStop.Image = ((System.Drawing.Image)(resources.GetObject("pbStop.Image")));
-            this.pbStop.Location = new System.Drawing.Point(503, 150);
+            this.pbStop.Location = new System.Drawing.Point(228, 81);
             this.pbStop.Name = "pbStop";
-            this.pbStop.Size = new System.Drawing.Size(87, 68);
+            this.pbStop.Size = new System.Drawing.Size(30, 23);
             this.pbStop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbStop.TabIndex = 94;
             this.pbStop.TabStop = false;
@@ -124,9 +132,9 @@
             this.pbPause.BackColor = System.Drawing.Color.Silver;
             this.pbPause.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbPause.Image = ((System.Drawing.Image)(resources.GetObject("pbPause.Image")));
-            this.pbPause.Location = new System.Drawing.Point(387, 150);
+            this.pbPause.Location = new System.Drawing.Point(178, 79);
             this.pbPause.Name = "pbPause";
-            this.pbPause.Size = new System.Drawing.Size(87, 68);
+            this.pbPause.Size = new System.Drawing.Size(27, 23);
             this.pbPause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPause.TabIndex = 93;
             this.pbPause.TabStop = false;
@@ -137,9 +145,9 @@
             this.pbPlay.BackColor = System.Drawing.Color.Silver;
             this.pbPlay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbPlay.Image = ((System.Drawing.Image)(resources.GetObject("pbPlay.Image")));
-            this.pbPlay.Location = new System.Drawing.Point(269, 150);
+            this.pbPlay.Location = new System.Drawing.Point(136, 79);
             this.pbPlay.Name = "pbPlay";
-            this.pbPlay.Size = new System.Drawing.Size(86, 68);
+            this.pbPlay.Size = new System.Drawing.Size(25, 23);
             this.pbPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlay.TabIndex = 92;
             this.pbPlay.TabStop = false;
@@ -149,9 +157,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Silver;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(25, 53);
+            this.pictureBox1.Location = new System.Drawing.Point(21, 46);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(225, 177);
+            this.pictureBox1.Size = new System.Drawing.Size(82, 77);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 91;
             this.pictureBox1.TabStop = false;
@@ -160,9 +168,9 @@
             // 
             this.pbMinimizeForm.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pbMinimizeForm.Image = global::AppOneCode.Properties.Resources.icons8_minimize_window_30;
-            this.pbMinimizeForm.Location = new System.Drawing.Point(573, 12);
+            this.pbMinimizeForm.Location = new System.Drawing.Point(322, 12);
             this.pbMinimizeForm.Name = "pbMinimizeForm";
-            this.pbMinimizeForm.Size = new System.Drawing.Size(32, 29);
+            this.pbMinimizeForm.Size = new System.Drawing.Size(17, 15);
             this.pbMinimizeForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMinimizeForm.TabIndex = 90;
             this.pbMinimizeForm.TabStop = false;
@@ -172,9 +180,9 @@
             // 
             this.pbCloseForm.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pbCloseForm.Image = global::AppOneCode.Properties.Resources.icons8_close_window_50;
-            this.pbCloseForm.Location = new System.Drawing.Point(620, 12);
+            this.pbCloseForm.Location = new System.Drawing.Point(345, 12);
             this.pbCloseForm.Name = "pbCloseForm";
-            this.pbCloseForm.Size = new System.Drawing.Size(32, 29);
+            this.pbCloseForm.Size = new System.Drawing.Size(20, 15);
             this.pbCloseForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCloseForm.TabIndex = 89;
             this.pbCloseForm.TabStop = false;
@@ -185,15 +193,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(664, 564);
-            this.Controls.Add(this.lbMarcasTiempo);
-            this.Controls.Add(this.lblNumerosCrono);
-            this.Controls.Add(this.pbStop);
-            this.Controls.Add(this.pbPause);
-            this.Controls.Add(this.pbPlay);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pbMinimizeForm);
-            this.Controls.Add(this.pbCloseForm);
+            this.ClientSize = new System.Drawing.Size(377, 242);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCronometro";
@@ -202,6 +202,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCronometro_FormClosing);
             this.Load += new System.EventHandler(this.FrmCronometro_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPause)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).EndInit();
@@ -209,7 +210,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizeForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCloseForm)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

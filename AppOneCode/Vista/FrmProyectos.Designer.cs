@@ -36,11 +36,14 @@
             this.lbltareas = new System.Windows.Forms.Label();
             this.lblinicio = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pbBuscar = new System.Windows.Forms.PictureBox();
+            this.dgvproyectos = new System.Windows.Forms.DataGridView();
             this.txtSearchProyect = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pbActualizarProyecto = new System.Windows.Forms.PictureBox();
             this.pbEliminarProyecto = new System.Windows.Forms.PictureBox();
             this.pbAgregarProyecto = new System.Windows.Forms.PictureBox();
+            this.txtDescProyecto = new System.Windows.Forms.TextBox();
             this.txtAreaTProyecto = new System.Windows.Forms.TextBox();
             this.txtEncargadoProyecto = new System.Windows.Forms.TextBox();
             this.txtNombreProyecto = new System.Windows.Forms.TextBox();
@@ -53,10 +56,9 @@
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtDescProyecto = new System.Windows.Forms.TextBox();
-            this.dgvproyectos = new System.Windows.Forms.DataGridView();
-            this.pbBuscar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvproyectos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbActualizarProyecto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminarProyecto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAgregarProyecto)).BeginInit();
@@ -64,8 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvproyectos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).BeginInit();
             this.SuspendLayout();
             // 
             // lblchat
@@ -175,6 +175,29 @@
             this.panel1.TabIndex = 103;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // pbBuscar
+            // 
+            this.pbBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.pbBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("pbBuscar.Image")));
+            this.pbBuscar.Location = new System.Drawing.Point(783, 480);
+            this.pbBuscar.Name = "pbBuscar";
+            this.pbBuscar.Size = new System.Drawing.Size(38, 32);
+            this.pbBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbBuscar.TabIndex = 118;
+            this.pbBuscar.TabStop = false;
+            this.pbBuscar.Click += new System.EventHandler(this.pbBuscar_Click);
+            // 
+            // dgvproyectos
+            // 
+            this.dgvproyectos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.dgvproyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvproyectos.Location = new System.Drawing.Point(261, 557);
+            this.dgvproyectos.Name = "dgvproyectos";
+            this.dgvproyectos.Size = new System.Drawing.Size(654, 255);
+            this.dgvproyectos.TabIndex = 117;
+            this.dgvproyectos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvproyectos_CellContentClick);
+            // 
             // txtSearchProyect
             // 
             this.txtSearchProyect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,6 +262,16 @@
             this.pbAgregarProyecto.Click += new System.EventHandler(this.pbAgregarProyecto_Click);
             this.pbAgregarProyecto.MouseEnter += new System.EventHandler(this.pbAgregarProyecto_MouseEnter);
             this.pbAgregarProyecto.MouseLeave += new System.EventHandler(this.pbAgregarProyecto_MouseLeave);
+            // 
+            // txtDescProyecto
+            // 
+            this.txtDescProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescProyecto.Location = new System.Drawing.Point(414, 326);
+            this.txtDescProyecto.Multiline = true;
+            this.txtDescProyecto.Name = "txtDescProyecto";
+            this.txtDescProyecto.Size = new System.Drawing.Size(364, 65);
+            this.txtDescProyecto.TabIndex = 111;
+            this.txtDescProyecto.TextChanged += new System.EventHandler(this.txtDescProyecto_TextChanged);
             // 
             // txtAreaTProyecto
             // 
@@ -364,39 +397,6 @@
             this.pictureBox1.TabIndex = 92;
             this.pictureBox1.TabStop = false;
             // 
-            // txtDescProyecto
-            // 
-            this.txtDescProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescProyecto.Location = new System.Drawing.Point(414, 326);
-            this.txtDescProyecto.Multiline = true;
-            this.txtDescProyecto.Name = "txtDescProyecto";
-            this.txtDescProyecto.Size = new System.Drawing.Size(364, 65);
-            this.txtDescProyecto.TabIndex = 111;
-            this.txtDescProyecto.TextChanged += new System.EventHandler(this.txtDescProyecto_TextChanged);
-            // 
-            // dgvproyectos
-            // 
-            this.dgvproyectos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.dgvproyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvproyectos.Location = new System.Drawing.Point(280, 547);
-            this.dgvproyectos.Name = "dgvproyectos";
-            this.dgvproyectos.Size = new System.Drawing.Size(654, 255);
-            this.dgvproyectos.TabIndex = 117;
-            this.dgvproyectos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvproyectos_CellContentClick);
-            // 
-            // pbBuscar
-            // 
-            this.pbBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.pbBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("pbBuscar.Image")));
-            this.pbBuscar.Location = new System.Drawing.Point(783, 480);
-            this.pbBuscar.Name = "pbBuscar";
-            this.pbBuscar.Size = new System.Drawing.Size(38, 32);
-            this.pbBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbBuscar.TabIndex = 118;
-            this.pbBuscar.TabStop = false;
-            this.pbBuscar.Click += new System.EventHandler(this.pbBuscar_Click);
-            // 
             // frmProyectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -414,6 +414,8 @@
             this.Text = "Tareas";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvproyectos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbActualizarProyecto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminarProyecto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAgregarProyecto)).EndInit();
@@ -421,8 +423,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvproyectos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

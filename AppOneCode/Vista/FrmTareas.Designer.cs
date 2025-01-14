@@ -113,7 +113,7 @@
             this.userControlTareas1.Location = new System.Drawing.Point(3, 4);
             this.userControlTareas1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.userControlTareas1.Name = "userControlTareas1";
-            this.userControlTareas1.Size = new System.Drawing.Size(666, 63);
+            this.userControlTareas1.Size = new System.Drawing.Size(667, 63);
             this.userControlTareas1.TabIndex = 0;
             // 
             // lblNumeroTC
@@ -178,9 +178,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(828, 163);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 16);
+            this.label1.Size = new System.Drawing.Size(117, 16);
             this.label1.TabIndex = 108;
-            this.label1.Text = "Agregar Proyecto";
+            this.label1.Text = "Agregar Tareas";
             // 
             // pbAgregarProyecto
             // 

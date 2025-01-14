@@ -51,6 +51,7 @@
     <Compile Include="Modelo\Conexion.cs" />
     <Compile Include="Modelo\EmailService.cs" />
     <Compile Include="Modelo\Tareas.cs" />
+    <Compile Include="Modelo\Tareas2.cs" />
     <Compile Include="Vista\FrmAgregarTareas.cs">
       <SubType>Form</SubType>
     </Compile>

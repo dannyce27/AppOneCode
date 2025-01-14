@@ -64,9 +64,9 @@ namespace AppOneCode.Vista
 
         private void pbAgregarProyecto_Click(object sender, EventArgs e)
         {
-            frmProyectos frmProyectos = new frmProyectos();
+            FrmAgregarTareas frmAggTareas = new FrmAgregarTareas();
             this.Close();
-            frmProyectos.ShowDialog();
+            frmAggTareas.Show();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

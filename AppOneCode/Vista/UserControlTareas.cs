@@ -94,7 +94,9 @@ namespace AppOneCode.Vista
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-
+            FrmCronometro frmC = new FrmCronometro();
+            this.Hide();
+            frmC.ShowDialog();
         }
     }
 }

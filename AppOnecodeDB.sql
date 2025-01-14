@@ -3,7 +3,7 @@ CREATE DATABASE AppOnecodeDB;
 GO
 
 -- Usar la base de datos
-USE AppOnecodeDB;
+USE BDOneCode;
 GO
 
 -- Crear tabla para usuarios con email
@@ -47,5 +47,45 @@ CREATE TABLE Trabajo (
     Descripcion NVARCHAR(MAX) NULL              
 );
 
+CREATE TABLE Prioridad (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+	NombrePrioridad NVARCHAR(50) NOT NULL
+);
 
+
+INSERT INTO Prioridad(NombrePrioridad) VALUES ('Alta');
+
+INSERT INTO Prioridad(NombrePrioridad) VALUES ('Media');
+
+INSERT INTO Prioridad(NombrePrioridad) VALUES ('Baja');
 select * from Trabajo
+
+
+CREATE TABLE Estado(
+Id INT IDENTITY(1,1) PRIMARY KEY,
+Nombre NVARCHAR(50) NOT  NULL
+);
+
+
+INSERT INTO Estado(Nombre) VALUES ('Trabajando');
+
+INSERT INTO Estado(Nombre) VALUES ('Pendiente');
+
+INSERT INTO Estado(Nombre) VALUES ('Completada');
+
+
+select * from Estado;
+
+
+CREATE TABLE Tareas (
+    Id INT IDENTITY(1,1) PRIMARY KEY, 
+    Descripcion NVARCHAR(MAX) NOT NULL,
+    UsuarioId INT NOT NULL,
+    PrioridadId INT NOT NULL,
+    EstadoId INT NOT NULL, 
+    CONSTRAINT FK_Tareas_Usuario FOREIGN KEY (UsuarioId) REFERENCES Users(Id),
+    CONSTRAINT FK_Tareas_Prioridad FOREIGN KEY (PrioridadId) REFERENCES Prioridad(Id),
+    CONSTRAINT FK_Tareas_Estado FOREIGN KEY (EstadoId) REFERENCES Estado(Id)
+);
+	
+select * from Tareas
