@@ -193,11 +193,11 @@
             // 
             this.dgvproyectos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.dgvproyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-<<<<<<< HEAD
+
             this.dgvproyectos.Location = new System.Drawing.Point(280, 547);
-=======
+
             this.dgvproyectos.Location = new System.Drawing.Point(261, 557);
->>>>>>> 8b5716f36f48b6f6558766872654d34303240012
+
             this.dgvproyectos.Name = "dgvproyectos";
             this.dgvproyectos.Size = new System.Drawing.Size(654, 255);
             this.dgvproyectos.TabIndex = 117;

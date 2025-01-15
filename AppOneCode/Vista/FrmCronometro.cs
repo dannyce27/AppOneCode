@@ -24,7 +24,17 @@ namespace AppOneCode.Vista
 
         private void pictureBox19_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized; // Minimiza la aplicación
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                // Obtener el tamaño de la pantalla
+                Rectangle workingArea = Screen.GetWorkingArea(this);
+
+                // Mover el formulario a la esquina inferior derecha
+                this.Location = new Point(workingArea.Right - this.Width, workingArea.Bottom - this.Height);
+
+                // Mantenerlo visible
+                this.ShowInTaskbar = true;
+            }
         }
 
         private void pictureBox20_Click(object sender, EventArgs e)

@@ -61,7 +61,7 @@ namespace AppOneCode.Modelo
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"
-                    SELECT T.Id, T.Descripcion, U.Username AS Usuario, P.NombrePrioridad AS Prioridad, E.Nombre AS Estado
+                    SELECT T.Id, T.Descripcion, U.Username AS Usuario, P.NombrePrioridad AS Prioridad, E.NombreEstado AS Estado
                     FROM Tareas T
                     INNER JOIN Users U ON T.UsuarioId = U.Id
                     INNER JOIN Prioridad P ON T.PrioridadId = P.Id
@@ -110,7 +110,7 @@ namespace AppOneCode.Modelo
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"
-                    SELECT T.Id, T.Descripcion, U.Username AS Usuario, P.NombrePrioridad AS Prioridad, E.Nombre AS Estado
+                    SELECT T.Id, T.Descripcion, U.Username AS Usuario, P.NombrePrioridad AS Prioridad, E.NombreEstado AS Estado
                     FROM Tareas T
                     INNER JOIN Users U ON T.UsuarioId = U.Id
                     INNER JOIN Prioridad P ON T.PrioridadId = P.Id

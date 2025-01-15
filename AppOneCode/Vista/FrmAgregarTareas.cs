@@ -180,6 +180,8 @@ namespace AppOneCode.Vista
                 cmbPrioridad.SelectedIndex = -1;
                 cmbEstado.SelectedIndex = -1;
 
+                
+
 
             }
             else

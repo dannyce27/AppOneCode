@@ -124,9 +124,15 @@ namespace AppOneCode.Vista
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            FrmCronometro frmC = new FrmCronometro();
-            this.Hide();
-            frmC.ShowDialog();
+            try
+            {
+                FrmCronometro frmC = new FrmCronometro();
+                frmC.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
