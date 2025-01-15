@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChat.Designer.cs">
+      <DependentUpon>FrmChat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Conexion.cs" />
     <Compile Include="Modelo\EmailService.cs" />
     <Compile Include="Modelo\Tareas.cs" />
@@ -144,6 +150,9 @@
     <Compile Include="Vista\UserControlTareasPendientes.Designer.cs">
       <DependentUpon>UserControlTareasPendientes.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmChat.resx">
+      <DependentUpon>FrmChat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmAgregarTareas.resx">
       <DependentUpon>FrmAgregarTareas.cs</DependentUpon>
     </EmbeddedResource>
