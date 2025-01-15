@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AppOneCode.Modelo;
 
 namespace AppOneCode.Vista
 {
@@ -15,16 +17,297 @@ namespace AppOneCode.Vista
         public FrmAgregarTareas()
         {
             InitializeComponent();
+            CargarEmpleados();
+            CargarPrioridades();
+            CargarEstados();
+            CargarDatos();
+
+            dgvMostrarProyectosI.ReadOnly = true;
         }
 
         private void FrmAgregarTareas_Load(object sender, EventArgs e)
         {
 
         }
+        private void CargarEmpleados()
+        {
+            string connectionString = "Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Id, Username FROM Users";
+
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Crea una lista para almacenar los datos
+                    Dictionary<int, string> empleados = new Dictionary<int, string>();
+
+                    while (reader.Read())
+                    {
+                        int id = reader.GetInt32(0);
+                        string username = reader.GetString(1);
+
+                        // Agrega el id y el nombre a la lista
+                        empleados.Add(id, username);
+                    }
+
+                    // Asigna los datos al ComboBox
+                    cmbEmpleadoAsignado.DataSource = new BindingSource(empleados, null);
+                    cmbEmpleadoAsignado.DisplayMember = "Value"; // Lo que se muestra
+                    cmbEmpleadoAsignado.ValueMember = "Key";    // El valor interno
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar empleados: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void CargarPrioridades()
+        {
+            string connectionString = "Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Id, NombrePrioridad FROM Prioridad";
+
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Crea una lista para almacenar los datos
+                    Dictionary<int, string> prioridades = new Dictionary<int, string>();
+
+                    while (reader.Read())
+                    {
+                        int id = reader.GetInt32(0);
+                        string nombrePrioridad = reader.GetString(1);
+
+                        // Agrega el id y el nombre al diccionario
+                        prioridades.Add(id, nombrePrioridad);
+                    }
+
+                    // Asigna los datos al ComboBox
+                    cmbPrioridad.DataSource = new BindingSource(prioridades, null);
+                    cmbPrioridad.DisplayMember = "Value"; // Lo que se muestra
+                    cmbPrioridad.ValueMember = "Key";    // El valor interno
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar prioridades: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
+        private void CargarEstados()
+        {
+            string connectionString = "Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Id, NombreEstado FROM Estado"; // Ajusta 'Nombre' según el nombre real de tu columna.
+
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Crea un diccionario para almacenar los datos
+                    Dictionary<int, string> estados = new Dictionary<int, string>();
+
+                    while (reader.Read())
+                    {
+                        int id = reader.GetInt32(0);        // Id del estado
+                        string nombreEstado = reader.GetString(1); // Nombre del estado
+
+                        // Agrega el id y el nombre al diccionario
+                        estados.Add(id, nombreEstado);
+                    }
+
+                    // Asigna los datos al ComboBox
+                    cmbEstado.DataSource = new BindingSource(estados, null);
+                    cmbEstado.DisplayMember = "Value"; // Lo que se muestra
+                    cmbEstado.ValueMember = "Key";    // El valor interno
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar estados: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
 
         private void pbAgregarProyecto_Click(object sender, EventArgs e)
         {
+            // Verifica que los campos no estén vacíos
+            if (string.IsNullOrWhiteSpace(txtDescP.Text) ||
+                cmbEmpleadoAsignado.SelectedValue == null ||
+                cmbPrioridad.SelectedValue == null ||
+                cmbEstado.SelectedValue == null)
+            {
+                MessageBox.Show("Por favor, completa todos los campos antes de agregar la tarea.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Crea una nueva instancia de la clase Tareas2
+            Tareas2 nuevaTarea = new Tareas2
+            {
+                Descripcion = txtDescP.Text,
+                Usuario = cmbEmpleadoAsignado.Text,
+                Prioridad = cmbPrioridad.Text,
+                Estado = cmbEstado.Text
+            };
+
+            // Llama al método InsertarTarea para agregar la tarea
+            bool resultado = nuevaTarea.InsertarTarea();
+
+            // Verifica si la tarea fue agregada correctamente
+            if (resultado)
+            {
+                MessageBox.Show("Tarea agregada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Limpia los campos del formulario
+                txtDescP.Clear();
+                cmbEmpleadoAsignado.SelectedIndex = -1;
+                cmbPrioridad.SelectedIndex = -1;
+                cmbEstado.SelectedIndex = -1;
+
+
+            }
+            else
+            {
+                MessageBox.Show("Error al agregar la tarea. Verifica los datos ingresados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CargarDatos()
+        {
+            // Crear una instancia de Tareas2 (asumo que el modelo se llama Tareas2)
+            Tareas2 tareaModelo = new Tareas2();
+
+            // Llamar al método CargarTareas para obtener las tareas
+            List<Tareas2> tareasList = tareaModelo.CargarTareas();
+
+            // Asignar la lista de tareas al DataGridView
+            dgvMostrarProyectosI.DataSource = tareasList;
+
+            // Opcionalmente, configurar algunas propiedades del DataGridView
+            dgvMostrarProyectosI.Columns["Id"].Visible = false;  // Si no deseas mostrar la columna Id
+            dgvMostrarProyectosI.Columns["Descripcion"].HeaderText = "Descripción";
+            dgvMostrarProyectosI.Columns["Usuario"].HeaderText = "Empleado Asignado";
+            dgvMostrarProyectosI.Columns["Prioridad"].HeaderText = "Prioridad";
+            dgvMostrarProyectosI.Columns["Estado"].HeaderText = "Estado";
+
+    
+
+        }
+
+        private void txtEncargadoProyecto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbEliminarProyecto_Click(object sender, EventArgs e)
+        {
+            // Verificar si se ha seleccionado una fila en el DataGridView
+            if (dgvMostrarProyectosI.SelectedRows.Count > 0)
+            {
+                // Obtener el Id de la tarea seleccionada (asumo que la columna Id está en la posición 0)
+                int tareaId = Convert.ToInt32(dgvMostrarProyectosI.SelectedRows[0].Cells["Id"].Value);
+
+                // Crear una instancia del modelo de Tareas2
+                Tareas2 tareaModelo = new Tareas2();
+                tareaModelo.Id = tareaId;  // Asignar el Id de la tarea a eliminar
+
+                // Eliminar la tarea
+                bool resultado = tareaModelo.EliminarTarea();
+
+                if (resultado)
+                {
+                    MessageBox.Show("La tarea ha sido eliminada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Volver a cargar los datos para reflejar el cambio
+                    CargarDatos();
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error al eliminar la tarea. Intenta de nuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una tarea para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void pbActualizarProyecto_Click(object sender, EventArgs e)
+        {
+            // Verificar si se ha seleccionado una fila en el DataGridView
+            if (dgvMostrarProyectosI.SelectedRows.Count > 0)
+            {
+                // Obtener el Id de la tarea seleccionada (asumiendo que la columna Id está en la posición 0)
+                int tareaId = Convert.ToInt32(dgvMostrarProyectosI.SelectedRows[0].Cells["Id"].Value);
+
+                // Verificar que haya un empleado seleccionado en el ComboBox
+                if (cmbEmpleadoAsignado.SelectedItem == null || cmbEmpleadoAsignado.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Por favor, selecciona un empleado para la tarea.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Detener la ejecución si no se seleccionó un empleado
+                }
+
+                // Crear una instancia del modelo de Tareas2
+                Tareas2 tareaModelo = new Tareas2();
+                tareaModelo.Id = tareaId; 
+                tareaModelo.Descripcion = txtDescP.Text;  
+                tareaModelo.Usuario = cmbEmpleadoAsignado.SelectedItem.ToString();
+                tareaModelo.Prioridad = cmbPrioridad.SelectedItem.ToString(); 
+                tareaModelo.Estado = cmbEstado.SelectedItem.ToString(); 
+
+                // Llamar al método de actualización
+                bool resultado = tareaModelo.ActualizarTarea();
+
+                if (resultado)
+                {
+                    MessageBox.Show("La tarea ha sido actualizada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Volver a cargar los datos para reflejar el cambio
+                    CargarDatos();
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error al actualizar la tarea. Intenta de nuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una tarea para actualizar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private void pictureBox19_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBox20_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            FrmTareas fmT = new FrmTareas();
+            this.Close();
+            fmT.ShowDialog();
         }
     }
 }

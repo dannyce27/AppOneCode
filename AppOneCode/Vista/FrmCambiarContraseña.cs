@@ -16,5 +16,24 @@ namespace AppOneCode.Vista
         {
             InitializeComponent();
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // FrmCambiarContraseña
+            // 
+            this.ClientSize = new System.Drawing.Size(494, 431);
+            this.Name = "FrmCambiarContraseña";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FrmCambiarContraseña_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void FrmCambiarContraseña_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

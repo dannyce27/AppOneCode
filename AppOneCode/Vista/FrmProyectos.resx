@@ -136,6 +136,7 @@
         9IDkm0le2qo8W6RIvu3XV2Wu3b8/3zHr3iRv8iJaaodgUJAktoetGEMryfewzchVH+TLXsjsq7LMjZ7S
         EbQUu3Dibyssm/M0bd6nWUZ/ymsZQgSpLb50g8kz+luAeAiNiYfYKfwrBP0+yC/b2fwxhNGzZjB6Svgl
         O59NIf43+Q14iKF9Zu8Z/lOcOHE2kZDwA39BUHsMBj1XAAAAAElFTkSuQmCC
+<<<<<<< HEAD
 </value>
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -666,6 +667,8 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAJjVL7/8P5PpYgq3P52DAAAAAElFTkSuQmCC
+=======
+>>>>>>> 8b5716f36f48b6f6558766872654d34303240012
 </value>
   </data>
   <data name="pbActualizarProyecto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
