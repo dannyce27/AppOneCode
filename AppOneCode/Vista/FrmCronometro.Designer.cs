@@ -55,11 +55,11 @@
             // 
             this.lblNumerosCrono.AutoSize = true;
             this.lblNumerosCrono.BackColor = System.Drawing.Color.Silver;
-            this.lblNumerosCrono.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumerosCrono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumerosCrono.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblNumerosCrono.Location = new System.Drawing.Point(132, 25);
+            this.lblNumerosCrono.Location = new System.Drawing.Point(142, 25);
             this.lblNumerosCrono.Name = "lblNumerosCrono";
-            this.lblNumerosCrono.Size = new System.Drawing.Size(126, 34);
+            this.lblNumerosCrono.Size = new System.Drawing.Size(116, 24);
             this.lblNumerosCrono.TabIndex = 95;
             this.lblNumerosCrono.Text = "00:00:00:00";
             // 
@@ -82,19 +82,19 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(377, 242);
+            this.panel1.Size = new System.Drawing.Size(377, 204);
             this.panel1.TabIndex = 96;
             // 
             // lbMarcasTiempo
             // 
             this.lbMarcasTiempo.BackColor = System.Drawing.Color.Silver;
             this.lbMarcasTiempo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbMarcasTiempo.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMarcasTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMarcasTiempo.FormattingEnabled = true;
-            this.lbMarcasTiempo.ItemHeight = 22;
-            this.lbMarcasTiempo.Location = new System.Drawing.Point(91, 151);
+            this.lbMarcasTiempo.ItemHeight = 15;
+            this.lbMarcasTiempo.Location = new System.Drawing.Point(41, 151);
             this.lbMarcasTiempo.Name = "lbMarcasTiempo";
-            this.lbMarcasTiempo.Size = new System.Drawing.Size(198, 70);
+            this.lbMarcasTiempo.Size = new System.Drawing.Size(308, 34);
             this.lbMarcasTiempo.TabIndex = 97;
             this.lbMarcasTiempo.SelectedIndexChanged += new System.EventHandler(this.lbMarcasTiempo_SelectedIndexChanged);
             // 
@@ -138,7 +138,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Silver;
-            this.label1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(134, 123);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 25);
@@ -193,7 +193,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(377, 242);
+            this.ClientSize = new System.Drawing.Size(377, 204);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCronometro";

@@ -63,31 +63,31 @@
             // txtContrasenaUsuarioR
             // 
             this.txtContrasenaUsuarioR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtContrasenaUsuarioR.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenaUsuarioR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasenaUsuarioR.Location = new System.Drawing.Point(323, 287);
             this.txtContrasenaUsuarioR.Name = "txtContrasenaUsuarioR";
             this.txtContrasenaUsuarioR.PasswordChar = '*';
-            this.txtContrasenaUsuarioR.Size = new System.Drawing.Size(194, 27);
+            this.txtContrasenaUsuarioR.Size = new System.Drawing.Size(194, 22);
             this.txtContrasenaUsuarioR.TabIndex = 14;
             this.txtContrasenaUsuarioR.TextChanged += new System.EventHandler(this.txtContrasenaUsuario_TextChanged);
             // 
             // txtemailR
             // 
             this.txtemailR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtemailR.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtemailR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtemailR.Location = new System.Drawing.Point(324, 204);
             this.txtemailR.Name = "txtemailR";
-            this.txtemailR.Size = new System.Drawing.Size(194, 27);
+            this.txtemailR.Size = new System.Drawing.Size(194, 22);
             this.txtemailR.TabIndex = 13;
             this.txtemailR.TextChanged += new System.EventHandler(this.txtNombreUsuario_TextChanged);
             // 
             // txtusuarioR
             // 
             this.txtusuarioR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtusuarioR.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtusuarioR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusuarioR.Location = new System.Drawing.Point(323, 130);
             this.txtusuarioR.Name = "txtusuarioR";
-            this.txtusuarioR.Size = new System.Drawing.Size(194, 27);
+            this.txtusuarioR.Size = new System.Drawing.Size(194, 22);
             this.txtusuarioR.TabIndex = 17;
             this.txtusuarioR.TextChanged += new System.EventHandler(this.txtusuarioR_TextChanged);
             // 
@@ -278,7 +278,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frmregistro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frmregistro";
+            this.Text = "  ";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
