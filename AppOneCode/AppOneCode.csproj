@@ -64,6 +64,12 @@
     <Compile Include="Vista\FrmAgregarTareas.Designer.cs">
       <DependentUpon>FrmAgregarTareas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\frmAgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmAgregarUsuario.Designer.cs">
+      <DependentUpon>frmAgregarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmAgregarTareas.resx">
       <DependentUpon>FrmAgregarTareas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmAgregarUsuario.resx">
+      <DependentUpon>frmAgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
