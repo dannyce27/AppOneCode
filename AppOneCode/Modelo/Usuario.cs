@@ -8,6 +8,8 @@ using System;
 
 public class Usuario
 {
+    public static int UsuarioId { get; set; }
+
     // Método para crear cuentas
     public static bool CrearCuentas(string usuario, string email, string password)
     {
@@ -52,14 +54,13 @@ public class Usuario
     }
 
     // Método para verificar cuenta
-    public static bool VerificarCuenta(string usuario, string password, Form formularioActual)
+    public static int VerificarCuenta(string usuario, string password, AppOneCode.Vista.FrmLogin frmLogin)
     {
-
         string hashedPassword = HashPassword(password);
 
         using (SqlConnection conn = new Conexion().OpenConnection())
         {
-            string query = "SELECT COUNT(*) FROM Users WHERE Username = @Username AND Contrasenaa = @Contrasenaa";
+            string query = "SELECT Id FROM Users WHERE Username = @Username AND Contrasenaa = @Contrasenaa";
 
             using (SqlCommand comando = new SqlCommand(query, conn))
             {
@@ -68,9 +69,13 @@ public class Usuario
 
                 try
                 {
-                    int count = (int)comando.ExecuteScalar();
+                    object result = comando.ExecuteScalar();
 
-                    return count > 0;
+                    if (result != null)
+                    {
+                        // Si las credenciales son correctas, devolvemos el usuarioId
+                        return Convert.ToInt32(result);
+                    }
                 }
                 catch (SqlException ex)
                 {
@@ -83,11 +88,137 @@ public class Usuario
             }
         }
 
-        return false;
+        return -1; // Si no se encuentra al usuario, devolvemos -1
     }
 
-    
- 
+
+    // Método para guardar la imagen en la base de datos
+    public static bool GuardarImagenUsuario(int usuarioId, byte[] imagen)
+    {
+        try
+        {
+            using (SqlConnection conn = new Conexion().OpenConnection())
+            {
+                string query = "UPDATE Users SET ImagenPerfil = @ImagenPerfil WHERE Id = @UsuarioId";
+                using (SqlCommand comando = new SqlCommand(query, conn))
+                {
+                    comando.Parameters.Add(new SqlParameter("@UsuarioId", SqlDbType.Int) { Value = usuarioId });
+                    comando.Parameters.Add(new SqlParameter("@ImagenPerfil", SqlDbType.VarBinary) { Value = imagen });
+
+                    // Ejecutar el comando
+                    int filasAfectadas = comando.ExecuteNonQuery();
+                    return filasAfectadas > 0;
+                }
+            }
+        }
+        catch (SqlException ex)
+        {
+            // Mostrar el error completo
+            MessageBox.Show($"Error de SQL: {ex.Message}\nCódigo: {ex.Number}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+        catch (Exception ex)
+        {
+            // Mostrar el error general
+            MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+    }
+
+    // Método para cargar la imagen desde la base de datos
+    public static byte[] CargarImagenUsuario(int usuarioId)
+    {
+        try
+        {
+            using (SqlConnection conn = new Conexion().OpenConnection())
+            {
+                string query = "SELECT ImagenPerfil FROM Users WHERE Id = @UsuarioId";
+                using (SqlCommand comando = new SqlCommand(query, conn))
+                {
+                    comando.Parameters.Add(new SqlParameter("@UsuarioId", SqlDbType.Int) { Value = usuarioId });
+
+                    SqlDataReader reader = comando.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        return reader["Imagen"] as byte[];
+                    }
+                    return null;
+                }
+            }
+        }
+        catch (SqlException ex) 
+        {
+            MessageBox.Show($"Error de SQL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return null;
+        }
+    }
+
+    public static string ObtenerNombreUsuario(int usuarioId)
+    {
+        try
+        {
+            using (SqlConnection conn = new Conexion().OpenConnection())
+            {
+                string query = "SELECT Username FROM Users WHERE Id = @UsuarioId";
+                using (SqlCommand comando = new SqlCommand(query, conn))
+                {
+                    comando.Parameters.Add(new SqlParameter("@UsuarioId", SqlDbType.Int) { Value = usuarioId });
+
+                    object result = comando.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        return result.ToString();
+                    }
+                }
+            }
+        }
+        catch (SqlException ex)
+        {
+            MessageBox.Show($"Error de SQL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        return null;
+    }// Si no se encuentra el usuario
+
+
+    public static string ObtenerEmailUsuario(int usuarioId)
+    {
+        try
+        {
+            using (SqlConnection conn = new Conexion().OpenConnection())
+            {
+                string query = "SELECT Email FROM Users WHERE Id = @UsuarioId";
+                using (SqlCommand comando = new SqlCommand(query, conn))
+                {
+                    comando.Parameters.Add(new SqlParameter("@UsuarioId", SqlDbType.Int) { Value = usuarioId });
+
+                    object result = comando.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        return result.ToString();
+                    }
+                }
+            }
+        }
+        catch (SqlException ex)
+        {
+            MessageBox.Show($"Error de SQL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        return null; // Si no se encuentra el email
+    }
+
+
 
     // Método para hash de contraseñas
     private static string HashPassword(string password)

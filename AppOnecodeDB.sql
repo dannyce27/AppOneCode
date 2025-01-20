@@ -14,6 +14,9 @@ CREATE TABLE Users (
     Contrasenaa NVARCHAR (250) NOT NULL
 );
 
+ALTER TABLE Users
+ADD ImagenPerfil VARBINARY(MAX);
+
 CREATE TABLE MarcasDeTiempo (
     Id INT PRIMARY KEY IDENTITY(1,1),
     Fecha DATE NOT NULL,

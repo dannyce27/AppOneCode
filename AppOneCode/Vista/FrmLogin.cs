@@ -48,12 +48,15 @@ namespace AppOneCode.Vista
                     return;
                 }
 
-                // Llamar al método VerificarCuenta
-                bool inicioSesionExitoso = Usuario.VerificarCuenta(usuario, contrasena, this);
+                // Llamar al método VerificarCuenta para obtener el usuarioId
+                int usuarioId = Usuario.VerificarCuenta(usuario, contrasena, this);
 
-                // Si las credenciales son correctas
-                if (inicioSesionExitoso)
+                // Si el usuarioId es mayor a -1, la cuenta es válida
+                if (usuarioId > -1)
                 {
+                    // Asignar el usuarioId de la sesión
+                    Usuario.UsuarioId = usuarioId; // Establecer el usuarioId dinámicamente
+
                     // Abrir la ventana principal
                     FrmInicio frmInicio = new FrmInicio();
                     frmInicio.Show();

@@ -20,7 +20,7 @@ namespace AppOneCode
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTareas());
+            Application.Run(new SplashScreen());
         }
     }
 }

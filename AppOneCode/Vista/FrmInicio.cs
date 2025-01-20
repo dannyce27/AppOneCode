@@ -109,5 +109,12 @@ namespace AppOneCode
         {
 
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            FrmPerfil Ft = new FrmPerfil();
+            this.Hide();
+            Ft.ShowDialog();
+        }
     }
 }
