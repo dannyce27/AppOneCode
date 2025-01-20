@@ -71,3 +71,4 @@ C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmCambi
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmChat.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmCambiarContraseña.resources
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmChat.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.frmAgregarUsuario.resources

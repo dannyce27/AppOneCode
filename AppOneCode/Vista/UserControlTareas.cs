@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AppOneCode.Modelo;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AppOneCode.Vista
 {
@@ -119,7 +121,31 @@ namespace AppOneCode.Vista
 
         private void pbTaskComplete_Click(object sender, EventArgs e)
         {
+            try
+            {
+                
+                Tareas2 tareaModel = new Tareas2
+                {
+                    Id = this.Id, // Id de la tarea actual
+                    Estado = "Completada" // Nuevo estado
+                };
 
+                // Actualizar el estado en la base de datos
+                if (tareaModel.ActualizarEstado())
+                {
+                    // Actualizar la etiqueta del estado en el UserControl
+                    this.Estado = "Completada";
+                    MessageBox.Show("La tarea ha sido marcada como completada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo completar la tarea.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -133,6 +159,29 @@ namespace AppOneCode.Vista
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
              }
+        }
+
+        private void pbEncargadoTarea_MouseHover(object sender, EventArgs e)
+        {
+            // ID de la tarea seleccionada
+            int tareaId = id; 
+            if (tareaId <= 0)
+            {
+                toolTip1.SetToolTip(pbEncargadoTarea, "No hay una tarea seleccionada.");
+                return;
+            }
+
+            Tareas2 tareas2 = new Tareas2();
+            string encargado = tareas2.ObtenerNombreUsuarioAsignado(tareaId);
+
+            if (!string.IsNullOrEmpty(encargado))
+            {
+                toolTip1.SetToolTip(pbEncargadoTarea, $"Encargado: {encargado}");
+            }
+            else
+            {
+                toolTip1.SetToolTip(pbEncargadoTarea, "No se encontró el encargado de esta tarea.");
+            }
         }
     }
 }

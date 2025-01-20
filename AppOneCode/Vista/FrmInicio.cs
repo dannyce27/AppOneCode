@@ -78,7 +78,9 @@ namespace AppOneCode
 
         private void label1_Click_1(object sender, EventArgs e)
         {
-
+            FrmDashboard Ft = new FrmDashboard();
+            this.Hide();
+            Ft.ShowDialog();
         }
 
         private void lblproyectos_Click(object sender, EventArgs e)

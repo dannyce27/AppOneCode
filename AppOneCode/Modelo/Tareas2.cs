@@ -270,5 +270,90 @@ namespace AppOneCode.Modelo
                 }
             }
         }
+
+        public bool ActualizarEstado()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = @"
+            UPDATE Tareas
+            SET EstadoId = (SELECT Id FROM Estado WHERE NombreEstado = @Estado)
+            WHERE Id = @Id";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Id", Id);
+                cmd.Parameters.AddWithValue("@Estado", Estado);
+
+                try
+                {
+                    conn.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show($"Error de SQL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+        }
+
+        public int ObtenerTareasCompletadasPorUsuario(int usuarioId)
+        {
+            int tareasCompletadas = 0;
+            using (SqlConnection connection = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+            {
+                string query = @"
+            SELECT COUNT(*) 
+            FROM Tareas 
+            WHERE UsuarioId = @UsuarioId AND EstadoId = (
+                SELECT Id FROM Estado WHERE NombreEstado = 'Completada'
+            )";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@UsuarioId", usuarioId);
+
+                connection.Open();
+                tareasCompletadas = (int)command.ExecuteScalar();
+            }
+            return tareasCompletadas;
+        }
+
+        public string ObtenerNombreUsuarioAsignado(int tareaId)
+        {
+            string encargado = null;
+
+            string query = @"
+                SELECT U.Username 
+                FROM Users U
+                INNER JOIN Tareas T ON U.Id = T.UsuarioId
+                WHERE T.Id = @TareaId";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@TareaId", tareaId);
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    encargado = reader["Username"].ToString();
+                }
+            }
+
+            return encargado;
+        }
+
     }
+
+
+
+
 }

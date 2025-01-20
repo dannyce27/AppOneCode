@@ -17,6 +17,7 @@ namespace AppOneCode.Vista
         {
             InitializeComponent();
             LLenarTareas();
+            ActualizarNumeroTareasCompletadas();
         }
 
         private void LLenarTareas()
@@ -26,7 +27,7 @@ namespace AppOneCode.Vista
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
             if (txtBuscar.Text == "Buscar proyectos o tareas")
             {
                 txtBuscar.ForeColor = Color.Gray;
@@ -46,21 +47,21 @@ namespace AppOneCode.Vista
         private void lblinicio_Click(object sender, EventArgs e)
         {
             FrmInicio fI = new FrmInicio();
-            this.Close();
+            this.Hide();
             fI.ShowDialog();
         }
 
         private void lblDasboard_Click(object sender, EventArgs e)
         {
             FrmDashboard frmDashboard = new FrmDashboard();
-            this.Close();
+            this.Hide();
             frmDashboard.Show();
         }
 
         private void lblproyectos_Click(object sender, EventArgs e)
         {
             frmProyectos fp = new frmProyectos();
-            this.Close();
+            this.Hide();
             fp.ShowDialog();
         }
 
@@ -84,6 +85,15 @@ namespace AppOneCode.Vista
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void ActualizarNumeroTareasCompletadas()
+        {
+            Tareas2 objTareas = new Tareas2();
+            int usuarioId = 1; // Reemplazar con el ID real del usuario actual
+            int tareasCompletadas = objTareas.ObtenerTareasCompletadasPorUsuario(usuarioId);
+
+            lblNumeroTC.Text = $"{tareasCompletadas}";
         }
     }
 }
