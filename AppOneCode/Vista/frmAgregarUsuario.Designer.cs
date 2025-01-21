@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarUsuario));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblfaq = new System.Windows.Forms.Label();
@@ -53,15 +53,18 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.txtemailR = new System.Windows.Forms.TextBox();
+            this.txtagregarEmailUsuario = new System.Windows.Forms.TextBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.BtnIngresarR = new System.Windows.Forms.Button();
+            this.btnAgregarUsuario = new System.Windows.Forms.Button();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtagregarContrasenaUsuario = new System.Windows.Forms.TextBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtagregarNombreUsuario = new System.Windows.Forms.TextBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.BtnEliminarUsuario = new System.Windows.Forms.Button();
+            this.dgvListaUsuarios = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox19
@@ -252,16 +256,16 @@
             // 
             // chart2
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart2.Legends.Add(legend1);
+            chartArea7.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chart2.Legends.Add(legend7);
             this.chart2.Location = new System.Drawing.Point(62, 435);
             this.chart2.Name = "chart2";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart2.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.chart2.Series.Add(series7);
             this.chart2.Size = new System.Drawing.Size(222, 179);
             this.chart2.TabIndex = 156;
             this.chart2.Text = "ct%Proyectos";
@@ -292,7 +296,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.Image = global::AppOneCode.Properties.Resources.icons8_mail_50;
-            this.pictureBox5.Location = new System.Drawing.Point(468, 342);
+            this.pictureBox5.Location = new System.Drawing.Point(448, 342);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(34, 29);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -303,7 +307,7 @@
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.White;
             this.pictureBox9.Image = global::AppOneCode.Properties.Resources.icons8_user_64;
-            this.pictureBox9.Location = new System.Drawing.Point(469, 220);
+            this.pictureBox9.Location = new System.Drawing.Point(448, 220);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(33, 30);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -314,27 +318,27 @@
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.White;
             this.pictureBox8.Image = global::AppOneCode.Properties.Resources.icons8_password_24;
-            this.pictureBox8.Location = new System.Drawing.Point(468, 448);
+            this.pictureBox8.Location = new System.Drawing.Point(448, 458);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(33, 30);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 165;
             this.pictureBox8.TabStop = false;
             // 
-            // txtemailR
+            // txtagregarEmailUsuario
             // 
-            this.txtemailR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtemailR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtemailR.Location = new System.Drawing.Point(536, 342);
-            this.txtemailR.Name = "txtemailR";
-            this.txtemailR.Size = new System.Drawing.Size(194, 22);
-            this.txtemailR.TabIndex = 161;
+            this.txtagregarEmailUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtagregarEmailUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtagregarEmailUsuario.Location = new System.Drawing.Point(529, 343);
+            this.txtagregarEmailUsuario.Name = "txtagregarEmailUsuario";
+            this.txtagregarEmailUsuario.Size = new System.Drawing.Size(194, 22);
+            this.txtagregarEmailUsuario.TabIndex = 161;
             // 
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.White;
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(513, 333);
+            this.pictureBox11.Location = new System.Drawing.Point(491, 333);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(261, 42);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -342,24 +346,25 @@
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
             // 
-            // BtnIngresarR
+            // btnAgregarUsuario
             // 
-            this.BtnIngresarR.BackColor = System.Drawing.Color.White;
-            this.BtnIngresarR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnIngresarR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnIngresarR.Location = new System.Drawing.Point(513, 584);
-            this.BtnIngresarR.Name = "BtnIngresarR";
-            this.BtnIngresarR.Size = new System.Drawing.Size(243, 46);
-            this.BtnIngresarR.TabIndex = 168;
-            this.BtnIngresarR.Text = "Registrar usuario";
-            this.BtnIngresarR.UseVisualStyleBackColor = false;
+            this.btnAgregarUsuario.BackColor = System.Drawing.Color.White;
+            this.btnAgregarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(509, 510);
+            this.btnAgregarUsuario.Name = "btnAgregarUsuario";
+            this.btnAgregarUsuario.Size = new System.Drawing.Size(186, 46);
+            this.btnAgregarUsuario.TabIndex = 168;
+            this.btnAgregarUsuario.Text = "Registrar usuario";
+            this.btnAgregarUsuario.UseVisualStyleBackColor = false;
+            this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
             // 
             // pictureBox12
             // 
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(835, 90);
+            this.pictureBox12.Location = new System.Drawing.Point(780, 90);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(361, 662);
+            this.pictureBox12.Size = new System.Drawing.Size(449, 662);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 169;
             this.pictureBox12.TabStop = false;
@@ -370,51 +375,89 @@
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(939, 131);
+            this.label5.Location = new System.Drawing.Point(930, 131);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(167, 24);
             this.label5.TabIndex = 170;
             this.label5.Text = "Lista de usuarios";
             // 
-            // textBox1
+            // txtagregarContrasenaUsuario
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(536, 448);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 22);
-            this.textBox1.TabIndex = 172;
+            this.txtagregarContrasenaUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtagregarContrasenaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtagregarContrasenaUsuario.Location = new System.Drawing.Point(523, 457);
+            this.txtagregarContrasenaUsuario.Name = "txtagregarContrasenaUsuario";
+            this.txtagregarContrasenaUsuario.Size = new System.Drawing.Size(194, 22);
+            this.txtagregarContrasenaUsuario.TabIndex = 172;
+            this.txtagregarContrasenaUsuario.TextChanged += new System.EventHandler(this.txtagregarContrasenaUsuario_TextChanged);
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.White;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(513, 439);
+            this.pictureBox6.Location = new System.Drawing.Point(491, 448);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(261, 42);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 171;
             this.pictureBox6.TabStop = false;
             // 
-            // textBox2
+            // txtagregarNombreUsuario
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(536, 220);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(194, 22);
-            this.textBox2.TabIndex = 174;
+            this.txtagregarNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtagregarNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtagregarNombreUsuario.Location = new System.Drawing.Point(525, 222);
+            this.txtagregarNombreUsuario.Name = "txtagregarNombreUsuario";
+            this.txtagregarNombreUsuario.Size = new System.Drawing.Size(194, 22);
+            this.txtagregarNombreUsuario.TabIndex = 174;
             // 
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.White;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(513, 211);
+            this.pictureBox7.Location = new System.Drawing.Point(489, 211);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(261, 42);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 173;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // BtnEliminarUsuario
+            // 
+            this.BtnEliminarUsuario.BackColor = System.Drawing.Color.White;
+            this.BtnEliminarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEliminarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEliminarUsuario.Location = new System.Drawing.Point(605, 587);
+            this.BtnEliminarUsuario.Name = "BtnEliminarUsuario";
+            this.BtnEliminarUsuario.Size = new System.Drawing.Size(147, 50);
+            this.BtnEliminarUsuario.TabIndex = 175;
+            this.BtnEliminarUsuario.Text = "Eliminar usuario";
+            this.BtnEliminarUsuario.UseVisualStyleBackColor = false;
+            this.BtnEliminarUsuario.Click += new System.EventHandler(this.BtnEliminarUsuario_Click);
+            // 
+            // dgvListaUsuarios
+            // 
+            this.dgvListaUsuarios.BackgroundColor = System.Drawing.Color.White;
+            this.dgvListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaUsuarios.Location = new System.Drawing.Point(816, 235);
+            this.dgvListaUsuarios.Name = "dgvListaUsuarios";
+            this.dgvListaUsuarios.Size = new System.Drawing.Size(382, 364);
+            this.dgvListaUsuarios.TabIndex = 176;
+            this.dgvListaUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaUsuarios_CellContentClick);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(428, 587);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 50);
+            this.button1.TabIndex = 177;
+            this.button1.Text = "Editar usuario";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmAgregarUsuario
             // 
@@ -422,17 +465,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(1224, 867);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dgvListaUsuarios);
+            this.Controls.Add(this.BtnEliminarUsuario);
+            this.Controls.Add(this.txtagregarNombreUsuario);
             this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtagregarContrasenaUsuario);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox12);
-            this.Controls.Add(this.BtnIngresarR);
+            this.Controls.Add(this.btnAgregarUsuario);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.txtemailR);
+            this.Controls.Add(this.txtagregarEmailUsuario);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.chart2);
@@ -471,6 +517,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -499,14 +546,17 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.TextBox txtemailR;
+        private System.Windows.Forms.TextBox txtagregarEmailUsuario;
         private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.Button BtnIngresarR;
+        private System.Windows.Forms.Button btnAgregarUsuario;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtagregarContrasenaUsuario;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtagregarNombreUsuario;
         private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Button BtnEliminarUsuario;
+        private System.Windows.Forms.DataGridView dgvListaUsuarios;
+        private System.Windows.Forms.Button button1;
     }
 }

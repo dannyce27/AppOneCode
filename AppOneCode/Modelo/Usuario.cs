@@ -11,6 +11,22 @@ public class Usuario
     public static int UsuarioId { get; set; }
 
     // Método para crear cuentas
+
+
+    public static void CargarUsuarios(DataGridView dgv)
+    {
+        using (SqlConnection conn = new Conexion().OpenConnection())
+        {
+            string query = "SELECT Id, Username, Email FROM Users"; // Selecciona los campos que deseas mostrar
+            using (SqlCommand comando = new SqlCommand(query, conn))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(comando);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgv.DataSource = dt; // Asigna el DataTable como fuente de datos del DataGridView
+            }
+        }
+    }
     public static bool CrearCuentas(string usuario, string email, string password)
     {
         // Validación de entrada
