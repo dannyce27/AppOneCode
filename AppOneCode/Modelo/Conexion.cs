@@ -1,10 +1,11 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 public class Conexion
 {
     private SqlConnection connection;
-    private readonly string connectionString = @"Server=DESKTOP-2I6K8G4\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+    private readonly string connectionString = @"Server=DESKTOP-8FODO0C\SQLEXPRESS02;Database=AppOnecodeDB;Trusted_Connection=True;";
 
     public SqlConnection OpenConnection()
     {
@@ -30,11 +31,15 @@ public class Conexion
         try
         {
             if (connection != null && connection.State == System.Data.ConnectionState.Open)
+            {
                 connection.Close();
+                connection = null; // Establece la conexión a null para permitir una nueva conexión
+            }
         }
         catch (SqlException ex)
         {
             MessageBox.Show($"Error al cerrar la conexión: {ex.Message}", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            throw; // Lanza la excepción para manejarla en niveles superiores
         }
     }
 }

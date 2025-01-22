@@ -3,7 +3,7 @@ CREATE DATABASE AppOnecodeDB;
 GO
 
 -- Usar la base de datos
-USE BDOneCode;
+USE AppOnecodeDB;
 GO
 
 -- Crear tabla para usuarios con email
