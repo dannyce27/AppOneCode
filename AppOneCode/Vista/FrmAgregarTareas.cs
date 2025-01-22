@@ -179,10 +179,7 @@ namespace AppOneCode.Vista
                 cmbEmpleadoAsignado.SelectedIndex = -1;
                 cmbPrioridad.SelectedIndex = -1;
                 cmbEstado.SelectedIndex = -1;
-
-                
-
-
+                CargarDatos();
             }
             else
             {
@@ -192,7 +189,7 @@ namespace AppOneCode.Vista
 
         private void CargarDatos()
         {
-            // Crear una instancia de Tareas2 (asumo que el modelo se llama Tareas2)
+     
             Tareas2 tareaModelo = new Tareas2();
 
             // Llamar al método CargarTareas para obtener las tareas

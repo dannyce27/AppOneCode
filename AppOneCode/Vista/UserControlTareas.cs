@@ -183,5 +183,10 @@ namespace AppOneCode.Vista
                 toolTip1.SetToolTip(pbEncargadoTarea, "No se encontró el encargado de esta tarea.");
             }
         }
+
+        private void pbEncargadoTarea_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

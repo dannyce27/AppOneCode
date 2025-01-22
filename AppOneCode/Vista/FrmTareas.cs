@@ -90,7 +90,7 @@ namespace AppOneCode.Vista
         private void ActualizarNumeroTareasCompletadas()
         {
             Tareas2 objTareas = new Tareas2();
-            int usuarioId = 1; // Reemplazar con el ID real del usuario actual
+            int usuarioId = Usuario.UsuarioId; // Reemplazar con el ID real del usuario actual
             int tareasCompletadas = objTareas.ObtenerTareasCompletadasPorUsuario(usuarioId);
 
             lblNumeroTC.Text = $"{tareasCompletadas}";

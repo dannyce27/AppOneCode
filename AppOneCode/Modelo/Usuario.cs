@@ -132,15 +132,15 @@ public class Usuario
         {
             using (SqlConnection conn = new Conexion().OpenConnection())
             {
-                string query = "SELECT ImagenPerfil FROM Users WHERE Id = @UsuarioId";
+                string query = "SELECT ImagenPerfil FROM Users WHERE Id = @Id";
                 using (SqlCommand comando = new SqlCommand(query, conn))
                 {
-                    comando.Parameters.Add(new SqlParameter("@UsuarioId", SqlDbType.Int) { Value = usuarioId });
+                    comando.Parameters.Add(new SqlParameter("@Id", SqlDbType.Int) { Value = usuarioId });
 
                     SqlDataReader reader = comando.ExecuteReader();
                     if (reader.Read())
                     {
-                        return reader["Imagen"] as byte[];
+                        return reader["ImagenPerfil"] as byte[];
                     }
                     return null;
                 }

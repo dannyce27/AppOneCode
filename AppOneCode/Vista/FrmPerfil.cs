@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Forms;
 
 namespace AppOneCode.Vista
@@ -26,9 +27,9 @@ namespace AppOneCode.Vista
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            FrmLogin frmLogin = new FrmLogin();
+            FrmInicio FrmInicio = new FrmInicio();
             this.Close();
-            frmLogin.ShowDialog();
+            FrmInicio.ShowDialog();
         }
 
         private void btnCambiarPerfil_Click(object sender, EventArgs e)
@@ -95,7 +96,6 @@ namespace AppOneCode.Vista
             }
         }
 
-      
         private void CargarDatosTareas()
         {
             try
@@ -130,7 +130,10 @@ namespace AppOneCode.Vista
                             int cantidad = Convert.ToInt32(reader["Cantidad"]);
 
                             // Añadir los puntos al gráfico
-                            ctProgresoPerfil.Series["EstadoTareas"].Points.AddXY(nombreEstado, cantidad);
+                            var punto = ctProgresoPerfil.Series["EstadoTareas"].Points.AddXY(nombreEstado, cantidad);
+
+                            // Establecer el valor como etiqueta
+                            ctProgresoPerfil.Series["EstadoTareas"].Points.Last().Label = $"{nombreEstado} ({cantidad})";
                         }
                     }
                 }
@@ -183,6 +186,18 @@ namespace AppOneCode.Vista
         }
 
         private void ctProgresoPerfil_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            FrmLogin frmLogin = new FrmLogin();
+            this.Hide();    
+            frmLogin.ShowDialog();
+        }
+
+        private void pbImageTrabajador_Click(object sender, EventArgs e)
         {
 
         }

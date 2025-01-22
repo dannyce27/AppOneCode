@@ -351,6 +351,22 @@ namespace AppOneCode.Modelo
             return encargado;
         }
 
+
+        public void ActualizarNumeroTareasCompletadas(int usuarioId, Label lblNumeroTC)
+        {
+            try
+            {
+                // Llamar al método para obtener el número de tareas completadas
+                int tareasCompletadas = ObtenerTareasCompletadasPorUsuario(usuarioId);
+
+                // Actualizar el Label con el nuevo número de tareas completadas
+                lblNumeroTC.Text = tareasCompletadas.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al actualizar las tareas completadas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 
 

@@ -149,6 +149,7 @@
             this.pbEncargadoTarea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbEncargadoTarea.TabIndex = 5;
             this.pbEncargadoTarea.TabStop = false;
+            this.pbEncargadoTarea.Click += new System.EventHandler(this.pbEncargadoTarea_Click);
             this.pbEncargadoTarea.MouseHover += new System.EventHandler(this.pbEncargadoTarea_MouseHover);
             // 
             // pbAgregarComent
