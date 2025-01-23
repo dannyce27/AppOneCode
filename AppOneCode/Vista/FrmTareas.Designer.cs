@@ -55,6 +55,9 @@
             this.lblproyectos = new System.Windows.Forms.Label();
             this.lblinicio = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.btnSiguiiente = new System.Windows.Forms.Button();
+            this.lblPagina = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -71,6 +74,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblPagina);
+            this.panel1.Controls.Add(this.btnSiguiiente);
+            this.panel1.Controls.Add(this.btnAnterior);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -138,7 +144,6 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(73, 271);
@@ -382,6 +387,37 @@
             this.pictureBox1.TabIndex = 92;
             this.pictureBox1.TabStop = false;
             // 
+            // btnAnterior
+            // 
+            this.btnAnterior.Location = new System.Drawing.Point(313, 785);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(103, 23);
+            this.btnAnterior.TabIndex = 118;
+            this.btnAnterior.Text = "Pagina Anterior";
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
+            // 
+            // btnSiguiiente
+            // 
+            this.btnSiguiiente.Location = new System.Drawing.Point(644, 785);
+            this.btnSiguiiente.Name = "btnSiguiiente";
+            this.btnSiguiiente.Size = new System.Drawing.Size(103, 23);
+            this.btnSiguiiente.TabIndex = 119;
+            this.btnSiguiiente.Text = "Siguiente Pagina";
+            this.btnSiguiiente.UseVisualStyleBackColor = true;
+            this.btnSiguiiente.Click += new System.EventHandler(this.btnSiguiiente_Click);
+            // 
+            // lblPagina
+            // 
+            this.lblPagina.AutoSize = true;
+            this.lblPagina.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPagina.ForeColor = System.Drawing.Color.White;
+            this.lblPagina.Location = new System.Drawing.Point(93, 794);
+            this.lblPagina.Name = "lblPagina";
+            this.lblPagina.Size = new System.Drawing.Size(49, 23);
+            this.lblPagina.TabIndex = 120;
+            this.lblPagina.Text = "N Pag";
+            // 
             // FrmTareas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,5 +476,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnSiguiiente;
+        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.Label lblPagina;
     }
 }

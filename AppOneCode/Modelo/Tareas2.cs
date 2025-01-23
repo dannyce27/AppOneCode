@@ -367,6 +367,62 @@ namespace AppOneCode.Modelo
                 MessageBox.Show($"Error al actualizar las tareas completadas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public List<Tareas2> ObtenerTareas()
+        {
+            List<Tareas2> tareas = new List<Tareas2>();
+
+            string connectionString = "Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT t.Id, t.Descripcion, u.Username AS Usuario, p.NombrePrioridad AS Prioridad, e.NombreEstado AS Estado " +
+                               "FROM Tareas t " +
+                               "JOIN Users u ON t.UsuarioId = u.Id " +
+                               "JOIN Prioridad p ON t.PrioridadId = p.Id " +
+                               "JOIN Estado e ON t.EstadoId = e.Id";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.Text;
+
+                try
+                {
+                    conn.Open();
+                    SqlDataReader rd = cmd.ExecuteReader();
+
+                    while (rd.Read())
+                    {
+                        // Crear y agregar objetos Tareas2 a la lista
+                        Tareas2 tarea = new Tareas2
+                        {
+                            Id = rd["Id"] != DBNull.Value ? Convert.ToInt32(rd["Id"]) : 0,
+                            Descripcion = rd["Descripcion"] != DBNull.Value ? rd["Descripcion"].ToString() : string.Empty,
+                            Usuario = rd["Usuario"] != DBNull.Value ? rd["Usuario"].ToString() : string.Empty,
+                            Prioridad = rd["Prioridad"] != DBNull.Value ? rd["Prioridad"].ToString() : string.Empty,
+                            Estado = rd["Estado"] != DBNull.Value ? rd["Estado"].ToString() : string.Empty
+                        };
+
+                        tareas.Add(tarea);
+                    }
+
+                    rd.Close();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show($"Error en SQL: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error inesperado: {ex.Message}");
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
+            return tareas;
+        }
     }
 
 
