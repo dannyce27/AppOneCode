@@ -55,6 +55,9 @@
       <DependentUpon>FrmChat.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\AgregarUsuario.cs" />
+    <Compile Include="Modelo\BotonPersonalizado.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Modelo\Conexion.cs" />
     <Compile Include="Modelo\EmailService.cs" />
     <Compile Include="Modelo\Tareas.cs" />
