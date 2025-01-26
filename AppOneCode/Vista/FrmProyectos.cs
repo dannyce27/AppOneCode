@@ -202,6 +202,11 @@ namespace AppOneCode.Vista
 
             dgvproyectos.DataSource = tareasList;
         }
+
+        private void pictureBox19_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
     

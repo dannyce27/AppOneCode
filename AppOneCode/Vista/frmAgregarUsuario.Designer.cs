@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarUsuario));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblfaq = new System.Windows.Forms.Label();
@@ -44,7 +44,6 @@
             this.lblchat = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -66,12 +65,13 @@
             this.dgvListaUsuarios = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.pbImageTrabajador = new System.Windows.Forms.PictureBox();
+            this.btnCambiarPerfil = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -82,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImageTrabajador)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox19
@@ -93,6 +94,7 @@
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox19.TabIndex = 138;
             this.pictureBox19.TabStop = false;
+            this.pictureBox19.Click += new System.EventHandler(this.pictureBox19_Click);
             // 
             // pictureBox3
             // 
@@ -103,6 +105,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 140;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // lblfaq
             // 
@@ -219,24 +222,13 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // pictureBox27
-            // 
-            this.pictureBox27.BackColor = System.Drawing.Color.White;
-            this.pictureBox27.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox27.Image")));
-            this.pictureBox27.Location = new System.Drawing.Point(120, 169);
-            this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.Size = new System.Drawing.Size(81, 73);
-            this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox27.TabIndex = 152;
-            this.pictureBox27.TabStop = false;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.White;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(87, 273);
+            this.label12.Location = new System.Drawing.Point(90, 340);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(167, 24);
             this.label12.TabIndex = 153;
@@ -249,7 +241,7 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(116, 322);
+            this.label3.Location = new System.Drawing.Point(116, 390);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 24);
             this.label3.TabIndex = 154;
@@ -257,16 +249,16 @@
             // 
             // chart2
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chart2.Legends.Add(legend5);
-            this.chart2.Location = new System.Drawing.Point(62, 435);
+            chartArea4.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart2.Legends.Add(legend4);
+            this.chart2.Location = new System.Drawing.Point(65, 497);
             this.chart2.Name = "chart2";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chart2.Series.Add(series5);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart2.Series.Add(series4);
             this.chart2.Size = new System.Drawing.Size(222, 179);
             this.chart2.TabIndex = 156;
             this.chart2.Text = "ct%Proyectos";
@@ -275,7 +267,7 @@
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(49, 403);
+            this.pictureBox10.Location = new System.Drawing.Point(49, 469);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(249, 243);
             this.pictureBox10.TabIndex = 155;
@@ -287,7 +279,7 @@
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(71, 363);
+            this.label4.Location = new System.Drawing.Point(71, 435);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(227, 24);
             this.label4.TabIndex = 157;
@@ -472,12 +464,35 @@
             this.label6.TabIndex = 178;
             this.label6.Text = "Usuarios";
             // 
+            // pbImageTrabajador
+            // 
+            this.pbImageTrabajador.Image = ((System.Drawing.Image)(resources.GetObject("pbImageTrabajador.Image")));
+            this.pbImageTrabajador.Location = new System.Drawing.Point(109, 167);
+            this.pbImageTrabajador.Name = "pbImageTrabajador";
+            this.pbImageTrabajador.Size = new System.Drawing.Size(124, 111);
+            this.pbImageTrabajador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImageTrabajador.TabIndex = 179;
+            this.pbImageTrabajador.TabStop = false;
+            // 
+            // btnCambiarPerfil
+            // 
+            this.btnCambiarPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarPerfil.Location = new System.Drawing.Point(99, 301);
+            this.btnCambiarPerfil.Name = "btnCambiarPerfil";
+            this.btnCambiarPerfil.Size = new System.Drawing.Size(139, 23);
+            this.btnCambiarPerfil.TabIndex = 180;
+            this.btnCambiarPerfil.Text = "Cambiar foto de Perfil";
+            this.btnCambiarPerfil.UseVisualStyleBackColor = true;
+            this.btnCambiarPerfil.Click += new System.EventHandler(this.btnCambiarPerfil_Click);
+            // 
             // frmAgregarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(1224, 867);
+            this.Controls.Add(this.btnCambiarPerfil);
+            this.Controls.Add(this.pbImageTrabajador);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvListaUsuarios);
@@ -499,7 +514,6 @@
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.pictureBox27);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.lblchat);
             this.Controls.Add(this.pictureBox2);
@@ -521,7 +535,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -532,6 +545,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImageTrabajador)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -551,7 +565,6 @@
         private System.Windows.Forms.Label lblchat;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox27;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
@@ -573,5 +586,7 @@
         private System.Windows.Forms.DataGridView dgvListaUsuarios;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pbImageTrabajador;
+        private System.Windows.Forms.Button btnCambiarPerfil;
     }
 }

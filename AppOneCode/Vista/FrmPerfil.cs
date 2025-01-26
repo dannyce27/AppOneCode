@@ -22,7 +22,7 @@ namespace AppOneCode.Vista
 
         private void pbCloseForm_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -200,6 +200,11 @@ namespace AppOneCode.Vista
         private void pbImageTrabajador_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pbMinimizeForm_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

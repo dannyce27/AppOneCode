@@ -306,7 +306,7 @@ namespace AppOneCode.Modelo
         public int ObtenerTareasCompletadasPorUsuario(int usuarioId)
         {
             int tareasCompletadas = 0;
-            using (SqlConnection connection = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+            using (SqlConnection connection = new SqlConnection("Server=DESKTOP-8FODO0C\\SQLEXPRESS02;Database=AppOnecodeDB;Trusted_Connection=True;"))
             {
                 string query = @"
             SELECT COUNT(*) 

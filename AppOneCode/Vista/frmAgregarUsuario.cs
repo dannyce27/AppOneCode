@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -17,6 +18,7 @@ namespace AppOneCode.Vista
         public frmAgregarUsuario()
         {
             InitializeComponent();
+            CargarImagenPerfil();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -143,6 +145,82 @@ namespace AppOneCode.Vista
         private void pictureBox6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCambiarPerfil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Abrir un cuadro de diálogo para seleccionar la imagen
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Imagenes (*.jpg; *.jpeg; *.png; *.gif)|*.jpg;*.jpeg;*.png;*.gif";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Cargar la imagen seleccionada en el PictureBox
+                    pbImageTrabajador.Image = Image.FromFile(openFileDialog.FileName);
+
+                    // Convertir la imagen a un array de bytes
+                    byte[] imageBytes = File.ReadAllBytes(openFileDialog.FileName);
+
+                    // Obtener el usuarioId
+                    int usuarioId = Usuario.UsuarioId; // Ya tienes el usuarioId de la sesión
+
+                    // Guardar la imagen en la base de datos
+                    bool imagenGuardada = Usuario.GuardarImagenUsuario(usuarioId, imageBytes);
+
+                    if (imagenGuardada)
+                    {
+                        MessageBox.Show("Imagen de perfil guardada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al guardar la imagen.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cambiar la imagen: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        
+        }
+
+
+        private void CargarImagenPerfil()
+        {
+            try
+            {
+                int usuarioId = Usuario.UsuarioId; // Obtener el usuarioId
+
+                // Cargar la imagen desde la base de datos
+                byte[] imagenBytes = Usuario.CargarImagenUsuario(usuarioId);
+
+                if (imagenBytes != null)
+                {
+                    using (MemoryStream ms = new MemoryStream(imagenBytes))
+                    {
+                        pbImageTrabajador.Image = Image.FromStream(ms);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró una imagen de perfil para este usuario.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar la imagen: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox19_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -42,27 +42,27 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnCambiarPerfil = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizeForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCloseForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImageTrabajador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctProgresoPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(100, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 48);
+            this.label1.Size = new System.Drawing.Size(82, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "Perfil";
             // 
@@ -76,6 +76,7 @@
             this.pbMinimizeForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMinimizeForm.TabIndex = 92;
             this.pbMinimizeForm.TabStop = false;
+            this.pbMinimizeForm.Click += new System.EventHandler(this.pbMinimizeForm_Click);
             // 
             // pbCloseForm
             // 
@@ -103,22 +104,22 @@
             // lblNicknameUSer
             // 
             this.lblNicknameUSer.AutoSize = true;
-            this.lblNicknameUSer.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNicknameUSer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNicknameUSer.ForeColor = System.Drawing.Color.White;
             this.lblNicknameUSer.Location = new System.Drawing.Point(115, 346);
             this.lblNicknameUSer.Name = "lblNicknameUSer";
-            this.lblNicknameUSer.Size = new System.Drawing.Size(65, 37);
+            this.lblNicknameUSer.Size = new System.Drawing.Size(58, 25);
             this.lblNicknameUSer.TabIndex = 93;
             this.lblNicknameUSer.Text = "NIck";
             // 
             // lblGmailUser
             // 
             this.lblGmailUser.AutoSize = true;
-            this.lblGmailUser.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGmailUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGmailUser.ForeColor = System.Drawing.Color.White;
             this.lblGmailUser.Location = new System.Drawing.Point(38, 397);
             this.lblGmailUser.Name = "lblGmailUser";
-            this.lblGmailUser.Size = new System.Drawing.Size(62, 28);
+            this.lblGmailUser.Size = new System.Drawing.Size(55, 20);
             this.lblGmailUser.TabIndex = 94;
             this.lblGmailUser.Text = "Gmail";
             // 
@@ -133,7 +134,7 @@
             this.ctProgresoPerfil.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             series1.Legend = "Legend1";
             series1.Name = "EstadoTareas";
             this.ctProgresoPerfil.Series.Add(series1);
@@ -156,11 +157,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.label5.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(338, 111);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(382, 37);
+            this.label5.Size = new System.Drawing.Size(367, 25);
             this.label5.TabIndex = 120;
             this.label5.Text = "Tareas completadas y pendientes";
             // 
@@ -183,9 +184,20 @@
             this.panel1.TabIndex = 121;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(30, 451);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 121;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // btnCambiarPerfil
             // 
-            this.btnCambiarPerfil.Font = new System.Drawing.Font("Poppins Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarPerfil.Location = new System.Drawing.Point(76, 303);
             this.btnCambiarPerfil.Name = "btnCambiarPerfil";
             this.btnCambiarPerfil.Size = new System.Drawing.Size(139, 23);
@@ -204,17 +216,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(30, 451);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(39, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 121;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // FrmPerfil
             // 
@@ -237,8 +238,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
