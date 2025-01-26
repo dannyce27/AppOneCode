@@ -26,7 +26,7 @@ public class Conexion
             throw; // Lanza la excepción para manejarla en niveles superiores
         }
     }
-
+    
     public void CloseConnection()
     {
         try

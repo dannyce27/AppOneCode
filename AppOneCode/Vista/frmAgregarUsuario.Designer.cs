@@ -241,7 +241,7 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(171, 430);
+            this.label3.Location = new System.Drawing.Point(171, 422);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 24);
             this.label3.TabIndex = 154;
@@ -253,7 +253,7 @@
             this.chart2.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(120, 537);
+            this.chart2.Location = new System.Drawing.Point(130, 550);
             this.chart2.Name = "chart2";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -267,19 +267,19 @@
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(90, 469);
+            this.pictureBox10.Location = new System.Drawing.Point(101, 460);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(249, 243);
+            this.pictureBox10.Size = new System.Drawing.Size(272, 287);
             this.pictureBox10.TabIndex = 155;
             this.pictureBox10.TabStop = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(126, 475);
+            this.label4.Location = new System.Drawing.Point(125, 495);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(227, 24);
             this.label4.TabIndex = 157;
