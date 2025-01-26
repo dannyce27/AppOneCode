@@ -140,5 +140,47 @@ namespace AppOneCode.Vista
             this.Hide();
             fL.ShowDialog();
         }
+
+        private void btnRegistrarse_Click(object sender, EventArgs e)
+        {
+            {
+                // Validar que los campos no estén vacíos
+                if (string.IsNullOrWhiteSpace(txtusuarioR.Text) ||
+                    string.IsNullOrWhiteSpace(txtemailR.Text) ||
+                    string.IsNullOrWhiteSpace(txtContrasenaUsuarioR.Text))
+                {
+                    MessageBox.Show("Por favor, completa todos los campos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Validar el formato del correo electrónico
+                string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+                if (!Regex.IsMatch(txtemailR.Text, emailPattern))
+                {
+                    MessageBox.Show("El correo electrónico no tiene un formato válido. Asegúrate de usar un formato como 'usuario@dominio.com o .sv'.",
+                       "Advertencia",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Crear cuenta
+                bool resultado = Usuario.CrearCuentas(txtusuarioR.Text, txtemailR.Text, txtContrasenaUsuarioR.Text);
+                if (resultado = true)
+                {
+                    MessageBox.Show("Cuenta creada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FrmLogin frl = new FrmLogin();
+                    this.Hide();
+                    frl.ShowDialog();
+
+
+
+                }
+                else
+                {
+                    MessageBox.Show("No se creó la cuenta. Verifica los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

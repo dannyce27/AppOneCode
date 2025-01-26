@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
-            this.btnIngresar = new System.Windows.Forms.Button();
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.txtContrasenaUsuario = new System.Windows.Forms.TextBox();
             this.lblIniciodeSesion = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -50,19 +50,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnIngresar
-            // 
-            this.btnIngresar.BackColor = System.Drawing.Color.White;
-            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIngresar.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.Location = new System.Drawing.Point(457, 308);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(261, 46);
-            this.btnIngresar.TabIndex = 4;
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = false;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // txtNombreUsuario
             // 
@@ -193,12 +180,28 @@
             this.linkLabel2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linkLabel2.Font = new System.Drawing.Font("Poppins Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.LinkColor = System.Drawing.Color.White;
-            this.linkLabel2.Location = new System.Drawing.Point(525, 405);
+            this.linkLabel2.Location = new System.Drawing.Point(516, 403);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(154, 19);
             this.linkLabel2.TabIndex = 12;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "¿Olvidaste tu Contraseña?";
+            // 
+            // botonPersonalizado1
+            // 
+            this.botonPersonalizado1.BackColor = System.Drawing.Color.White;
+            this.botonPersonalizado1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado1.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado1.ForeColor = System.Drawing.Color.Black;
+            this.botonPersonalizado1.Location = new System.Drawing.Point(457, 305);
+            this.botonPersonalizado1.Name = "botonPersonalizado1";
+            this.botonPersonalizado1.Size = new System.Drawing.Size(261, 40);
+            this.botonPersonalizado1.TabIndex = 13;
+            this.botonPersonalizado1.Text = "Ingresar";
+            this.botonPersonalizado1.UseVisualStyleBackColor = false;
+            this.botonPersonalizado1.Click += new System.EventHandler(this.botonPersonalizado1_Click);
             // 
             // FrmLogin
             // 
@@ -206,6 +209,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(822, 467);
+            this.Controls.Add(this.botonPersonalizado1);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.pictureBox7);
@@ -214,7 +218,6 @@
             this.Controls.Add(this.lblIniciodeSesion);
             this.Controls.Add(this.txtContrasenaUsuario);
             this.Controls.Add(this.txtNombreUsuario);
-            this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -243,7 +246,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.TextBox txtNombreUsuario;
         private System.Windows.Forms.TextBox txtContrasenaUsuario;
         private System.Windows.Forms.Label lblIniciodeSesion;
@@ -252,5 +254,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private Modelo.BotonPersonalizado botonPersonalizado1;
     }
 }

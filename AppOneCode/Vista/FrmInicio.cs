@@ -116,5 +116,12 @@ namespace AppOneCode
             this.Hide();
             Ft.ShowDialog();
         }
+
+        private void botonPersonalizado1_Click(object sender, EventArgs e)
+        {
+            FrmChat Ft = new FrmChat();
+            this.Hide();
+            Ft.ShowDialog();
+        }
     }
 }

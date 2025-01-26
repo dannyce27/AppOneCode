@@ -125,5 +125,49 @@ namespace AppOneCode.Vista
             fmR.ShowDialog();
            
         }
+
+        private void botonPersonalizado1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Obtener los datos ingresados por el usuario
+                string usuario = txtNombreUsuario.Text.Trim();
+                string contrasena = txtContrasenaUsuario.Text.Trim();
+
+                // Validar que los campos no estén vacíos
+                if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contrasena))
+                {
+                    MessageBox.Show("Por favor, ingrese el usuario y la contraseña.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Llamar al método VerificarCuenta para obtener el usuarioId
+                int usuarioId = Usuario.VerificarCuenta(usuario, contrasena, this);
+
+                // Si el usuarioId es mayor a -1, la cuenta es válida
+                if (usuarioId > -1)
+                {
+                    // Asignar el usuarioId de la sesión
+                    Usuario.UsuarioId = usuarioId; // Establecer el usuarioId dinámicamente
+
+                    // Abrir la ventana principal
+                    FrmInicio frmInicio = new FrmInicio();
+                    frmInicio.Show();
+
+                    // Ocultar el formulario actual
+                    this.Hide();
+                }
+                else
+                {
+                    // Si las credenciales son incorrectas, mostrar un mensaje de error
+                    MessageBox.Show("Usuario o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier error inesperado
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

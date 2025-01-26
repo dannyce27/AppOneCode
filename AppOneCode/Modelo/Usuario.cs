@@ -10,7 +10,7 @@ public class Usuario
 {
     public static int UsuarioId { get; set; }
 
-    // Método para crear cuentas
+
 
 
     public static void CargarUsuarios(DataGridView dgv)
@@ -41,33 +41,53 @@ public class Usuario
 
         using (SqlConnection conn = new Conexion().OpenConnection())
         {
-            string query = "INSERT INTO Users (Username, Email, Contrasenaa) VALUES (@Username, @Email, @Contrasenaa)";
-            using (SqlCommand comando = new SqlCommand(query, conn))
-            {
-                // Agregar parámetros
-                comando.Parameters.Add(new SqlParameter("@Username", SqlDbType.NVarChar) { Value = usuario });
-                comando.Parameters.Add(new SqlParameter("@Email", SqlDbType.NVarChar) { Value = email });
-                comando.Parameters.Add(new SqlParameter("@Contrasenaa", SqlDbType.NVarChar) { Value = hashedPassword });
+            // Inicialización de la variable para el tipo de usuario
+            int idTipoUsuario;
 
-                try
+            try
+            {
+                // Comprobar si hay usuarios en la base de datos
+                string queryComprobarUsuarios = "SELECT COUNT(*) FROM Users";
+                using (SqlCommand comandoComprobar = new SqlCommand(queryComprobarUsuarios, conn))
                 {
-                    // Si `ExecuteNonQuery` devuelve más de 0 filas afectadas, la inserción fue exitosa
-                    int filasAfectadas = comando.ExecuteNonQuery();
+                    int count = (int)comandoComprobar.ExecuteScalar();
+                    // Si no hay registros, asignar tipo de usuario como 1 (Administrador)
+                    idTipoUsuario = (count == 0) ? 1 : 2; // 1 para Administrador, 2 para Empleado
+                }
+
+                // Ahora insertar el nuevo usuario con el idTipoUsuario correspondiente
+                string queryInsertar = @"
+            INSERT INTO Users (Username, Email, Contrasenaa, idTipoUsuario) 
+            VALUES (@Username, @Email, @Contrasenaa, @idTipoUsuario)";
+
+                using (SqlCommand comandoInsertar = new SqlCommand(queryInsertar, conn))
+                {
+                    comandoInsertar.Parameters.Add(new SqlParameter("@Username", SqlDbType.NVarChar) { Value = usuario });
+                    comandoInsertar.Parameters.Add(new SqlParameter("@Email", SqlDbType.NVarChar) { Value = email });
+                    comandoInsertar.Parameters.Add(new SqlParameter("@Contrasenaa", SqlDbType.NVarChar) { Value = hashedPassword });
+                    comandoInsertar.Parameters.Add(new SqlParameter("@idTipoUsuario", SqlDbType.Int) { Value = idTipoUsuario });
+
+                    int filasAfectadas = comandoInsertar.ExecuteNonQuery();
                     return filasAfectadas > 0;
                 }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show($"Error de SQL: {ex.Message}\nCódigo: {ex.Number}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Error de SQL: {ex.Message}\nCódigo: {ex.Number}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
     }
+
+
+
+
+
 
     // Método para verificar cuenta
     public static int VerificarCuenta(string usuario, string password, AppOneCode.Vista.FrmLogin frmLogin)

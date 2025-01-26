@@ -1,21 +1,57 @@
 -- Crear base de datos
-CREATE DATABASE AppOnecodeDB;
+CREATE DATABASE BDOneCode;
 GO
 
 -- Usar la base de datos
-USE AppOnecodeDB;
+USE BDOneCode;
 GO
+
+
+CREATE TABLE TipoUsuario(
+idTipoUsuario INT IDENTITY(1,1) PRIMARY KEY,
+NombreTipoUsuario NVARCHAR(50) NOT NULL
+);
+
 
 -- Crear tabla para usuarios con email
 CREATE TABLE Users (
     Id INT IDENTITY(1,1) PRIMARY KEY,
     Username NVARCHAR(50) NOT NULL UNIQUE,
     Email NVARCHAR(100) NOT NULL UNIQUE,
-    Contrasenaa NVARCHAR (250) NOT NULL
+    Contrasenaa NVARCHAR(250) NOT NULL,
+	ImagenPerfil VARBINARY(MAX),
+	idTipoUsuario INT 
+    FOREIGN KEY (idTipoUsuario) REFERENCES TipoUsuario(idTipoUsuario)
 );
 
-ALTER TABLE Users
-ADD ImagenPerfil VARBINARY(MAX);
+
+
+
+select * from TipoUsuario
+
+INSERT INTO Users (Username, Email, Contrasenaa, idTipoUsuario)
+VALUES ('NuevoUsuario', 'nuevo.usuario@dominio.com', 'hashedPassword123', 1);
+
+		
+drop table Tareas;
+
+INSERT INTO TipoUsuario (NombreTipoUsuario)
+VALUES 
+    ('Administrador'), 
+    ('Empleado'), 
+    ('Comentarista');
+
+	SELECT * FROM TipoUsuario;
+
+
+
+
+
+select * From Users;
+
+
+
+
 
 CREATE TABLE MarcasDeTiempo (
     Id INT PRIMARY KEY IDENTITY(1,1),
@@ -35,7 +71,7 @@ drop table	Users
 INSERT INTO Users (Username, Email, Contrasenaa) 
 VALUES ('testUser', 'test@example.com', '123');
 
-
+EXEC sp_help 'Users';
 SELECT COLUMN_NAME 
 FROM INFORMATION_SCHEMA.COLUMNS 
 WHERE TABLE_NAME = 'Users'

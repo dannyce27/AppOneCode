@@ -49,9 +49,9 @@ namespace AppOneCode.Vista
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
         {
             {
-                string usuario = txtagregarNombreUsuario.Text; // Suponiendo que tienes un TextBox para el usuario
-                string email = txtagregarEmailUsuario.Text; // Suponiendo que tienes un TextBox para el email
-                string password = txtagregarContrasenaUsuario.Text; // Suponiendo que tienes un TextBox para la contraseña
+                string usuario = txtagregarNombreUsuario.Text; 
+                string email = txtagregarEmailUsuario.Text;
+                string password = txtagregarContrasenaUsuario.Text; 
 
                 bool resultado = AgregarUsuario.CrearCuentas(usuario, email, password, dgvListaUsuarios);
                 if (resultado)
@@ -126,9 +126,9 @@ namespace AppOneCode.Vista
                 int usuarioId = Convert.ToInt32(dgvListaUsuarios.SelectedRows[0].Cells["Id"].Value);
 
                 // Obtener los nuevos valores de los TextBox
-                string nuevoUsuario = txtagregarNombreUsuario.Text; // Suponiendo que tienes un TextBox para el nuevo nombre de usuario
-                string nuevoEmail = txtagregarEmailUsuario.Text; // Suponiendo que tienes un TextBox para el nuevo email
-                string nuevaContraseña = txtagregarContrasenaUsuario.Text; // Suponiendo que tienes un TextBox para la nueva contraseña
+                string nuevoUsuario = txtagregarNombreUsuario.Text; 
+                string nuevoEmail = txtagregarEmailUsuario.Text; 
+                string nuevaContraseña = txtagregarContrasenaUsuario.Text; 
 
                 bool resultado = AgregarUsuario.EditarCuenta(usuarioId, nuevoUsuario, nuevoEmail, nuevaContraseña, dgvListaUsuarios);
                 if (resultado)

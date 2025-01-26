@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarUsuario));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblfaq = new System.Windows.Forms.Label();
@@ -214,7 +214,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(-50, 131);
+            this.pictureBox4.Location = new System.Drawing.Point(12, 173);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(440, 621);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -228,7 +228,7 @@
             this.label12.BackColor = System.Drawing.Color.White;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(90, 340);
+            this.label12.Location = new System.Drawing.Point(145, 380);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(167, 24);
             this.label12.TabIndex = 153;
@@ -241,7 +241,7 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(116, 390);
+            this.label3.Location = new System.Drawing.Point(171, 430);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 24);
             this.label3.TabIndex = 154;
@@ -249,16 +249,16 @@
             // 
             // chart2
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chart2.Legends.Add(legend6);
-            this.chart2.Location = new System.Drawing.Point(65, 497);
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
+            this.chart2.Location = new System.Drawing.Point(120, 537);
             this.chart2.Name = "chart2";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chart2.Series.Add(series6);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart2.Series.Add(series1);
             this.chart2.Size = new System.Drawing.Size(222, 179);
             this.chart2.TabIndex = 156;
             this.chart2.Text = "ct%Proyectos";
@@ -267,7 +267,7 @@
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(49, 469);
+            this.pictureBox10.Location = new System.Drawing.Point(90, 469);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(249, 243);
             this.pictureBox10.TabIndex = 155;
@@ -279,7 +279,7 @@
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(71, 435);
+            this.label4.Location = new System.Drawing.Point(126, 475);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(227, 24);
             this.label4.TabIndex = 157;
@@ -289,7 +289,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.Image = global::AppOneCode.Properties.Resources.icons8_mail_50;
-            this.pictureBox5.Location = new System.Drawing.Point(569, 249);
+            this.pictureBox5.Location = new System.Drawing.Point(611, 249);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(34, 29);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -300,7 +300,7 @@
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.White;
             this.pictureBox9.Image = global::AppOneCode.Properties.Resources.icons8_user_64;
-            this.pictureBox9.Location = new System.Drawing.Point(569, 188);
+            this.pictureBox9.Location = new System.Drawing.Point(611, 188);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(33, 30);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -311,7 +311,7 @@
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.White;
             this.pictureBox8.Image = global::AppOneCode.Properties.Resources.icons8_password_24;
-            this.pictureBox8.Location = new System.Drawing.Point(569, 326);
+            this.pictureBox8.Location = new System.Drawing.Point(611, 326);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(33, 30);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -322,7 +322,7 @@
             // 
             this.txtagregarEmailUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtagregarEmailUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtagregarEmailUsuario.Location = new System.Drawing.Point(699, 256);
+            this.txtagregarEmailUsuario.Location = new System.Drawing.Point(742, 256);
             this.txtagregarEmailUsuario.Name = "txtagregarEmailUsuario";
             this.txtagregarEmailUsuario.Size = new System.Drawing.Size(194, 22);
             this.txtagregarEmailUsuario.TabIndex = 161;
@@ -331,7 +331,7 @@
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.White;
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(662, 249);
+            this.pictureBox11.Location = new System.Drawing.Point(704, 249);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(261, 42);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -344,7 +344,7 @@
             this.btnAgregarUsuario.BackColor = System.Drawing.Color.White;
             this.btnAgregarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(708, 390);
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(750, 390);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
             this.btnAgregarUsuario.Size = new System.Drawing.Size(186, 35);
             this.btnAgregarUsuario.TabIndex = 168;
@@ -355,7 +355,7 @@
             // pictureBox12
             // 
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(471, 435);
+            this.pictureBox12.Location = new System.Drawing.Point(513, 435);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(649, 391);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -368,7 +368,7 @@
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(726, 460);
+            this.label5.Location = new System.Drawing.Point(768, 460);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(167, 24);
             this.label5.TabIndex = 170;
@@ -378,7 +378,7 @@
             // 
             this.txtagregarContrasenaUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtagregarContrasenaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtagregarContrasenaUsuario.Location = new System.Drawing.Point(699, 334);
+            this.txtagregarContrasenaUsuario.Location = new System.Drawing.Point(741, 334);
             this.txtagregarContrasenaUsuario.Name = "txtagregarContrasenaUsuario";
             this.txtagregarContrasenaUsuario.Size = new System.Drawing.Size(194, 22);
             this.txtagregarContrasenaUsuario.TabIndex = 172;
@@ -388,7 +388,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.White;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(662, 322);
+            this.pictureBox6.Location = new System.Drawing.Point(704, 322);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(261, 42);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -400,7 +400,7 @@
             // 
             this.txtagregarNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtagregarNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtagregarNombreUsuario.Location = new System.Drawing.Point(700, 196);
+            this.txtagregarNombreUsuario.Location = new System.Drawing.Point(741, 196);
             this.txtagregarNombreUsuario.Name = "txtagregarNombreUsuario";
             this.txtagregarNombreUsuario.Size = new System.Drawing.Size(194, 22);
             this.txtagregarNombreUsuario.TabIndex = 174;
@@ -409,7 +409,7 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.White;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(662, 188);
+            this.pictureBox7.Location = new System.Drawing.Point(704, 188);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(261, 42);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -422,7 +422,7 @@
             this.BtnEliminarUsuario.BackColor = System.Drawing.Color.White;
             this.BtnEliminarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEliminarUsuario.Location = new System.Drawing.Point(833, 753);
+            this.BtnEliminarUsuario.Location = new System.Drawing.Point(875, 753);
             this.BtnEliminarUsuario.Name = "BtnEliminarUsuario";
             this.BtnEliminarUsuario.Size = new System.Drawing.Size(147, 41);
             this.BtnEliminarUsuario.TabIndex = 175;
@@ -434,7 +434,7 @@
             // 
             this.dgvListaUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.dgvListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaUsuarios.Location = new System.Drawing.Point(534, 507);
+            this.dgvListaUsuarios.Location = new System.Drawing.Point(576, 507);
             this.dgvListaUsuarios.Name = "dgvListaUsuarios";
             this.dgvListaUsuarios.Size = new System.Drawing.Size(520, 240);
             this.dgvListaUsuarios.TabIndex = 176;
@@ -445,7 +445,7 @@
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(628, 753);
+            this.button1.Location = new System.Drawing.Point(670, 753);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 41);
             this.button1.TabIndex = 177;
@@ -458,7 +458,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(701, 94);
+            this.label6.Location = new System.Drawing.Point(743, 108);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(152, 37);
             this.label6.TabIndex = 178;
@@ -467,7 +467,7 @@
             // pbImageTrabajador
             // 
             this.pbImageTrabajador.Image = ((System.Drawing.Image)(resources.GetObject("pbImageTrabajador.Image")));
-            this.pbImageTrabajador.Location = new System.Drawing.Point(109, 167);
+            this.pbImageTrabajador.Location = new System.Drawing.Point(164, 207);
             this.pbImageTrabajador.Name = "pbImageTrabajador";
             this.pbImageTrabajador.Size = new System.Drawing.Size(124, 111);
             this.pbImageTrabajador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -480,7 +480,7 @@
             this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
             this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonPersonalizado1.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalizado1.Location = new System.Drawing.Point(110, 288);
+            this.botonPersonalizado1.Location = new System.Drawing.Point(165, 328);
             this.botonPersonalizado1.Name = "botonPersonalizado1";
             this.botonPersonalizado1.Size = new System.Drawing.Size(123, 35);
             this.botonPersonalizado1.TabIndex = 181;

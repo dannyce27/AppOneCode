@@ -5,13 +5,14 @@ using System.Windows.Forms;
 public class Conexion
 {
     private SqlConnection connection;
-    private readonly string connectionString = @"Server=DESKTOP-8FODO0C\SQLEXPRESS02;Database=AppOnecodeDB;Trusted_Connection=True;";
+    private readonly string connectionString = @"Server=DESKTOP-2I6K8G4\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+    
 
     public SqlConnection OpenConnection()
     {
         try
         {
-            if (connection == null)
+            if (connection == null)             
                 connection = new SqlConnection(connectionString);
 
             if (connection.State == System.Data.ConnectionState.Closed)

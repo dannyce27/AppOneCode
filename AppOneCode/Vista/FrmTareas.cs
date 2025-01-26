@@ -168,5 +168,35 @@ namespace AppOneCode.Vista
                 ActualizarLabelPagina(); // Actualiza el label con la página actual
             }
         }
+
+        private void botonPersonalizado1_Click(object sender, EventArgs e)
+        {
+            if (paginaActual > 1)
+            {
+                paginaActual--;
+                LLenarTareas(); // Actualiza el contenido de la página
+                ActualizarLabelPagina(); // Actualiza el label con la página actual
+            }
+        }
+
+        private void botonPersonalizado2_Click(object sender, EventArgs e)
+        {
+            // Comprobar si hay más páginas
+            int totalPaginas = (int)Math.Ceiling((double)listaTareas.Count / elementosPorPagina);
+
+            if (paginaActual < totalPaginas)
+            {
+                paginaActual++;
+                LLenarTareas(); // Actualiza el contenido de la página
+                ActualizarLabelPagina(); // Actualiza el label con la página actual
+            }
+        }
+
+        private void botonPersonalizado3_Click(object sender, EventArgs e)
+        {
+            FrmAgregarTareas frmAgregarTareas = new FrmAgregarTareas();
+            this.Hide();
+            frmAgregarTareas.ShowDialog();
+        }
     }
 }

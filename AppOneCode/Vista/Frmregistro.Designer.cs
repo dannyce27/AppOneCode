@@ -32,7 +32,6 @@
             this.txtContrasenaUsuarioR = new System.Windows.Forms.TextBox();
             this.txtemailR = new System.Windows.Forms.TextBox();
             this.txtusuarioR = new System.Windows.Forms.TextBox();
-            this.BtnIngresarR = new System.Windows.Forms.Button();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
@@ -46,6 +45,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btnRegistrarse = new AppOneCode.Modelo.BotonPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -90,19 +90,6 @@
             this.txtusuarioR.Size = new System.Drawing.Size(194, 22);
             this.txtusuarioR.TabIndex = 17;
             this.txtusuarioR.TextChanged += new System.EventHandler(this.txtusuarioR_TextChanged);
-            // 
-            // BtnIngresarR
-            // 
-            this.BtnIngresarR.BackColor = System.Drawing.Color.White;
-            this.BtnIngresarR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnIngresarR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnIngresarR.Location = new System.Drawing.Point(283, 341);
-            this.BtnIngresarR.Name = "BtnIngresarR";
-            this.BtnIngresarR.Size = new System.Drawing.Size(261, 46);
-            this.BtnIngresarR.TabIndex = 23;
-            this.BtnIngresarR.Text = "Registrarse";
-            this.BtnIngresarR.UseVisualStyleBackColor = false;
-            this.BtnIngresarR.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // pictureBox12
             // 
@@ -252,14 +239,31 @@
             this.linkLabel1.Text = "¿Ya tienes una cuenta?";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // btnRegistrarse
+            // 
+            this.btnRegistrarse.BackColor = System.Drawing.Color.White;
+            this.btnRegistrarse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrarse.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarse.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarse.ForeColor = System.Drawing.Color.Black;
+            this.btnRegistrarse.Location = new System.Drawing.Point(336, 352);
+            this.btnRegistrarse.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.btnRegistrarse.Name = "btnRegistrarse";
+            this.btnRegistrarse.Size = new System.Drawing.Size(150, 40);
+            this.btnRegistrarse.TabIndex = 25;
+            this.btnRegistrarse.Text = "Registrarse";
+            this.btnRegistrarse.UseVisualStyleBackColor = false;
+            this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
+            // 
             // Frmregistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(812, 495);
+            this.Controls.Add(this.btnRegistrarse);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.BtnIngresarR);
             this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.pictureBox10);
@@ -312,7 +316,7 @@
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.Button BtnIngresarR;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private Modelo.BotonPersonalizado btnRegistrarse;
     }
 }
