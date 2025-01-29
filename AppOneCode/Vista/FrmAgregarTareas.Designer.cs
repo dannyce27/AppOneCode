@@ -342,28 +342,28 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(834, 571);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(114, 20);
+            this.label9.Size = new System.Drawing.Size(118, 28);
             this.label9.TabIndex = 145;
             this.label9.Text = "Buscar de el:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(856, 645);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 20);
+            this.label10.Size = new System.Drawing.Size(64, 28);
             this.label10.TabIndex = 146;
             this.label10.Text = " Hasta";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(860, 722);
+            this.button1.Location = new System.Drawing.Point(861, 720);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 22);
             this.button1.TabIndex = 147;

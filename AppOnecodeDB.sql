@@ -1,4 +1,4 @@
--- Crear base de datos
+	-- Crear base de datos
 CREATE DATABASE BDOneCode;
 GO
 
@@ -34,7 +34,7 @@ VALUES ('NuevoUsuario', 'nuevo.usuario@dominio.com', 'hashedPassword123', 1);
 
 		
 drop table Tareas;
-
+		
 INSERT INTO TipoUsuario (NombreTipoUsuario)
 VALUES 
     ('Administrador'), 
@@ -97,7 +97,7 @@ INSERT INTO Prioridad(NombrePrioridad) VALUES ('Alta');
 INSERT INTO Prioridad(NombrePrioridad) VALUES ('Media');
 
 INSERT INTO Prioridad(NombrePrioridad) VALUES ('Baja');
-select * from Trabajo
+select * from Estado
 
 
 CREATE TABLE Estado(
@@ -123,9 +123,12 @@ CREATE TABLE Tareas (
     UsuarioId INT NOT NULL,
     PrioridadId INT NOT NULL,
     EstadoId INT NOT NULL, 
+	FechaInicio DATE NOT NULL,
+	FechaFinalizacion DATE NOT NULL
     CONSTRAINT FK_Tareas_Usuario FOREIGN KEY (UsuarioId) REFERENCES Users(Id),
     CONSTRAINT FK_Tareas_Prioridad FOREIGN KEY (PrioridadId) REFERENCES Prioridad(Id),
     CONSTRAINT FK_Tareas_Estado FOREIGN KEY (EstadoId) REFERENCES Estado(Id)
 );
 	
 select * from Tareas
+drop table Tareas;
