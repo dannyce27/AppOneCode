@@ -16,6 +16,8 @@ namespace AppOneCode.Modelo
         public string Usuario { get; set; }
         public string Prioridad { get; set; }
         public string Estado { get; set; }
+        public DateTime FechaInicio { get; set; }
+        public DateTime FechaFinalizacion { get; set; }
 
         // Método para insertar una nueva tarea
         public bool InsertarTarea()
@@ -23,16 +25,23 @@ namespace AppOneCode.Modelo
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"
-                    INSERT INTO Tareas (Descripcion, UsuarioId, PrioridadId, EstadoId)
-                    SELECT @Descripcion, U.Id, P.Id, E.Id
-                    FROM Users U, Prioridad P, Estado E
-                    WHERE U.Username = @Usuario AND P.NombrePrioridad = @Prioridad AND E.NombreEstado = @Estado";
+            INSERT INTO Tareas (Descripcion, UsuarioId, PrioridadId, EstadoId, FechaInicio, FechaFinalizacion)
+            VALUES (
+                @Descripcion, 
+                (SELECT Id FROM Users WHERE Username = @Usuario), 
+                (SELECT Id FROM Prioridad WHERE NombrePrioridad = @Prioridad), 
+                (SELECT Id FROM Estado WHERE NombreEstado = @Estado),
+                @FechaInicio,
+                @FechaFinalizacion
+            )";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Descripcion", Descripcion);
                 cmd.Parameters.AddWithValue("@Usuario", Usuario);
                 cmd.Parameters.AddWithValue("@Prioridad", Prioridad);
                 cmd.Parameters.AddWithValue("@Estado", Estado);
+                cmd.Parameters.AddWithValue("@FechaInicio", FechaInicio);
+                cmd.Parameters.AddWithValue("@FechaFinalizacion", FechaFinalizacion);
 
                 try
                 {
@@ -43,11 +52,6 @@ namespace AppOneCode.Modelo
                 catch (SqlException ex)
                 {
                     MessageBox.Show($"Error de SQL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
@@ -110,11 +114,13 @@ namespace AppOneCode.Modelo
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"
-                    SELECT T.Id, T.Descripcion, U.Username AS Usuario, P.NombrePrioridad AS Prioridad, E.NombreEstado AS Estado
-                    FROM Tareas T
-                    INNER JOIN Users U ON T.UsuarioId = U.Id
-                    INNER JOIN Prioridad P ON T.PrioridadId = P.Id
-                    INNER JOIN Estado E ON T.EstadoId = E.Id";
+            SELECT T.Id, T.Descripcion, U.Username AS Usuario, 
+                   P.NombrePrioridad AS Prioridad, E.NombreEstado AS Estado,
+                   T.FechaInicio, T.FechaFinalizacion
+            FROM Tareas T
+            INNER JOIN Users U ON T.UsuarioId = U.Id
+            INNER JOIN Prioridad P ON T.PrioridadId = P.Id
+            INNER JOIN Estado E ON T.EstadoId = E.Id";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -131,7 +137,9 @@ namespace AppOneCode.Modelo
                             Descripcion = reader.GetString(1),
                             Usuario = reader.GetString(2),
                             Prioridad = reader.GetString(3),
-                            Estado = reader.GetString(4)
+                            Estado = reader.GetString(4),
+                            FechaInicio = reader.GetDateTime(5),
+                            FechaFinalizacion = reader.GetDateTime(6)
                         };
                         tareasList.Add(tarea);
                     }
@@ -149,18 +157,22 @@ namespace AppOneCode.Modelo
             return tareasList;
         }
 
+
         // Método para actualizar una tarea
         public bool ActualizarTarea()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"
-                    UPDATE Tareas
-                    SET Descripcion = @Descripcion,
-                        UsuarioId = (SELECT Id FROM Users WHERE Username = @Usuario),
-                        PrioridadId = (SELECT Id FROM Prioridad WHERE NombrePrioridad = @Prioridad),
-                        EstadoId = (SELECT Id FROM Estado WHERE NombreEstado = @Estado)
-                    WHERE Id = @Id";
+            UPDATE Tareas
+            SET 
+                Descripcion = @Descripcion,
+                UsuarioId = (SELECT Id FROM Users WHERE Username = @Usuario),
+                PrioridadId = (SELECT Id FROM Prioridad WHERE NombrePrioridad = @Prioridad),
+                EstadoId = (SELECT Id FROM Estado WHERE NombreEstado = @Estado),
+                FechaInicio = @FechaInicio,
+                FechaFinalizacion = @FechaFinalizacion
+            WHERE Id = @Id";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", Id);
@@ -168,6 +180,8 @@ namespace AppOneCode.Modelo
                 cmd.Parameters.AddWithValue("@Usuario", Usuario);
                 cmd.Parameters.AddWithValue("@Prioridad", Prioridad);
                 cmd.Parameters.AddWithValue("@Estado", Estado);
+                cmd.Parameters.AddWithValue("@FechaInicio", FechaInicio);
+                cmd.Parameters.AddWithValue("@FechaFinalizacion", FechaFinalizacion);
 
                 try
                 {
@@ -178,11 +192,6 @@ namespace AppOneCode.Modelo
                 catch (SqlException ex)
                 {
                     MessageBox.Show($"Error de SQL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
@@ -423,6 +432,63 @@ namespace AppOneCode.Modelo
 
             return tareas;
         }
+
+
+        public List<Tareas2> BuscarTareasPorFecha(DateTime fechaInicio, DateTime fechaFinalizacion)
+        {
+            List<Tareas2> tareasFiltradas = new List<Tareas2>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = @"
+            SELECT T.Id, T.Descripcion, U.Username AS Usuario, 
+                   P.NombrePrioridad AS Prioridad, E.NombreEstado AS Estado,
+                   T.FechaInicio, T.FechaFinalizacion
+            FROM Tareas T
+            INNER JOIN Users U ON T.UsuarioId = U.Id
+            INNER JOIN Prioridad P ON T.PrioridadId = P.Id
+            INNER JOIN Estado E ON T.EstadoId = E.Id
+            WHERE T.FechaInicio >= @FechaInicio 
+              AND T.FechaFinalizacion <= @FechaFinalizacion";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio);
+                cmd.Parameters.AddWithValue("@FechaFinalizacion", fechaFinalizacion);
+
+                try
+                {
+                    conn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Tareas2 tarea = new Tareas2
+                        {
+                            Id = reader.GetInt32(0),
+                            Descripcion = reader.GetString(1),
+                            Usuario = reader.GetString(2),
+                            Prioridad = reader.GetString(3),
+                            Estado = reader.GetString(4),
+                            FechaInicio = reader.GetDateTime(5),
+                            FechaFinalizacion = reader.GetDateTime(6)
+                        };
+                        tareasFiltradas.Add(tarea);
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show($"Error de SQL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return tareasFiltradas;
+        }
+
+
     }
 
 

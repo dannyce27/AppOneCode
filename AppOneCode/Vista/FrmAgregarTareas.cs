@@ -163,7 +163,9 @@ namespace AppOneCode.Vista
                 Descripcion = txtDescP.Text,
                 Usuario = cmbEmpleadoAsignado.Text,
                 Prioridad = cmbPrioridad.Text,
-                Estado = cmbEstado.Text
+                Estado = cmbEstado.Text,
+                FechaInicio = dtpFechaInicio.Value,  // Obtiene la fecha del DateTimePicker
+                FechaFinalizacion = dtpFechaFinalizacion.Value // Obtiene la fecha final
             };
 
             // Llama al método InsertarTarea para agregar la tarea
@@ -179,7 +181,9 @@ namespace AppOneCode.Vista
                 cmbEmpleadoAsignado.SelectedIndex = -1;
                 cmbPrioridad.SelectedIndex = -1;
                 cmbEstado.SelectedIndex = -1;
-                CargarDatos();
+                dtpFechaInicio.Value = DateTime.Now;  // Reinicia la fecha al día actual
+                dtpFechaFinalizacion.Value = DateTime.Now; // Reinicia la fecha al día actual
+                CargarDatos();  // Recargar datos en la interfaz
             }
             else
             {
@@ -307,6 +311,16 @@ namespace AppOneCode.Vista
             FrmTareas fmT = new FrmTareas();
             this.Close();
             fmT.ShowDialog();
+        }
+
+        private void botonPersonalizado1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+               
         }
     }
 }
