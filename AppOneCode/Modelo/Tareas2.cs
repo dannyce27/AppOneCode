@@ -9,7 +9,7 @@ namespace AppOneCode.Modelo
 {
     public class Tareas2
     {
-        private readonly string connectionString = "Server=DESKTOP-JVGVM0A\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+        string connectionString = "Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
 
         public int Id { get; set; }
         public string Descripcion { get; set; }
@@ -315,7 +315,7 @@ namespace AppOneCode.Modelo
         public int ObtenerTareasCompletadasPorUsuario(int usuarioId)
         {
             int tareasCompletadas = 0;
-            using (SqlConnection connection = new SqlConnection("Server=DESKTOP-JVGVM0A\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string query = @"
             SELECT COUNT(*) 
@@ -381,7 +381,7 @@ namespace AppOneCode.Modelo
         {
             List<Tareas2> tareas = new List<Tareas2>();
 
-            string connectionString = "Server=DESKTOP-JVGVM0A\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+            
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {

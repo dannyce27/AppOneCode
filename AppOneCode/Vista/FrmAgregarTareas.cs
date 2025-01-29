@@ -320,7 +320,27 @@ namespace AppOneCode.Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-               
+
+            Tareas2 tareaModelo = new Tareas2();
+
+            DateTime fechaInicio = dtpFechaInicio.Value.Date.AddHours(23).AddMinutes(59);
+            DateTime fechaFinalizacion = dtpFechaFinalizacion.Value.Date.AddHours(23).AddMinutes(59); // Incluir todo el día
+
+            List<Tareas2> t2 = tareaModelo.BuscarTareasPorFecha(fechaInicio, fechaFinalizacion);
+
+            dgvMostrarProyectosI.DataSource = t2; 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Tareas2 tareaModelo = new Tareas2();
+            string searchCriteria = txtSearchProyect.Text.Trim();
+
+            
+            List<Tareas2> resultados = tareaModelo.BuscarTareas(searchCriteria);
+
+            
+            dgvMostrarProyectosI.DataSource = resultados;
         }
     }
 }

@@ -185,7 +185,7 @@ public class Usuario
                 }
             }
         }
-        catch (SqlException ex) 
+        catch (SqlException ex)
         {
             MessageBox.Show($"Error de SQL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return null;
@@ -274,7 +274,7 @@ public class Usuario
 
     public List<Usuario> BuscarUsuarios(string usuario)
     {
-         string connectionString = @"Server=DESKTOP-JVGVM0A\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+        string connectionString = @"Server=DESKTOP-2I6K8G4\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
         List<Usuario> tareasList = new List<Usuario>();
 
         using (SqlConnection conn = new SqlConnection(connectionString))
@@ -292,11 +292,11 @@ public class Usuario
                 {
                     Usuario usuario_ = new Usuario
                     {
-                      
+
                         Username = reader.GetString(0),
                         Email = reader.GetString(1)
-                       
-                        
+
+
                     };
                     tareasList.Add(usuario_);
                 }
@@ -312,6 +312,34 @@ public class Usuario
         }
 
         return tareasList;
+    }
+
+    public int ContarUsuarios()
+    {
+        int numeroUsuarios = 0;
+
+        using (SqlConnection conn = new Conexion().OpenConnection())
+        {
+            string query = "SELECT COUNT(*) FROM Users";
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+
+            try
+            {
+                conn.Open();
+                numeroUsuarios = (int)cmd.ExecuteScalar();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Error de SQL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        return numeroUsuarios;
     }
 
 }

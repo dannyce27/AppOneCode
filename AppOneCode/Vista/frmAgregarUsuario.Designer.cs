@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarUsuario));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblfaq = new System.Windows.Forms.Label();
@@ -49,16 +49,10 @@
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.txtagregarEmailUsuario = new System.Windows.Forms.TextBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.btnAgregarUsuario = new System.Windows.Forms.Button();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtagregarContrasenaUsuario = new System.Windows.Forms.TextBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.txtagregarNombreUsuario = new System.Windows.Forms.TextBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.BtnEliminarUsuario = new System.Windows.Forms.Button();
@@ -66,9 +60,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.pbImageTrabajador = new System.Windows.Forms.PictureBox();
-            this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
             this.txtSearchProyect = new System.Windows.Forms.TextBox();
             this.pbBuscar = new System.Windows.Forms.PictureBox();
+            this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.txtagregarEmailUsuario = new System.Windows.Forms.TextBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.txtagregarContrasenaUsuario = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -76,16 +76,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImageTrabajador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox19
@@ -252,16 +252,16 @@
             // 
             // chart2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
             this.chart2.Location = new System.Drawing.Point(130, 550);
             this.chart2.Name = "chart2";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart2.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart2.Series.Add(series1);
             this.chart2.Size = new System.Drawing.Size(222, 179);
             this.chart2.TabIndex = 156;
             this.chart2.Text = "ct%Proyectos";
@@ -288,66 +288,23 @@
             this.label4.TabIndex = 157;
             this.label4.Text = "Proyectos completados";
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.White;
-            this.pictureBox5.Image = global::AppOneCode.Properties.Resources.icons8_mail_50;
-            this.pictureBox5.Location = new System.Drawing.Point(611, 249);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(34, 29);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 167;
-            this.pictureBox5.TabStop = false;
-            // 
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.White;
             this.pictureBox9.Image = global::AppOneCode.Properties.Resources.icons8_user_64;
-            this.pictureBox9.Location = new System.Drawing.Point(611, 188);
+            this.pictureBox9.Location = new System.Drawing.Point(498, 190);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(33, 30);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 166;
             this.pictureBox9.TabStop = false;
             // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.White;
-            this.pictureBox8.Image = global::AppOneCode.Properties.Resources.icons8_password_24;
-            this.pictureBox8.Location = new System.Drawing.Point(611, 326);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(33, 30);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 165;
-            this.pictureBox8.TabStop = false;
-            // 
-            // txtagregarEmailUsuario
-            // 
-            this.txtagregarEmailUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtagregarEmailUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtagregarEmailUsuario.Location = new System.Drawing.Point(742, 256);
-            this.txtagregarEmailUsuario.Name = "txtagregarEmailUsuario";
-            this.txtagregarEmailUsuario.Size = new System.Drawing.Size(194, 22);
-            this.txtagregarEmailUsuario.TabIndex = 161;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.BackColor = System.Drawing.Color.White;
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(704, 249);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(261, 42);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 159;
-            this.pictureBox11.TabStop = false;
-            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
-            // 
             // btnAgregarUsuario
             // 
             this.btnAgregarUsuario.BackColor = System.Drawing.Color.White;
             this.btnAgregarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(750, 390);
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(750, 328);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
             this.btnAgregarUsuario.Size = new System.Drawing.Size(186, 35);
             this.btnAgregarUsuario.TabIndex = 168;
@@ -358,7 +315,7 @@
             // pictureBox12
             // 
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(513, 435);
+            this.pictureBox12.Location = new System.Drawing.Point(523, 466);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(649, 391);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -371,39 +328,17 @@
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(768, 460);
+            this.label5.Location = new System.Drawing.Point(778, 491);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(167, 24);
             this.label5.TabIndex = 170;
             this.label5.Text = "Lista de usuarios";
             // 
-            // txtagregarContrasenaUsuario
-            // 
-            this.txtagregarContrasenaUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtagregarContrasenaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtagregarContrasenaUsuario.Location = new System.Drawing.Point(741, 334);
-            this.txtagregarContrasenaUsuario.Name = "txtagregarContrasenaUsuario";
-            this.txtagregarContrasenaUsuario.Size = new System.Drawing.Size(194, 22);
-            this.txtagregarContrasenaUsuario.TabIndex = 172;
-            this.txtagregarContrasenaUsuario.TextChanged += new System.EventHandler(this.txtagregarContrasenaUsuario_TextChanged);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.White;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(704, 322);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(261, 42);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 171;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
-            // 
             // txtagregarNombreUsuario
             // 
             this.txtagregarNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtagregarNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtagregarNombreUsuario.Location = new System.Drawing.Point(741, 196);
+            this.txtagregarNombreUsuario.Location = new System.Drawing.Point(586, 190);
             this.txtagregarNombreUsuario.Name = "txtagregarNombreUsuario";
             this.txtagregarNombreUsuario.Size = new System.Drawing.Size(194, 22);
             this.txtagregarNombreUsuario.TabIndex = 174;
@@ -412,7 +347,7 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.White;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(704, 188);
+            this.pictureBox7.Location = new System.Drawing.Point(549, 182);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(261, 42);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -425,7 +360,7 @@
             this.BtnEliminarUsuario.BackColor = System.Drawing.Color.White;
             this.BtnEliminarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEliminarUsuario.Location = new System.Drawing.Point(875, 753);
+            this.BtnEliminarUsuario.Location = new System.Drawing.Point(885, 784);
             this.BtnEliminarUsuario.Name = "BtnEliminarUsuario";
             this.BtnEliminarUsuario.Size = new System.Drawing.Size(147, 41);
             this.BtnEliminarUsuario.TabIndex = 175;
@@ -437,7 +372,7 @@
             // 
             this.dgvListaUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.dgvListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaUsuarios.Location = new System.Drawing.Point(576, 507);
+            this.dgvListaUsuarios.Location = new System.Drawing.Point(586, 538);
             this.dgvListaUsuarios.Name = "dgvListaUsuarios";
             this.dgvListaUsuarios.Size = new System.Drawing.Size(520, 240);
             this.dgvListaUsuarios.TabIndex = 176;
@@ -448,7 +383,7 @@
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(670, 753);
+            this.button1.Location = new System.Drawing.Point(680, 784);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 41);
             this.button1.TabIndex = 177;
@@ -461,7 +396,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(743, 108);
+            this.label6.Location = new System.Drawing.Point(743, 90);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(152, 37);
             this.label6.TabIndex = 178;
@@ -477,6 +412,27 @@
             this.pbImageTrabajador.TabIndex = 179;
             this.pbImageTrabajador.TabStop = false;
             // 
+            // txtSearchProyect
+            // 
+            this.txtSearchProyect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchProyect.Location = new System.Drawing.Point(643, 427);
+            this.txtSearchProyect.Name = "txtSearchProyect";
+            this.txtSearchProyect.Size = new System.Drawing.Size(364, 20);
+            this.txtSearchProyect.TabIndex = 182;
+            // 
+            // pbBuscar
+            // 
+            this.pbBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.pbBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("pbBuscar.Image")));
+            this.pbBuscar.Location = new System.Drawing.Point(1020, 423);
+            this.pbBuscar.Name = "pbBuscar";
+            this.pbBuscar.Size = new System.Drawing.Size(38, 32);
+            this.pbBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbBuscar.TabIndex = 183;
+            this.pbBuscar.TabStop = false;
+            this.pbBuscar.Click += new System.EventHandler(this.pbBuscar_Click);
+            // 
             // botonPersonalizado1
             // 
             this.botonPersonalizado1.BackColor = System.Drawing.Color.Navy;
@@ -491,26 +447,70 @@
             this.botonPersonalizado1.UseVisualStyleBackColor = false;
             this.botonPersonalizado1.Click += new System.EventHandler(this.botonPersonalizado1_Click);
             // 
-            // txtSearchProyect
+            // pictureBox11
             // 
-            this.txtSearchProyect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchProyect.Location = new System.Drawing.Point(23, 147);
-            this.txtSearchProyect.Name = "txtSearchProyect";
-            this.txtSearchProyect.Size = new System.Drawing.Size(364, 20);
-            this.txtSearchProyect.TabIndex = 182;
+            this.pictureBox11.BackColor = System.Drawing.Color.White;
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(899, 183);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(261, 42);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 159;
+            this.pictureBox11.TabStop = false;
+            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
             // 
-            // pbBuscar
+            // txtagregarEmailUsuario
             // 
-            this.pbBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.pbBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("pbBuscar.Image")));
-            this.pbBuscar.Location = new System.Drawing.Point(400, 143);
-            this.pbBuscar.Name = "pbBuscar";
-            this.pbBuscar.Size = new System.Drawing.Size(38, 32);
-            this.pbBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbBuscar.TabIndex = 183;
-            this.pbBuscar.TabStop = false;
-            this.pbBuscar.Click += new System.EventHandler(this.pbBuscar_Click);
+            this.txtagregarEmailUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtagregarEmailUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtagregarEmailUsuario.Location = new System.Drawing.Point(937, 190);
+            this.txtagregarEmailUsuario.Name = "txtagregarEmailUsuario";
+            this.txtagregarEmailUsuario.Size = new System.Drawing.Size(194, 22);
+            this.txtagregarEmailUsuario.TabIndex = 161;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.White;
+            this.pictureBox8.Image = global::AppOneCode.Properties.Resources.icons8_password_24;
+            this.pictureBox8.Location = new System.Drawing.Point(668, 263);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(33, 30);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 165;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.White;
+            this.pictureBox5.Image = global::AppOneCode.Properties.Resources.icons8_mail_50;
+            this.pictureBox5.Location = new System.Drawing.Point(849, 191);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(34, 29);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 167;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.White;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(725, 259);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(261, 42);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 171;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // txtagregarContrasenaUsuario
+            // 
+            this.txtagregarContrasenaUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtagregarContrasenaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtagregarContrasenaUsuario.Location = new System.Drawing.Point(762, 271);
+            this.txtagregarContrasenaUsuario.Name = "txtagregarContrasenaUsuario";
+            this.txtagregarContrasenaUsuario.Size = new System.Drawing.Size(194, 22);
+            this.txtagregarContrasenaUsuario.TabIndex = 172;
+            this.txtagregarContrasenaUsuario.TextChanged += new System.EventHandler(this.txtagregarContrasenaUsuario_TextChanged);
             // 
             // frmAgregarUsuario
             // 
@@ -566,16 +566,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImageTrabajador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -600,16 +600,10 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.TextBox txtagregarEmailUsuario;
-        private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Button btnAgregarUsuario;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtagregarContrasenaUsuario;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.TextBox txtagregarNombreUsuario;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Button BtnEliminarUsuario;
@@ -620,5 +614,11 @@
         private Modelo.BotonPersonalizado botonPersonalizado1;
         private System.Windows.Forms.TextBox txtSearchProyect;
         private System.Windows.Forms.PictureBox pbBuscar;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.TextBox txtagregarEmailUsuario;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.TextBox txtagregarContrasenaUsuario;
     }
 }
