@@ -19,6 +19,8 @@ namespace AppOneCode.Vista
         {
             InitializeComponent();
             CargarImagenPerfil();
+            
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -258,6 +260,15 @@ namespace AppOneCode.Vista
             {
                 MessageBox.Show($"Error al cambiar la imagen: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void pbBuscar_Click(object sender, EventArgs e)
+        {
+            String usuario = txtSearchProyect.Text.Trim();
+
+            Usuario usuario_ = new Usuario();
+            List<Usuario> usuList = usuario_.BuscarUsuarios(usuario);
+            dgvListaUsuarios.DataSource = usuList;
         }
     }
 }

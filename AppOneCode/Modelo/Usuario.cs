@@ -5,13 +5,16 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 using System;
+using AppOneCode.Modelo;
+using System.Collections.Generic;
 
 public class Usuario
 {
     public static int UsuarioId { get; set; }
-
-
-
+    public int Id { get; private set; }
+    public string Username { get; private set; }
+    public string Email { get; private set; }
+    public string Contrasenaa { get; private set; }
 
     public static void CargarUsuarios(DataGridView dgv)
     {
@@ -268,4 +271,47 @@ public class Usuario
             return BitConverter.ToString(hashedBytes).Replace("-", "").ToLowerInvariant();
         }
     }
+
+    public List<Usuario> BuscarUsuarios(string usuario)
+    {
+         string connectionString = @"Server=DESKTOP-JVGVM0A\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+        List<Usuario> tareasList = new List<Usuario>();
+
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        {
+            string query = "SELECT  Username, email FROM Users WHERE Username LIKE @Criterio OR Email LIKE @Criterio";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@Criterio", "%" + usuario + "%"); // Búsqueda con comodines
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Usuario usuario_ = new Usuario
+                    {
+                      
+                        Username = reader.GetString(0),
+                        Email = reader.GetString(1)
+                       
+                        
+                    };
+                    tareasList.Add(usuario_);
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Error de SQL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        return tareasList;
+    }
+
 }
