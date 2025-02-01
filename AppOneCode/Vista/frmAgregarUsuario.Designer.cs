@@ -32,6 +32,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblfaq = new System.Windows.Forms.Label();
@@ -62,13 +63,13 @@
             this.pbImageTrabajador = new System.Windows.Forms.PictureBox();
             this.txtSearchProyect = new System.Windows.Forms.TextBox();
             this.pbBuscar = new System.Windows.Forms.PictureBox();
-            this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.txtagregarEmailUsuario = new System.Windows.Forms.TextBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.txtagregarContrasenaUsuario = new System.Windows.Forms.TextBox();
+            this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -371,10 +372,17 @@
             // dgvListaUsuarios
             // 
             this.dgvListaUsuarios.BackgroundColor = System.Drawing.Color.White;
+            this.dgvListaUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaUsuarios.Location = new System.Drawing.Point(586, 538);
+            this.dgvListaUsuarios.Location = new System.Drawing.Point(610, 538);
             this.dgvListaUsuarios.Name = "dgvListaUsuarios";
-            this.dgvListaUsuarios.Size = new System.Drawing.Size(520, 240);
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.GhostWhite;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvListaUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvListaUsuarios.Size = new System.Drawing.Size(487, 240);
             this.dgvListaUsuarios.TabIndex = 176;
             this.dgvListaUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaUsuarios_CellContentClick);
             // 
@@ -432,20 +440,6 @@
             this.pbBuscar.TabIndex = 183;
             this.pbBuscar.TabStop = false;
             this.pbBuscar.Click += new System.EventHandler(this.pbBuscar_Click);
-            // 
-            // botonPersonalizado1
-            // 
-            this.botonPersonalizado1.BackColor = System.Drawing.Color.Navy;
-            this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
-            this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalizado1.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalizado1.Location = new System.Drawing.Point(165, 328);
-            this.botonPersonalizado1.Name = "botonPersonalizado1";
-            this.botonPersonalizado1.Size = new System.Drawing.Size(123, 35);
-            this.botonPersonalizado1.TabIndex = 181;
-            this.botonPersonalizado1.Text = "Cargar imagen\r\n";
-            this.botonPersonalizado1.UseVisualStyleBackColor = false;
-            this.botonPersonalizado1.Click += new System.EventHandler(this.botonPersonalizado1_Click);
             // 
             // pictureBox11
             // 
@@ -511,6 +505,20 @@
             this.txtagregarContrasenaUsuario.Size = new System.Drawing.Size(194, 22);
             this.txtagregarContrasenaUsuario.TabIndex = 172;
             this.txtagregarContrasenaUsuario.TextChanged += new System.EventHandler(this.txtagregarContrasenaUsuario_TextChanged);
+            // 
+            // botonPersonalizado1
+            // 
+            this.botonPersonalizado1.BackColor = System.Drawing.Color.Navy;
+            this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado1.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalizado1.Location = new System.Drawing.Point(165, 328);
+            this.botonPersonalizado1.Name = "botonPersonalizado1";
+            this.botonPersonalizado1.Size = new System.Drawing.Size(123, 35);
+            this.botonPersonalizado1.TabIndex = 181;
+            this.botonPersonalizado1.Text = "Cargar imagen\r\n";
+            this.botonPersonalizado1.UseVisualStyleBackColor = false;
+            this.botonPersonalizado1.Click += new System.EventHandler(this.botonPersonalizado1_Click);
             // 
             // frmAgregarUsuario
             // 

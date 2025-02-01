@@ -75,7 +75,7 @@ namespace AppOneCode.Vista
                 {
                     txtagregarNombreUsuario.Text = dgvListaUsuarios.CurrentRow.Cells["Username"].Value.ToString();
                     txtagregarEmailUsuario.Text = dgvListaUsuarios.CurrentRow.Cells["Email"].Value.ToString();
-                    txtagregarContrasenaUsuario.Text = dgvListaUsuarios.CurrentRow.Cells["Contrasenaa"].Value.ToString();
+                   // txtagregarContrasenaUsuario.Text = dgvListaUsuarios.CurrentRow.Cells["Contrasenaa"].Value.ToString();
 
                 }
             }
