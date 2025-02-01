@@ -207,6 +207,11 @@ namespace AppOneCode.Vista
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     
