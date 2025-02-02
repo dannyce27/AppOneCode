@@ -94,7 +94,7 @@
             // pictureBox19
             // 
             this.pictureBox19.Image = global::AppOneCode.Properties.Resources.icons8_minimize_window_30;
-            this.pictureBox19.Location = new System.Drawing.Point(1027, 12);
+            this.pictureBox19.Location = new System.Drawing.Point(1140, 9);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(32, 29);
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -105,7 +105,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::AppOneCode.Properties.Resources.icons8_close_window_50;
-            this.pictureBox3.Location = new System.Drawing.Point(1065, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(1180, 9);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(32, 29);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -119,7 +119,7 @@
             this.lblfaq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.lblfaq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfaq.ForeColor = System.Drawing.Color.White;
-            this.lblfaq.Location = new System.Drawing.Point(798, 18);
+            this.lblfaq.Location = new System.Drawing.Point(874, 15);
             this.lblfaq.Name = "lblfaq";
             this.lblfaq.Size = new System.Drawing.Size(42, 20);
             this.lblfaq.TabIndex = 145;
@@ -131,7 +131,7 @@
             this.lblrecursos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.lblrecursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblrecursos.ForeColor = System.Drawing.Color.White;
-            this.lblrecursos.Location = new System.Drawing.Point(576, 18);
+            this.lblrecursos.Location = new System.Drawing.Point(652, 15);
             this.lblrecursos.Name = "lblrecursos";
             this.lblrecursos.Size = new System.Drawing.Size(77, 20);
             this.lblrecursos.TabIndex = 144;
@@ -143,7 +143,7 @@
             this.lblproyectos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.lblproyectos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblproyectos.ForeColor = System.Drawing.Color.White;
-            this.lblproyectos.Location = new System.Drawing.Point(347, 18);
+            this.lblproyectos.Location = new System.Drawing.Point(423, 15);
             this.lblproyectos.Name = "lblproyectos";
             this.lblproyectos.Size = new System.Drawing.Size(79, 20);
             this.lblproyectos.TabIndex = 143;
@@ -155,7 +155,7 @@
             this.lbltareas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.lbltareas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltareas.ForeColor = System.Drawing.Color.White;
-            this.lbltareas.Location = new System.Drawing.Point(476, 18);
+            this.lbltareas.Location = new System.Drawing.Point(552, 15);
             this.lbltareas.Name = "lbltareas";
             this.lbltareas.Size = new System.Drawing.Size(58, 20);
             this.lbltareas.TabIndex = 142;
@@ -167,7 +167,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(252, 18);
+            this.label1.Location = new System.Drawing.Point(328, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 20);
             this.label1.TabIndex = 141;
@@ -189,7 +189,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(696, 18);
+            this.label2.Location = new System.Drawing.Point(772, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 20);
             this.label2.TabIndex = 148;
@@ -201,7 +201,7 @@
             this.lblchat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(56)))), ((int)(((byte)(102)))));
             this.lblchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblchat.ForeColor = System.Drawing.Color.White;
-            this.lblchat.Location = new System.Drawing.Point(913, 21);
+            this.lblchat.Location = new System.Drawing.Point(989, 18);
             this.lblchat.Name = "lblchat";
             this.lblchat.Size = new System.Drawing.Size(43, 20);
             this.lblchat.TabIndex = 150;
@@ -210,7 +210,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(876, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(952, 9);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(117, 43);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -399,7 +399,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListaUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.GhostWhite;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;

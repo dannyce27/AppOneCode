@@ -90,5 +90,52 @@ namespace AppOneCode.Vista
         {
             // Lógica para el PictureBox si es necesario
         }
+
+        private void btnValidarCodigo_Click_1(object sender, EventArgs e)
+        {
+            // Verificar si el código ingresado coincide
+            if (txtValidarCodigo.Text == codigoRecuperacion)
+            {
+                MessageBox.Show("Código válido. Proceder a cambiar contraseña.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Abrir el formulario para cambiar la contraseña
+                FrmCambiarContraseña frmCambiarContraseña = new FrmCambiarContraseña();
+                frmCambiarContraseña.Show();
+                this.Close(); // Cierra el formulario actual
+            }
+            else
+            {
+                MessageBox.Show("El código ingresado es incorrecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEnviarCorreo_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                // Obtener el correo ingresado
+                string email = txtIngresarCorreo.Text;
+
+                // Verificar que no esté vacío
+                if (string.IsNullOrWhiteSpace(email))
+                {
+                    MessageBox.Show("Por favor, ingresa tu correo electrónico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Enviar el código de recuperación
+                EmailService emailService = new EmailService();
+                codigoRecuperacion = emailService.EnviarCodigoRecuperacion(email);
+
+                MessageBox.Show("El código de recuperación ha sido enviado a tu correo.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Cambiar a la vista de validación
+                CambiarVistaValidacion(true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

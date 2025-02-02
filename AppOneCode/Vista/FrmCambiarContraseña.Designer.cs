@@ -20,6 +20,17 @@
             base.Dispose(disposing);
         }
 
-        
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtContrasenaUsuarioConfirm;
+        private Modelo.BotonPersonalizado btnCambiarContraseña;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.TextBox txtContrasenaUsuarioN;
+        private System.Windows.Forms.TextBox txtemailR;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

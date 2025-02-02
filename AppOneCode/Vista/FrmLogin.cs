@@ -169,5 +169,12 @@ namespace AppOneCode.Vista
                 MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmRecuperacionC frmRecuperacionC = new FrmRecuperacionC();
+            this.Hide();
+            frmRecuperacionC.ShowDialog();
+        }
     }
 }

@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRecuperacionC));
             this.txtIngresarCorreo = new System.Windows.Forms.TextBox();
-            this.btnEnviarCorreo = new System.Windows.Forms.Button();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pbTextoInformativo = new System.Windows.Forms.PictureBox();
@@ -38,8 +37,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtValidarCodigo = new System.Windows.Forms.TextBox();
-            this.btnValidarCodigo = new System.Windows.Forms.Button();
             this.lblValidarCodigo = new System.Windows.Forms.Label();
+            this.btnValidarCodigo = new AppOneCode.Modelo.BotonPersonalizado();
+            this.btnEnviarCorreo = new AppOneCode.Modelo.BotonPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTextoInformativo)).BeginInit();
@@ -57,19 +57,6 @@
             this.txtIngresarCorreo.Size = new System.Drawing.Size(194, 22);
             this.txtIngresarCorreo.TabIndex = 22;
             this.txtIngresarCorreo.TextChanged += new System.EventHandler(this.txtIngresarCorreo_TextChanged);
-            // 
-            // btnEnviarCorreo
-            // 
-            this.btnEnviarCorreo.BackColor = System.Drawing.Color.Silver;
-            this.btnEnviarCorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviarCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviarCorreo.Location = new System.Drawing.Point(270, 318);
-            this.btnEnviarCorreo.Name = "btnEnviarCorreo";
-            this.btnEnviarCorreo.Size = new System.Drawing.Size(261, 46);
-            this.btnEnviarCorreo.TabIndex = 24;
-            this.btnEnviarCorreo.Text = "Enviar";
-            this.btnEnviarCorreo.UseVisualStyleBackColor = false;
-            this.btnEnviarCorreo.Click += new System.EventHandler(this.btnEnviarCorreo_Click);
             // 
             // pictureBox10
             // 
@@ -144,19 +131,6 @@
             this.txtValidarCodigo.TabIndex = 25;
             this.txtValidarCodigo.TextChanged += new System.EventHandler(this.txtValidarCodigo_TextChanged);
             // 
-            // btnValidarCodigo
-            // 
-            this.btnValidarCodigo.BackColor = System.Drawing.Color.Silver;
-            this.btnValidarCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnValidarCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValidarCodigo.Location = new System.Drawing.Point(270, 318);
-            this.btnValidarCodigo.Name = "btnValidarCodigo";
-            this.btnValidarCodigo.Size = new System.Drawing.Size(261, 46);
-            this.btnValidarCodigo.TabIndex = 26;
-            this.btnValidarCodigo.Text = "Validar Codigo";
-            this.btnValidarCodigo.UseVisualStyleBackColor = false;
-            this.btnValidarCodigo.Click += new System.EventHandler(this.btnValidarCodigo_Click);
-            // 
             // lblValidarCodigo
             // 
             this.lblValidarCodigo.AutoSize = true;
@@ -169,16 +143,46 @@
             this.lblValidarCodigo.TabIndex = 27;
             this.lblValidarCodigo.Text = "Ingresa el codigo que recibiste atraves de gmail.";
             // 
+            // btnValidarCodigo
+            // 
+            this.btnValidarCodigo.BackColor = System.Drawing.Color.White;
+            this.btnValidarCodigo.FlatAppearance.BorderSize = 0;
+            this.btnValidarCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnValidarCodigo.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValidarCodigo.ForeColor = System.Drawing.Color.Black;
+            this.btnValidarCodigo.Location = new System.Drawing.Point(272, 317);
+            this.btnValidarCodigo.Name = "btnValidarCodigo";
+            this.btnValidarCodigo.Size = new System.Drawing.Size(261, 52);
+            this.btnValidarCodigo.TabIndex = 28;
+            this.btnValidarCodigo.Text = "Validar Codigo";
+            this.btnValidarCodigo.UseVisualStyleBackColor = false;
+            this.btnValidarCodigo.Click += new System.EventHandler(this.btnValidarCodigo_Click_1);
+            // 
+            // btnEnviarCorreo
+            // 
+            this.btnEnviarCorreo.BackColor = System.Drawing.Color.White;
+            this.btnEnviarCorreo.FlatAppearance.BorderSize = 0;
+            this.btnEnviarCorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarCorreo.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviarCorreo.ForeColor = System.Drawing.Color.Black;
+            this.btnEnviarCorreo.Location = new System.Drawing.Point(272, 317);
+            this.btnEnviarCorreo.Name = "btnEnviarCorreo";
+            this.btnEnviarCorreo.Size = new System.Drawing.Size(261, 52);
+            this.btnEnviarCorreo.TabIndex = 29;
+            this.btnEnviarCorreo.Text = "Enviar Codigo";
+            this.btnEnviarCorreo.UseVisualStyleBackColor = false;
+            this.btnEnviarCorreo.Click += new System.EventHandler(this.btnEnviarCorreo_Click_1);
+            // 
             // FrmRecuperacionC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblValidarCodigo);
-            this.Controls.Add(this.btnValidarCodigo);
-            this.Controls.Add(this.txtValidarCodigo);
             this.Controls.Add(this.btnEnviarCorreo);
+            this.Controls.Add(this.btnValidarCodigo);
+            this.Controls.Add(this.lblValidarCodigo);
+            this.Controls.Add(this.txtValidarCodigo);
             this.Controls.Add(this.txtIngresarCorreo);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox5);
@@ -209,9 +213,9 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.TextBox txtIngresarCorreo;
-        private System.Windows.Forms.Button btnEnviarCorreo;
         private System.Windows.Forms.TextBox txtValidarCodigo;
-        private System.Windows.Forms.Button btnValidarCodigo;
         private System.Windows.Forms.Label lblValidarCodigo;
+        private Modelo.BotonPersonalizado btnValidarCodigo;
+        private Modelo.BotonPersonalizado btnEnviarCorreo;
     }
 }

@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTareas));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.botonPersonalizado3 = new AppOneCode.Modelo.BotonPersonalizado();
+            this.botonPersonalizado2 = new AppOneCode.Modelo.BotonPersonalizado();
+            this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
+            this.lblPagina = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,7 +44,6 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pbNotificaciones = new System.Windows.Forms.PictureBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.pbFiltrarTareas = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
@@ -52,15 +55,10 @@
             this.lblproyectos = new System.Windows.Forms.Label();
             this.lblinicio = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblPagina = new System.Windows.Forms.Label();
-            this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
-            this.botonPersonalizado2 = new AppOneCode.Modelo.BotonPersonalizado();
-            this.botonPersonalizado3 = new AppOneCode.Modelo.BotonPersonalizado();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNotificaciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFiltrarTareas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
@@ -84,7 +82,6 @@
             this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Controls.Add(this.pbNotificaciones);
             this.panel1.Controls.Add(this.txtBuscar);
-            this.panel1.Controls.Add(this.pbFiltrarTareas);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox19);
             this.panel1.Controls.Add(this.pictureBox20);
@@ -102,6 +99,62 @@
             this.panel1.Size = new System.Drawing.Size(1101, 910);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // botonPersonalizado3
+            // 
+            this.botonPersonalizado3.BackColor = System.Drawing.Color.White;
+            this.botonPersonalizado3.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado3.ForeColor = System.Drawing.Color.Black;
+            this.botonPersonalizado3.Location = new System.Drawing.Point(789, 152);
+            this.botonPersonalizado3.Name = "botonPersonalizado3";
+            this.botonPersonalizado3.Size = new System.Drawing.Size(210, 44);
+            this.botonPersonalizado3.TabIndex = 123;
+            this.botonPersonalizado3.Text = "Agregar Tareas";
+            this.botonPersonalizado3.UseVisualStyleBackColor = false;
+            this.botonPersonalizado3.Click += new System.EventHandler(this.botonPersonalizado3_Click);
+            // 
+            // botonPersonalizado2
+            // 
+            this.botonPersonalizado2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.botonPersonalizado2.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado2.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalizado2.Location = new System.Drawing.Point(625, 785);
+            this.botonPersonalizado2.Name = "botonPersonalizado2";
+            this.botonPersonalizado2.Size = new System.Drawing.Size(133, 40);
+            this.botonPersonalizado2.TabIndex = 122;
+            this.botonPersonalizado2.Text = "Siguiente Pagina";
+            this.botonPersonalizado2.UseVisualStyleBackColor = false;
+            this.botonPersonalizado2.Click += new System.EventHandler(this.botonPersonalizado2_Click);
+            // 
+            // botonPersonalizado1
+            // 
+            this.botonPersonalizado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado1.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalizado1.Location = new System.Drawing.Point(368, 785);
+            this.botonPersonalizado1.Name = "botonPersonalizado1";
+            this.botonPersonalizado1.Size = new System.Drawing.Size(133, 40);
+            this.botonPersonalizado1.TabIndex = 121;
+            this.botonPersonalizado1.Text = "Pagina Anterior";
+            this.botonPersonalizado1.UseVisualStyleBackColor = false;
+            this.botonPersonalizado1.Click += new System.EventHandler(this.botonPersonalizado1_Click);
+            // 
+            // lblPagina
+            // 
+            this.lblPagina.AutoSize = true;
+            this.lblPagina.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPagina.ForeColor = System.Drawing.Color.White;
+            this.lblPagina.Location = new System.Drawing.Point(93, 794);
+            this.lblPagina.Name = "lblPagina";
+            this.lblPagina.Size = new System.Drawing.Size(49, 23);
+            this.lblPagina.TabIndex = 120;
+            this.lblPagina.Text = "N Pag";
             // 
             // label5
             // 
@@ -209,16 +262,6 @@
             this.txtBuscar.Size = new System.Drawing.Size(464, 13);
             this.txtBuscar.TabIndex = 105;
             this.txtBuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // pbFiltrarTareas
-            // 
-            this.pbFiltrarTareas.Image = ((System.Drawing.Image)(resources.GetObject("pbFiltrarTareas.Image")));
-            this.pbFiltrarTareas.Location = new System.Drawing.Point(198, 169);
-            this.pbFiltrarTareas.Name = "pbFiltrarTareas";
-            this.pbFiltrarTareas.Size = new System.Drawing.Size(35, 27);
-            this.pbFiltrarTareas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbFiltrarTareas.TabIndex = 104;
-            this.pbFiltrarTareas.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -348,62 +391,6 @@
             this.pictureBox1.TabIndex = 92;
             this.pictureBox1.TabStop = false;
             // 
-            // lblPagina
-            // 
-            this.lblPagina.AutoSize = true;
-            this.lblPagina.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPagina.ForeColor = System.Drawing.Color.White;
-            this.lblPagina.Location = new System.Drawing.Point(93, 794);
-            this.lblPagina.Name = "lblPagina";
-            this.lblPagina.Size = new System.Drawing.Size(49, 23);
-            this.lblPagina.TabIndex = 120;
-            this.lblPagina.Text = "N Pag";
-            // 
-            // botonPersonalizado1
-            // 
-            this.botonPersonalizado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
-            this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalizado1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonPersonalizado1.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalizado1.Location = new System.Drawing.Point(368, 785);
-            this.botonPersonalizado1.Name = "botonPersonalizado1";
-            this.botonPersonalizado1.Size = new System.Drawing.Size(133, 40);
-            this.botonPersonalizado1.TabIndex = 121;
-            this.botonPersonalizado1.Text = "Pagina Anterior";
-            this.botonPersonalizado1.UseVisualStyleBackColor = false;
-            this.botonPersonalizado1.Click += new System.EventHandler(this.botonPersonalizado1_Click);
-            // 
-            // botonPersonalizado2
-            // 
-            this.botonPersonalizado2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.botonPersonalizado2.FlatAppearance.BorderSize = 0;
-            this.botonPersonalizado2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalizado2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonPersonalizado2.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalizado2.Location = new System.Drawing.Point(625, 785);
-            this.botonPersonalizado2.Name = "botonPersonalizado2";
-            this.botonPersonalizado2.Size = new System.Drawing.Size(133, 40);
-            this.botonPersonalizado2.TabIndex = 122;
-            this.botonPersonalizado2.Text = "Siguiente Pagina";
-            this.botonPersonalizado2.UseVisualStyleBackColor = false;
-            this.botonPersonalizado2.Click += new System.EventHandler(this.botonPersonalizado2_Click);
-            // 
-            // botonPersonalizado3
-            // 
-            this.botonPersonalizado3.BackColor = System.Drawing.Color.White;
-            this.botonPersonalizado3.FlatAppearance.BorderSize = 0;
-            this.botonPersonalizado3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalizado3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonPersonalizado3.ForeColor = System.Drawing.Color.Black;
-            this.botonPersonalizado3.Location = new System.Drawing.Point(789, 152);
-            this.botonPersonalizado3.Name = "botonPersonalizado3";
-            this.botonPersonalizado3.Size = new System.Drawing.Size(210, 44);
-            this.botonPersonalizado3.TabIndex = 123;
-            this.botonPersonalizado3.Text = "Agregar Tareas";
-            this.botonPersonalizado3.UseVisualStyleBackColor = false;
-            this.botonPersonalizado3.Click += new System.EventHandler(this.botonPersonalizado3_Click);
-            // 
             // FrmTareas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,7 +409,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNotificaciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFiltrarTareas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
@@ -445,7 +431,6 @@
         private System.Windows.Forms.Label lblproyectos;
         private System.Windows.Forms.Label lblinicio;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pbFiltrarTareas;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.PictureBox pbNotificaciones;

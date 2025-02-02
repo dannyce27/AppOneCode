@@ -342,4 +342,50 @@ public class Usuario
         return numeroUsuarios;
     }
 
+   public bool CambiarContraseñaPorCorreo(string email, string nuevaContraseña)
+{
+    try
+    {
+        string contraseñaEncriptada = EncriptarContraseña(nuevaContraseña);
+
+        using (SqlConnection conn = new Conexion().OpenConnection())
+        {
+            string query = "UPDATE Users SET Contrasenaa = @Contrasenaa WHERE Email = @Email";
+
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@Contrasenaa", contraseñaEncriptada);
+                cmd.Parameters.AddWithValue("@Email", email);
+
+                int filasAfectadas = cmd.ExecuteNonQuery();
+                return filasAfectadas > 0; // Retorna true si al menos una fila fue actualizada
+            }
+        }
+    }
+    catch (SqlException ex)
+    {
+        MessageBox.Show($"Error de SQL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return false;
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return false;
+    }
+}
+
+    private string EncriptarContraseña(string contraseña)
+    {
+        using (SHA256 sha256 = SHA256.Create())
+        {
+            byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(contraseña));
+            StringBuilder sb = new StringBuilder();
+            foreach (byte b in bytes)
+            {
+                sb.Append(b.ToString("x2"));
+            }
+            return sb.ToString();
+        }
+    }
+
 }

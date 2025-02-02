@@ -58,8 +58,8 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
+            this.botonPersonalizado2 = new AppOneCode.Modelo.BotonPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarProyectosI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
@@ -362,25 +362,35 @@
             this.label10.TabIndex = 146;
             this.label10.Text = " Hasta";
             // 
-            // button1
+            // botonPersonalizado1
             // 
-            this.button1.Location = new System.Drawing.Point(861, 720);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 22);
-            this.button1.TabIndex = 147;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.botonPersonalizado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado1.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalizado1.Location = new System.Drawing.Point(839, 714);
+            this.botonPersonalizado1.Name = "botonPersonalizado1";
+            this.botonPersonalizado1.Size = new System.Drawing.Size(98, 33);
+            this.botonPersonalizado1.TabIndex = 149;
+            this.botonPersonalizado1.Text = "Buscar";
+            this.botonPersonalizado1.UseVisualStyleBackColor = false;
+            this.botonPersonalizado1.Click += new System.EventHandler(this.botonPersonalizado1_Click_1);
             // 
-            // button2
+            // botonPersonalizado2
             // 
-            this.button2.Location = new System.Drawing.Point(978, 527);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(57, 22);
-            this.button2.TabIndex = 148;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.botonPersonalizado2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.botonPersonalizado2.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado2.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado2.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalizado2.Location = new System.Drawing.Point(978, 518);
+            this.botonPersonalizado2.Name = "botonPersonalizado2";
+            this.botonPersonalizado2.Size = new System.Drawing.Size(68, 40);
+            this.botonPersonalizado2.TabIndex = 150;
+            this.botonPersonalizado2.Text = "Buscar";
+            this.botonPersonalizado2.UseVisualStyleBackColor = false;
+            this.botonPersonalizado2.Click += new System.EventHandler(this.botonPersonalizado2_Click);
             // 
             // FrmAgregarTareas
             // 
@@ -388,8 +398,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(1058, 797);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.botonPersonalizado2);
+            this.Controls.Add(this.botonPersonalizado1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dateTimePicker2);
@@ -467,7 +477,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private Modelo.BotonPersonalizado botonPersonalizado1;
+        private Modelo.BotonPersonalizado botonPersonalizado2;
     }
 }
