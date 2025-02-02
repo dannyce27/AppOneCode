@@ -137,5 +137,12 @@ namespace AppOneCode.Vista
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            FrmLogin frmLogin = new FrmLogin();
+            this.Hide();
+            frmLogin.ShowDialog();
+        }
     }
 }

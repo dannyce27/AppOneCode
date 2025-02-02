@@ -112,7 +112,7 @@ namespace AppOneCode.Vista
 
         private void txtusuarioR_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
@@ -180,6 +180,66 @@ namespace AppOneCode.Vista
                 {
                     MessageBox.Show("No se creó la cuenta. Verifica los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void txtusuarioR_Enter(object sender, EventArgs e)
+        {
+            // Si el texto es el placeholder, limpiar el texto
+            if (txtusuarioR.Text == "Nombre de Usuario")
+            {
+                txtusuarioR.Text = "";
+                txtusuarioR.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtusuarioR_Leave(object sender, EventArgs e)
+        {
+            // Si el usuario deja vacío el campo, volver al placeholder
+            if (string.IsNullOrWhiteSpace(txtusuarioR.Text))
+            {
+                txtusuarioR.Text = "Nombre de Usuario";
+                txtusuarioR.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtemailR_Enter(object sender, EventArgs e)
+        {
+            // Si el texto es el placeholder, limpiar el texto
+            if (txtusuarioR.Text == "Correo de empresa")
+            {
+                txtusuarioR.Text = "";
+                txtusuarioR.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtemailR_Leave(object sender, EventArgs e)
+        {
+            // Si el usuario deja vacío el campo, volver al placeholder
+            if (string.IsNullOrWhiteSpace(txtusuarioR.Text))
+            {
+                txtusuarioR.Text = "Correo de empresa";
+                txtusuarioR.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtContrasenaUsuarioR_Enter(object sender, EventArgs e)
+        {
+            // Si el texto es el placeholder, limpiar el texto
+            if (txtusuarioR.Text == "Contraseña de Usuario")
+            {
+                txtusuarioR.Text = "";
+                txtusuarioR.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtContrasenaUsuarioR_Leave(object sender, EventArgs e)
+        {
+            // Si el usuario deja vacío el campo, volver al placeholder
+            if (string.IsNullOrWhiteSpace(txtusuarioR.Text))
+            {
+                txtusuarioR.Text = "Contraseña de Usuario";
+                txtusuarioR.ForeColor = Color.Gray;
             }
         }
     }

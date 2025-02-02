@@ -70,6 +70,8 @@
             this.txtContrasenaUsuarioR.Size = new System.Drawing.Size(194, 22);
             this.txtContrasenaUsuarioR.TabIndex = 14;
             this.txtContrasenaUsuarioR.TextChanged += new System.EventHandler(this.txtContrasenaUsuario_TextChanged);
+            this.txtContrasenaUsuarioR.Enter += new System.EventHandler(this.txtContrasenaUsuarioR_Enter);
+            this.txtContrasenaUsuarioR.Leave += new System.EventHandler(this.txtContrasenaUsuarioR_Leave);
             // 
             // txtemailR
             // 
@@ -80,6 +82,8 @@
             this.txtemailR.Size = new System.Drawing.Size(194, 22);
             this.txtemailR.TabIndex = 13;
             this.txtemailR.TextChanged += new System.EventHandler(this.txtNombreUsuario_TextChanged);
+            this.txtemailR.Enter += new System.EventHandler(this.txtemailR_Enter);
+            this.txtemailR.Leave += new System.EventHandler(this.txtemailR_Leave);
             // 
             // txtusuarioR
             // 
@@ -90,6 +94,8 @@
             this.txtusuarioR.Size = new System.Drawing.Size(194, 22);
             this.txtusuarioR.TabIndex = 17;
             this.txtusuarioR.TextChanged += new System.EventHandler(this.txtusuarioR_TextChanged);
+            this.txtusuarioR.Enter += new System.EventHandler(this.txtusuarioR_Enter);
+            this.txtusuarioR.Leave += new System.EventHandler(this.txtusuarioR_Leave);
             // 
             // pictureBox12
             // 
@@ -248,7 +254,7 @@
             this.btnRegistrarse.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarse.ForeColor = System.Drawing.Color.Black;
             this.btnRegistrarse.Location = new System.Drawing.Point(336, 352);
-            this.btnRegistrarse.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.btnRegistrarse.Margin = new System.Windows.Forms.Padding(0);
             this.btnRegistrarse.Name = "btnRegistrarse";
             this.btnRegistrarse.Size = new System.Drawing.Size(150, 40);
             this.btnRegistrarse.TabIndex = 25;

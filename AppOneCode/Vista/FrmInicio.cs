@@ -31,6 +31,21 @@ namespace AppOneCode
         private void Form2_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+
+            int usuarioId = Usuario.UsuarioId;
+
+            // Llamas al método para obtener el nombre de usuario
+            string username = Usuario.ObtenerNombreUsuario(usuarioId);
+
+
+            if (!string.IsNullOrEmpty(username))
+            {
+                lblUsername.Text = username;
+            }
+            else
+            {
+                MessageBox.Show("No se pudo cargar el nombre de usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -122,6 +137,11 @@ namespace AppOneCode
             FrmChat Ft = new FrmChat();
             this.Hide();
             Ft.ShowDialog();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -96,44 +96,46 @@ namespace AppOneCode.Vista
             }
         }
 
-        private void CargarDatosTareas()
+        private void CargarDatosTareas(string estadoFiltro = null)
         {
             try
             {
-                // Suponemos que el UsuarioId ya está disponible (ej. a partir de la sesión o del login)
                 int usuarioId = Usuario.UsuarioId;
 
-                // Crear la conexión con la base de datos
                 using (SqlConnection conn = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
                 {
                     conn.Open();
                     string query = @"
-                SELECT e.NombreEstado, COUNT(t.Id) AS Cantidad
+                SELECT t.Descripcion, e.NombreEstado
                 FROM Tareas t
                 JOIN Estado e ON t.EstadoId = e.Id
-                WHERE t.UsuarioId = @UsuarioId
-                GROUP BY e.NombreEstado";
+                WHERE t.UsuarioId = @UsuarioId";
+
+                    if (!string.IsNullOrEmpty(estadoFiltro))
+                    {
+                        query += " AND e.NombreEstado = @Estado";
+                    }
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        // Añadir el parámetro UsuarioId
                         cmd.Parameters.AddWithValue("@UsuarioId", usuarioId);
+
+                        if (!string.IsNullOrEmpty(estadoFiltro))
+                        {
+                            cmd.Parameters.AddWithValue("@Estado", estadoFiltro);
+                        }
 
                         SqlDataReader reader = cmd.ExecuteReader();
 
-                        // Limpiar los datos existentes en el gráfico
                         ctProgresoPerfil.Series["EstadoTareas"].Points.Clear();
 
                         while (reader.Read())
                         {
+                            string descripcionTarea = reader["Descripcion"].ToString();
                             string nombreEstado = reader["NombreEstado"].ToString();
-                            int cantidad = Convert.ToInt32(reader["Cantidad"]);
 
-                            // Añadir los puntos al gráfico
-                            var punto = ctProgresoPerfil.Series["EstadoTareas"].Points.AddXY(nombreEstado, cantidad);
-
-                            // Establecer el valor como etiqueta
-                            ctProgresoPerfil.Series["EstadoTareas"].Points.Last().Label = $"{nombreEstado} ({cantidad})";
+                            var punto = ctProgresoPerfil.Series["EstadoTareas"].Points.AddXY(descripcionTarea, 1);
+                            ctProgresoPerfil.Series["EstadoTareas"].Points.Last().Label = $"{descripcionTarea} ({nombreEstado})";
                         }
                     }
                 }
@@ -143,6 +145,7 @@ namespace AppOneCode.Vista
                 MessageBox.Show($"Ocurrió un error al cargar los datos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
         private void FrmPerfil_Load(object sender, EventArgs e)
@@ -205,6 +208,26 @@ namespace AppOneCode.Vista
         private void pbMinimizeForm_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnFiltrarporPendientes_Click(object sender, EventArgs e)
+        {
+            CargarDatosTareas("Pendiente");
+        }
+
+        private void btnFiltrarporTrabajando_Click(object sender, EventArgs e)
+        {
+            CargarDatosTareas("Trabajando");
+        }
+
+        private void btnFiltrarporCompletas_Click(object sender, EventArgs e)
+        {
+            CargarDatosTareas("Completada");
+        }
+
+        private void lblNicknameUSer_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
