@@ -65,7 +65,7 @@ namespace AppOneCode.Modelo
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"
-                    SELECT T.Id, T.Descripcion, U.Username AS Usuario, P.NombrePrioridad AS Prioridad, E.NombreEstado AS Estado
+                    SELECT T.Id, T.Descripcion, U.Username AS Usuario, P.NombrePrioridad AS Prioridad, E.NombreEstado AS Estado, T.FechaInicio AS Fecha_Inicio, T.FechaFinalizacion AS Fecha_Finalizacion
                     FROM Tareas T
                     INNER JOIN Users U ON T.UsuarioId = U.Id
                     INNER JOIN Prioridad P ON T.PrioridadId = P.Id
@@ -88,7 +88,9 @@ namespace AppOneCode.Modelo
                             Descripcion = reader.GetString(1),
                             Usuario = reader.GetString(2),
                             Prioridad = reader.GetString(3),
-                            Estado = reader.GetString(4)
+                            Estado = reader.GetString(4),
+                            FechaInicio = reader.GetDateTime(5),
+                            FechaFinalizacion = reader.GetDateTime(6),
                         };
                         tareasList.Add(tarea);
                     }

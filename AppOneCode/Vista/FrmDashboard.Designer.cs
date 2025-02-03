@@ -64,13 +64,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.lblchat = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblfaq = new System.Windows.Forms.Label();
             this.lblrecursos = new System.Windows.Forms.Label();
             this.lblproyectos = new System.Windows.Forms.Label();
             this.lbltareas = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ctTareasCompletadas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -86,12 +85,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.botonPersonalizado1);
             this.panel1.Controls.Add(this.ctTareasCompletadas);
             this.panel1.Controls.Add(this.pictureBox11);
             this.panel1.Controls.Add(this.label11);
@@ -117,8 +116,6 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox19);
             this.panel1.Controls.Add(this.pictureBox20);
-            this.panel1.Controls.Add(this.lblchat);
-            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.lblfaq);
             this.panel1.Controls.Add(this.lblrecursos);
             this.panel1.Controls.Add(this.lblproyectos);
@@ -428,28 +425,6 @@
             this.pictureBox20.TabStop = false;
             this.pictureBox20.Click += new System.EventHandler(this.pictureBox20_Click);
             // 
-            // lblchat
-            // 
-            this.lblchat.AutoSize = true;
-            this.lblchat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(56)))), ((int)(((byte)(102)))));
-            this.lblchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblchat.ForeColor = System.Drawing.Color.White;
-            this.lblchat.Location = new System.Drawing.Point(893, 33);
-            this.lblchat.Name = "lblchat";
-            this.lblchat.Size = new System.Drawing.Size(43, 20);
-            this.lblchat.TabIndex = 99;
-            this.lblchat.Text = "Chat";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(859, 21);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(117, 43);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 98;
-            this.pictureBox2.TabStop = false;
-            // 
             // lblfaq
             // 
             this.lblfaq.AutoSize = true;
@@ -508,6 +483,20 @@
             this.pictureBox1.TabIndex = 92;
             this.pictureBox1.TabStop = false;
             // 
+            // botonPersonalizado1
+            // 
+            this.botonPersonalizado1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado1.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalizado1.Location = new System.Drawing.Point(860, 25);
+            this.botonPersonalizado1.Name = "botonPersonalizado1";
+            this.botonPersonalizado1.Size = new System.Drawing.Size(111, 40);
+            this.botonPersonalizado1.TabIndex = 130;
+            this.botonPersonalizado1.Text = "Chat";
+            this.botonPersonalizado1.UseVisualStyleBackColor = false;
+            // 
             // FrmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -535,7 +524,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -546,8 +534,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.PictureBox pictureBox20;
-        private System.Windows.Forms.Label lblchat;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblfaq;
         private System.Windows.Forms.Label lblrecursos;
         private System.Windows.Forms.Label lblproyectos;
@@ -576,5 +562,6 @@
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataVisualization.Charting.Chart ctTareasCompletadas;
+        private Modelo.BotonPersonalizado botonPersonalizado1;
     }
 }

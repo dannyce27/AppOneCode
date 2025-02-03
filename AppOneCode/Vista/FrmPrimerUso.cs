@@ -24,7 +24,7 @@ namespace AppOneCode
             label8.Cursor = Cursors.Hand; // Cambia el cursor a una mano
             label9.Cursor = Cursors.Hand;
             label1.Cursor = Cursors.Hand;
-            label2.Cursor = Cursors.Hand;
+            botonPersonalizado1.Cursor = Cursors.Hand;
 
         }
 
@@ -261,6 +261,16 @@ namespace AppOneCode
         private void label13_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void botonPersonalizado1_Click(object sender, EventArgs e)
+        {
+
+            Frmregistro frmRegistroo = new Frmregistro();
+
+            frmRegistroo.Show();
+
+            this.Hide();
         }
     }
 }

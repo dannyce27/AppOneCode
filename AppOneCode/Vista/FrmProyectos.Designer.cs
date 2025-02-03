@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.lblchat = new System.Windows.Forms.Label();
             this.lblfaq = new System.Windows.Forms.Label();
             this.lblrecursos = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,7 +57,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.botonPersonalizado2 = new AppOneCode.Modelo.BotonPersonalizado();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvproyectos)).BeginInit();
@@ -68,20 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAgregarProyecto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblchat
-            // 
-            this.lblchat.AutoSize = true;
-            this.lblchat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(56)))), ((int)(((byte)(102)))));
-            this.lblchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblchat.ForeColor = System.Drawing.Color.White;
-            this.lblchat.Location = new System.Drawing.Point(931, 27);
-            this.lblchat.Name = "lblchat";
-            this.lblchat.Size = new System.Drawing.Size(43, 20);
-            this.lblchat.TabIndex = 100;
-            this.lblchat.Text = "Chat";
             // 
             // lblfaq
             // 
@@ -150,6 +136,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.panel1.Controls.Add(this.botonPersonalizado2);
             this.panel1.Controls.Add(this.pbBuscar);
             this.panel1.Controls.Add(this.dgvproyectos);
             this.panel1.Controls.Add(this.txtSearchProyect);
@@ -420,24 +407,25 @@
             this.pictureBox19.TabStop = false;
             this.pictureBox19.Click += new System.EventHandler(this.pictureBox19_Click);
             // 
-            // pictureBox2
+            // botonPersonalizado2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(895, 18);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(117, 43);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 99;
-            this.pictureBox2.TabStop = false;
+            this.botonPersonalizado2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.botonPersonalizado2.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado2.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado2.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalizado2.Location = new System.Drawing.Point(877, 19);
+            this.botonPersonalizado2.Name = "botonPersonalizado2";
+            this.botonPersonalizado2.Size = new System.Drawing.Size(111, 40);
+            this.botonPersonalizado2.TabIndex = 185;
+            this.botonPersonalizado2.Text = "Chat";
+            this.botonPersonalizado2.UseVisualStyleBackColor = false;
             // 
             // frmProyectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1131, 885);
-            this.Controls.Add(this.lblchat);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblfaq);
             this.Controls.Add(this.lblrecursos);
             this.Controls.Add(this.panel1);
@@ -455,7 +443,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAgregarProyecto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -465,8 +452,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.PictureBox pictureBox20;
-        private System.Windows.Forms.Label lblchat;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblfaq;
         private System.Windows.Forms.Label lblrecursos;
         private System.Windows.Forms.Label label1;
@@ -490,5 +475,6 @@
         private System.Windows.Forms.TextBox txtDescProyecto;
         private System.Windows.Forms.DataGridView dgvproyectos;
         private System.Windows.Forms.PictureBox pbBuscar;
+        private Modelo.BotonPersonalizado botonPersonalizado2;
     }
 }

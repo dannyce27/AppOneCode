@@ -42,12 +42,12 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnCambiarPerfil = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnFiltrarporCompletas = new AppOneCode.Modelo.BotonPersonalizado();
-            this.btnFiltrarporPendientes = new AppOneCode.Modelo.BotonPersonalizado();
             this.btnFiltrarporTrabajando = new AppOneCode.Modelo.BotonPersonalizado();
+            this.btnFiltrarporPendientes = new AppOneCode.Modelo.BotonPersonalizado();
+            this.btnFiltrarporCompletas = new AppOneCode.Modelo.BotonPersonalizado();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizeForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCloseForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImageTrabajador)).BeginInit();
@@ -109,7 +109,7 @@
             this.lblNicknameUSer.AutoSize = true;
             this.lblNicknameUSer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNicknameUSer.ForeColor = System.Drawing.Color.White;
-            this.lblNicknameUSer.Location = new System.Drawing.Point(115, 346);
+            this.lblNicknameUSer.Location = new System.Drawing.Point(113, 346);
             this.lblNicknameUSer.Name = "lblNicknameUSer";
             this.lblNicknameUSer.Size = new System.Drawing.Size(58, 25);
             this.lblNicknameUSer.TabIndex = 93;
@@ -121,7 +121,7 @@
             this.lblGmailUser.AutoSize = true;
             this.lblGmailUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGmailUser.ForeColor = System.Drawing.Color.White;
-            this.lblGmailUser.Location = new System.Drawing.Point(38, 397);
+            this.lblGmailUser.Location = new System.Drawing.Point(63, 397);
             this.lblGmailUser.Name = "lblGmailUser";
             this.lblGmailUser.Size = new System.Drawing.Size(55, 20);
             this.lblGmailUser.TabIndex = 94;
@@ -171,6 +171,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.botonPersonalizado1);
             this.panel1.Controls.Add(this.pbMinimizeForm);
             this.panel1.Controls.Add(this.btnFiltrarporTrabajando);
             this.panel1.Controls.Add(this.pbCloseForm);
@@ -179,7 +180,6 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.ctProgresoPerfil);
-            this.panel1.Controls.Add(this.btnCambiarPerfil);
             this.panel1.Controls.Add(this.pictureBox9);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lblGmailUser);
@@ -192,53 +192,20 @@
             this.panel1.TabIndex = 121;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // pictureBox2
+            // btnFiltrarporTrabajando
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(30, 451);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(39, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 121;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // btnCambiarPerfil
-            // 
-            this.btnCambiarPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambiarPerfil.Location = new System.Drawing.Point(76, 303);
-            this.btnCambiarPerfil.Name = "btnCambiarPerfil";
-            this.btnCambiarPerfil.Size = new System.Drawing.Size(139, 23);
-            this.btnCambiarPerfil.TabIndex = 1;
-            this.btnCambiarPerfil.Text = "Cambiar foto de Perfil";
-            this.btnCambiarPerfil.UseVisualStyleBackColor = true;
-            this.btnCambiarPerfil.Click += new System.EventHandler(this.btnCambiarPerfil_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1026, 440);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(49, 47);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // btnFiltrarporCompletas
-            // 
-            this.btnFiltrarporCompletas.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnFiltrarporCompletas.FlatAppearance.BorderSize = 0;
-            this.btnFiltrarporCompletas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltrarporCompletas.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrarporCompletas.ForeColor = System.Drawing.Color.White;
-            this.btnFiltrarporCompletas.Location = new System.Drawing.Point(376, 440);
-            this.btnFiltrarporCompletas.Name = "btnFiltrarporCompletas";
-            this.btnFiltrarporCompletas.Size = new System.Drawing.Size(99, 47);
-            this.btnFiltrarporCompletas.TabIndex = 122;
-            this.btnFiltrarporCompletas.Text = "Filtrar por Completadas";
-            this.btnFiltrarporCompletas.UseVisualStyleBackColor = false;
-            this.btnFiltrarporCompletas.Click += new System.EventHandler(this.btnFiltrarporCompletas_Click);
+            this.btnFiltrarporTrabajando.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnFiltrarporTrabajando.FlatAppearance.BorderSize = 0;
+            this.btnFiltrarporTrabajando.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrarporTrabajando.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrarporTrabajando.ForeColor = System.Drawing.Color.White;
+            this.btnFiltrarporTrabajando.Location = new System.Drawing.Point(859, 440);
+            this.btnFiltrarporTrabajando.Name = "btnFiltrarporTrabajando";
+            this.btnFiltrarporTrabajando.Size = new System.Drawing.Size(99, 47);
+            this.btnFiltrarporTrabajando.TabIndex = 124;
+            this.btnFiltrarporTrabajando.Text = "Filtrar por Trabajando";
+            this.btnFiltrarporTrabajando.UseVisualStyleBackColor = false;
+            this.btnFiltrarporTrabajando.Click += new System.EventHandler(this.btnFiltrarporTrabajando_Click);
             // 
             // btnFiltrarporPendientes
             // 
@@ -255,20 +222,57 @@
             this.btnFiltrarporPendientes.UseVisualStyleBackColor = false;
             this.btnFiltrarporPendientes.Click += new System.EventHandler(this.btnFiltrarporPendientes_Click);
             // 
-            // btnFiltrarporTrabajando
+            // btnFiltrarporCompletas
             // 
-            this.btnFiltrarporTrabajando.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnFiltrarporTrabajando.FlatAppearance.BorderSize = 0;
-            this.btnFiltrarporTrabajando.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltrarporTrabajando.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrarporTrabajando.ForeColor = System.Drawing.Color.White;
-            this.btnFiltrarporTrabajando.Location = new System.Drawing.Point(859, 440);
-            this.btnFiltrarporTrabajando.Name = "btnFiltrarporTrabajando";
-            this.btnFiltrarporTrabajando.Size = new System.Drawing.Size(99, 47);
-            this.btnFiltrarporTrabajando.TabIndex = 124;
-            this.btnFiltrarporTrabajando.Text = "Filtrar por Trabajando";
-            this.btnFiltrarporTrabajando.UseVisualStyleBackColor = false;
-            this.btnFiltrarporTrabajando.Click += new System.EventHandler(this.btnFiltrarporTrabajando_Click);
+            this.btnFiltrarporCompletas.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnFiltrarporCompletas.FlatAppearance.BorderSize = 0;
+            this.btnFiltrarporCompletas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrarporCompletas.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrarporCompletas.ForeColor = System.Drawing.Color.White;
+            this.btnFiltrarporCompletas.Location = new System.Drawing.Point(376, 440);
+            this.btnFiltrarporCompletas.Name = "btnFiltrarporCompletas";
+            this.btnFiltrarporCompletas.Size = new System.Drawing.Size(99, 47);
+            this.btnFiltrarporCompletas.TabIndex = 122;
+            this.btnFiltrarporCompletas.Text = "Filtrar por Completadas";
+            this.btnFiltrarporCompletas.UseVisualStyleBackColor = false;
+            this.btnFiltrarporCompletas.Click += new System.EventHandler(this.btnFiltrarporCompletas_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(30, 451);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 121;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1026, 440);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(49, 47);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // botonPersonalizado1
+            // 
+            this.botonPersonalizado1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado1.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalizado1.Location = new System.Drawing.Point(67, 288);
+            this.botonPersonalizado1.Name = "botonPersonalizado1";
+            this.botonPersonalizado1.Size = new System.Drawing.Size(162, 33);
+            this.botonPersonalizado1.TabIndex = 125;
+            this.botonPersonalizado1.Text = "cambiar foto de perfil";
+            this.botonPersonalizado1.UseVisualStyleBackColor = false;
+            this.botonPersonalizado1.Click += new System.EventHandler(this.botonPersonalizado1_Click);
             // 
             // FrmPerfil
             // 
@@ -308,10 +312,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnCambiarPerfil;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Modelo.BotonPersonalizado btnFiltrarporTrabajando;
         private Modelo.BotonPersonalizado btnFiltrarporPendientes;
         private Modelo.BotonPersonalizado btnFiltrarporCompletas;
+        private Modelo.BotonPersonalizado botonPersonalizado1;
     }
 }

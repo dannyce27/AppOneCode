@@ -318,7 +318,7 @@ public class Usuario
     {
         int numeroUsuarios = 0;
 
-        using (SqlConnection conn = new Conexion().OpenConnection())
+        using (SqlConnection conn = new Conexion().OpenConnection()) // La conexión ya está abierta
         {
             string query = "SELECT COUNT(*) FROM Users";
 
@@ -326,8 +326,7 @@ public class Usuario
 
             try
             {
-                conn.Open();
-                numeroUsuarios = (int)cmd.ExecuteScalar();
+                numeroUsuarios = (int)cmd.ExecuteScalar(); // Ejecuta la consulta directamente
             }
             catch (SqlException ex)
             {
@@ -342,7 +341,7 @@ public class Usuario
         return numeroUsuarios;
     }
 
-   public bool CambiarContraseñaPorCorreo(string email, string nuevaContraseña)
+    public bool CambiarContraseñaPorCorreo(string email, string nuevaContraseña)
 {
     try
     {

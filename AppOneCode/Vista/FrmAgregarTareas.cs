@@ -392,7 +392,9 @@ namespace AppOneCode.Vista
 
         private void botonPersonalizado2_Click(object sender, EventArgs e)
         {
-            Tareas2 tareaModelo = new Tareas2(); string searchCriteria = txtSearchProyect.Text.Trim(); 
+            Tareas2 tareaModelo = new Tareas2(); 
+            
+            string searchCriteria = txtSearchProyect.Text.Trim(); 
 
             List<Tareas2> resultados = tareaModelo.BuscarTareas(searchCriteria); 
             

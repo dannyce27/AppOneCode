@@ -229,5 +229,42 @@ namespace AppOneCode.Vista
         {
 
         }
+
+        private void botonPersonalizado1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Abrir un cuadro de diálogo para seleccionar la imagen
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Imagenes (*.jpg; *.jpeg; *.png; *.gif)|*.jpg;*.jpeg;*.png;*.gif";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Cargar la imagen seleccionada en el PictureBox
+                    pbImageTrabajador.Image = Image.FromFile(openFileDialog.FileName);
+
+                    // Convertir la imagen a un array de bytes
+                    byte[] imageBytes = File.ReadAllBytes(openFileDialog.FileName);
+
+                    // Obtener el usuarioId
+                    int usuarioId = Usuario.UsuarioId; // Ya tienes el usuarioId de la sesión
+
+                    // Guardar la imagen en la base de datos
+                    bool imagenGuardada = Usuario.GuardarImagenUsuario(usuarioId, imageBytes);
+
+                    if (imagenGuardada)
+                    {
+                        MessageBox.Show("Imagen de perfil guardada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al guardar la imagen.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cambiar la imagen: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

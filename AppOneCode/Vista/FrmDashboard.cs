@@ -13,7 +13,12 @@ using AppOneCode.Modelo;
 namespace AppOneCode.Vista
 {
     public partial class FrmDashboard : Form
+
+
     {
+        private readonly string connectionString = @"Server=DESKTOP-2I6K8G4\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+
+
         public FrmDashboard()
         {
             InitializeComponent();
@@ -58,6 +63,7 @@ namespace AppOneCode.Vista
             CargarDatosTareasCompletadasPorDia();
             CargarNumeroTareasCompletadas();
             CargarNumeroTareasPendientes();
+
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)
@@ -70,7 +76,7 @@ namespace AppOneCode.Vista
             try
             {
                 // Crear la conexión con la base de datos
-                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
                     string query = @"
@@ -113,7 +119,7 @@ namespace AppOneCode.Vista
             try
             {
                 // Crear la conexión con la base de datos
-                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
                     string query = @"
@@ -155,13 +161,13 @@ namespace AppOneCode.Vista
             try
             {
                 // Crear la conexión con la base de datos
-                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
                     string query = @"
-                SELECT COUNT(*) 
-                FROM Tareas 
-                WHERE EstadoId = (SELECT Id FROM Estado WHERE NombreEstado = 'Completada')";
+                   SELECT COUNT(*) 
+                   FROM Tareas 
+                   WHERE EstadoId = (SELECT Id FROM Estado WHERE NombreEstado = 'Completada')";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -183,7 +189,7 @@ namespace AppOneCode.Vista
             try
             {
                 // Crear la conexión con la base de datos
-                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
                     string query = @"
