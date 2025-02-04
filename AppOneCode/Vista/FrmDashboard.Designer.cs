@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ctTareasCompletadas = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -70,6 +70,8 @@
             this.lbltareas = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
+            this.cmbProyectos = new System.Windows.Forms.ComboBox();
+            this.btnBuscarProyectos = new AppOneCode.Modelo.BotonPersonalizado();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ctTareasCompletadas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -90,6 +92,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnBuscarProyectos);
+            this.panel1.Controls.Add(this.cmbProyectos);
             this.panel1.Controls.Add(this.botonPersonalizado1);
             this.panel1.Controls.Add(this.ctTareasCompletadas);
             this.panel1.Controls.Add(this.pictureBox11);
@@ -130,17 +134,17 @@
             // 
             // ctTareasCompletadas
             // 
-            chartArea1.Name = "ChartArea1";
-            this.ctTareasCompletadas.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ctTareasCompletadas.Legends.Add(legend1);
-            this.ctTareasCompletadas.Location = new System.Drawing.Point(205, 659);
+            chartArea4.Name = "ChartArea1";
+            this.ctTareasCompletadas.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.ctTareasCompletadas.Legends.Add(legend4);
+            this.ctTareasCompletadas.Location = new System.Drawing.Point(211, 700);
             this.ctTareasCompletadas.Name = "ctTareasCompletadas";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.ctTareasCompletadas.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.ctTareasCompletadas.Series.Add(series4);
             this.ctTareasCompletadas.Size = new System.Drawing.Size(737, 135);
             this.ctTareasCompletadas.TabIndex = 129;
             this.ctTareasCompletadas.Text = "ctTareasCompletadas";
@@ -149,7 +153,7 @@
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(182, 633);
+            this.pictureBox11.Location = new System.Drawing.Point(188, 674);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(808, 180);
             this.pictureBox11.TabIndex = 124;
@@ -160,7 +164,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(687, 529);
+            this.label11.Location = new System.Drawing.Point(664, 527);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(284, 24);
             this.label11.TabIndex = 123;
@@ -168,27 +172,28 @@
             // 
             // ctPorcentajeProyectos
             // 
-            chartArea2.Name = "ChartArea1";
-            this.ctPorcentajeProyectos.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.ctPorcentajeProyectos.Legends.Add(legend2);
-            this.ctPorcentajeProyectos.Location = new System.Drawing.Point(692, 347);
+            chartArea5.Name = "ChartArea1";
+            this.ctPorcentajeProyectos.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.ctPorcentajeProyectos.Legends.Add(legend5);
+            this.ctPorcentajeProyectos.Location = new System.Drawing.Point(527, 322);
             this.ctPorcentajeProyectos.Name = "ctPorcentajeProyectos";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.ctPorcentajeProyectos.Series.Add(series2);
-            this.ctPorcentajeProyectos.Size = new System.Drawing.Size(286, 179);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.ctPorcentajeProyectos.Series.Add(series5);
+            this.ctPorcentajeProyectos.Size = new System.Drawing.Size(550, 191);
             this.ctPorcentajeProyectos.TabIndex = 122;
             this.ctPorcentajeProyectos.Text = "ct%Proyectos";
+            this.ctPorcentajeProyectos.Click += new System.EventHandler(this.ctPorcentajeProyectos_Click);
             // 
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(677, 333);
+            this.pictureBox10.Location = new System.Drawing.Point(517, 311);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(313, 243);
+            this.pictureBox10.Size = new System.Drawing.Size(572, 319);
             this.pictureBox10.TabIndex = 121;
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
@@ -197,18 +202,18 @@
             // 
             this.ctEmpleadosEficientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
             this.ctEmpleadosEficientes.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
-            chartArea3.Name = "ChartArea1";
-            this.ctEmpleadosEficientes.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.ctEmpleadosEficientes.Legends.Add(legend3);
-            this.ctEmpleadosEficientes.Location = new System.Drawing.Point(205, 389);
+            chartArea6.Name = "ChartArea1";
+            this.ctEmpleadosEficientes.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.ctEmpleadosEficientes.Legends.Add(legend6);
+            this.ctEmpleadosEficientes.Location = new System.Drawing.Point(44, 403);
             this.ctEmpleadosEficientes.Name = "ctEmpleadosEficientes";
             this.ctEmpleadosEficientes.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.ctEmpleadosEficientes.Series.Add(series3);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.ctEmpleadosEficientes.Series.Add(series6);
             this.ctEmpleadosEficientes.Size = new System.Drawing.Size(403, 174);
             this.ctEmpleadosEficientes.TabIndex = 120;
             this.ctEmpleadosEficientes.Text = "ctEmpleadosEficientes";
@@ -219,7 +224,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(268, 352);
+            this.label10.Location = new System.Drawing.Point(107, 366);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(254, 24);
             this.label10.TabIndex = 119;
@@ -229,7 +234,7 @@
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(182, 333);
+            this.pictureBox9.Location = new System.Drawing.Point(21, 347);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(470, 243);
             this.pictureBox9.TabIndex = 118;
@@ -497,6 +502,28 @@
             this.botonPersonalizado1.Text = "Chat";
             this.botonPersonalizado1.UseVisualStyleBackColor = false;
             // 
+            // cmbProyectos
+            // 
+            this.cmbProyectos.FormattingEnabled = true;
+            this.cmbProyectos.Location = new System.Drawing.Point(615, 582);
+            this.cmbProyectos.Name = "cmbProyectos";
+            this.cmbProyectos.Size = new System.Drawing.Size(228, 21);
+            this.cmbProyectos.TabIndex = 131;
+            // 
+            // btnBuscarProyectos
+            // 
+            this.btnBuscarProyectos.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnBuscarProyectos.FlatAppearance.BorderSize = 0;
+            this.btnBuscarProyectos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarProyectos.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarProyectos.Location = new System.Drawing.Point(860, 571);
+            this.btnBuscarProyectos.Name = "btnBuscarProyectos";
+            this.btnBuscarProyectos.Size = new System.Drawing.Size(88, 40);
+            this.btnBuscarProyectos.TabIndex = 132;
+            this.btnBuscarProyectos.Text = "Buscar";
+            this.btnBuscarProyectos.UseVisualStyleBackColor = false;
+            this.btnBuscarProyectos.Click += new System.EventHandler(this.btnBuscarProyectos_Click);
+            // 
             // FrmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -563,5 +590,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataVisualization.Charting.Chart ctTareasCompletadas;
         private Modelo.BotonPersonalizado botonPersonalizado1;
+        private Modelo.BotonPersonalizado btnBuscarProyectos;
+        private System.Windows.Forms.ComboBox cmbProyectos;
     }
 }

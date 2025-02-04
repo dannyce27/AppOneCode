@@ -60,6 +60,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
             this.botonPersonalizado2 = new AppOneCode.Modelo.BotonPersonalizado();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cmbProyectos = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarProyectosI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
@@ -256,7 +258,7 @@
             this.pbActualizarTarea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.pbActualizarTarea.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbActualizarTarea.Image = ((System.Drawing.Image)(resources.GetObject("pbActualizarTarea.Image")));
-            this.pbActualizarTarea.Location = new System.Drawing.Point(626, 375);
+            this.pbActualizarTarea.Location = new System.Drawing.Point(638, 430);
             this.pbActualizarTarea.Name = "pbActualizarTarea";
             this.pbActualizarTarea.Size = new System.Drawing.Size(65, 52);
             this.pbActualizarTarea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -269,7 +271,7 @@
             this.pbEliminarProyecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.pbEliminarProyecto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbEliminarProyecto.Image = ((System.Drawing.Image)(resources.GetObject("pbEliminarProyecto.Image")));
-            this.pbEliminarProyecto.Location = new System.Drawing.Point(474, 375);
+            this.pbEliminarProyecto.Location = new System.Drawing.Point(476, 430);
             this.pbEliminarProyecto.Name = "pbEliminarProyecto";
             this.pbEliminarProyecto.Size = new System.Drawing.Size(65, 52);
             this.pbEliminarProyecto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -282,7 +284,7 @@
             this.pbAgregarProyecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.pbAgregarProyecto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbAgregarProyecto.Image = ((System.Drawing.Image)(resources.GetObject("pbAgregarProyecto.Image")));
-            this.pbAgregarProyecto.Location = new System.Drawing.Point(327, 375);
+            this.pbAgregarProyecto.Location = new System.Drawing.Point(328, 430);
             this.pbAgregarProyecto.Name = "pbAgregarProyecto";
             this.pbAgregarProyecto.Size = new System.Drawing.Size(62, 52);
             this.pbAgregarProyecto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -392,12 +394,33 @@
             this.botonPersonalizado2.UseVisualStyleBackColor = false;
             this.botonPersonalizado2.Click += new System.EventHandler(this.botonPersonalizado2_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(146, 351);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(164, 20);
+            this.label11.TabIndex = 151;
+            this.label11.Text = "Proyecto Asignado:";
+            // 
+            // cmbProyectos
+            // 
+            this.cmbProyectos.FormattingEnabled = true;
+            this.cmbProyectos.Location = new System.Drawing.Point(339, 353);
+            this.cmbProyectos.Name = "cmbProyectos";
+            this.cmbProyectos.Size = new System.Drawing.Size(364, 21);
+            this.cmbProyectos.TabIndex = 152;
+            // 
             // FrmAgregarTareas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(1058, 797);
+            this.Controls.Add(this.cmbProyectos);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.botonPersonalizado2);
             this.Controls.Add(this.botonPersonalizado1);
             this.Controls.Add(this.label10);
@@ -479,5 +502,7 @@
         private System.Windows.Forms.Label label10;
         private Modelo.BotonPersonalizado botonPersonalizado1;
         private Modelo.BotonPersonalizado botonPersonalizado2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox cmbProyectos;
     }
 }

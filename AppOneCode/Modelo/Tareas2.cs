@@ -18,6 +18,7 @@ namespace AppOneCode.Modelo
         public string Estado { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFinalizacion { get; set; }
+         public string Trabajo { get; set; }
 
         // Método para insertar una nueva tarea
         public bool InsertarTarea()
@@ -25,14 +26,15 @@ namespace AppOneCode.Modelo
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"
-            INSERT INTO Tareas (Descripcion, UsuarioId, PrioridadId, EstadoId, FechaInicio, FechaFinalizacion)
+            INSERT INTO Tareas (Descripcion, UsuarioId, PrioridadId, EstadoId, FechaInicio, FechaFinalizacion, idProyecto)
             VALUES (
                 @Descripcion, 
                 (SELECT Id FROM Users WHERE Username = @Usuario), 
                 (SELECT Id FROM Prioridad WHERE NombrePrioridad = @Prioridad), 
                 (SELECT Id FROM Estado WHERE NombreEstado = @Estado),
                 @FechaInicio,
-                @FechaFinalizacion
+                @FechaFinalizacion, 
+                (SELECT Id FROM Trabajo WHERE Nombre = @Trabajo)
             )";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -42,6 +44,7 @@ namespace AppOneCode.Modelo
                 cmd.Parameters.AddWithValue("@Estado", Estado);
                 cmd.Parameters.AddWithValue("@FechaInicio", FechaInicio);
                 cmd.Parameters.AddWithValue("@FechaFinalizacion", FechaFinalizacion);
+                cmd.Parameters.AddWithValue("@Trabajo", Trabajo);  // Se utiliza la subconsulta para obtener el Id del proyecto
 
                 try
                 {
@@ -57,7 +60,7 @@ namespace AppOneCode.Modelo
             }
         }
 
-        // Método para buscar tareas por descripción
+
         public List<Tareas2> BuscarTareas(string criterio)
         {
             List<Tareas2> tareasList = new List<Tareas2>();
@@ -65,12 +68,13 @@ namespace AppOneCode.Modelo
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"
-                    SELECT T.Id, T.Descripcion, U.Username AS Usuario, P.NombrePrioridad AS Prioridad, E.NombreEstado AS Estado, T.FechaInicio AS Fecha_Inicio, T.FechaFinalizacion AS Fecha_Finalizacion
-                    FROM Tareas T
-                    INNER JOIN Users U ON T.UsuarioId = U.Id
-                    INNER JOIN Prioridad P ON T.PrioridadId = P.Id
-                    INNER JOIN Estado E ON T.EstadoId = E.Id
-                    WHERE T.Descripcion LIKE @Criterio";
+              SELECT T.Id, T.Descripcion, U.Username AS Usuario, P.NombrePrioridad AS Prioridad, E.NombreEstado AS Estado, T.FechaInicio AS Fecha_Inicio, T.FechaFinalizacion AS Fecha_Finalizacion, PR.Nombre AS NombreProyecto
+              FROM Tareas T
+              INNER JOIN Users U ON T.UsuarioId = U.Id
+              INNER JOIN Prioridad P ON T.PrioridadId = P.Id
+              INNER JOIN Estado E ON T.EstadoId = E.Id
+             INNER JOIN Trabajo PR ON T.idProyecto = PR.Id
+              WHERE T.Descripcion LIKE @Criterio";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Criterio", "%" + criterio + "%");
@@ -91,6 +95,7 @@ namespace AppOneCode.Modelo
                             Estado = reader.GetString(4),
                             FechaInicio = reader.GetDateTime(5),
                             FechaFinalizacion = reader.GetDateTime(6),
+                            Trabajo = reader.GetString(7),
                         };
                         tareasList.Add(tarea);
                     }
@@ -116,13 +121,19 @@ namespace AppOneCode.Modelo
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"
-            SELECT T.Id, T.Descripcion, U.Username AS Usuario, 
-                   P.NombrePrioridad AS Prioridad, E.NombreEstado AS Estado,
-                   T.FechaInicio, T.FechaFinalizacion
+            SELECT T.Id, 
+                   T.Descripcion, 
+                   U.Username AS Usuario, 
+                   P.NombrePrioridad AS Prioridad, 
+                   E.NombreEstado AS Estado,
+                   T.FechaInicio, 
+                   T.FechaFinalizacion,
+                   PR.Nombre AS NombreProyecto
             FROM Tareas T
             INNER JOIN Users U ON T.UsuarioId = U.Id
             INNER JOIN Prioridad P ON T.PrioridadId = P.Id
-            INNER JOIN Estado E ON T.EstadoId = E.Id";
+            INNER JOIN Estado E ON T.EstadoId = E.Id
+            INNER JOIN Trabajo PR ON T.idProyecto = PR.Id";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -141,7 +152,8 @@ namespace AppOneCode.Modelo
                             Prioridad = reader.GetString(3),
                             Estado = reader.GetString(4),
                             FechaInicio = reader.GetDateTime(5),
-                            FechaFinalizacion = reader.GetDateTime(6)
+                            FechaFinalizacion = reader.GetDateTime(6),
+                            Trabajo = reader.GetString(7) 
                         };
                         tareasList.Add(tarea);
                     }
@@ -163,6 +175,15 @@ namespace AppOneCode.Modelo
         // Método para actualizar una tarea
         public bool ActualizarTarea()
         {
+            // Validar que las fechas estén dentro del rango permitido por SQL Server.
+            // El mínimo permitido para SqlDateTime es: 1/1/1753 12:00:00 AM
+            DateTime fechaInicioValida = FechaInicio < (DateTime)System.Data.SqlTypes.SqlDateTime.MinValue
+                ? (DateTime)System.Data.SqlTypes.SqlDateTime.MinValue
+                : FechaInicio;
+            DateTime fechaFinalizacionValida = FechaFinalizacion < (DateTime)System.Data.SqlTypes.SqlDateTime.MinValue
+                ? (DateTime)System.Data.SqlTypes.SqlDateTime.MinValue
+                : FechaFinalizacion;
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"
@@ -173,7 +194,8 @@ namespace AppOneCode.Modelo
                 PrioridadId = (SELECT Id FROM Prioridad WHERE NombrePrioridad = @Prioridad),
                 EstadoId = (SELECT Id FROM Estado WHERE NombreEstado = @Estado),
                 FechaInicio = @FechaInicio,
-                FechaFinalizacion = @FechaFinalizacion
+                FechaFinalizacion = @FechaFinalizacion,
+                idProyecto = (SELECT Id FROM Trabajo WHERE Nombre = @Trabajo)
             WHERE Id = @Id";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -182,8 +204,9 @@ namespace AppOneCode.Modelo
                 cmd.Parameters.AddWithValue("@Usuario", Usuario);
                 cmd.Parameters.AddWithValue("@Prioridad", Prioridad);
                 cmd.Parameters.AddWithValue("@Estado", Estado);
-                cmd.Parameters.AddWithValue("@FechaInicio", FechaInicio);
-                cmd.Parameters.AddWithValue("@FechaFinalizacion", FechaFinalizacion);
+                cmd.Parameters.AddWithValue("@FechaInicio", fechaInicioValida);
+                cmd.Parameters.AddWithValue("@FechaFinalizacion", fechaFinalizacionValida);
+                cmd.Parameters.AddWithValue("@Trabajo", Trabajo);  
 
                 try
                 {
@@ -198,6 +221,7 @@ namespace AppOneCode.Modelo
                 }
             }
         }
+
 
         // Método para eliminar una tarea
         public bool EliminarTarea()
