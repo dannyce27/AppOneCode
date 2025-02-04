@@ -16,6 +16,10 @@ public class Usuario
     public string Email { get; private set; }
     public string Contrasenaa { get; private set; }
 
+    public int idTipoUsuario { get; private set; }
+
+
+
     public static void CargarUsuarios(DataGridView dgv)
     {
         using (SqlConnection conn = new Conexion().OpenConnection())
@@ -342,36 +346,67 @@ public class Usuario
     }
 
     public bool CambiarContraseñaPorCorreo(string email, string nuevaContraseña)
-{
-    try
     {
-        string contraseñaEncriptada = EncriptarContraseña(nuevaContraseña);
-
-        using (SqlConnection conn = new Conexion().OpenConnection())
+        try
         {
-            string query = "UPDATE Users SET Contrasenaa = @Contrasenaa WHERE Email = @Email";
+            string contraseñaEncriptada = EncriptarContraseña(nuevaContraseña);
 
-            using (SqlCommand cmd = new SqlCommand(query, conn))
+            using (SqlConnection conn = new Conexion().OpenConnection())
             {
-                cmd.Parameters.AddWithValue("@Contrasenaa", contraseñaEncriptada);
-                cmd.Parameters.AddWithValue("@Email", email);
+                string query = "UPDATE Users SET Contrasenaa = @Contrasenaa WHERE Email = @Email";
 
-                int filasAfectadas = cmd.ExecuteNonQuery();
-                return filasAfectadas > 0; // Retorna true si al menos una fila fue actualizada
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Contrasenaa", contraseñaEncriptada);
+                    cmd.Parameters.AddWithValue("@Email", email);
+
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+                    return filasAfectadas > 0; // Retorna true si al menos una fila fue actualizada
+                }
             }
         }
+        catch (SqlException ex)
+        {
+            MessageBox.Show($"Error de SQL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+
     }
-    catch (SqlException ex)
+
+    public static int ObtenerIdTipoUsuario(int usuarioId)
     {
-        MessageBox.Show($"Error de SQL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        return false;
+        try
+        {
+            using (SqlConnection conn = new Conexion().OpenConnection())
+            {
+                string query = "SELECT idTipoUsuario FROM Users WHERE Id = @UsuarioId";
+                using (SqlCommand comando = new SqlCommand(query, conn))
+                {
+                    comando.Parameters.Add(new SqlParameter("@UsuarioId", SqlDbType.Int) { Value = usuarioId });
+
+                    object result = comando.ExecuteScalar();
+                    return result != null ? Convert.ToInt32(result) : -1; // Retorna -1 si no encuentra el usuario
+                }
+            }
+        }
+        catch (SqlException ex)
+        {
+            MessageBox.Show($"Error de SQL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        return -1;
     }
-    catch (Exception ex)
-    {
-        MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        return false;
-    }
-}
+
 
     private string EncriptarContraseña(string contraseña)
     {

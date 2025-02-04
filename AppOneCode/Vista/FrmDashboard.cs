@@ -49,6 +49,44 @@ namespace AppOneCode.Vista
 
         }
 
+        private void CargaProyectos()
+        {
+
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Id, Nombre FROM Trabajo";
+
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Crea una lista para almacenar los datos
+                    Dictionary<int, string> Proyectos = new Dictionary<int, string>();
+
+                    while (reader.Read())
+                    {
+                        int id = reader.GetInt32(0);
+                        string username = reader.GetString(1);
+
+                        // Agrega el id y el nombre a la lista
+                        Proyectos.Add(id, username);
+                    }
+
+                    // Asigna los datos al ComboBox
+                    cmbProyectos.DataSource = new BindingSource(Proyectos, null);
+                    cmbProyectos.DisplayMember = "Value"; // Lo que se muestra
+                    cmbProyectos.ValueMember = "Key";    // El valor interno
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar Proyectos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
             Usuario Usuario = new Usuario();
@@ -56,15 +94,20 @@ namespace AppOneCode.Vista
 
             int userCount = Usuario.ContarUsuarios();
 
+            Tareas Tareas = new Tareas();
 
+            int idProyecto = Tareas.Id;
             lblUserCount.Text = $"{userCount}";
 
             CargarDatosEmpleadosEficientes();
             CargarDatosTareasCompletadasPorDia();
             CargarNumeroTareasCompletadas();
             CargarNumeroTareasPendientes();
+            CargarPorcentajeProyectos(idProyecto);
+            CargaProyectos();
 
         }
+
 
         private void pictureBox9_Click(object sender, EventArgs e)
         {
@@ -212,9 +255,75 @@ namespace AppOneCode.Vista
             }
         }
 
+        private void CargarPorcentajeProyectos(int idProyecto)
+        {
+            try
+            {
+                // Crear la conexión con la base de datos
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // Consultar el número total de tareas del proyecto
+                    string queryTotalTareas = @"
+            SELECT COUNT(*) 
+            FROM Tareas 
+            WHERE idProyecto = @idProyecto";
+
+                    SqlCommand cmdTotalTareas = new SqlCommand(queryTotalTareas, conn);
+                    cmdTotalTareas.Parameters.AddWithValue("@idProyecto", idProyecto);
+
+                    int totalTareas = (int)cmdTotalTareas.ExecuteScalar();
+
+                    // Consultar el número de tareas completadas del proyecto
+                    string queryTareasCompletadas = @"
+            SELECT COUNT(*) 
+            FROM Tareas 
+            WHERE idProyecto = @idProyecto AND EstadoId = (SELECT Id FROM Estado WHERE NombreEstado = 'Completada')";
+
+                    SqlCommand cmdTareasCompletadas = new SqlCommand(queryTareasCompletadas, conn);
+                    cmdTareasCompletadas.Parameters.AddWithValue("@idProyecto", idProyecto);
+
+                    int tareasCompletadas = (int)cmdTareasCompletadas.ExecuteScalar();
+
+                    // Calcular el porcentaje de tareas completadas
+                    double porcentajeCompletado = totalTareas > 0 ? ((double)tareasCompletadas / totalTareas) * 100 : 0;
+
+                    // Limpiar datos previos del gráfico
+                    ctPorcentajeProyectos.Series["Series1"].Points.Clear();
+
+                    // Mostrar el porcentaje de tareas completadas y pendientes en el gráfico
+                    ctPorcentajeProyectos.Series["Series1"].Points.AddXY("Completadas", porcentajeCompletado);
+                    ctPorcentajeProyectos.Series["Series1"].Points.AddXY("Pendientes", 100 - porcentajeCompletado);
+
+                    // Etiquetas en los puntos del gráfico
+                    ctPorcentajeProyectos.Series["Series1"].Points[0].Label = $"{porcentajeCompletado:F1}% Completadas";
+                    ctPorcentajeProyectos.Series["Series1"].Points[1].Label = $"{100 - porcentajeCompletado:F1}% Pendientes";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al cargar el porcentaje de proyectos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
 
         private void pictureBox10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ctPorcentajeProyectos_Click(object sender, EventArgs e)
+        {
+            // Obtener el Id del proyecto seleccionado en el ComboBox
+            int idProyecto = (int)((KeyValuePair<int, string>)cmbProyectos.SelectedItem).Key;
+
+            // Llamar al método que carga el porcentaje de tareas del proyecto seleccionado
+            CargarPorcentajeProyectos(idProyecto);
+        }
+
+        private void btnBuscarProyectos_Click(object sender, EventArgs e)
         {
 
         }

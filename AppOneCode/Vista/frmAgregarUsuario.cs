@@ -40,8 +40,34 @@ namespace AppOneCode.Vista
 
         private void frmAgregarUsuario_Load(object sender, EventArgs e)
         {
+            int usuarioId = Usuario.UsuarioId;
 
+            // Llamas al método para obtener el nombre de usuario
+            string username = Usuario.ObtenerNombreUsuario(usuarioId);
+
+
+            string email = Usuario.ObtenerEmailUsuario(usuarioId);
+
+
+            if (!string.IsNullOrEmpty(username))
+            {
+                lblNombreUsuario.Text = username;
+            }
+            else
+            {
+                MessageBox.Show("No se pudo cargar el nombre de usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if (!string.IsNullOrEmpty(email))
+            {
+                label3.Text = email;
+            }
+            else
+            {
+                MessageBox.Show("No se pudo cargar el email del usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+        
 
         private void pictureBox11_Click(object sender, EventArgs e)
         {
@@ -269,6 +295,11 @@ namespace AppOneCode.Vista
             Usuario usuario_ = new Usuario();
             List<Usuario> usuList = usuario_.BuscarUsuarios(usuario);
             dgvListaUsuarios.DataSource = usuList;
+        }
+
+        private void pbImageTrabajador_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

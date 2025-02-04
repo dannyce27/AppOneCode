@@ -14,6 +14,9 @@ namespace AppOneCode.Vista
 {
     public partial class FrmAgregarTareas : Form
     {
+
+        private readonly string connectionString = @"Server=DESKTOP-2I6K8G4\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+
         public FrmAgregarTareas()
         {
             InitializeComponent();
@@ -21,6 +24,7 @@ namespace AppOneCode.Vista
             CargarPrioridades();
             CargarEstados();
             CargarDatos();
+            CargaProyectos();
 
             dgvMostrarProyectosI.ReadOnly = true;
         }
@@ -67,9 +71,47 @@ namespace AppOneCode.Vista
             }
         }
 
+        private void CargaProyectos()
+        {
+            
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Id, Nombre FROM Trabajo";
+
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Crea una lista para almacenar los datos
+                    Dictionary<int, string> Proyectos = new Dictionary<int, string>();
+
+                    while (reader.Read())
+                    {
+                        int id = reader.GetInt32(0);
+                        string username = reader.GetString(1);
+
+                        // Agrega el id y el nombre a la lista
+                        Proyectos.Add(id, username);
+                    }
+
+                    // Asigna los datos al ComboBox
+                    cmbProyectos.DataSource = new BindingSource(Proyectos, null);
+                    cmbProyectos.DisplayMember = "Value"; // Lo que se muestra
+                    cmbProyectos.ValueMember = "Key";    // El valor interno
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar Proyectos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         private void CargarPrioridades()
         {
-            string connectionString = "Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+            
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -108,7 +150,7 @@ namespace AppOneCode.Vista
 
         private void CargarEstados()
         {
-            string connectionString = "Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+  
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -165,7 +207,8 @@ namespace AppOneCode.Vista
                 Prioridad = cmbPrioridad.Text,
                 Estado = cmbEstado.Text,
                 FechaInicio = dtpFechaInicio.Value,  // Obtiene la fecha del DateTimePicker
-                FechaFinalizacion = dtpFechaFinalizacion.Value // Obtiene la fecha final
+                FechaFinalizacion = dtpFechaFinalizacion.Value, // Obtiene la fecha final
+                Trabajo = cmbProyectos.Text
             };
 
             // Llama al método InsertarTarea para agregar la tarea
@@ -183,6 +226,7 @@ namespace AppOneCode.Vista
                 cmbEstado.SelectedIndex = -1;
                 dtpFechaInicio.Value = DateTime.Now;  // Reinicia la fecha al día actual
                 dtpFechaFinalizacion.Value = DateTime.Now; // Reinicia la fecha al día actual
+                cmbProyectos.SelectedIndex = -1;
                 CargarDatos();  // Recargar datos en la interfaz
             }
             else
@@ -208,8 +252,9 @@ namespace AppOneCode.Vista
             dgvMostrarProyectosI.Columns["Usuario"].HeaderText = "Empleado Asignado";
             dgvMostrarProyectosI.Columns["Prioridad"].HeaderText = "Prioridad";
             dgvMostrarProyectosI.Columns["Estado"].HeaderText = "Estado";
+           
 
-    
+
 
         }
 
@@ -271,8 +316,11 @@ namespace AppOneCode.Vista
                 tareaModelo.Id = tareaId; 
                 tareaModelo.Descripcion = txtDescP.Text;  
                 tareaModelo.Usuario = cmbEmpleadoAsignado.SelectedItem.ToString();
-                tareaModelo.Prioridad = cmbPrioridad.SelectedItem.ToString(); 
-                tareaModelo.Estado = cmbEstado.SelectedItem.ToString(); 
+                tareaModelo.Prioridad = cmbPrioridad.SelectedItem.ToString();
+                tareaModelo.Estado = cmbEstado.SelectedItem.ToString();
+                tareaModelo.FechaInicio = dtpFechaInicio.Value;
+                tareaModelo.FechaFinalizacion = dtpFechaFinalizacion.Value;
+                tareaModelo.Trabajo = cmbProyectos.SelectedItem.ToString();
 
                 // Llamar al método de actualización
                 bool resultado = tareaModelo.ActualizarTarea();

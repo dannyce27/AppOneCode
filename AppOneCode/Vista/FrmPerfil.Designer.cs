@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPerfil));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.pbMinimizeForm = new System.Windows.Forms.PictureBox();
             this.pbCloseForm = new System.Windows.Forms.PictureBox();
@@ -42,12 +42,12 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
             this.btnFiltrarporTrabajando = new AppOneCode.Modelo.BotonPersonalizado();
             this.btnFiltrarporPendientes = new AppOneCode.Modelo.BotonPersonalizado();
             this.btnFiltrarporCompletas = new AppOneCode.Modelo.BotonPersonalizado();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizeForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCloseForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImageTrabajador)).BeginInit();
@@ -129,19 +129,19 @@
             // 
             // ctProgresoPerfil
             // 
-            chartArea3.Name = "ChartArea1";
-            this.ctProgresoPerfil.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.ctProgresoPerfil.Legends.Add(legend3);
+            chartArea2.Name = "ChartArea1";
+            this.ctProgresoPerfil.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.ctProgresoPerfil.Legends.Add(legend2);
             this.ctProgresoPerfil.Location = new System.Drawing.Point(356, 103);
             this.ctProgresoPerfil.Name = "ctProgresoPerfil";
             this.ctProgresoPerfil.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series3.Legend = "Legend1";
-            series3.Name = "EstadoTareas";
-            this.ctProgresoPerfil.Series.Add(series3);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.Legend = "Legend1";
+            series2.Name = "EstadoTareas";
+            this.ctProgresoPerfil.Series.Add(series2);
             this.ctProgresoPerfil.Size = new System.Drawing.Size(615, 301);
             this.ctProgresoPerfil.TabIndex = 96;
             this.ctProgresoPerfil.Text = "chart1";
@@ -186,11 +186,27 @@
             this.panel1.Controls.Add(this.lblNicknameUSer);
             this.panel1.Controls.Add(this.pbImageTrabajador);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-1, 0);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1087, 497);
+            this.panel1.Size = new System.Drawing.Size(1087, 500);
             this.panel1.TabIndex = 121;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // botonPersonalizado1
+            // 
+            this.botonPersonalizado1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado1.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalizado1.Location = new System.Drawing.Point(67, 288);
+            this.botonPersonalizado1.Name = "botonPersonalizado1";
+            this.botonPersonalizado1.Size = new System.Drawing.Size(162, 33);
+            this.botonPersonalizado1.TabIndex = 125;
+            this.botonPersonalizado1.Text = "cambiar foto de perfil";
+            this.botonPersonalizado1.UseVisualStyleBackColor = false;
+            this.botonPersonalizado1.Click += new System.EventHandler(this.botonPersonalizado1_Click);
             // 
             // btnFiltrarporTrabajando
             // 
@@ -258,21 +274,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // botonPersonalizado1
-            // 
-            this.botonPersonalizado1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
-            this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalizado1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonPersonalizado1.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalizado1.Location = new System.Drawing.Point(67, 288);
-            this.botonPersonalizado1.Name = "botonPersonalizado1";
-            this.botonPersonalizado1.Size = new System.Drawing.Size(162, 33);
-            this.botonPersonalizado1.TabIndex = 125;
-            this.botonPersonalizado1.Text = "cambiar foto de perfil";
-            this.botonPersonalizado1.UseVisualStyleBackColor = false;
-            this.botonPersonalizado1.Click += new System.EventHandler(this.botonPersonalizado1_Click);
             // 
             // FrmPerfil
             // 

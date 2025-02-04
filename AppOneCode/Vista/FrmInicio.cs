@@ -127,9 +127,25 @@ namespace AppOneCode
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            FrmPerfil Ft = new FrmPerfil();
-            this.Hide();
-            Ft.ShowDialog();
+            int idTipoUsuario = Usuario.ObtenerIdTipoUsuario(Usuario.UsuarioId); // Obtiene el tipo de usuario
+
+            switch (idTipoUsuario)
+            {
+                case 1: // Administrador
+                    frmAgregarUsuario frmAdmin = new frmAgregarUsuario();
+                    this.Hide();
+                    frmAdmin.Show();
+                    break;
+                case 2: // Empleado
+                    FrmPerfil frmEmpleado = new FrmPerfil();
+                    this.Hide();
+                    frmEmpleado.Show();
+                    break;
+                default:
+                    MessageBox.Show("Rol no reconocido. Contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+            }
+
         }
 
         private void botonPersonalizado1_Click(object sender, EventArgs e)

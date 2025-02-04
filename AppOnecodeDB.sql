@@ -124,7 +124,9 @@ CREATE TABLE Tareas (
     PrioridadId INT NOT NULL,
     EstadoId INT NOT NULL, 
 	FechaInicio DATE NOT NULL,
-	FechaFinalizacion DATE NOT NULL
+	FechaFinalizacion DATE NOT NULL,
+	idProyecto INT NOT NULL,
+	CONSTRAINT FK_ID_Proyecto FOREIGN KEY (idProyecto) REFERENCES Trabajo(Id),
     CONSTRAINT FK_Tareas_Usuario FOREIGN KEY (UsuarioId) REFERENCES Users(Id),
     CONSTRAINT FK_Tareas_Prioridad FOREIGN KEY (PrioridadId) REFERENCES Prioridad(Id),
     CONSTRAINT FK_Tareas_Estado FOREIGN KEY (EstadoId) REFERENCES Estado(Id)
@@ -132,3 +134,8 @@ CREATE TABLE Tareas (
 	
 select * from Tareas
 drop table Tareas;
+
+Select * From Trabajo
+
+
+
