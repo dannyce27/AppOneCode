@@ -408,6 +408,35 @@ public class Usuario
     }
 
 
+    public static string ObtenerTipoUsuario(int usuarioId)
+    {
+        string tipoUsuario = "";
+
+        // Aquí debes agregar la lógica para obtener el tipo de usuario desde la base de datos.
+        using (SqlConnection conn = new Conexion().OpenConnection())
+        {
+            string query = "SELECT tu.NombreTipoUsuario \r\n                         FROM Users u\r\n                         INNER JOIN TipoUsuario tu ON u.idTipoUsuario = tu.idTipoUsuario\r\n                         WHERE u.Id = @UsuarioId   ";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@UsuarioId", usuarioId);
+
+            try
+            {
+                object resultado = cmd.ExecuteScalar();
+                if (resultado != null)
+                {
+                    tipoUsuario = resultado.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener el TipoUsuario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        return tipoUsuario;
+    }
+
+
     private string EncriptarContraseña(string contraseña)
     {
         using (SHA256 sha256 = SHA256.Create())

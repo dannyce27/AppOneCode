@@ -38,6 +38,7 @@
             this.lbltareas = new System.Windows.Forms.Label();
             this.lblinicio = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.botonPersonalizado2 = new AppOneCode.Modelo.BotonPersonalizado();
             this.pbBuscar = new System.Windows.Forms.PictureBox();
             this.dgvproyectos = new System.Windows.Forms.DataGridView();
             this.txtSearchProyect = new System.Windows.Forms.TextBox();
@@ -57,7 +58,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.botonPersonalizado2 = new AppOneCode.Modelo.BotonPersonalizado();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).BeginInit();
@@ -168,6 +168,20 @@
             this.panel1.Size = new System.Drawing.Size(1131, 885);
             this.panel1.TabIndex = 103;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // botonPersonalizado2
+            // 
+            this.botonPersonalizado2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.botonPersonalizado2.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado2.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalizado2.Location = new System.Drawing.Point(877, 19);
+            this.botonPersonalizado2.Name = "botonPersonalizado2";
+            this.botonPersonalizado2.Size = new System.Drawing.Size(111, 40);
+            this.botonPersonalizado2.TabIndex = 185;
+            this.botonPersonalizado2.Text = "Chat";
+            this.botonPersonalizado2.UseVisualStyleBackColor = false;
             // 
             // pbBuscar
             // 
@@ -410,20 +424,6 @@
             this.pictureBox19.TabIndex = 102;
             this.pictureBox19.TabStop = false;
             this.pictureBox19.Click += new System.EventHandler(this.pictureBox19_Click);
-            // 
-            // botonPersonalizado2
-            // 
-            this.botonPersonalizado2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.botonPersonalizado2.FlatAppearance.BorderSize = 0;
-            this.botonPersonalizado2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalizado2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonPersonalizado2.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalizado2.Location = new System.Drawing.Point(877, 19);
-            this.botonPersonalizado2.Name = "botonPersonalizado2";
-            this.botonPersonalizado2.Size = new System.Drawing.Size(111, 40);
-            this.botonPersonalizado2.TabIndex = 185;
-            this.botonPersonalizado2.Text = "Chat";
-            this.botonPersonalizado2.UseVisualStyleBackColor = false;
             // 
             // pictureBox12
             // 

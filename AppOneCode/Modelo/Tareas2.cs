@@ -9,7 +9,7 @@ namespace AppOneCode.Modelo
 {
     public class Tareas2
     {
-        string connectionString = "Server=DESKTOP-8FODO0C\\SQLEXPRESS02;Database=BDOneCode;Trusted_Connection=True;";
+        string connectionString = "Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
 
         public int Id { get; set; }
         public string Descripcion { get; set; }
@@ -469,17 +469,18 @@ namespace AppOneCode.Modelo
                 string query = @"
             SELECT T.Id, T.Descripcion, U.Username AS Usuario, 
                    P.NombrePrioridad AS Prioridad, E.NombreEstado AS Estado,
-                   T.FechaInicio, T.FechaFinalizacion
+                   T.FechaInicio, T.FechaFinalizacion, PR.Nombre
             FROM Tareas T
             INNER JOIN Users U ON T.UsuarioId = U.Id
             INNER JOIN Prioridad P ON T.PrioridadId = P.Id
             INNER JOIN Estado E ON T.EstadoId = E.Id
+            INNER JOIN Trabajo PR ON T.idProyecto = PR.Id
             WHERE CONVERT(DATE, T.FechaInicio) >= @FechaInicio 
               AND CONVERT(DATE, T.FechaFinalizacion) <= @FechaFinalizacion"; // Asegurar comparación por fecha sin horas
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio.Date);
-                cmd.Parameters.AddWithValue("@FechaFinalizacion", fechaFinalizacion.Date.AddHours(23).AddMinutes(59));
+                cmd.Parameters.AddWithValue("@FechaFinalizacion", fechaFinalizacion);
 
                 try
                 {
@@ -496,7 +497,9 @@ namespace AppOneCode.Modelo
                             Prioridad = reader.GetString(3),
                             Estado = reader.GetString(4),
                             FechaInicio = reader.GetDateTime(5),
-                            FechaFinalizacion = reader.GetDateTime(6)
+                            FechaFinalizacion = reader.GetDateTime(6),
+                            Trabajo = reader.GetString(7)
+
                         };
                         tareasFiltradas.Add(tarea);
                     }

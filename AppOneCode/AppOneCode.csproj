@@ -232,6 +232,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Poppins-Bold.ttf" />
+    <None Include="Resources\Poppins-Light.ttf" />
+    <None Include="Resources\Poppins-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

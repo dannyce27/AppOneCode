@@ -46,7 +46,7 @@ namespace AppOneCode.Vista
             string username = Usuario.ObtenerNombreUsuario(usuarioId);
 
 
-            string email = Usuario.ObtenerEmailUsuario(usuarioId);
+         
 
 
             if (!string.IsNullOrEmpty(username))
@@ -58,16 +58,21 @@ namespace AppOneCode.Vista
                 MessageBox.Show("No se pudo cargar el nombre de usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            if (!string.IsNullOrEmpty(email))
+         
+
+            // Obtener el nombre de usuario
+            string tipoUsuario = Usuario.ObtenerTipoUsuario(usuarioId); // Obtener el tipo de usuario
+
+            if (!string.IsNullOrEmpty(tipoUsuario))
             {
-                label3.Text = email;
+                lblCargo.Text = tipoUsuario; // Mostrar el tipo de usuario en lblCargo
             }
             else
             {
-                MessageBox.Show("No se pudo cargar el email del usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo cargar el tipo de usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
 
         private void pictureBox11_Click(object sender, EventArgs e)
         {
@@ -298,6 +303,44 @@ namespace AppOneCode.Vista
         }
 
         private void pbImageTrabajador_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            FrmInicio frmInicio = new FrmInicio();
+            this.Hide();
+            frmInicio.ShowDialog();
+        }
+
+        private void lblproyectos_Click(object sender, EventArgs e)
+        {
+            frmProyectos frmPro = new frmProyectos();   
+            this.Hide();
+            frmPro.ShowDialog();
+        }
+
+        private void lbltareas_Click(object sender, EventArgs e)
+        {
+            FrmTareas frmTareas = new FrmTareas();
+            this.Hide();
+            frmTareas.ShowDialog();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void botonPersonalizado2_Click(object sender, EventArgs e)
+        {
+            FrmChat chat = new FrmChat();
+            this.Hide();
+            chat.ShowDialog();
+        }
+
+        private void lblCargo_Click(object sender, EventArgs e)
         {
 
         }
