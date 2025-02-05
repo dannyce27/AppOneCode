@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,11 @@ namespace AppOneCode.Vista
         public int Id
         {
             get { return id; }
-            set { id = value; }
+            set
+            {
+                id = value;
+                CargarImagenEncargado(); // Cargar la imagen automáticamente al asignar un Id
+            }
         }
 
         public string Descripcion
@@ -56,6 +61,41 @@ namespace AppOneCode.Vista
         {
 
         }
+
+
+        private void CargarImagenEncargado()
+        {
+            if (id <= 0)
+            {
+                pbEncargadoTarea.Image = Properties.Resources.icons8_close_32; // Imagen por defecto
+                return;
+            }
+
+            try
+            {
+                byte[] imagenBytes = Usuario.CargarImagenUsuario(Usuario.UsuarioId);
+
+                if (imagenBytes != null)
+                {
+                    using (MemoryStream ms = new MemoryStream(imagenBytes))
+                    {
+                        pbEncargadoTarea.Image = Image.FromStream(ms);
+                        pbEncargadoTarea.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
+                }
+                else
+                {
+                    pbEncargadoTarea.Image = Properties.Resources.icons8_close_32;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar la imagen del encargado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
 
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -158,13 +198,13 @@ namespace AppOneCode.Vista
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             }
+            }
         }
 
         private void pbEncargadoTarea_MouseHover(object sender, EventArgs e)
         {
             // ID de la tarea seleccionada
-            int tareaId = id; 
+            int tareaId = id;
             if (tareaId <= 0)
             {
                 toolTip1.SetToolTip(pbEncargadoTarea, "No hay una tarea seleccionada.");
@@ -182,10 +222,19 @@ namespace AppOneCode.Vista
             {
                 toolTip1.SetToolTip(pbEncargadoTarea, "No se encontró el encargado de esta tarea.");
             }
+
+
         }
 
         private void pbEncargadoTarea_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void UserControlTareas_Load(object sender, EventArgs e)
+        {
+
+            CargarImagenEncargado();
 
         }
     }
