@@ -190,7 +190,7 @@ namespace AppOneCode.Modelo
             UPDATE Tareas
             SET 
                 Descripcion = @Descripcion,
-                UsuarioId = (SELECT Id FROM Users WHERE Username = @Usuario),
+                UsuarioId = (SELECT Id FROM Users WHERE Username = @Users),
                 PrioridadId = (SELECT Id FROM Prioridad WHERE NombrePrioridad = @Prioridad),
                 EstadoId = (SELECT Id FROM Estado WHERE NombreEstado = @Estado),
                 FechaInicio = @FechaInicio,
@@ -201,7 +201,7 @@ namespace AppOneCode.Modelo
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", Id);
                 cmd.Parameters.AddWithValue("@Descripcion", Descripcion);
-                cmd.Parameters.AddWithValue("@Usuario", Usuario);
+                cmd.Parameters.AddWithValue("@Users", Usuario);
                 cmd.Parameters.AddWithValue("@Prioridad", Prioridad);
                 cmd.Parameters.AddWithValue("@Estado", Estado);
                 cmd.Parameters.AddWithValue("@FechaInicio", fechaInicioValida);

@@ -35,7 +35,7 @@ namespace AppOneCode.Vista
         }
         private void CargarEmpleados()
         {
-            string connectionString = "Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+           
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -61,8 +61,8 @@ namespace AppOneCode.Vista
 
                     // Asigna los datos al ComboBox
                     cmbEmpleadoAsignado.DataSource = new BindingSource(empleados, null);
-                    cmbEmpleadoAsignado.DisplayMember = "Value"; // Lo que se muestra
-                    cmbEmpleadoAsignado.ValueMember = "Key";    // El valor interno
+                    cmbEmpleadoAsignado.ValueMember = "Key"; // Lo que se muestra
+                    cmbEmpleadoAsignado.DisplayMember = "Value";    // El valor interno
                 }
                 catch (Exception ex)
                 {

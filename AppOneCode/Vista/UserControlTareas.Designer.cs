@@ -87,6 +87,7 @@
             this.panel1.Controls.Add(this.lblDescTarea);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Segoe MDL2 Assets", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -189,6 +190,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "UserControlTareas";
             this.Size = new System.Drawing.Size(955, 47);
+            this.Load += new System.EventHandler(this.UserControlTareas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
