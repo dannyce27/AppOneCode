@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarTareas));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvMostrarProyectosI = new System.Windows.Forms.DataGridView();
@@ -62,6 +64,7 @@
             this.botonPersonalizado2 = new AppOneCode.Modelo.BotonPersonalizado();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbProyectos = new System.Windows.Forms.ComboBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarProyectosI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
@@ -70,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbActualizarTarea)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminarProyecto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAgregarProyecto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -87,18 +91,35 @@
             // 
             this.dgvMostrarProyectosI.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMostrarProyectosI.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMostrarProyectosI.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMostrarProyectosI.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMostrarProyectosI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMostrarProyectosI.Location = new System.Drawing.Point(40, 514);
+            this.dgvMostrarProyectosI.EnableHeadersVisualStyles = false;
+            this.dgvMostrarProyectosI.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvMostrarProyectosI.Location = new System.Drawing.Point(81, 518);
             this.dgvMostrarProyectosI.Name = "dgvMostrarProyectosI";
-            this.dgvMostrarProyectosI.Size = new System.Drawing.Size(635, 252);
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvMostrarProyectosI.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMostrarProyectosI.Size = new System.Drawing.Size(587, 252);
             this.dgvMostrarProyectosI.TabIndex = 130;
             // 
             // txtSearchProyect
             // 
             this.txtSearchProyect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchProyect.Location = new System.Drawing.Point(733, 529);
+            this.txtSearchProyect.Location = new System.Drawing.Point(768, 529);
             this.txtSearchProyect.Name = "txtSearchProyect";
-            this.txtSearchProyect.Size = new System.Drawing.Size(239, 20);
+            this.txtSearchProyect.Size = new System.Drawing.Size(204, 20);
             this.txtSearchProyect.TabIndex = 129;
             // 
             // label7
@@ -345,22 +366,22 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(834, 571);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(118, 28);
+            this.label9.Size = new System.Drawing.Size(114, 20);
             this.label9.TabIndex = 145;
             this.label9.Text = "Buscar de el:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(856, 645);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 28);
+            this.label10.Size = new System.Drawing.Size(62, 20);
             this.label10.TabIndex = 146;
             this.label10.Text = " Hasta";
             // 
@@ -369,7 +390,7 @@
             this.botonPersonalizado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
             this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalizado1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonPersonalizado1.ForeColor = System.Drawing.Color.White;
             this.botonPersonalizado1.Location = new System.Drawing.Point(839, 714);
             this.botonPersonalizado1.Name = "botonPersonalizado1";
@@ -384,7 +405,7 @@
             this.botonPersonalizado2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.botonPersonalizado2.FlatAppearance.BorderSize = 0;
             this.botonPersonalizado2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalizado2.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonPersonalizado2.ForeColor = System.Drawing.Color.White;
             this.botonPersonalizado2.Location = new System.Drawing.Point(978, 518);
             this.botonPersonalizado2.Name = "botonPersonalizado2";
@@ -412,6 +433,16 @@
             this.cmbProyectos.Name = "cmbProyectos";
             this.cmbProyectos.Size = new System.Drawing.Size(364, 21);
             this.cmbProyectos.TabIndex = 152;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
+            this.pictureBox12.Location = new System.Drawing.Point(-4, 490);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(758, 299);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox12.TabIndex = 170;
+            this.pictureBox12.TabStop = false;
             // 
             // FrmAgregarTareas
             // 
@@ -452,6 +483,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox12);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAgregarTareas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -464,6 +496,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbActualizarTarea)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminarProyecto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAgregarProyecto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -504,5 +537,6 @@
         private Modelo.BotonPersonalizado botonPersonalizado2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbProyectos;
+        private System.Windows.Forms.PictureBox pictureBox12;
     }
 }

@@ -278,7 +278,7 @@ public class Usuario
 
     public List<Usuario> BuscarUsuarios(string usuario)
     {
-        string connectionString = @"Server=DESKTOP-2I6K8G4\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+        string connectionString = @"Server=DESKTOP-8FODO0C\SQLEXPRESS02;Database=BDOneCode;Trusted_Connection=True;";
         List<Usuario> tareasList = new List<Usuario>();
 
         using (SqlConnection conn = new SqlConnection(connectionString))
