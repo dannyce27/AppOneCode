@@ -384,5 +384,10 @@ namespace AppOneCode.Vista
         {
 
         }
+
+        private void cmbProyectos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
