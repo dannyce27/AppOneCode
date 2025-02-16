@@ -14,9 +14,10 @@ namespace AppOneCode.Vista
 {
     public partial class FrmDashboard : Form
 
-
+        
     {
-        private readonly string connectionString = @"Server=DESKTOP-2I6K8G4\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+        bool sideBarexoand;
+        private readonly string connectionString = @"Server=DESKTOP-8FODO0C\SQLEXPRESS02;Database=BDOneCode;Trusted_Connection=True;";
 
 
         public FrmDashboard()
@@ -324,6 +325,62 @@ namespace AppOneCode.Vista
         }
 
         private void btnBuscarProyectos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUserCount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTareasCompletadas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void s(object sender, EventArgs e)
+        {
+            if (sideBarexoand)
+            {
+
+                sideBarContainer.Width -= 10;
+                if(sideBarContainer.Width  == sideBarContainer.MinimumSize.Width)
+                {
+
+                    sideBarexoand  = false;
+                    SidebarTime.Stop();
+
+
+                   
+                }
+            }
+            else
+            {
+
+                sideBarContainer.Width += 10;
+                if(sideBarContainer.Width == sideBarContainer.MaximumSize.Width)
+                {
+
+                    sideBarexoand= true;
+                    SidebarTime.Stop();
+
+                }
+
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            SidebarTime.Start();
+        }
+
+        private void lblTareasPendientes_Click(object sender, EventArgs e)
         {
 
         }
