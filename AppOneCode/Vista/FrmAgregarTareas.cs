@@ -431,7 +431,7 @@ namespace AppOneCode.Vista
             {
                 dgvMostrarProyectosI.DataSource = tareasFiltradas; // Mostrar en DataGridView
 
-                CargarDatos();
+             
             }
             else
             {

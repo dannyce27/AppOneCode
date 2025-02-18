@@ -9,7 +9,7 @@ namespace AppOneCode.Modelo
 {
     public class Tareas2
     {
-        string connectionString = "Server=DESKTOP-8FODO0C\\SQLEXPRESS02;Database=BDOneCode;Trusted_Connection=True;";
+        string connectionString = "Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
 
         public int Id { get; set; }
         public string Descripcion { get; set; }

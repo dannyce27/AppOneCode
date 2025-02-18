@@ -17,7 +17,7 @@ namespace AppOneCode.Vista
         
     {
         bool sideBarexoand;
-        private readonly string connectionString = @"Server=DESKTOP-8FODO0C\SQLEXPRESS02;Database=BDOneCode;Trusted_Connection=True;";
+        private readonly string connectionString = @"Server=DESKTOP-2I6K8G4\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
 
 
         public FrmDashboard()
@@ -119,7 +119,7 @@ namespace AppOneCode.Vista
         {
             try
             {
-                // Crear la conexión con la base de datos
+                
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();

@@ -15,12 +15,12 @@ using System.Drawing;
 public class Usuario
 {
     public static int UsuarioId { get; set; }
-    public int Id { get; private set; }
-    public string Username { get; private set; }
-    public string Email { get; private set; }
-    public string Contrasenaa { get; private set; }
+    public int Id { get;  set; }
+    public string Username { get; set; }
+    public string Email { get;  set; }
+    public string Contrasenaa { get;  set; }
 
-    public int idTipoUsuario { get; private set; }
+    public int idTipoUsuario { get;  set; }
 
     public byte[] ImagenPerfil { get; set; }
 
@@ -519,9 +519,9 @@ public class Usuario
                     Usuario usuario = new Usuario
                     {
                         Id = reader.GetInt32(0),
-                        Username = reader.GetString(1),
-                        Email = reader.GetString(2),
-                        idTipoUsuario = reader.GetInt32(3)
+                        Username = reader.IsDBNull(1) ? "Sin Nombre" : reader.GetString(1),  // Manejo de NULL
+                        Email = reader.IsDBNull(2) ? "Sin Email" : reader.GetString(2),      // Manejo de NULL
+                        idTipoUsuario = reader.IsDBNull(3) ? 0 : reader.GetInt32(3)          // Manejo de NULL
                     };
                     listaUsuarios.Add(usuario);
                 }
@@ -530,6 +530,7 @@ public class Usuario
 
         return listaUsuarios;
     }
+
 
 
 

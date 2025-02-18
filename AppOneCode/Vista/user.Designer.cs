@@ -57,6 +57,7 @@
             this.pbEstado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbEstado.TabIndex = 143;
             this.pbEstado.TabStop = false;
+            this.pbEstado.Click += new System.EventHandler(this.pbEstado_Click);
             // 
             // pbFotoPerfil
             // 
@@ -79,6 +80,7 @@
             this.Name = "user";
             this.Size = new System.Drawing.Size(224, 78);
             this.Load += new System.EventHandler(this.user_Load);
+            this.Click += new System.EventHandler(this.user_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pbEstado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoPerfil)).EndInit();
             this.ResumeLayout(false);
