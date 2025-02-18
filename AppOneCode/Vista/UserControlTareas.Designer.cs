@@ -73,6 +73,7 @@
             this.lblDescTarea.Size = new System.Drawing.Size(147, 22);
             this.lblDescTarea.TabIndex = 1;
             this.lblDescTarea.Text = "Descripcion de la Tarea";
+            this.lblDescTarea.Click += new System.EventHandler(this.lblDescTarea_Click);
             // 
             // panel1
             // 

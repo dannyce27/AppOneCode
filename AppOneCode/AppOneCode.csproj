@@ -149,17 +149,17 @@
       <DependentUpon>frmProyectos.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Usuario.cs" />
+    <Compile Include="Vista\user.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\user.Designer.cs">
+      <DependentUpon>user.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\UserControlTareas.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Vista\UserControlTareas.Designer.cs">
       <DependentUpon>UserControlTareas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\UserControlTareasPendientes.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Vista\UserControlTareasPendientes.Designer.cs">
-      <DependentUpon>UserControlTareasPendientes.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmChat.resx">
       <DependentUpon>FrmChat.cs</DependentUpon>
@@ -217,11 +217,11 @@
       <DependentUpon>frmProyectos.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\user.resx">
+      <DependentUpon>user.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\UserControlTareas.resx">
       <DependentUpon>UserControlTareas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\UserControlTareasPendientes.resx">
-      <DependentUpon>UserControlTareasPendientes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

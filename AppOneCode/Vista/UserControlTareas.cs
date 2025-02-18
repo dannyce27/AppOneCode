@@ -237,5 +237,10 @@ namespace AppOneCode.Vista
             CargarImagenEncargado();
 
         }
+
+        private void lblDescTarea_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

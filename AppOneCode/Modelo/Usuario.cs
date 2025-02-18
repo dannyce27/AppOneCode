@@ -7,6 +7,10 @@ using System.Windows.Forms;
 using System;
 using AppOneCode.Modelo;
 using System.Collections.Generic;
+using AppOneCode.Vista;
+using System.IO;
+using System.Linq;
+using System.Drawing;
 
 public class Usuario
 {
@@ -17,6 +21,8 @@ public class Usuario
     public string Contrasenaa { get; private set; }
 
     public int idTipoUsuario { get; private set; }
+
+    public byte[] ImagenPerfil { get; set; }
 
 
 
@@ -435,6 +441,96 @@ public class Usuario
 
         return tipoUsuario;
     }
+
+    public void LlenarUsuarios(FlowLayoutPanel contenedor)
+    {
+        using (SqlConnection conn = new Conexion().OpenConnection())
+        {
+            string query = "SELECT Id, Username, ImagenPerfil FROM Users";
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.CommandType = CommandType.Text;
+
+            try
+            {
+
+                SqlDataReader rd = cmd.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    // Obtener valores de la BD
+                    int id = rd["Id"] != DBNull.Value ? Convert.ToInt32(rd["Id"]) : 0;
+                    string nombre = rd["Username"] != DBNull.Value ? rd["Username"].ToString() : string.Empty;
+                    byte[] imagenBytes = rd["ImagenPerfil"] != DBNull.Value ? (byte[])rd["ImagenPerfil"] : null;
+
+                    // Crear una nueva instancia de UserControl
+                    user userControl = new user
+                    {
+                        Id = id,
+                        Name = nombre
+                    };
+
+                    // Asignar nombre al Label
+                    Label lblNombreUsuario = (Label)userControl.Controls.Find("lblNombreUsuario", true).FirstOrDefault();
+                    if (lblNombreUsuario != null)
+                    {
+                        lblNombreUsuario.Text = nombre;
+                    }
+
+                    // Asignar imagen al PictureBox
+                    PictureBox pbFotoPerfil = (PictureBox)userControl.Controls.Find("pbFotoPerfil", true).FirstOrDefault();
+                    if (pbFotoPerfil != null && imagenBytes != null)
+                    {
+                        using (MemoryStream ms = new MemoryStream(imagenBytes))
+                        {
+                            pbFotoPerfil.Image = Image.FromStream(ms);
+                            pbFotoPerfil.SizeMode = PictureBoxSizeMode.StretchImage;
+                        }
+                    }
+
+                    // Agregar al contenedor
+                    contenedor.Controls.Add(userControl);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Error de SQL: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error inesperado: {ex.Message}");
+            }
+        }
+    }
+
+    public static List<Usuario> ObtenerUsuarios()
+    {
+        List<Usuario> listaUsuarios = new List<Usuario>();
+
+        using (SqlConnection conn = new Conexion().OpenConnection())
+        {
+            string query = "SELECT Id, Username, Email, idTipoUsuario FROM Users";
+            using (SqlCommand comando = new SqlCommand(query, conn))
+            {
+                SqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    Usuario usuario = new Usuario
+                    {
+                        Id = reader.GetInt32(0),
+                        Username = reader.GetString(1),
+                        Email = reader.GetString(2),
+                        idTipoUsuario = reader.GetInt32(3)
+                    };
+                    listaUsuarios.Add(usuario);
+                }
+            }
+        }
+
+        return listaUsuarios;
+    }
+
 
 
     private string EncriptarContraseña(string contraseña)

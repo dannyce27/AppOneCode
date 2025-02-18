@@ -430,11 +430,13 @@ namespace AppOneCode.Vista
             if (tareasFiltradas.Count > 0)
             {
                 dgvMostrarProyectosI.DataSource = tareasFiltradas; // Mostrar en DataGridView
+
+                CargarDatos();
             }
             else
             {
                 MessageBox.Show("No se encontraron tareas en el rango de fechas seleccionado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dgvMostrarProyectosI.DataSource = null; // Limpiar DataGridView si no hay datos
+                
             }
         }
 

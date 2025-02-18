@@ -18,7 +18,7 @@ namespace AppOneCode.Modelo
         public string Estado { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFinalizacion { get; set; }
-         public string Trabajo { get; set; }
+        public string Trabajo { get; set; }
 
         // Método para insertar una nueva tarea
         public bool InsertarTarea()
@@ -153,7 +153,7 @@ namespace AppOneCode.Modelo
                             Estado = reader.GetString(4),
                             FechaInicio = reader.GetDateTime(5),
                             FechaFinalizacion = reader.GetDateTime(6),
-                            Trabajo = reader.GetString(7) 
+                            Trabajo = reader.GetString(7)
                         };
                         tareasList.Add(tarea);
                     }
@@ -206,7 +206,7 @@ namespace AppOneCode.Modelo
                 cmd.Parameters.AddWithValue("@Estado", Estado);
                 cmd.Parameters.AddWithValue("@FechaInicio", fechaInicioValida);
                 cmd.Parameters.AddWithValue("@FechaFinalizacion", fechaFinalizacionValida);
-                cmd.Parameters.AddWithValue("@Trabajo", Trabajo);  
+                cmd.Parameters.AddWithValue("@Trabajo", Trabajo);
 
                 try
                 {
@@ -467,20 +467,22 @@ namespace AppOneCode.Modelo
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"
-            SELECT T.Id, T.Descripcion, U.Username AS Usuario, 
-                   P.NombrePrioridad AS Prioridad, E.NombreEstado AS Estado,
-                   T.FechaInicio, T.FechaFinalizacion, PR.Nombre
-            FROM Tareas T
-            INNER JOIN Users U ON T.UsuarioId = U.Id
-            INNER JOIN Prioridad P ON T.PrioridadId = P.Id
-            INNER JOIN Estado E ON T.EstadoId = E.Id
-            INNER JOIN Trabajo PR ON T.idProyecto = PR.Id
-            WHERE CONVERT(DATE, T.FechaInicio) >= @FechaInicio 
-              AND CONVERT(DATE, T.FechaFinalizacion) <= @FechaFinalizacion"; // Asegurar comparación por fecha sin horas
+        SELECT T.Id, T.Descripcion, U.Username AS Usuario, 
+               P.NombrePrioridad AS Prioridad, E.NombreEstado AS Estado,
+               T.FechaInicio, T.FechaFinalizacion, PR.Nombre
+        FROM Tareas T
+        INNER JOIN Users U ON T.UsuarioId = U.Id
+        INNER JOIN Prioridad P ON T.PrioridadId = P.Id
+        INNER JOIN Estado E ON T.EstadoId = E.Id
+        INNER JOIN Trabajo PR ON T.idProyecto = PR.Id
+        WHERE CAST(T.FechaInicio AS DATE) >= @FechaInicio 
+          AND CAST(T.FechaFinalizacion AS DATE) <= @FechaFinalizacion";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio.Date);
+                cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio);
                 cmd.Parameters.AddWithValue("@FechaFinalizacion", fechaFinalizacion);
+
+
 
                 try
                 {
@@ -499,9 +501,9 @@ namespace AppOneCode.Modelo
                             FechaInicio = reader.GetDateTime(5),
                             FechaFinalizacion = reader.GetDateTime(6),
                             Trabajo = reader.GetString(7)
-
                         };
                         tareasFiltradas.Add(tarea);
+
                     }
                 }
                 catch (SqlException ex)
@@ -516,9 +518,13 @@ namespace AppOneCode.Modelo
 
             return tareasFiltradas;
         }
+
+
+
     }
 
-
-
-
 }
+
+
+
+
