@@ -9,16 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppOneCode.Vista;
-
-using FirebaseAdmin;
-using FirebaseAdmin.Auth;
-using Google.Apis.Auth.OAuth2;
-using Newtonsoft.Json;
 using Firebase.Database;
-
-
-using static AppOneCode.Vista.user;
 using Firebase.Database.Query;
+using Firebase.Database.Streaming;
+using static AppOneCode.Vista.user;
+
 
 namespace AppOneCode
 {
@@ -103,9 +98,11 @@ namespace AppOneCode
             lblNumPagina.Text = $"Página {paginaActual} de {totalPaginas}";
         }
 
-        private void FrmChat_Load(object sender, EventArgs e)
+        private async void FrmChat_Load(object sender, EventArgs e)
         {
+            await LeerMensajes(); // Load messages when the form loads
 
+            EscucharMensajesEnTiempoReal(); // Start listening for real-time messages
         }
 
         private void flpUsuariosLista_Paint(object sender, PaintEventArgs e)
@@ -190,28 +187,144 @@ namespace AppOneCode
             MessageBox.Show("Mensaje enviado");
         }
 
-     
 
+        private async Task LeerMensajes()
+        {
+            try
+            {
+                // Reference to the messages node in Firebase
+                var chatRef = firebaseClient
+                    .Child("chats")
+                    .Child("chat1")
+                    .Child("messages");
+
+                // Fetch messages from Firebase
+                var messages = await chatRef.OnceAsync<dynamic>();
+
+                // Clear the chat panel before adding new messages
+                pChatporUsuario.Controls.Clear();
+
+                // Iterate through the messages and add them to the chat panel
+                foreach (var message in messages)
+                {
+                    string sender = message.Object.sender;
+                    string messageText = message.Object.message;
+
+                    // Add the message to the chat panel
+                    AgregarMensajeAlChat(sender, messageText);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al leer los mensajes: " + ex.Message);
+            }
+        }
 
 
 
 
         private void AgregarMensajeAlChat(string sender, string message)
         {
-            // Agregar el mensaje al panel de chat (puedes usar un Label o un TextBox)
+            // Create a new Label for the message
             Label lblMensaje = new Label
             {
                 Text = $"{sender}: {message}",
                 AutoSize = true,
-                Font = new Font("Arial", 12),
-                ForeColor = Color.Black
+                Font = new Font("Poppins", 12),
+                ForeColor = Color.White,
+                Padding = new Padding(5),
+                Margin = new Padding(5)
             };
 
+            // Add the Label to the chat panel
             pChatporUsuario.Controls.Add(lblMensaje);
+
+            // Scroll to the bottom of the panel to show the latest message
+            pChatporUsuario.ScrollControlIntoView(lblMensaje);
         }
 
+        public class FirebaseMessage
+        {
+            public string sender { get; set; }
+            public string message { get; set; }
+            public long timestamp { get; set; }
+        }
+
+        public class FirebaseObserver : IObserver<FirebaseEvent<FirebaseMessage>>
+        {
+            private readonly Action<FirebaseEvent<FirebaseMessage>> _onNext;
+            private readonly Action<Exception> _onError;
+            private readonly Action _onCompleted;
+
+            public FirebaseObserver(Action<FirebaseEvent<FirebaseMessage>> onNext, Action<Exception> onError = null, Action onCompleted = null)
+            {
+                _onNext = onNext;
+                _onError = onError;
+                _onCompleted = onCompleted;
+            }
+
+            public void OnNext(FirebaseEvent<FirebaseMessage> value)
+            {
+                _onNext?.Invoke(value);
+            }
+
+            public void OnError(Exception error)
+            {
+                _onError?.Invoke(error);
+            }
+
+            public void OnCompleted()
+            {
+                _onCompleted?.Invoke();
+            }
+        }
+
+        private void EscucharMensajesEnTiempoReal()
+        {
+            var chatRef = firebaseClient
+                .Child("chats")
+                .Child("chat1")
+                .Child("messages");
+
+            // Listen for real-time updates using FirebaseMessage
+            var observable = chatRef.AsObservable<FirebaseMessage>();
+
+            // Create a custom observer
+            var observer = new FirebaseObserver(
+                onNext: messageEvent =>
+                {
+                    if (messageEvent.Object != null)
+                    {
+                        // Safely access properties
+                        string sender = messageEvent.Object.sender;
+                        string messageText = messageEvent.Object.message;
+
+                        // Add the message to the chat panel
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            AgregarMensajeAlChat(sender, messageText);
+                        });
+                    }
+                },
+                onError: ex =>
+                {
+                    // Handle any errors
+                    MessageBox.Show("Error al recibir mensajes: " + ex.Message);
+                },
+                onCompleted: () =>
+                {
+                    // Handle completion (if needed)
+                    MessageBox.Show("La conexión con el chat se ha cerrado.");
+                }
+            );
+
+            // Subscribe to the observable using the custom observer
+            observable.Subscribe(observer);
+        }
 
     }
+
+
 
 
 
