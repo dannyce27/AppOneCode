@@ -18,8 +18,11 @@ using static AppOneCode.Vista.user;
 namespace AppOneCode
 {
     public partial class FrmChat : Form
+
     {
         private FirebaseClient firebaseClient;
+
+
 
         private int paginaActual = 1; // Página actual
         private int elementosPorPagina = 5; // Elementos por página
@@ -103,6 +106,9 @@ namespace AppOneCode
             await LeerMensajes(); // Load messages when the form loads
 
             EscucharMensajesEnTiempoReal(); // Start listening for real-time messages
+
+            pChatporUsuario.AutoScroll = true; // Habilita el desplazamiento
+
         }
 
         private void flpUsuariosLista_Paint(object sender, PaintEventArgs e)
@@ -123,15 +129,8 @@ namespace AppOneCode
             pChatporUsuario.Controls.Clear(); // Limpia el panel antes de mostrar el nuevo chat
 
             // Agregar un control de chat dinámico (Ejemplo: un Label o TextBox para mensajes)
-            Label lblMensaje = new Label
-            {
-                Text = $"Chat con {usuario.Username}",
-                AutoSize = true,
-                Font = new Font("Arial", 12, FontStyle.Bold),
-                ForeColor = Color.White
-            };
 
-            pChatporUsuario.Controls.Add(lblMensaje);
+
         }
 
         private void UserControl_UsuarioSeleccionado(object sender, UsuarioEventArgs e)
@@ -169,11 +168,13 @@ namespace AppOneCode
                 .Child("chat1")
                 .Child("messages");
 
+            string nombreUsuario = ObtenerNombreUsuario();
+
             // Crear un nuevo mensaje con un timestamp
             var nuevoMensaje = new
             {
                 message = mensaje,
-                sender = "User1",  // El usuario que envía el mensaje
+                sender = nombreUsuario,  // El usuario que envía el mensaje
                 timestamp = DateTimeOffset.Now.ToUnixTimeSeconds()  // Timestamp actual
             };
 
@@ -187,7 +188,18 @@ namespace AppOneCode
             MessageBox.Show("Mensaje enviado");
         }
 
+        private string ObtenerNombreUsuario()
+        {
+            // Suponiendo que tienes un objeto de usuario que contiene la información
+            // Si estás utilizando un sistema de autenticación, este método puede adaptarse según tu implementación
 
+            // Ejemplo simple, reemplaza esto con tu lógica para obtener el nombre
+            int usuarioId = Usuario.UsuarioId;
+
+            string nombreUsuario = Usuario.ObtenerNombreUsuario(usuarioId); // Aquí puedes poner la lógica para obtener el nombre real
+
+            return nombreUsuario;
+        }
         private async Task LeerMensajes()
         {
             try
@@ -321,6 +333,34 @@ namespace AppOneCode
             // Subscribe to the observable using the custom observer
             observable.Subscribe(observer);
         }
+
+        private async void btnEnviarMensaje_Click(object sender, EventArgs e)
+        {
+            string mensaje = txtMensaje.Text.Trim();
+
+            if (!string.IsNullOrEmpty(mensaje))
+            {
+                await EnviarMensaje(mensaje);
+                txtMensaje.Clear();
+            }
+        }
+
+        private async void txtMensaje_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter) // Detecta la tecla Enter
+            {
+                e.Handled = true; // Evita que se agregue un salto de línea en el TextBox
+                string mensaje = txtMensaje.Text.Trim();
+
+                if (!string.IsNullOrEmpty(mensaje))
+                {
+                    await EnviarMensaje(mensaje);
+                    txtMensaje.Clear();
+                }
+            }
+        }
+
+       
 
     }
 

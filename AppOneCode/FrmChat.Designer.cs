@@ -68,12 +68,14 @@
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox33 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblChatNombreUsuario = new System.Windows.Forms.Label();
             this.flpUsuariosLista = new System.Windows.Forms.FlowLayoutPanel();
             this.lblNumPagina = new System.Windows.Forms.Label();
             this.btnSiguiente = new AppOneCode.Modelo.BotonPersonalizado();
             this.btnAnterior = new AppOneCode.Modelo.BotonPersonalizado();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblChatNombreUsuario = new System.Windows.Forms.Label();
+            this.txtMensaje = new System.Windows.Forms.TextBox();
+            this.btnEnviarMensaje = new AppOneCode.Modelo.BotonPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
@@ -554,6 +556,26 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel2.Controls.Add(this.lblChatNombreUsuario);
+            this.panel2.Location = new System.Drawing.Point(521, 110);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(588, 43);
+            this.panel2.TabIndex = 155;
+            // 
+            // lblChatNombreUsuario
+            // 
+            this.lblChatNombreUsuario.AutoSize = true;
+            this.lblChatNombreUsuario.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChatNombreUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblChatNombreUsuario.Location = new System.Drawing.Point(7, 8);
+            this.lblChatNombreUsuario.Name = "lblChatNombreUsuario";
+            this.lblChatNombreUsuario.Size = new System.Drawing.Size(66, 28);
+            this.lblChatNombreUsuario.TabIndex = 156;
+            this.lblChatNombreUsuario.Text = "Daniel";
+            // 
             // flpUsuariosLista
             // 
             this.flpUsuariosLista.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -604,25 +626,29 @@
             this.btnAnterior.UseVisualStyleBackColor = false;
             this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
-            // panel2
+            // txtMensaje
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.panel2.Controls.Add(this.lblChatNombreUsuario);
-            this.panel2.Location = new System.Drawing.Point(521, 110);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(588, 43);
-            this.panel2.TabIndex = 155;
+            this.txtMensaje.Font = new System.Drawing.Font("Poppins Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMensaje.Location = new System.Drawing.Point(521, 741);
+            this.txtMensaje.Name = "txtMensaje";
+            this.txtMensaje.Size = new System.Drawing.Size(441, 24);
+            this.txtMensaje.TabIndex = 4;
+            this.txtMensaje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMensaje_KeyPress);
             // 
-            // lblChatNombreUsuario
+            // btnEnviarMensaje
             // 
-            this.lblChatNombreUsuario.AutoSize = true;
-            this.lblChatNombreUsuario.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChatNombreUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblChatNombreUsuario.Location = new System.Drawing.Point(7, 8);
-            this.lblChatNombreUsuario.Name = "lblChatNombreUsuario";
-            this.lblChatNombreUsuario.Size = new System.Drawing.Size(66, 28);
-            this.lblChatNombreUsuario.TabIndex = 156;
-            this.lblChatNombreUsuario.Text = "Daniel";
+            this.btnEnviarMensaje.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnEnviarMensaje.FlatAppearance.BorderSize = 0;
+            this.btnEnviarMensaje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarMensaje.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviarMensaje.ForeColor = System.Drawing.Color.White;
+            this.btnEnviarMensaje.Location = new System.Drawing.Point(970, 736);
+            this.btnEnviarMensaje.Name = "btnEnviarMensaje";
+            this.btnEnviarMensaje.Size = new System.Drawing.Size(127, 31);
+            this.btnEnviarMensaje.TabIndex = 5;
+            this.btnEnviarMensaje.Text = "Enviar";
+            this.btnEnviarMensaje.UseVisualStyleBackColor = false;
+            this.btnEnviarMensaje.Click += new System.EventHandler(this.btnEnviarMensaje_Click);
             // 
             // FrmChat
             // 
@@ -630,6 +656,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(1109, 780);
+            this.Controls.Add(this.btnEnviarMensaje);
+            this.Controls.Add(this.txtMensaje);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.lblNumPagina);
@@ -721,5 +749,7 @@
         private Modelo.BotonPersonalizado btnSiguiente;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblChatNombreUsuario;
+        private System.Windows.Forms.TextBox txtMensaje;
+        private Modelo.BotonPersonalizado btnEnviarMensaje;
     }
 }
