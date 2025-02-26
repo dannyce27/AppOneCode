@@ -27,6 +27,8 @@ namespace AppOneCode
         private int paginaActual = 1; // Página actual
         private int elementosPorPagina = 5; // Elementos por página
         private List<Usuario> listaUsuarios; // Lista de todos los usuarios
+        private string chatIdActual = "";
+        private IDisposable subscription;
 
         public FrmChat()
         {
@@ -35,6 +37,14 @@ namespace AppOneCode
             ActualizarLabelPagina();
 
             firebaseClient = new FirebaseClient("https://onecode-1d62d-default-rtdb.firebaseio.com/");
+        }
+        private string GenerarChatId(int usuarioId)
+        {
+            // Ejemplo: Combina el ID del usuario actual y el seleccionado
+            int miUsuarioId = Usuario.UsuarioId;
+            return miUsuarioId < usuarioId
+                ? $"{miUsuarioId}-{usuarioId}"
+                : $"{usuarioId}-{miUsuarioId}";
         }
 
         private void LlenarUsuarios()
@@ -125,12 +135,15 @@ namespace AppOneCode
 
         private void MostrarChatUsuario(Usuario usuario)
         {
-            lblChatNombreUsuario.Text = usuario.Username; // Cambia el nombre del usuario en el panel
-            pChatporUsuario.Controls.Clear(); // Limpia el panel antes de mostrar el nuevo chat
+            lblChatNombreUsuario.Text = usuario.Username;
+            pChatporUsuario.Controls.Clear();
 
-            // Agregar un control de chat dinámico (Ejemplo: un Label o TextBox para mensajes)
+            // Generar un ID único para el chat (ej: combinación de IDs de usuarios)
+            chatIdActual = GenerarChatId(usuario.Id);
 
-
+            // Cargar mensajes del chat actual
+            LeerMensajes();
+            EscucharMensajesEnTiempoReal();
         }
 
         private void UserControl_UsuarioSeleccionado(object sender, UsuarioEventArgs e)
@@ -163,29 +176,26 @@ namespace AppOneCode
 
         private async Task EnviarMensaje(string mensaje)
         {
+            if (string.IsNullOrEmpty(chatIdActual))
+            {
+                MessageBox.Show("Selecciona un usuario primero");
+                return;
+            }
+
             var chatRef = firebaseClient
                 .Child("chats")
-                .Child("chat1")
+                .Child(chatIdActual)
                 .Child("messages");
 
-            string nombreUsuario = ObtenerNombreUsuario();
-
-            // Crear un nuevo mensaje con un timestamp
-            var nuevoMensaje = new
+            var nuevoMensaje = new FirebaseMessage
             {
+                sender = ObtenerNombreUsuario(),
                 message = mensaje,
-                sender = nombreUsuario,  // El usuario que envía el mensaje
-                timestamp = DateTimeOffset.Now.ToUnixTimeSeconds()  // Timestamp actual
+                timestamp = DateTimeOffset.Now.ToUnixTimeSeconds()  // Asegúrate de incluir esto
             };
 
-            // Usar el timestamp como clave única para cada mensaje
             string messageKey = "message" + nuevoMensaje.timestamp;
-
-            // Agregar el mensaje a la base de datos con PutAsync
             await chatRef.Child(messageKey).PutAsync(nuevoMensaje);
-
-            // Puedes mostrar un mensaje para verificar que el mensaje fue enviado correctamente
-            MessageBox.Show("Mensaje enviado");
         }
 
         private string ObtenerNombreUsuario()
@@ -204,31 +214,28 @@ namespace AppOneCode
         {
             try
             {
-                // Reference to the messages node in Firebase
+                if (string.IsNullOrEmpty(chatIdActual)) return;
+
                 var chatRef = firebaseClient
                     .Child("chats")
-                    .Child("chat1")
+                    .Child(chatIdActual)
                     .Child("messages");
 
-                // Fetch messages from Firebase
-                var messages = await chatRef.OnceAsync<dynamic>();
+                var messages = await chatRef
+                    .OrderBy("timestamp")  // Ordenar por timestamp
+                    .OnceAsync<FirebaseMessage>();
 
-                // Clear the chat panel before adding new messages
+                // Limpiar el panel antes de agregar mensajes
                 pChatporUsuario.Controls.Clear();
 
-                // Iterate through the messages and add them to the chat panel
                 foreach (var message in messages)
                 {
-                    string sender = message.Object.sender;
-                    string messageText = message.Object.message;
-
-                    // Add the message to the chat panel
-                    AgregarMensajeAlChat(sender, messageText);
+                    AgregarMensajeAlChat(message.Object.sender, message.Object.message);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al leer los mensajes: " + ex.Message);
+                MessageBox.Show("Error al leer mensajes: " + ex.Message);
             }
         }
 
@@ -237,7 +244,7 @@ namespace AppOneCode
 
         private void AgregarMensajeAlChat(string sender, string message)
         {
-            // Create a new Label for the message
+            // Crear un nuevo Label para el mensaje
             Label lblMensaje = new Label
             {
                 Text = $"{sender}: {message}",
@@ -245,14 +252,16 @@ namespace AppOneCode
                 Font = new Font("Poppins", 12),
                 ForeColor = Color.White,
                 Padding = new Padding(5),
-                Margin = new Padding(5)
+                Margin = new Padding(5),
+                Dock = DockStyle.Top // Asegura que los mensajes se apilen verticalmente
             };
 
-            // Add the Label to the chat panel
+            // Agregar el Label al panel
             pChatporUsuario.Controls.Add(lblMensaje);
 
-            // Scroll to the bottom of the panel to show the latest message
+            // Desplazar el panel al final para mostrar el mensaje más reciente
             pChatporUsuario.ScrollControlIntoView(lblMensaje);
+            pChatporUsuario.AutoScrollOffset = new Point(0, lblMensaje.Bottom);
         }
 
         public class FirebaseMessage
@@ -293,25 +302,26 @@ namespace AppOneCode
 
         private void EscucharMensajesEnTiempoReal()
         {
+            if (string.IsNullOrEmpty(chatIdActual)) return;
+
             var chatRef = firebaseClient
                 .Child("chats")
-                .Child("chat1")
+                .Child(chatIdActual)
                 .Child("messages");
 
-            // Listen for real-time updates using FirebaseMessage
+            // Escuchar actualizaciones en tiempo real
             var observable = chatRef.AsObservable<FirebaseMessage>();
 
-            // Create a custom observer
+            // Crear un observador personalizado
             var observer = new FirebaseObserver(
                 onNext: messageEvent =>
                 {
                     if (messageEvent.Object != null)
                     {
-                        // Safely access properties
                         string sender = messageEvent.Object.sender;
                         string messageText = messageEvent.Object.message;
 
-                        // Add the message to the chat panel
+                        // Agregar el mensaje al panel
                         this.Invoke((MethodInvoker)delegate
                         {
                             AgregarMensajeAlChat(sender, messageText);
@@ -320,17 +330,15 @@ namespace AppOneCode
                 },
                 onError: ex =>
                 {
-                    // Handle any errors
                     MessageBox.Show("Error al recibir mensajes: " + ex.Message);
                 },
                 onCompleted: () =>
                 {
-                    // Handle completion (if needed)
                     MessageBox.Show("La conexión con el chat se ha cerrado.");
                 }
             );
 
-            // Subscribe to the observable using the custom observer
+            // Suscribirse al observable usando el observador personalizado
             observable.Subscribe(observer);
         }
 
