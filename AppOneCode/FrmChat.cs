@@ -25,7 +25,7 @@ namespace AppOneCode
 
 
         private int paginaActual = 1; // Página actual
-        private int elementosPorPagina = 5; // Elementos por página
+        private int elementosPorPagina = 6; // Elementos por página
         private List<Usuario> listaUsuarios; // Lista de todos los usuarios
         private string chatIdActual = "";
         private IDisposable subscription;
@@ -51,13 +51,13 @@ namespace AppOneCode
         {
             flpUsuariosLista.Controls.Clear();
 
-            // Verificar si la lista de usuarios es nula antes de continuar
+           
             if (listaUsuarios == null)
             {
-                listaUsuarios = Usuario.ObtenerUsuarios(); // Asignar a la variable de clase
+                listaUsuarios = Usuario.ObtenerUsuarios(); 
             }
 
-            // Evitar NullReferenceException si la lista sigue siendo nula
+            
             if (listaUsuarios == null || listaUsuarios.Count == 0)
             {
                 MessageBox.Show("No hay usuarios disponibles.");
@@ -72,21 +72,21 @@ namespace AppOneCode
             {
                 Usuario usuario = listaUsuarios[i];
 
-                // Crear un nuevo UserControl para cada usuario
+               
                 user userControl = new user
                 {
                     Id = usuario.Id,
                     Name = usuario.Username
                 };
 
-                // Asignar el nombre al Label dentro del UserControl
+                
                 Label lblNombreUsuario = (Label)userControl.Controls.Find("lblNombreUsuario", true).FirstOrDefault();
                 if (lblNombreUsuario != null)
                 {
                     lblNombreUsuario.Text = usuario.Username;
                 }
 
-                // Asignar imagen al PictureBox dentro del UserControl
+                
                 PictureBox pbFotoPerfil = (PictureBox)userControl.Controls.Find("pbFotoPerfil", true).FirstOrDefault();
                 if (pbFotoPerfil != null && usuario.ImagenPerfil != null)
                 {
@@ -99,7 +99,7 @@ namespace AppOneCode
 
                 userControl.UsuarioSeleccionado += UserControl_UsuarioSeleccionado;
 
-                // Agregar el UserControl al FlowLayoutPanel
+                
                 flpUsuariosLista.Controls.Add(userControl);
             }
         }
@@ -113,11 +113,11 @@ namespace AppOneCode
 
         private async void FrmChat_Load(object sender, EventArgs e)
         {
-            await LeerMensajes(); // Load messages when the form loads
+            await LeerMensajes(); 
 
-            EscucharMensajesEnTiempoReal(); // Start listening for real-time messages
+            EscucharMensajesEnTiempoReal(); 
 
-            pChatporUsuario.AutoScroll = true; // Habilita el desplazamiento
+            pChatporUsuario.AutoScroll = true; 
 
         }
 
@@ -138,17 +138,17 @@ namespace AppOneCode
             lblChatNombreUsuario.Text = usuario.Username;
             pChatporUsuario.Controls.Clear();
 
-            // Generar un ID único para el chat (ej: combinación de IDs de usuarios)
+           
             chatIdActual = GenerarChatId(usuario.Id);
 
-            // Cargar mensajes del chat actual
+            
             LeerMensajes();
             EscucharMensajesEnTiempoReal();
         }
 
         private void UserControl_UsuarioSeleccionado(object sender, UsuarioEventArgs e)
         {
-            // Accede al usuario desde e.Usuario
+          
             MostrarChatUsuario(e.Usuario);
         }
 
@@ -157,7 +157,7 @@ namespace AppOneCode
             if (paginaActual > 1)
             {
                 paginaActual--;
-                LlenarUsuarios(); // Actualiza la lista
+                LlenarUsuarios();
                 ActualizarLabelPagina();
             }
         }
@@ -169,7 +169,7 @@ namespace AppOneCode
             if (paginaActual < totalPaginas)
             {
                 paginaActual++;
-                LlenarUsuarios(); // Actualiza la lista
+                LlenarUsuarios(); 
                 ActualizarLabelPagina();
             }
         }
@@ -191,7 +191,7 @@ namespace AppOneCode
             {
                 sender = ObtenerNombreUsuario(),
                 message = mensaje,
-                timestamp = DateTimeOffset.Now.ToUnixTimeSeconds()  // Asegúrate de incluir esto
+                timestamp = DateTimeOffset.Now.ToUnixTimeSeconds()  
             };
 
             string messageKey = "message" + nuevoMensaje.timestamp;
@@ -200,13 +200,10 @@ namespace AppOneCode
 
         private string ObtenerNombreUsuario()
         {
-            // Suponiendo que tienes un objeto de usuario que contiene la información
-            // Si estás utilizando un sistema de autenticación, este método puede adaptarse según tu implementación
-
-            // Ejemplo simple, reemplaza esto con tu lógica para obtener el nombre
+            
             int usuarioId = Usuario.UsuarioId;
 
-            string nombreUsuario = Usuario.ObtenerNombreUsuario(usuarioId); // Aquí puedes poner la lógica para obtener el nombre real
+            string nombreUsuario = Usuario.ObtenerNombreUsuario(usuarioId); 
 
             return nombreUsuario;
         }
@@ -244,25 +241,53 @@ namespace AppOneCode
 
         private void AgregarMensajeAlChat(string sender, string message)
         {
-            // Crear un nuevo Label para el mensaje
+            // Verificar si el mensaje es enviado por el usuario actual
+            bool esMensajeEnviadoPorMiUsuario = sender == ObtenerNombreUsuario();
+
+            // Crear un contenedor para el mensaje
+            Panel panelMensaje = new Panel
+            {
+                Dock = DockStyle.Top,
+                AutoSize = true,
+                MaximumSize = new Size(pChatporUsuario.Width - 20, 0) // Evitar que los mensajes se desborden
+            };
+
+            // Crear un Label para el mensaje
             Label lblMensaje = new Label
             {
                 Text = $"{sender}: {message}",
                 AutoSize = true,
                 Font = new Font("Poppins", 12),
                 ForeColor = Color.White,
-                Padding = new Padding(5),
+                Padding = new Padding(10),
                 Margin = new Padding(5),
-                Dock = DockStyle.Top // Asegura que los mensajes se apilen verticalmente
+                MaximumSize = new Size(pChatporUsuario.Width - 20, 0), // Evitar que el mensaje se desborde
             };
 
-            // Agregar el Label al panel
-            pChatporUsuario.Controls.Add(lblMensaje);
+            // Asignar el fondo y alineación según si es enviado o recibido
+            if (esMensajeEnviadoPorMiUsuario)
+            {
+                lblMensaje.TextAlign = ContentAlignment.MiddleLeft; // Alinear texto a la izquierda
+                lblMensaje.BackColor = Color.FromArgb(0, 122, 255); // Color para los mensajes enviados
+            }
+            else
+            {
+                lblMensaje.TextAlign = ContentAlignment.MiddleRight; // Alinear texto a la derecha
+                lblMensaje.BackColor = Color.Gray; // Color para los mensajes recibidos
+            }
+
+            // Añadir el label al panel
+            panelMensaje.Controls.Add(lblMensaje);
+
+            // Añadir el panel al panel de chat
+            pChatporUsuario.Controls.Add(panelMensaje);
 
             // Desplazar el panel al final para mostrar el mensaje más reciente
-            pChatporUsuario.ScrollControlIntoView(lblMensaje);
-            pChatporUsuario.AutoScrollOffset = new Point(0, lblMensaje.Bottom);
+            pChatporUsuario.ScrollControlIntoView(panelMensaje);
+            pChatporUsuario.AutoScrollOffset = new Point(0, panelMensaje.Bottom);
         }
+
+
 
         public class FirebaseMessage
         {
@@ -338,7 +363,7 @@ namespace AppOneCode
                 }
             );
 
-            // Suscribirse al observable usando el observador personalizado
+          
             observable.Subscribe(observer);
         }
 
@@ -355,9 +380,9 @@ namespace AppOneCode
 
         private async void txtMensaje_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter) // Detecta la tecla Enter
+            if (e.KeyChar == (char)Keys.Enter) 
             {
-                e.Handled = true; // Evita que se agregue un salto de línea en el TextBox
+                e.Handled = true; 
                 string mensaje = txtMensaje.Text.Trim();
 
                 if (!string.IsNullOrEmpty(mensaje))

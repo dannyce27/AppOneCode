@@ -11,7 +11,6 @@ public class EmailService
             Random random = new Random();
             string codigo = random.Next(100000, 999999).ToString(); // Generar código
 
-            // HTML del mensaje (con el código dinámico)
             string mensajeHtml = $@"
         <!DOCTYPE html>
         <html lang='es'>

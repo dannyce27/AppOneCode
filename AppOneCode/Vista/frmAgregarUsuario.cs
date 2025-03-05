@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace AppOneCode.Vista
         {
             InitializeComponent();
             CargarImagenPerfil();
-            
+            CargarGraficoProyectosCompletados();
 
         }
 
@@ -344,6 +345,58 @@ namespace AppOneCode.Vista
         {
 
         }
+
+        private void crtProyectosCompletados_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void CargarGraficoProyectosCompletados()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                {
+                    conn.Open();
+
+                    string query = @"
+                    SELECT 
+    tr.Nombre AS NombreProyecto,
+    COUNT(ta.Id) AS TotalTareas,
+    SUM(CASE WHEN ta.EstadoId = e.Id THEN 1 ELSE 0 END) AS TareasCompletadas
+FROM Tareas ta
+INNER JOIN Trabajo tr ON ta.idProyecto = tr.Id
+INNER JOIN Estado e ON e.NombreEstado = 'Completada' -- Unir en lugar de subconsulta
+GROUP BY tr.Nombre;";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            // Limpiar datos anteriores del gráfico
+                            crtProyectosCompletados.Series["Series1"].Points.Clear();
+
+                            while (reader.Read())
+                            {
+                                string nombreProyecto = reader["NombreProyecto"].ToString();
+                                int totalTareas = Convert.ToInt32(reader["TotalTareas"]);
+                                int tareasCompletadas = Convert.ToInt32(reader["TareasCompletadas"]);
+
+                                double porcentaje = (totalTareas == 0) ? 0 : ((double)tareasCompletadas / totalTareas) * 100;
+
+                                // Agregar los datos al gráfico en la serie "Series1"
+                                crtProyectosCompletados.Series["Series1"].Points.AddXY(nombreProyecto, porcentaje);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar el gráfico: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
+
 }
+
 
