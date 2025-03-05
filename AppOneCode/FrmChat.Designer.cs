@@ -40,14 +40,6 @@
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pChatporUsuario = new System.Windows.Forms.Panel();
-            this.pictureBox32 = new System.Windows.Forms.PictureBox();
-            this.pictureBox31 = new System.Windows.Forms.PictureBox();
-            this.pictureBox30 = new System.Windows.Forms.PictureBox();
-            this.pictureBox27 = new System.Windows.Forms.PictureBox();
-            this.pictureBox29 = new System.Windows.Forms.PictureBox();
-            this.pictureBox26 = new System.Windows.Forms.PictureBox();
-            this.pictureBox28 = new System.Windows.Forms.PictureBox();
-            this.pictureBox25 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox34 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -64,19 +56,13 @@
             this.btnAnterior = new AppOneCode.Modelo.BotonPersonalizado();
             this.txtMensaje = new System.Windows.Forms.TextBox();
             this.btnEnviarMensaje = new AppOneCode.Modelo.BotonPersonalizado();
+            this.label2 = new System.Windows.Forms.Label();
+            this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             this.pChatporUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -91,7 +77,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(258, 118);
+            this.pictureBox1.Size = new System.Drawing.Size(258, 89);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
@@ -201,98 +187,11 @@
             // pChatporUsuario
             // 
             this.pChatporUsuario.BackColor = System.Drawing.Color.SteelBlue;
-            this.pChatporUsuario.Controls.Add(this.pictureBox32);
-            this.pChatporUsuario.Controls.Add(this.pictureBox31);
-            this.pChatporUsuario.Controls.Add(this.pictureBox30);
-            this.pChatporUsuario.Controls.Add(this.pictureBox27);
-            this.pChatporUsuario.Controls.Add(this.pictureBox29);
-            this.pChatporUsuario.Controls.Add(this.pictureBox26);
-            this.pChatporUsuario.Controls.Add(this.pictureBox28);
-            this.pChatporUsuario.Controls.Add(this.pictureBox25);
+            this.pChatporUsuario.Controls.Add(this.label2);
             this.pChatporUsuario.Location = new System.Drawing.Point(521, 154);
             this.pChatporUsuario.Name = "pChatporUsuario";
             this.pChatporUsuario.Size = new System.Drawing.Size(588, 571);
             this.pChatporUsuario.TabIndex = 113;
-            // 
-            // pictureBox32
-            // 
-            this.pictureBox32.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox32.Image")));
-            this.pictureBox32.Location = new System.Drawing.Point(477, 446);
-            this.pictureBox32.Name = "pictureBox32";
-            this.pictureBox32.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox32.TabIndex = 152;
-            this.pictureBox32.TabStop = false;
-            // 
-            // pictureBox31
-            // 
-            this.pictureBox31.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox31.Image")));
-            this.pictureBox31.Location = new System.Drawing.Point(298, 420);
-            this.pictureBox31.Name = "pictureBox31";
-            this.pictureBox31.Size = new System.Drawing.Size(170, 72);
-            this.pictureBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox31.TabIndex = 151;
-            this.pictureBox31.TabStop = false;
-            // 
-            // pictureBox30
-            // 
-            this.pictureBox30.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox30.Image")));
-            this.pictureBox30.Location = new System.Drawing.Point(87, 306);
-            this.pictureBox30.Name = "pictureBox30";
-            this.pictureBox30.Size = new System.Drawing.Size(170, 72);
-            this.pictureBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox30.TabIndex = 150;
-            this.pictureBox30.TabStop = false;
-            // 
-            // pictureBox27
-            // 
-            this.pictureBox27.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox27.Image")));
-            this.pictureBox27.Location = new System.Drawing.Point(25, 329);
-            this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox27.TabIndex = 149;
-            this.pictureBox27.TabStop = false;
-            // 
-            // pictureBox29
-            // 
-            this.pictureBox29.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox29.Image")));
-            this.pictureBox29.Location = new System.Drawing.Point(298, 204);
-            this.pictureBox29.Name = "pictureBox29";
-            this.pictureBox29.Size = new System.Drawing.Size(170, 72);
-            this.pictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox29.TabIndex = 148;
-            this.pictureBox29.TabStop = false;
-            // 
-            // pictureBox26
-            // 
-            this.pictureBox26.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox26.Image")));
-            this.pictureBox26.Location = new System.Drawing.Point(92, 72);
-            this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(170, 72);
-            this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox26.TabIndex = 146;
-            this.pictureBox26.TabStop = false;
-            // 
-            // pictureBox28
-            // 
-            this.pictureBox28.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox28.Image")));
-            this.pictureBox28.Location = new System.Drawing.Point(477, 213);
-            this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox28.TabIndex = 146;
-            this.pictureBox28.TabStop = false;
-            // 
-            // pictureBox25
-            // 
-            this.pictureBox25.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox25.Image")));
-            this.pictureBox25.Location = new System.Drawing.Point(25, 81);
-            this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox25.TabIndex = 133;
-            this.pictureBox25.TabStop = false;
             // 
             // panel4
             // 
@@ -354,11 +253,11 @@
             this.label14.BackColor = System.Drawing.Color.White;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Gray;
-            this.label14.Location = new System.Drawing.Point(109, 126);
+            this.label14.Location = new System.Drawing.Point(158, 126);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(208, 20);
+            this.label14.Size = new System.Drawing.Size(121, 20);
             this.label14.TabIndex = 145;
-            this.label14.Text = "Buscar mensajes o usuarios";
+            this.label14.Text = "Busca Usuarios";
             // 
             // pictureBox33
             // 
@@ -373,6 +272,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.botonPersonalizado1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.flpUsuariosLista);
             this.panel1.Controls.Add(this.pictureBox33);
@@ -419,9 +319,9 @@
             // flpUsuariosLista
             // 
             this.flpUsuariosLista.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpUsuariosLista.Location = new System.Drawing.Point(0, 193);
+            this.flpUsuariosLista.Location = new System.Drawing.Point(0, 247);
             this.flpUsuariosLista.Name = "flpUsuariosLista";
-            this.flpUsuariosLista.Size = new System.Drawing.Size(521, 532);
+            this.flpUsuariosLista.Size = new System.Drawing.Size(521, 478);
             this.flpUsuariosLista.TabIndex = 154;
             this.flpUsuariosLista.Paint += new System.Windows.Forms.PaintEventHandler(this.flpUsuariosLista_Paint);
             // 
@@ -490,6 +390,32 @@
             this.btnEnviarMensaje.UseVisualStyleBackColor = false;
             this.btnEnviarMensaje.Click += new System.EventHandler(this.btnEnviarMensaje_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(165, 262);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(227, 28);
+            this.label2.TabIndex = 157;
+            this.label2.Text = "No tienes ningun mensaje";
+            // 
+            // botonPersonalizado1
+            // 
+            this.botonPersonalizado1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado1.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalizado1.Location = new System.Drawing.Point(162, 184);
+            this.botonPersonalizado1.Name = "botonPersonalizado1";
+            this.botonPersonalizado1.Size = new System.Drawing.Size(156, 40);
+            this.botonPersonalizado1.TabIndex = 156;
+            this.botonPersonalizado1.Text = "Filtrar por más recientes";
+            this.botonPersonalizado1.UseVisualStyleBackColor = false;
+            this.botonPersonalizado1.Click += new System.EventHandler(this.botonPersonalizado1_Click);
+            // 
             // FrmChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -511,14 +437,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             this.pChatporUsuario.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
+            this.pChatporUsuario.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).EndInit();
@@ -547,14 +466,6 @@
         private System.Windows.Forms.PictureBox pictureBox20;
         private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.Panel pChatporUsuario;
-        private System.Windows.Forms.PictureBox pictureBox32;
-        private System.Windows.Forms.PictureBox pictureBox31;
-        private System.Windows.Forms.PictureBox pictureBox30;
-        private System.Windows.Forms.PictureBox pictureBox27;
-        private System.Windows.Forms.PictureBox pictureBox29;
-        private System.Windows.Forms.PictureBox pictureBox26;
-        private System.Windows.Forms.PictureBox pictureBox28;
-        private System.Windows.Forms.PictureBox pictureBox25;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox34;
         private System.Windows.Forms.Label label15;
@@ -571,5 +482,7 @@
         private System.Windows.Forms.Label lblChatNombreUsuario;
         private System.Windows.Forms.TextBox txtMensaje;
         private Modelo.BotonPersonalizado btnEnviarMensaje;
+        private System.Windows.Forms.Label label2;
+        private Modelo.BotonPersonalizado botonPersonalizado1;
     }
 }

@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.sideBarContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -80,6 +80,10 @@
             this.lblproyectos = new System.Windows.Forms.Label();
             this.lbltareas = new System.Windows.Forms.Label();
             this.SidebarTime = new System.Windows.Forms.Timer(this.components);
+            this.btnFiltroCompletadas = new AppOneCode.Modelo.BotonPersonalizado();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnFiltroPendientes = new AppOneCode.Modelo.BotonPersonalizado();
+            this.btnFiltroTrabajando = new AppOneCode.Modelo.BotonPersonalizado();
             this.panel1.SuspendLayout();
             this.sideBarContainer.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -106,6 +110,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnFiltroTrabajando);
+            this.panel1.Controls.Add(this.btnFiltroPendientes);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.btnFiltroCompletadas);
             this.panel1.Controls.Add(this.sideBarContainer);
             this.panel1.Controls.Add(this.btnBuscarProyectos);
             this.panel1.Controls.Add(this.cmbProyectos);
@@ -409,17 +417,17 @@
             // 
             // ctTareasCompletadas
             // 
-            chartArea1.Name = "ChartArea1";
-            this.ctTareasCompletadas.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ctTareasCompletadas.Legends.Add(legend1);
+            chartArea7.Name = "ChartArea1";
+            this.ctTareasCompletadas.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.ctTareasCompletadas.Legends.Add(legend7);
             this.ctTareasCompletadas.Location = new System.Drawing.Point(144, 629);
             this.ctTareasCompletadas.Name = "ctTareasCompletadas";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.ctTareasCompletadas.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea;
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.ctTareasCompletadas.Series.Add(series7);
             this.ctTareasCompletadas.Size = new System.Drawing.Size(1285, 247);
             this.ctTareasCompletadas.TabIndex = 129;
             this.ctTareasCompletadas.Text = "ctTareasCompletadas";
@@ -439,6 +447,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(1110, 90);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(284, 24);
@@ -447,16 +456,16 @@
             // 
             // ctPorcentajeProyectos
             // 
-            chartArea2.Name = "ChartArea1";
-            this.ctPorcentajeProyectos.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.ctPorcentajeProyectos.Legends.Add(legend2);
+            chartArea8.Name = "ChartArea1";
+            this.ctPorcentajeProyectos.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.ctPorcentajeProyectos.Legends.Add(legend8);
             this.ctPorcentajeProyectos.Location = new System.Drawing.Point(950, 130);
             this.ctPorcentajeProyectos.Name = "ctPorcentajeProyectos";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.ctPorcentajeProyectos.Series.Add(series2);
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.ctPorcentajeProyectos.Series.Add(series8);
             this.ctPorcentajeProyectos.Size = new System.Drawing.Size(651, 391);
             this.ctPorcentajeProyectos.TabIndex = 122;
             this.ctPorcentajeProyectos.Text = "ct%Proyectos";
@@ -477,18 +486,18 @@
             // 
             this.ctEmpleadosEficientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
             this.ctEmpleadosEficientes.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
-            chartArea3.Name = "ChartArea1";
-            this.ctEmpleadosEficientes.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.ctEmpleadosEficientes.Legends.Add(legend3);
+            chartArea9.Name = "ChartArea1";
+            this.ctEmpleadosEficientes.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.ctEmpleadosEficientes.Legends.Add(legend9);
             this.ctEmpleadosEficientes.Location = new System.Drawing.Point(94, 118);
             this.ctEmpleadosEficientes.Name = "ctEmpleadosEficientes";
             this.ctEmpleadosEficientes.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.ctEmpleadosEficientes.Series.Add(series3);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.ctEmpleadosEficientes.Series.Add(series9);
             this.ctEmpleadosEficientes.Size = new System.Drawing.Size(571, 446);
             this.ctEmpleadosEficientes.TabIndex = 120;
             this.ctEmpleadosEficientes.Text = "ctEmpleadosEficientes";
@@ -499,6 +508,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(304, 90);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(260, 24);
@@ -603,6 +613,60 @@
             this.SidebarTime.Interval = 10;
             this.SidebarTime.Tick += new System.EventHandler(this.s);
             // 
+            // btnFiltroCompletadas
+            // 
+            this.btnFiltroCompletadas.BackColor = System.Drawing.Color.DarkBlue;
+            this.btnFiltroCompletadas.FlatAppearance.BorderSize = 0;
+            this.btnFiltroCompletadas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltroCompletadas.ForeColor = System.Drawing.Color.White;
+            this.btnFiltroCompletadas.Location = new System.Drawing.Point(619, 280);
+            this.btnFiltroCompletadas.Name = "btnFiltroCompletadas";
+            this.btnFiltroCompletadas.Size = new System.Drawing.Size(150, 40);
+            this.btnFiltroCompletadas.TabIndex = 134;
+            this.btnFiltroCompletadas.Text = "Completadas";
+            this.btnFiltroCompletadas.UseVisualStyleBackColor = false;
+            this.btnFiltroCompletadas.Click += new System.EventHandler(this.btnFiltroCompletadas_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(636, 244);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 24);
+            this.label3.TabIndex = 136;
+            this.label3.Text = "Filtrar Por:";
+            // 
+            // btnFiltroPendientes
+            // 
+            this.btnFiltroPendientes.BackColor = System.Drawing.Color.DarkBlue;
+            this.btnFiltroPendientes.FlatAppearance.BorderSize = 0;
+            this.btnFiltroPendientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltroPendientes.ForeColor = System.Drawing.Color.White;
+            this.btnFiltroPendientes.Location = new System.Drawing.Point(619, 343);
+            this.btnFiltroPendientes.Name = "btnFiltroPendientes";
+            this.btnFiltroPendientes.Size = new System.Drawing.Size(150, 40);
+            this.btnFiltroPendientes.TabIndex = 137;
+            this.btnFiltroPendientes.Text = "Pendientes";
+            this.btnFiltroPendientes.UseVisualStyleBackColor = false;
+            this.btnFiltroPendientes.Click += new System.EventHandler(this.btnFiltroPendientes_Click);
+            // 
+            // btnFiltroTrabajando
+            // 
+            this.btnFiltroTrabajando.BackColor = System.Drawing.Color.DarkBlue;
+            this.btnFiltroTrabajando.FlatAppearance.BorderSize = 0;
+            this.btnFiltroTrabajando.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltroTrabajando.ForeColor = System.Drawing.Color.White;
+            this.btnFiltroTrabajando.Location = new System.Drawing.Point(619, 405);
+            this.btnFiltroTrabajando.Name = "btnFiltroTrabajando";
+            this.btnFiltroTrabajando.Size = new System.Drawing.Size(150, 40);
+            this.btnFiltroTrabajando.TabIndex = 138;
+            this.btnFiltroTrabajando.Text = "Trabajando";
+            this.btnFiltroTrabajando.UseVisualStyleBackColor = false;
+            this.btnFiltroTrabajando.Click += new System.EventHandler(this.btnFiltroTrabajando_Click);
+            // 
             // FrmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -687,5 +751,9 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Timer SidebarTime;
+        private Modelo.BotonPersonalizado btnFiltroTrabajando;
+        private Modelo.BotonPersonalizado btnFiltroPendientes;
+        private System.Windows.Forms.Label label3;
+        private Modelo.BotonPersonalizado btnFiltroCompletadas;
     }
 }

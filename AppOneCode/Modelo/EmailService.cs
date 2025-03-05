@@ -51,13 +51,13 @@ public class EmailService
                 From = new MailAddress("dsoriano@emkt.com.sv"),
                 Subject = "Código de recuperación de contraseña",
                 Body = mensajeHtml,
-                IsBodyHtml = true // ✅ Activar envío en formato HTML
+                IsBodyHtml = true 
             };
 
             mensaje.To.Add(emailDestino);
             smtp.Send(mensaje);
 
-            return codigo; // Retorna el código generado
+            return codigo; 
         }
         catch (Exception ex)
         {

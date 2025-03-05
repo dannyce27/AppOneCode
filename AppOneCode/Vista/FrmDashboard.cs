@@ -350,28 +350,67 @@ namespace AppOneCode.Vista
             {
 
                 sideBarContainer.Width -= 10;
-                if(sideBarContainer.Width  == sideBarContainer.MinimumSize.Width)
+                if (sideBarContainer.Width == sideBarContainer.MinimumSize.Width)
                 {
 
-                    sideBarexoand  = false;
+                    sideBarexoand = false;
                     SidebarTime.Stop();
 
 
-                   
+
                 }
             }
             else
             {
 
                 sideBarContainer.Width += 10;
-                if(sideBarContainer.Width == sideBarContainer.MaximumSize.Width)
+                if (sideBarContainer.Width == sideBarContainer.MaximumSize.Width)
                 {
 
-                    sideBarexoand= true;
+                    sideBarexoand = true;
                     SidebarTime.Stop();
 
                 }
 
+            }
+        }
+
+        private void FiltrarTareasPorEstado(string estado)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = @"
+                SELECT u.Username, COUNT(t.Id) AS Cantidad
+                FROM Users u
+                JOIN Tareas t ON u.Id = t.UsuarioId
+                WHERE t.EstadoId = (SELECT Id FROM Estado WHERE NombreEstado = @Estado)
+                GROUP BY u.Username
+                ORDER BY Cantidad DESC";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Estado", estado);
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        ctEmpleadosEficientes.Series["Series1"].Points.Clear();
+
+                        while (reader.Read())
+                        {
+                            string username = reader["Username"].ToString();
+                            int cantidad = Convert.ToInt32(reader["Cantidad"]);
+
+                            ctEmpleadosEficientes.Series["Series1"].Points.AddXY(username, cantidad);
+                            ctEmpleadosEficientes.Series["Series1"].Points.Last().Label = $"{username} ({cantidad})";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al filtrar tareas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -388,6 +427,21 @@ namespace AppOneCode.Vista
         private void cmbProyectos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnFiltroCompletadas_Click(object sender, EventArgs e)
+        {
+            FiltrarTareasPorEstado("Completada");
+        }
+
+        private void btnFiltroPendientes_Click(object sender, EventArgs e)
+        {
+            FiltrarTareasPorEstado("Pendiente");    
+        }
+
+        private void btnFiltroTrabajando_Click(object sender, EventArgs e)
+        {
+            FiltrarTareasPorEstado("Trabajando");
         }
     }
 }

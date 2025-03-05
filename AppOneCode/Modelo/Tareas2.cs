@@ -467,22 +467,20 @@ namespace AppOneCode.Modelo
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"
-        SELECT T.Id, T.Descripcion, U.Username AS Usuario, 
-               P.NombrePrioridad AS Prioridad, E.NombreEstado AS Estado,
-               T.FechaInicio, T.FechaFinalizacion, PR.Nombre
-        FROM Tareas T
-        INNER JOIN Users U ON T.UsuarioId = U.Id
-        INNER JOIN Prioridad P ON T.PrioridadId = P.Id
-        INNER JOIN Estado E ON T.EstadoId = E.Id
-        INNER JOIN Trabajo PR ON T.idProyecto = PR.Id
-        WHERE CAST(T.FechaInicio AS DATE) >= @FechaInicio 
-          AND CAST(T.FechaFinalizacion AS DATE) <= @FechaFinalizacion";
+            SELECT T.Id, T.Descripcion, U.Username AS Usuario, 
+                   P.NombrePrioridad AS Prioridad, E.NombreEstado AS Estado,
+                   T.FechaInicio, T.FechaFinalizacion, PR.Nombre
+            FROM Tareas T
+            INNER JOIN Users U ON T.UsuarioId = U.Id
+            INNER JOIN Prioridad P ON T.PrioridadId = P.Id
+            INNER JOIN Estado E ON T.EstadoId = E.Id
+            INNER JOIN Trabajo PR ON T.idProyecto = PR.Id
+            WHERE CAST(T.FechaInicio AS DATE) >= @FechaInicio 
+              AND CAST(T.FechaFinalizacion AS DATE) <= @FechaFinalizacion";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio);
                 cmd.Parameters.AddWithValue("@FechaFinalizacion", fechaFinalizacion);
-
-
 
                 try
                 {
@@ -503,7 +501,6 @@ namespace AppOneCode.Modelo
                             Trabajo = reader.GetString(7)
                         };
                         tareasFiltradas.Add(tarea);
-
                     }
                 }
                 catch (SqlException ex)

@@ -31,7 +31,12 @@ namespace AppOneCode.Vista
 
         private void FrmAgregarTareas_Load(object sender, EventArgs e)
         {
+            // Configurar el formato de los DateTimePicker
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy"; // Formato día/mes/año
 
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.CustomFormat = "dd/MM/yyyy"; // Formato día/mes/año
         }
         private void CargarEmpleados()
         {
@@ -430,13 +435,11 @@ namespace AppOneCode.Vista
             if (tareasFiltradas.Count > 0)
             {
                 dgvMostrarProyectosI.DataSource = tareasFiltradas; // Mostrar en DataGridView
-
-             
+                MessageBox.Show($"Se encontraron {tareasFiltradas.Count} tareas.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("No se encontraron tareas en el rango de fechas seleccionado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
             }
         }
 
@@ -449,6 +452,16 @@ namespace AppOneCode.Vista
             List<Tareas2> resultados = tareaModelo.BuscarTareas(searchCriteria); 
             
             dgvMostrarProyectosI.DataSource = resultados;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

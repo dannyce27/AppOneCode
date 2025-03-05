@@ -43,7 +43,7 @@ namespace AppOneCode.Vista
         {
             int usuarioId = Usuario.UsuarioId;
 
-            // Llamas al método para obtener el nombre de usuario
+         
             string username = Usuario.ObtenerNombreUsuario(usuarioId);
 
 
@@ -62,11 +62,11 @@ namespace AppOneCode.Vista
          
 
             // Obtener el nombre de usuario
-            string tipoUsuario = Usuario.ObtenerTipoUsuario(usuarioId); // Obtener el tipo de usuario
+            string tipoUsuario = Usuario.ObtenerTipoUsuario(usuarioId); 
 
             if (!string.IsNullOrEmpty(tipoUsuario))
             {
-                lblCargo.Text = tipoUsuario; // Mostrar el tipo de usuario en lblCargo
+                lblCargo.Text = tipoUsuario; 
             }
             else
             {
