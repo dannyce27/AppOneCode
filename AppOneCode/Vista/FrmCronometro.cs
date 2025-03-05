@@ -177,5 +177,10 @@ namespace AppOneCode.Vista
             this.WindowState = FormWindowState.Normal; // Restaura el formulario si estaba minimizado
             notifyIconCronometro.Visible = false; // Oculta el ícono en el área de notificación
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

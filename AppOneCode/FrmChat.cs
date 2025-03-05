@@ -241,10 +241,9 @@ namespace AppOneCode
 
         private void AgregarMensajeAlChat(string sender, string message)
         {
-            // Verificar si el mensaje es enviado por el usuario actual
             bool esMensajeEnviadoPorMiUsuario = sender == ObtenerNombreUsuario();
 
-            // Crear un contenedor para el mensaje
+           
             Panel panelMensaje = new Panel
             {
                 Dock = DockStyle.Top,
@@ -276,13 +275,13 @@ namespace AppOneCode
                 lblMensaje.BackColor = Color.Gray; // Color para los mensajes recibidos
             }
 
-            // Añadir el label al panel
+        
             panelMensaje.Controls.Add(lblMensaje);
 
-            // Añadir el panel al panel de chat
+          
             pChatporUsuario.Controls.Add(panelMensaje);
 
-            // Desplazar el panel al final para mostrar el mensaje más reciente
+            
             pChatporUsuario.ScrollControlIntoView(panelMensaje);
             pChatporUsuario.AutoScrollOffset = new Point(0, panelMensaje.Bottom);
         }
