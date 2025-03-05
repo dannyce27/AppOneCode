@@ -312,9 +312,9 @@
             this.lblChatNombreUsuario.ForeColor = System.Drawing.Color.White;
             this.lblChatNombreUsuario.Location = new System.Drawing.Point(7, 8);
             this.lblChatNombreUsuario.Name = "lblChatNombreUsuario";
-            this.lblChatNombreUsuario.Size = new System.Drawing.Size(66, 28);
+            this.lblChatNombreUsuario.Size = new System.Drawing.Size(76, 28);
             this.lblChatNombreUsuario.TabIndex = 156;
-            this.lblChatNombreUsuario.Text = "Daniel";
+            this.lblChatNombreUsuario.Text = "Usuario";
             // 
             // flpUsuariosLista
             // 
