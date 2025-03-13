@@ -100,12 +100,4 @@ C:\Users\Estudiante\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.exe
 C:\Users\Estudiante\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.pdb
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.user.resources
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Firebase.Database.dll
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Newtonsoft.Json.dll
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Reactive.Core.dll
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Reactive.Interfaces.dll
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Reactive.Linq.dll
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Newtonsoft.Json.xml
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Reactive.Core.xml
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Reactive.Interfaces.xml
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Reactive.Linq.xml
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.Up2Date
