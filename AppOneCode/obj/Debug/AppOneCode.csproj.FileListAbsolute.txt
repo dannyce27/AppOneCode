@@ -62,7 +62,6 @@ C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmDa
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmPerfil.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.frmProyectos.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.UserControlTareas.resources
-C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.UserControlTareasPendientes.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmRecuperacionC.resources
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmPerfil.resources
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmRecuperacionC.resources
@@ -101,3 +100,10 @@ C:\Users\Estudiante\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.pdb
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.user.resources
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Firebase.Database.dll
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.Up2Date
+C:\Users\German G\Desktop\AppOneCode\AppOneCode\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\German G\Desktop\AppOneCode\AppOneCode\bin\Debug\Firebase.Database.dll
+C:\Users\German G\Desktop\AppOneCode\AppOneCode\bin\Debug\itextsharp.dll
+C:\Users\German G\Desktop\AppOneCode\AppOneCode\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\German G\Desktop\AppOneCode\AppOneCode\bin\Debug\itextsharp.xml
+C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.user.resources
+C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.Up2Date

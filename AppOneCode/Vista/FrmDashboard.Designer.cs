@@ -84,6 +84,8 @@
             this.lblproyectos = new System.Windows.Forms.Label();
             this.lbltareas = new System.Windows.Forms.Label();
             this.SidebarTime = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.sideBarContainer.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -106,6 +108,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -200,6 +204,7 @@
             this.sideBarContainer.Controls.Add(this.panel3);
             this.sideBarContainer.Controls.Add(this.panel4);
             this.sideBarContainer.Controls.Add(this.panel5);
+            this.sideBarContainer.Controls.Add(this.pictureBox12);
             this.sideBarContainer.Dock = System.Windows.Forms.DockStyle.Left;
             this.sideBarContainer.Location = new System.Drawing.Point(0, 0);
             this.sideBarContainer.MaximumSize = new System.Drawing.Size(252, 867);
@@ -366,11 +371,12 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.pictureBox5);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.lblTareasPendientes);
             this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.pictureBox5);
             this.panel5.Controls.Add(this.pictureBox6);
+            this.panel5.Controls.Add(this.pictureBox13);
             this.panel5.Location = new System.Drawing.Point(3, 235);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(247, 61);
@@ -380,7 +386,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(196)))), ((int)(((byte)(255)))));
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(3, 6);
+            this.pictureBox5.Location = new System.Drawing.Point(7, 8);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(58, 48);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -667,6 +673,28 @@
             this.SidebarTime.Interval = 10;
             this.SidebarTime.Tick += new System.EventHandler(this.s);
             // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(196)))), ((int)(((byte)(255)))));
+            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
+            this.pictureBox12.Location = new System.Drawing.Point(3, 302);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(65, 58);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox12.TabIndex = 135;
+            this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
+            this.pictureBox13.Location = new System.Drawing.Point(-11, 0);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(268, 61);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox13.TabIndex = 118;
+            this.pictureBox13.TabStop = false;
+            // 
             // FrmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -704,6 +732,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -755,5 +785,7 @@
         private Modelo.BotonPersonalizado btnFiltroPendientes;
         private System.Windows.Forms.Label label3;
         private Modelo.BotonPersonalizado btnFiltroCompletadas;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox pictureBox13;
     }
 }

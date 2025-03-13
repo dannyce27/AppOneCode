@@ -443,5 +443,13 @@ namespace AppOneCode.Vista
         {
             FiltrarTareasPorEstado("Trabajando");
         }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+
+            ReportePDF.GenerarReporte();
+            MessageBox.Show("Reporte generado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }
