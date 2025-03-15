@@ -204,6 +204,27 @@ namespace AppOneCode.Vista
                 return;
             }
 
+            string descripcion = txtDescP.Text;
+            string usuarioNombre = cmbEmpleadoAsignado.Text;
+            int usuarioId = Convert.ToInt32(cmbEmpleadoAsignado.SelectedValue);
+            string prioridad = cmbPrioridad.Text;
+            string estado = cmbEstado.Text;
+            DateTime fechaInicio = dtpFechaInicio.Value;
+            DateTime fechaFinalizacion = dtpFechaFinalizacion.Value;
+            string nombreProyecto = cmbProyectos.Text;
+            int idProyecto = Convert.ToInt32(cmbProyectos.SelectedValue);
+
+            string emailUsuario = "";
+
+            using (SqlConnection con = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT Email FROM Users WHERE Id = @UsuarioId", con);
+                cmd.Parameters.AddWithValue("@UsuarioId", usuarioId);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read()) emailUsuario = reader["Email"].ToString();
+            }
+
             // Crea una nueva instancia de la clase Tareas2
             Tareas2 nuevaTarea = new Tareas2
             {
@@ -223,6 +244,10 @@ namespace AppOneCode.Vista
             if (resultado)
             {
                 MessageBox.Show("Tarea agregada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Enviar correo de notificación
+                EmailService emailService = new EmailService();
+                emailService.EnviarNotificacionTarea(emailUsuario, usuarioNombre, nombreProyecto, descripcion);
 
                 // Limpia los campos del formulario
                 txtDescP.Clear();

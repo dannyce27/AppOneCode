@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -15,7 +16,7 @@ namespace AppOneCode.Vista
 {
     public partial class frmProyectos : Form
     {
-
+        private readonly string connectionString = @"Server=DESKTOP-2I6K8G4\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
         private ToolTip toolTip1;
 
         public frmProyectos()
@@ -25,6 +26,9 @@ namespace AppOneCode.Vista
 
             InitializeComponent();
             CargarTareas();
+            CargarAreasTrabajo();
+            CargarEncargadosProyectos();    
+
 
             toolTip1 = new ToolTip();
 
@@ -48,25 +52,105 @@ namespace AppOneCode.Vista
         {
 
         }
+        private void CargarAreasTrabajo()
+        {
+
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Id, NombreArea FROM AreaTrabajo";
+
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+
+                    Dictionary<int, string> estados = new Dictionary<int, string>();
+
+                    while (reader.Read())
+                    {
+                        int id = reader.GetInt32(0);
+                        string nombreEstado = reader.GetString(1);
+
+                        
+                        estados.Add(id, nombreEstado);
+                    }
+
+                   
+                    cmbAreaTrabajo.DataSource = new BindingSource(estados, null);
+                    cmbAreaTrabajo.DisplayMember = "Value";
+                    cmbAreaTrabajo.ValueMember = "Key";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar estados: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void CargarEncargadosProyectos()
+        {
+
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Id, Username FROM Users";
+
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+
+                    Dictionary<int, string> estados = new Dictionary<int, string>();
+
+                    while (reader.Read())
+                    {
+                        int id = reader.GetInt32(0);
+                        string nombreEstado = reader.GetString(1);
+
+                       
+                        estados.Add(id, nombreEstado);
+                    }
+
+                
+                    cmbEncargado.DataSource = new BindingSource(estados, null);
+                    cmbEncargado.DisplayMember = "Value";
+                    cmbEncargado.ValueMember = "Key";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar estados: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
         private void pbAgregarProyecto_Click(object sender, EventArgs e)
         {
             Tareas nuevaTarea = new Tareas
             {
                 Nombre = txtNombreProyecto.Text,
-                Encargado = txtEncargadoProyecto.Text,
-                AreaDeTrabajo = txtAreaTProyecto.Text,
-                Descripcion = txtDescProyecto.Text
+                IdEncargado = Convert.ToInt32(cmbEncargado.SelectedValue),
+                IdAreaTrabajo = Convert.ToInt32(cmbAreaTrabajo.SelectedValue),
+                Descripcion = txtDescProyecto.Text,
+                FechaInicio = dtpFechaInicio.Value,
+                FechaFinalizacion = dtpFechaFinalizacion.Value,
+
             };
 
-            if (nuevaTarea.InsertarProyecto()) 
+            if (nuevaTarea.InsertarProyecto())
             {
                 MessageBox.Show("Proyecto agregado exitosamente.");
-                CargarTareas(); // Recargar las tareas para mostrar la nueva
+                CargarTareas();
             }
 
 
         }
+
+
 
 
 
@@ -162,9 +246,12 @@ namespace AppOneCode.Vista
                 {
                     Id = Convert.ToInt32(dgvproyectos.CurrentRow.Cells["Id"].Value),
                     Nombre = txtNombreProyecto.Text,
-                    Encargado = txtEncargadoProyecto.Text,
-                    AreaDeTrabajo = txtAreaTProyecto.Text,
-                    Descripcion = txtDescProyecto.Text
+                    IdEncargado = (int)cmbEncargado.SelectedValue,
+                    IdAreaTrabajo = (int)cmbAreaTrabajo.SelectedValue,
+                    Descripcion = txtDescProyecto.Text,
+                    FechaInicio = dtpFechaFinalizacion.Value,
+                    FechaFinalizacion = dtpFechaFinalizacion.Value
+
                 };
 
                 if (tareaActualizada.ActualizarProyecto())
@@ -186,8 +273,8 @@ namespace AppOneCode.Vista
                 if (dgvproyectos.CurrentRow != null)
                 {
                     txtNombreProyecto.Text = dgvproyectos.CurrentRow.Cells["Nombre"].Value.ToString();
-                    txtEncargadoProyecto.Text = dgvproyectos.CurrentRow.Cells["Encargado"].Value.ToString();
-                    txtAreaTProyecto.Text = dgvproyectos.CurrentRow.Cells["AreaDeTrabajo"].Value.ToString();
+                    cmbEncargado.Text = dgvproyectos.CurrentRow.Cells["Encargado"].Value.ToString();
+                    cmbAreaTrabajo.Text = dgvproyectos.CurrentRow.Cells["AreaDeTrabajo"].Value.ToString();
                     txtDescProyecto.Text = dgvproyectos.CurrentRow.Cells["Descripcion"].Value.ToString();
                 }
             }

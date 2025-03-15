@@ -38,6 +38,11 @@
             this.lbltareas = new System.Windows.Forms.Label();
             this.lblinicio = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dtpFechaFinalizacion = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.cmbEncargado = new System.Windows.Forms.ComboBox();
             this.botonPersonalizado2 = new AppOneCode.Modelo.BotonPersonalizado();
             this.pbBuscar = new System.Windows.Forms.PictureBox();
             this.dgvproyectos = new System.Windows.Forms.DataGridView();
@@ -48,8 +53,6 @@
             this.pbEliminarProyecto = new System.Windows.Forms.PictureBox();
             this.pbAgregarProyecto = new System.Windows.Forms.PictureBox();
             this.txtDescProyecto = new System.Windows.Forms.TextBox();
-            this.txtAreaTProyecto = new System.Windows.Forms.TextBox();
-            this.txtEncargadoProyecto = new System.Windows.Forms.TextBox();
             this.txtNombreProyecto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,6 +62,7 @@
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.cmbAreaTrabajo = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvproyectos)).BeginInit();
@@ -138,6 +142,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.panel1.Controls.Add(this.cmbAreaTrabajo);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.dtpFechaFinalizacion);
+            this.panel1.Controls.Add(this.dtpFechaInicio);
+            this.panel1.Controls.Add(this.cmbEncargado);
             this.panel1.Controls.Add(this.botonPersonalizado2);
             this.panel1.Controls.Add(this.pbBuscar);
             this.panel1.Controls.Add(this.dgvproyectos);
@@ -148,8 +158,6 @@
             this.panel1.Controls.Add(this.pbEliminarProyecto);
             this.panel1.Controls.Add(this.pbAgregarProyecto);
             this.panel1.Controls.Add(this.txtDescProyecto);
-            this.panel1.Controls.Add(this.txtAreaTProyecto);
-            this.panel1.Controls.Add(this.txtEncargadoProyecto);
             this.panel1.Controls.Add(this.txtNombreProyecto);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -168,6 +176,50 @@
             this.panel1.Size = new System.Drawing.Size(1131, 885);
             this.panel1.TabIndex = 103;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(197, 443);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(189, 20);
+            this.label9.TabIndex = 191;
+            this.label9.Text = "Fecha de Finalización:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(233, 393);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(137, 20);
+            this.label8.TabIndex = 190;
+            this.label8.Text = "Fecha de Inicio:";
+            // 
+            // dtpFechaFinalizacion
+            // 
+            this.dtpFechaFinalizacion.Location = new System.Drawing.Point(405, 443);
+            this.dtpFechaFinalizacion.Name = "dtpFechaFinalizacion";
+            this.dtpFechaFinalizacion.Size = new System.Drawing.Size(364, 20);
+            this.dtpFechaFinalizacion.TabIndex = 189;
+            // 
+            // dtpFechaInicio
+            // 
+            this.dtpFechaInicio.Location = new System.Drawing.Point(405, 393);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(364, 20);
+            this.dtpFechaInicio.TabIndex = 188;
+            // 
+            // cmbEncargado
+            // 
+            this.cmbEncargado.FormattingEnabled = true;
+            this.cmbEncargado.Location = new System.Drawing.Point(404, 204);
+            this.cmbEncargado.Name = "cmbEncargado";
+            this.cmbEncargado.Size = new System.Drawing.Size(364, 21);
+            this.cmbEncargado.TabIndex = 187;
             // 
             // botonPersonalizado2
             // 
@@ -188,7 +240,7 @@
             this.pbBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.pbBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("pbBuscar.Image")));
-            this.pbBuscar.Location = new System.Drawing.Point(783, 480);
+            this.pbBuscar.Location = new System.Drawing.Point(1057, 595);
             this.pbBuscar.Name = "pbBuscar";
             this.pbBuscar.Size = new System.Drawing.Size(38, 32);
             this.pbBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -214,7 +266,7 @@
             this.dgvproyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvproyectos.EnableHeadersVisualStyles = false;
             this.dgvproyectos.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvproyectos.Location = new System.Drawing.Point(346, 551);
+            this.dgvproyectos.Location = new System.Drawing.Point(83, 607);
             this.dgvproyectos.Name = "dgvproyectos";
             this.dgvproyectos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -239,7 +291,7 @@
             // txtSearchProyect
             // 
             this.txtSearchProyect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchProyect.Location = new System.Drawing.Point(413, 485);
+            this.txtSearchProyect.Location = new System.Drawing.Point(685, 607);
             this.txtSearchProyect.Name = "txtSearchProyect";
             this.txtSearchProyect.Size = new System.Drawing.Size(364, 20);
             this.txtSearchProyect.TabIndex = 115;
@@ -249,7 +301,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(328, 484);
+            this.label7.Location = new System.Drawing.Point(840, 574);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 20);
             this.label7.TabIndex = 114;
@@ -271,7 +323,7 @@
             this.pbActualizarProyecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.pbActualizarProyecto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbActualizarProyecto.Image = ((System.Drawing.Image)(resources.GetObject("pbActualizarProyecto.Image")));
-            this.pbActualizarProyecto.Location = new System.Drawing.Point(698, 411);
+            this.pbActualizarProyecto.Location = new System.Drawing.Point(646, 504);
             this.pbActualizarProyecto.Name = "pbActualizarProyecto";
             this.pbActualizarProyecto.Size = new System.Drawing.Size(65, 52);
             this.pbActualizarProyecto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -287,7 +339,7 @@
             this.pbEliminarProyecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.pbEliminarProyecto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbEliminarProyecto.Image = ((System.Drawing.Image)(resources.GetObject("pbEliminarProyecto.Image")));
-            this.pbEliminarProyecto.Location = new System.Drawing.Point(551, 411);
+            this.pbEliminarProyecto.Location = new System.Drawing.Point(539, 504);
             this.pbEliminarProyecto.Name = "pbEliminarProyecto";
             this.pbEliminarProyecto.Size = new System.Drawing.Size(65, 52);
             this.pbEliminarProyecto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -302,7 +354,7 @@
             this.pbAgregarProyecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.pbAgregarProyecto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbAgregarProyecto.Image = ((System.Drawing.Image)(resources.GetObject("pbAgregarProyecto.Image")));
-            this.pbAgregarProyecto.Location = new System.Drawing.Point(413, 410);
+            this.pbAgregarProyecto.Location = new System.Drawing.Point(441, 504);
             this.pbAgregarProyecto.Name = "pbAgregarProyecto";
             this.pbAgregarProyecto.Size = new System.Drawing.Size(62, 52);
             this.pbAgregarProyecto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -315,33 +367,17 @@
             // txtDescProyecto
             // 
             this.txtDescProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescProyecto.Location = new System.Drawing.Point(414, 326);
+            this.txtDescProyecto.Location = new System.Drawing.Point(405, 297);
             this.txtDescProyecto.Multiline = true;
             this.txtDescProyecto.Name = "txtDescProyecto";
             this.txtDescProyecto.Size = new System.Drawing.Size(364, 65);
             this.txtDescProyecto.TabIndex = 111;
             this.txtDescProyecto.TextChanged += new System.EventHandler(this.txtDescProyecto_TextChanged);
             // 
-            // txtAreaTProyecto
-            // 
-            this.txtAreaTProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAreaTProyecto.Location = new System.Drawing.Point(413, 282);
-            this.txtAreaTProyecto.Name = "txtAreaTProyecto";
-            this.txtAreaTProyecto.Size = new System.Drawing.Size(364, 20);
-            this.txtAreaTProyecto.TabIndex = 110;
-            // 
-            // txtEncargadoProyecto
-            // 
-            this.txtEncargadoProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEncargadoProyecto.Location = new System.Drawing.Point(413, 236);
-            this.txtEncargadoProyecto.Name = "txtEncargadoProyecto";
-            this.txtEncargadoProyecto.Size = new System.Drawing.Size(364, 20);
-            this.txtEncargadoProyecto.TabIndex = 109;
-            // 
             // txtNombreProyecto
             // 
             this.txtNombreProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreProyecto.Location = new System.Drawing.Point(413, 187);
+            this.txtNombreProyecto.Location = new System.Drawing.Point(404, 158);
             this.txtNombreProyecto.Name = "txtNombreProyecto";
             this.txtNombreProyecto.Size = new System.Drawing.Size(364, 20);
             this.txtNombreProyecto.TabIndex = 108;
@@ -351,7 +387,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(269, 329);
+            this.label6.Location = new System.Drawing.Point(260, 300);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(108, 20);
             this.label6.TabIndex = 107;
@@ -362,7 +398,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(257, 282);
+            this.label5.Location = new System.Drawing.Point(248, 253);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(138, 20);
             this.label5.TabIndex = 106;
@@ -373,7 +409,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(276, 235);
+            this.label4.Location = new System.Drawing.Point(267, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 20);
             this.label4.TabIndex = 105;
@@ -384,7 +420,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(286, 190);
+            this.label3.Location = new System.Drawing.Point(277, 161);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 20);
             this.label3.TabIndex = 104;
@@ -395,7 +431,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(506, 114);
+            this.label2.Location = new System.Drawing.Point(499, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(167, 37);
             this.label2.TabIndex = 103;
@@ -427,13 +463,22 @@
             // 
             // pictureBox12
             // 
+            this.pictureBox12.BackColor = System.Drawing.Color.White;
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(273, 518);
+            this.pictureBox12.Location = new System.Drawing.Point(10, 574);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(619, 300);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 186;
             this.pictureBox12.TabStop = false;
+            // 
+            // cmbAreaTrabajo
+            // 
+            this.cmbAreaTrabajo.FormattingEnabled = true;
+            this.cmbAreaTrabajo.Location = new System.Drawing.Point(404, 251);
+            this.cmbAreaTrabajo.Name = "cmbAreaTrabajo";
+            this.cmbAreaTrabajo.Size = new System.Drawing.Size(365, 21);
+            this.cmbAreaTrabajo.TabIndex = 192;
             // 
             // frmProyectos
             // 
@@ -475,8 +520,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtAreaTProyecto;
-        private System.Windows.Forms.TextBox txtEncargadoProyecto;
         private System.Windows.Forms.TextBox txtNombreProyecto;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -492,5 +535,11 @@
         private System.Windows.Forms.PictureBox pbBuscar;
         private Modelo.BotonPersonalizado botonPersonalizado2;
         private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dtpFechaFinalizacion;
+        private System.Windows.Forms.DateTimePicker dtpFechaInicio;
+        private System.Windows.Forms.ComboBox cmbEncargado;
+        private System.Windows.Forms.ComboBox cmbAreaTrabajo;
     }
 }

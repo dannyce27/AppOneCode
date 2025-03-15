@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
@@ -59,8 +60,56 @@ namespace AppOneCode.Vista
 
         private void pbAgregarComent_Click(object sender, EventArgs e)
         {
+            // Obtener el correo del encargado del proyecto
+            string correoEncargado = ObtenerCorreoEncargadoProyecto(this.Id);
 
+            // Verificar si se obtuvo un correo
+            if (!string.IsNullOrEmpty(correoEncargado))
+            {
+                // Mostrar el mensaje con el correo
+                MessageBox.Show($"Puedes contactar con el encargado de proyecto que te asignó la tarea por medio de Zoho: {correoEncargado}",
+                                "Contacto con el encargado del proyecto",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No se encontró el correo del encargado del proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+        private string ObtenerCorreoEncargadoProyecto(int idTarea)
+        {
+            string correoEncargado = string.Empty;
+
+            try
+            {
+                // Consulta para obtener el correo del encargado del proyecto
+                string query = @"SELECT U.Email 
+                         FROM Trabajo Tr
+                         JOIN Users U ON Tr.IdEncargado = U.Id
+                         JOIN Tareas T ON T.idProyecto = Tr.Id
+                         WHERE T.Id = @idTarea";
+
+                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@idTarea", idTarea);
+                        correoEncargado = cmd.ExecuteScalar() as string;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener el correo del encargado del proyecto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return correoEncargado;
+        }
+
+
 
 
         private void CargarImagenEncargado()

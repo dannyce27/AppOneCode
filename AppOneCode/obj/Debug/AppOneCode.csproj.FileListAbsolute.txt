@@ -107,3 +107,7 @@ C:\Users\German G\Desktop\AppOneCode\AppOneCode\bin\Debug\BouncyCastle.Cryptogra
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\bin\Debug\itextsharp.xml
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.user.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.Up2Date
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\itextsharp.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\itextsharp.xml

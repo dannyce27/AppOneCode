@@ -5,7 +5,7 @@ using System.Windows.Forms;
 public class Conexion
 {
     private SqlConnection connection;
-    private readonly string connectionString = @"Server=DESKTOP-8FODO0C\SQLEXPRESS02;Database=BDOneCode;Trusted_Connection=True;";
+    private readonly string connectionString = @"Server=DESKTOP-2I6K8G4\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
 
 
     public SqlConnection OpenConnection()
@@ -23,7 +23,7 @@ public class Conexion
         catch (SqlException ex)
         {
             MessageBox.Show($"Error al abrir la conexión: {ex.Message}", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            throw; // Lanza la excepción para manejarla en niveles superiores
+                throw; // Lanza la excepción para manejarla en niveles superiores
         }
     }
     

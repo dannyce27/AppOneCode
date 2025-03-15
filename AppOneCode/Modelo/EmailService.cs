@@ -51,13 +51,13 @@ public class EmailService
                 From = new MailAddress("dsoriano@emkt.com.sv"),
                 Subject = "Código de recuperación de contraseña",
                 Body = mensajeHtml,
-                IsBodyHtml = true 
+                IsBodyHtml = true
             };
 
             mensaje.To.Add(emailDestino);
             smtp.Send(mensaje);
 
-            return codigo; 
+            return codigo;
         }
         catch (Exception ex)
         {
@@ -66,4 +66,94 @@ public class EmailService
 
         // Encerramos todo dentro de un trycactch por si habia un error, que no se cerrara la aplicacion por el propio error.
     }
+
+    public void EnviarNotificacionTarea(string emailDestino, string nombreUsuario, string nombreProyecto, string descripcionTarea)
+    {
+        try
+        {
+            string mensajeHtml = $@"
+        <!DOCTYPE html>
+        <html lang='es'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Nueva Tarea Asignada</title>
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+                
+                body {{
+                    font-family: 'Poppins', sans-serif;
+                    background-color: #f4f4f4;
+                    text-align: center;
+                    padding: 20px;
+                }}
+                .container {{
+                    background-color: #ffffff;
+                    padding: 20px;
+                    border-radius: 10px;
+                    width: 90%;
+                    max-width: 500px;
+                    margin: auto;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                }}
+                .title {{
+                    font-size: 22px;
+                    color: #1e90ff;
+                    font-weight: bold;
+                }}
+                .message {{
+                    font-size: 16px;
+                    color: #333;
+                    margin: 15px 0;
+                }}
+                .task-box {{
+                    background-color: #1e90ff;
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: bold;
+                    padding: 10px;
+                    border-radius: 5px;
+                    display: inline-block;
+                }}
+                .footer {{
+                    margin-top: 15px;
+                    font-size: 14px;
+                    color: #777;
+                }}
+            </style>
+        </head>
+        <body>
+            <div class='container'>
+                <h2 class='title'>¡Nueva tarea asignada!</h2>
+                <p class='message'>Se te ha asignado una nueva tarea en el proyecto <b>{nombreProyecto}</b>.</p>
+                <p class='message'>La tarea consiste en:</p>
+                <div class='task-box'>{descripcionTarea}</div>
+                <p class='footer'>Por favor, revisa tu panel de tareas para más detalles.</p>
+            </div>
+        </body>
+        </html>";
+
+            SmtpClient smtp = new SmtpClient("smtp.zoho.com", 587)
+            {
+                Credentials = new NetworkCredential("dsoriano@emkt.com.sv", "DSemkt2024$"),
+                EnableSsl = true
+            };
+
+            MailMessage mensaje = new MailMessage
+            {
+                From = new MailAddress("dsoriano@emkt.com.sv"),
+                Subject = "Nueva Tarea Asignada",
+                Body = mensajeHtml,
+                IsBodyHtml = true
+            };
+
+            mensaje.To.Add(emailDestino);
+            smtp.Send(mensaje);
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Error al enviar el correo: {ex.Message}");
+        }
+    }
+
 }

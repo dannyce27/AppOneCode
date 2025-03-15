@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Font = iTextSharp.text.Font;
 
 public class ReportePDF
 {
@@ -19,6 +21,7 @@ public class ReportePDF
 
                 // Título del documento
                 Font tituloFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16);
+
                 Paragraph titulo = new Paragraph("Reporte de Tareas", tituloFont);
                 titulo.Alignment = Element.ALIGN_CENTER;
                 doc.Add(titulo);

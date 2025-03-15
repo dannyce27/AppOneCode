@@ -24,6 +24,8 @@ CREATE TABLE Users (
     FOREIGN KEY (idTipoUsuario) REFERENCES TipoUsuario(idTipoUsuario)
 );
 
+select * from Users 
+
 
 
 
@@ -77,14 +79,35 @@ FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'Users'
 
 
+Create table AreaTrabajo( 
+    Id INT IDENTITY(1,1) PRIMARY KEY, 
+	NombreArea NVARCHAR(MAX) NOT NULL
+
+);
+
+
+INSERT INTO AreaTrabajo (NombreArea) VALUES ('Diseñador')
+INSERT INTO AreaTrabajo (NombreArea) VALUES ('Programador')
+INSERT INTO AreaTrabajo (NombreArea) VALUES ('Supervisor')
+
+select * From AreaTrabajo
 
 CREATE TABLE Trabajo (
     Id INT IDENTITY(1,1) PRIMARY KEY,     
     Nombre NVARCHAR(100) NOT NULL,       
-    Encargado NVARCHAR(100) NOT NULL,    
-    AreaDeTrabajo NVARCHAR(100) NOT NULL, 
-    Descripcion NVARCHAR(MAX) NULL              
+    IdEncargado INT NOT NULL,    
+    IdAreaTrabajo INT NOT NULL, 
+    Descripcion NVARCHAR(MAX) NULL,  
+	FechaInicio DATE NOT NULL,
+	FechaFinalizacion DATE NOT NULL,
+	CONSTRAINT FK_ID_Encargaodo FOREIGN KEY (IdEncargado) REFERENCES Users (Id),
+	CONSTRAINT FK_ID_AreaT FOREIGN KEY (IdAreaTrabajo) REFERENCES AreaTrabajo (Id)
+
 );
+
+
+
+select * from Trabajo
 
 CREATE TABLE Prioridad (
     Id INT IDENTITY(1,1) PRIMARY KEY,
