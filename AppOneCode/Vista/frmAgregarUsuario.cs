@@ -107,7 +107,7 @@ namespace AppOneCode.Vista
                 {
                     txtagregarNombreUsuario.Text = dgvListaUsuarios.CurrentRow.Cells["Username"].Value.ToString();
                     txtagregarEmailUsuario.Text = dgvListaUsuarios.CurrentRow.Cells["Email"].Value.ToString();
-                   // txtagregarContrasenaUsuario.Text = dgvListaUsuarios.CurrentRow.Cells["Contrasenaa"].Value.ToString();
+                    txtagregarContrasenaUsuario.Text = dgvListaUsuarios.CurrentRow.Cells["Contrasenaa"].Value.ToString();
 
                 }
             }
@@ -394,6 +394,14 @@ GROUP BY tr.Nombre;";
             {
                 MessageBox.Show($"Error al cargar el gráfico: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void botonPersonalizado3_Click(object sender, EventArgs e)
+        {
+            frmAuditoriaCambios frmAudi = new frmAuditoriaCambios();
+            this.Hide();
+            frmAudi.ShowDialog();
+
         }
     }
 

@@ -111,3 +111,4 @@ C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\BouncyCastle.Cryptography
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\itextsharp.dll
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\BouncyCastle.Cryptography.xml
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\itextsharp.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.frmAuditoriaCambios.resources

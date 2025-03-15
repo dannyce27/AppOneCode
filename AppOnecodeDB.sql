@@ -24,18 +24,17 @@ CREATE TABLE Users (
     FOREIGN KEY (idTipoUsuario) REFERENCES TipoUsuario(idTipoUsuario)
 );
 
-select * from Users 
 
 
 
 
-select * from TipoUsuario
+
 
 INSERT INTO Users (Username, Email, Contrasenaa, idTipoUsuario)
 VALUES ('NuevoUsuario', 'nuevo.usuario@dominio.com', 'hashedPassword123', 1);
 
 		
-drop table Tareas;
+
 		
 INSERT INTO TipoUsuario (NombreTipoUsuario)
 VALUES 
@@ -43,13 +42,13 @@ VALUES
     ('Empleado'), 
     ('Comentarista');
 
-	SELECT * FROM TipoUsuario;
 
 
 
 
 
-select * From Users;
+
+
 
 
 
@@ -64,11 +63,7 @@ CREATE TABLE MarcasDeTiempo (
 GO
 
 
-select  * from MarcasDeTiempo;
 
-select * From Users
-
-drop table	Users
 
 INSERT INTO Users (Username, Email, Contrasenaa) 
 VALUES ('testUser', 'test@example.com', '123');
@@ -107,7 +102,6 @@ CREATE TABLE Trabajo (
 
 
 
-select * from Trabajo
 
 CREATE TABLE Prioridad (
     Id INT IDENTITY(1,1) PRIMARY KEY,
@@ -137,7 +131,7 @@ INSERT INTO Estado(NombreEstado) VALUES ('Pendiente');
 INSERT INTO Estado(NombreEstado) VALUES ('Completada');
 
 
-select * from Estado;
+
 
 
 CREATE TABLE Tareas (
@@ -155,10 +149,142 @@ CREATE TABLE Tareas (
     CONSTRAINT FK_Tareas_Estado FOREIGN KEY (EstadoId) REFERENCES Estado(Id)
 );
 	
-select * from Tareas
-drop table Tareas;
+--TABLAS DE AUDITORIAS 
 
-Select * From Trabajo
+CREATE TABLE AuditoriaCambiosTareas (
+    Id INT IDENTITY(1,1) PRIMARY KEY,    
+    Fecha DATE NOT NULL,                 
+    Hora TIME NOT NULL,                    
+    NombreUsuario NVARCHAR(100) NOT NULL, 
+    TipoCambio NVARCHAR(10) NOT NULL,      
+    DescripcionCambio NVARCHAR(MAX) NULL,  
+    TareaId INT NOT NULL                   
+);
 
 
+CREATE  TRIGGER trg_AuditoriaInsertTareas
+ON Tareas
+FOR INSERT
+AS
+BEGIN
+    DECLARE @Fecha DATE = GETDATE();
+    DECLARE @Hora TIME = CONVERT(TIME, GETDATE());
+    DECLARE @NombreUsuario NVARCHAR(100) = SUSER_SNAME(); 
+    DECLARE @TareaId INT;
 
+  
+    SELECT @TareaId = Id FROM INSERTED;
+
+    
+    INSERT INTO AuditoriaCambiosTareas (Fecha, Hora, NombreUsuario, TipoCambio, TareaId)
+    VALUES (@Fecha, @Hora, @NombreUsuario, 'INSERT', @TareaId);
+END;
+
+
+CREATE TRIGGER trg_AuditoriaUpdateTareas
+ON Tareas
+FOR UPDATE
+AS
+BEGIN
+    DECLARE @Fecha DATE = GETDATE();
+    DECLARE @Hora TIME = CONVERT(TIME, GETDATE());
+    DECLARE @NombreUsuario NVARCHAR(100) = SUSER_SNAME(); 
+    DECLARE @TareaId INT;
+
+   
+    SELECT @TareaId = Id FROM INSERTED;
+
+   
+    INSERT INTO AuditoriaCambiosTareas (Fecha, Hora, NombreUsuario, TipoCambio, TareaId)
+    VALUES (@Fecha, @Hora, @NombreUsuario, 'UPDATE', @TareaId);
+END;
+
+
+CREATE TRIGGER trg_AuditoriaDeleteTareas
+ON Tareas
+FOR DELETE
+AS
+BEGIN
+    DECLARE @Fecha DATE = GETDATE();
+    DECLARE @Hora TIME = CONVERT(TIME, GETDATE());
+    DECLARE @NombreUsuario NVARCHAR(100) = SUSER_SNAME(); 
+    DECLARE @TareaId INT;
+
+   
+    SELECT @TareaId = Id FROM DELETED;
+
+    
+    INSERT INTO AuditoriaCambiosTareas (Fecha, Hora, NombreUsuario, TipoCambio, TareaId)
+    VALUES (@Fecha, @Hora, @NombreUsuario, 'DELETE', @TareaId);
+END;
+
+
+CREATE TABLE AuditoriaCambiosTrabajo (
+    Id INT IDENTITY(1,1) PRIMARY KEY,     
+    Fecha DATE NOT NULL,                  
+    Hora TIME NOT NULL,                    
+    NombreUsuario NVARCHAR(100) NOT NULL, 
+    TipoCambio NVARCHAR(10) NOT NULL,      
+    DescripcionCambio NVARCHAR(MAX) NULL, 
+    TrabajoId INT NOT NULL                 
+);
+
+
+CREATE TRIGGER trg_AuditoriaInsertTrabajo
+ON Trabajo
+FOR INSERT
+AS
+BEGIN
+    DECLARE @Fecha DATE = GETDATE();
+    DECLARE @Hora TIME = CONVERT(TIME, GETDATE());
+    DECLARE @NombreUsuario NVARCHAR(100) = SUSER_SNAME(); -- Nombre del usuario actual
+    DECLARE @TrabajoId INT;
+
+    -- Obtener el Id del trabajo insertado
+    SELECT @TrabajoId = Id FROM INSERTED;
+
+    -- Registrar en la tabla de auditoría
+    INSERT INTO AuditoriaCambiosTrabajo (Fecha, Hora, NombreUsuario, TipoCambio, TrabajoId)
+    VALUES (@Fecha, @Hora, @NombreUsuario, 'INSERT', @TrabajoId);
+END;
+
+CREATE TRIGGER trg_AuditoriaUpdateTrabajo
+ON Trabajo
+FOR UPDATE
+AS
+BEGIN
+    DECLARE @Fecha DATE = GETDATE();
+    DECLARE @Hora TIME = CONVERT(TIME, GETDATE());
+    DECLARE @NombreUsuario NVARCHAR(100) = SUSER_SNAME(); -- Nombre del usuario actual
+    DECLARE @TrabajoId INT;
+
+    -- Obtener el Id del trabajo actualizado
+    SELECT @TrabajoId = Id FROM INSERTED;
+
+    -- Registrar en la tabla de auditoría
+    INSERT INTO AuditoriaCambiosTrabajo (Fecha, Hora, NombreUsuario, TipoCambio, TrabajoId)
+    VALUES (@Fecha, @Hora, @NombreUsuario, 'UPDATE', @TrabajoId);
+END;
+
+CREATE TRIGGER trg_AuditoriaDeleteTrabajo
+ON Trabajo
+FOR DELETE
+AS
+BEGIN
+    DECLARE @Fecha DATE = GETDATE();
+    DECLARE @Hora TIME = CONVERT(TIME, GETDATE());
+    DECLARE @NombreUsuario NVARCHAR(100) = SUSER_SNAME(); -- Nombre del usuario actual
+    DECLARE @TrabajoId INT;
+
+    -- Obtener el Id del trabajo eliminado
+    SELECT @TrabajoId = Id FROM DELETED;
+
+    -- Registrar en la tabla de auditoría
+    INSERT INTO AuditoriaCambiosTrabajo (Fecha, Hora, NombreUsuario, TipoCambio, TrabajoId)
+    VALUES (@Fecha, @Hora, @NombreUsuario, 'DELETE', @TrabajoId);
+END;
+	
+
+
+select * from AuditoriaCambiosTrabajo;
+select * from AuditoriaCambiosTareas;

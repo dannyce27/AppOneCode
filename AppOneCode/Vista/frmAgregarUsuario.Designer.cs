@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarUsuario));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblfaq = new System.Windows.Forms.Label();
@@ -70,6 +70,7 @@
             this.txtagregarContrasenaUsuario = new System.Windows.Forms.TextBox();
             this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
             this.botonPersonalizado2 = new AppOneCode.Modelo.BotonPersonalizado();
+            this.botonPersonalizado3 = new AppOneCode.Modelo.BotonPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -178,7 +179,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-2, -2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(235, 129);
+            this.pictureBox1.Size = new System.Drawing.Size(235, 77);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 147;
             this.pictureBox1.TabStop = false;
@@ -186,9 +187,9 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(12, 183);
+            this.pictureBox4.Location = new System.Drawing.Point(12, 97);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(440, 621);
+            this.pictureBox4.Size = new System.Drawing.Size(440, 713);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 151;
             this.pictureBox4.TabStop = false;
@@ -200,11 +201,11 @@
             this.lblNombreUsuario.BackColor = System.Drawing.Color.White;
             this.lblNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreUsuario.ForeColor = System.Drawing.Color.Black;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(158, 390);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(179, 304);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(167, 24);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(85, 24);
             this.lblNombreUsuario.TabIndex = 153;
-            this.lblNombreUsuario.Text = "Marcela Apellido";
+            this.lblNombreUsuario.Text = "Nombre";
             this.lblNombreUsuario.Click += new System.EventHandler(this.label12_Click);
             // 
             // lblCargo
@@ -213,26 +214,26 @@
             this.lblCargo.BackColor = System.Drawing.Color.White;
             this.lblCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCargo.ForeColor = System.Drawing.Color.Black;
-            this.lblCargo.Location = new System.Drawing.Point(167, 436);
+            this.lblCargo.Location = new System.Drawing.Point(179, 345);
             this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(117, 24);
+            this.lblCargo.Size = new System.Drawing.Size(66, 24);
             this.lblCargo.TabIndex = 154;
-            this.lblCargo.Text = "Cargo: Jefe";
+            this.lblCargo.Text = "Cargo";
             this.lblCargo.Click += new System.EventHandler(this.lblCargo_Click);
             // 
             // crtProyectosCompletados
             // 
-            chartArea1.Name = "ChartArea1";
-            this.crtProyectosCompletados.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.crtProyectosCompletados.Legends.Add(legend1);
-            this.crtProyectosCompletados.Location = new System.Drawing.Point(134, 552);
+            chartArea4.Name = "ChartArea1";
+            this.crtProyectosCompletados.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.crtProyectosCompletados.Legends.Add(legend4);
+            this.crtProyectosCompletados.Location = new System.Drawing.Point(117, 466);
             this.crtProyectosCompletados.Name = "crtProyectosCompletados";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.crtProyectosCompletados.Series.Add(series1);
-            this.crtProyectosCompletados.Size = new System.Drawing.Size(222, 179);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.crtProyectosCompletados.Series.Add(series4);
+            this.crtProyectosCompletados.Size = new System.Drawing.Size(239, 273);
             this.crtProyectosCompletados.TabIndex = 156;
             this.crtProyectosCompletados.Text = "ct%Proyectos";
             this.crtProyectosCompletados.Click += new System.EventHandler(this.crtProyectosCompletados_Click);
@@ -241,9 +242,9 @@
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(102, 480);
+            this.pictureBox10.Location = new System.Drawing.Point(102, 394);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(272, 287);
+            this.pictureBox10.Size = new System.Drawing.Size(272, 369);
             this.pictureBox10.TabIndex = 155;
             this.pictureBox10.TabStop = false;
             // 
@@ -253,7 +254,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(113, 505);
+            this.label4.Location = new System.Drawing.Point(129, 422);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(227, 24);
             this.label4.TabIndex = 157;
@@ -344,34 +345,34 @@
             this.dgvListaUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.dgvListaUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListaUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvListaUsuarios.ColumnHeadersHeight = 30;
             this.dgvListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvListaUsuarios.EnableHeadersVisualStyles = false;
             this.dgvListaUsuarios.GridColor = System.Drawing.Color.White;
             this.dgvListaUsuarios.Location = new System.Drawing.Point(610, 538);
             this.dgvListaUsuarios.Name = "dgvListaUsuarios";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.GhostWhite;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvListaUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.GhostWhite;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvListaUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvListaUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaUsuarios.Size = new System.Drawing.Size(487, 240);
             this.dgvListaUsuarios.TabIndex = 176;
@@ -404,7 +405,7 @@
             // pbImageTrabajador
             // 
             this.pbImageTrabajador.Image = ((System.Drawing.Image)(resources.GetObject("pbImageTrabajador.Image")));
-            this.pbImageTrabajador.Location = new System.Drawing.Point(171, 216);
+            this.pbImageTrabajador.Location = new System.Drawing.Point(171, 130);
             this.pbImageTrabajador.Name = "pbImageTrabajador";
             this.pbImageTrabajador.Size = new System.Drawing.Size(124, 111);
             this.pbImageTrabajador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -504,7 +505,7 @@
             this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
             this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonPersonalizado1.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalizado1.Location = new System.Drawing.Point(171, 342);
+            this.botonPersonalizado1.Location = new System.Drawing.Point(171, 256);
             this.botonPersonalizado1.Name = "botonPersonalizado1";
             this.botonPersonalizado1.Size = new System.Drawing.Size(123, 35);
             this.botonPersonalizado1.TabIndex = 181;
@@ -527,12 +528,28 @@
             this.botonPersonalizado2.UseVisualStyleBackColor = false;
             this.botonPersonalizado2.Click += new System.EventHandler(this.botonPersonalizado2_Click);
             // 
+            // botonPersonalizado3
+            // 
+            this.botonPersonalizado3.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.botonPersonalizado3.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado3.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado3.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalizado3.Location = new System.Drawing.Point(144, 829);
+            this.botonPersonalizado3.Name = "botonPersonalizado3";
+            this.botonPersonalizado3.Size = new System.Drawing.Size(150, 40);
+            this.botonPersonalizado3.TabIndex = 185;
+            this.botonPersonalizado3.Text = "Auditoria";
+            this.botonPersonalizado3.UseVisualStyleBackColor = false;
+            this.botonPersonalizado3.Click += new System.EventHandler(this.botonPersonalizado3_Click);
+            // 
             // frmAgregarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(1224, 903);
+            this.Controls.Add(this.botonPersonalizado3);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.botonPersonalizado2);
@@ -630,5 +647,6 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.TextBox txtagregarContrasenaUsuario;
         private Modelo.BotonPersonalizado botonPersonalizado2;
+        private Modelo.BotonPersonalizado botonPersonalizado3;
     }
 }

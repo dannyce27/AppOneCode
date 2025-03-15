@@ -15,8 +15,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AppOneCode.Vista
 {
+
+
     public partial class UserControlTareas : UserControl
     {
+        
 
         private int id = 0;
         private string descripcion = "Descripcion Tarea";
@@ -107,6 +110,38 @@ namespace AppOneCode.Vista
             }
 
             return correoEncargado;
+        }
+
+
+        private string ObtenerNombreEncargadoProyecto(int idTarea)
+        {
+            string nombreEncargado = string.Empty;
+
+            try
+            {
+                // Consulta SQL para obtener el nombre del encargado del proyecto
+                string query = @"SELECT U.Username 
+                         FROM Trabajo Tr
+                         JOIN Users U ON Tr.IdEncargado = U.Id
+                         JOIN Tareas T ON T.idProyecto = Tr.Id
+                         WHERE T.Id = @idTarea";
+
+                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@idTarea", idTarea);
+                        nombreEncargado = cmd.ExecuteScalar() as string;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener el nombre del encargado del proyecto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return nombreEncargado;
         }
 
 
@@ -212,7 +247,7 @@ namespace AppOneCode.Vista
         {
             try
             {
-                
+                // Crear modelo de tarea
                 Tareas2 tareaModel = new Tareas2
                 {
                     Id = this.Id, // Id de la tarea actual
@@ -225,6 +260,26 @@ namespace AppOneCode.Vista
                     // Actualizar la etiqueta del estado en el UserControl
                     this.Estado = "Completada";
                     MessageBox.Show("La tarea ha sido marcada como completada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Obtener el correo del encargado usando el método ya implementado
+                    string correoEncargado = ObtenerCorreoEncargadoProyecto(this.Id);
+                    string username = ObtenerNombreEncargadoProyecto(this.Id);
+                    string nombreProyecto = ObtenerNombreProyecto(this.Id);
+                    string usernameCompleto = Usuario.ObtenerNombreUsuario(this.Id);
+
+                    // Verificar si se obtuvo el correo
+                    if (!string.IsNullOrEmpty(correoEncargado))
+                    {
+                        // Crear el servicio de correo para enviar la notificación
+                        EmailService emailService = new EmailService();
+                        emailService.EnviarNotificacionTareaCompletada(correoEncargado, username, usernameCompleto, nombreProyecto, this.Descripcion);
+
+                        MessageBox.Show("Correo enviado al encargado del proyecto.", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró el correo del encargado del proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
@@ -236,6 +291,37 @@ namespace AppOneCode.Vista
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private string ObtenerNombreProyecto(int idTarea)
+        {
+            string nombreProyecto = string.Empty;
+
+            try
+            {
+                
+                string query = @"SELECT P.Nombre 
+                         FROM Proyecto P
+                         JOIN Tareas T ON P.Id = T.idProyecto
+                         WHERE T.Id = @idTarea";
+
+                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@idTarea", idTarea);
+                        nombreProyecto = cmd.ExecuteScalar() as string;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener el nombre del proyecto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return nombreProyecto;
+        }
+
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {

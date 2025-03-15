@@ -154,6 +154,84 @@ public class EmailService
         {
             throw new Exception($"Error al enviar el correo: {ex.Message}");
         }
+
+
+
+    }
+
+    public void EnviarNotificacionTareaCompletada(string correoEncargado, string username, string usernameCompleto, string nombreProyecto, string descripcionTarea)
+    {
+        try
+        {
+            // Crear el objeto MailMessage
+            var mail = new MailMessage();
+            mail.From = new MailAddress("dsoriano@emkt.com.sv"); // Tu correo electrónico
+            mail.To.Add(correoEncargado);
+            mail.Subject = "Notificación de tarea completada";
+
+            // HTML para la notificación
+            string htmlBody = $@"
+                <html>
+                    <head>
+                        <style>
+                            body {{
+                                font-family: Arial, sans-serif;
+                                background-color: #f4f4f9;
+                                padding: 20px;
+                            }}
+                            .container {{
+                                background-color: #ffffff;
+                                border-radius: 10px;
+                                padding: 20px;
+                                border: 1px solid #e0e0e0;
+                            }}
+                            h2 {{
+                                color: #333;
+                            }}
+                            .highlight {{
+                                color: #4CAF50;
+                                font-weight: bold;
+                            }}
+                            .footer {{
+                                margin-top: 20px;
+                                font-size: 12px;
+                                color: #777;
+                                text-align: center;
+                            }}
+                        </style>
+                    </head>
+                    <body>
+                        <div class='container'>
+                            <h2>¡Hola {username}!</h2>
+                            <p><span class='highlight'>{usernameCompleto}</span> ha completado la tarea: <span class='highlight'>{descripcionTarea}</span> en el proyecto: <span class='highlight'>{nombreProyecto}</span>.</p>
+                            <p>¡Buen trabajo!</p>
+                            <div class='footer'>
+                                <p>Este es un mensaje automático generado por el sistema de gestión de tareas.</p>
+                            </div>
+                        </div>
+                    </body>
+                </html>";
+
+            // Asignar el cuerpo del correo
+            mail.Body = htmlBody;
+            mail.IsBodyHtml = true;
+
+            // Configuración SMTP
+            var smtpClient = new SmtpClient("smtp.zoho.com")
+            {
+                Port = 587, // Puede ser 587 o 465, dependiendo del servicio
+                Credentials = new NetworkCredential("dsoriano@emkt.com.sv", "DSemkt2024$"),
+                EnableSsl = true
+            };
+
+            // Enviar el correo
+            smtpClient.Send(mail);
+            Console.WriteLine("Correo enviado exitosamente.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error al enviar correo: {ex.Message}");
+        }
     }
 
 }
