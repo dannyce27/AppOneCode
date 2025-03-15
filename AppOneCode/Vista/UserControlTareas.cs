@@ -115,7 +115,7 @@ namespace AppOneCode.Vista
 
         private string ObtenerNombreEncargadoProyecto(int idTarea)
         {
-            string nombreEncargado = string.Empty;
+            string username = string.Empty;
 
             try
             {
@@ -132,7 +132,7 @@ namespace AppOneCode.Vista
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@idTarea", idTarea);
-                        nombreEncargado = cmd.ExecuteScalar() as string;
+                        username = cmd.ExecuteScalar() as string;
                     }
                 }
             }
@@ -141,7 +141,7 @@ namespace AppOneCode.Vista
                 MessageBox.Show($"Error al obtener el nombre del encargado del proyecto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return nombreEncargado;
+            return username;
         }
 
 
@@ -294,13 +294,13 @@ namespace AppOneCode.Vista
 
         private string ObtenerNombreProyecto(int idTarea)
         {
-            string nombreProyecto = string.Empty;
+            string nombreProyecto = string  .Empty;
 
             try
             {
                 
                 string query = @"SELECT P.Nombre 
-                         FROM Proyecto P
+                         FROM Trabajo P
                          JOIN Tareas T ON P.Id = T.idProyecto
                          WHERE T.Id = @idTarea";
 

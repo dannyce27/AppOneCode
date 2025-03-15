@@ -40,6 +40,9 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBuscarPorAT = new AppOneCode.Modelo.BotonPersonalizado();
+            this.cmbAreaTrabajo = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnFiltroTrabajando = new AppOneCode.Modelo.BotonPersonalizado();
             this.btnFiltroPendientes = new AppOneCode.Modelo.BotonPersonalizado();
             this.label3 = new System.Windows.Forms.Label();
@@ -114,6 +117,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnBuscarPorAT);
+            this.panel1.Controls.Add(this.cmbAreaTrabajo);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnFiltroTrabajando);
             this.panel1.Controls.Add(this.btnFiltroPendientes);
             this.panel1.Controls.Add(this.label3);
@@ -143,6 +149,42 @@
             this.panel1.Size = new System.Drawing.Size(1694, 970);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnBuscarPorAT
+            // 
+            this.btnBuscarPorAT.BackColor = System.Drawing.Color.DarkBlue;
+            this.btnBuscarPorAT.FlatAppearance.BorderSize = 0;
+            this.btnBuscarPorAT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarPorAT.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarPorAT.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarPorAT.Location = new System.Drawing.Point(655, 533);
+            this.btnBuscarPorAT.Name = "btnBuscarPorAT";
+            this.btnBuscarPorAT.Size = new System.Drawing.Size(88, 40);
+            this.btnBuscarPorAT.TabIndex = 141;
+            this.btnBuscarPorAT.Text = "Buscar";
+            this.btnBuscarPorAT.UseVisualStyleBackColor = false;
+            this.btnBuscarPorAT.Click += new System.EventHandler(this.btnBuscarPorAT_Click);
+            // 
+            // cmbAreaTrabajo
+            // 
+            this.cmbAreaTrabajo.FormattingEnabled = true;
+            this.cmbAreaTrabajo.Location = new System.Drawing.Point(640, 500);
+            this.cmbAreaTrabajo.Name = "cmbAreaTrabajo";
+            this.cmbAreaTrabajo.Size = new System.Drawing.Size(121, 21);
+            this.cmbAreaTrabajo.TabIndex = 140;
+            this.cmbAreaTrabajo.SelectedIndexChanged += new System.EventHandler(this.cmbAreaTrabajo_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(600, 458);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(215, 24);
+            this.label4.TabIndex = 139;
+            this.label4.Text = "Filtrar area de trabajo:";
             // 
             // btnFiltroTrabajando
             // 
@@ -503,7 +545,7 @@
             this.ctTareasCompletadas.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.ctTareasCompletadas.Legends.Add(legend1);
-            this.ctTareasCompletadas.Location = new System.Drawing.Point(144, 629);
+            this.ctTareasCompletadas.Location = new System.Drawing.Point(136, 686);
             this.ctTareasCompletadas.Name = "ctTareasCompletadas";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea;
@@ -518,7 +560,7 @@
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(123, 609);
+            this.pictureBox11.Location = new System.Drawing.Point(115, 666);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(1325, 285);
             this.pictureBox11.TabIndex = 124;
@@ -601,9 +643,9 @@
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(94, 76);
+            this.pictureBox9.Location = new System.Drawing.Point(94, 68);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(735, 497);
+            this.pictureBox9.Size = new System.Drawing.Size(735, 561);
             this.pictureBox9.TabIndex = 118;
             this.pictureBox9.TabStop = false;
             this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
@@ -787,5 +829,8 @@
         private Modelo.BotonPersonalizado btnFiltroCompletadas;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.ComboBox cmbAreaTrabajo;
+        private System.Windows.Forms.Label label4;
+        private Modelo.BotonPersonalizado btnBuscarPorAT;
     }
 }

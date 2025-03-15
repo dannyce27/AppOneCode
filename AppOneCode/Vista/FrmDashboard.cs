@@ -23,6 +23,8 @@ namespace AppOneCode.Vista
         public FrmDashboard()
         {
             InitializeComponent();
+            CargaProyectos();
+            CargarAreasTrabajo();
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -80,6 +82,44 @@ namespace AppOneCode.Vista
                     cmbProyectos.DataSource = new BindingSource(Proyectos, null);
                     cmbProyectos.DisplayMember = "Value"; // Lo que se muestra
                     cmbProyectos.ValueMember = "Key";    // El valor interno
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar Proyectos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void CargarAreasTrabajo()
+        {
+
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Id, NombreArea FROM AreaTrabajo";
+
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Crea una lista para almacenar los datos
+                    Dictionary<int, string> Proyectos = new Dictionary<int, string>();
+
+                    while (reader.Read())
+                    {
+                        int id = reader.GetInt32(0);
+                        string username = reader.GetString(1);
+
+                        // Agrega el id y el nombre a la lista
+                        Proyectos.Add(id, username);
+                    }
+
+                    // Asigna los datos al ComboBox
+                    cmbAreaTrabajo.DataSource = new BindingSource(Proyectos, null);
+                    cmbAreaTrabajo.DisplayMember = "Value"; // Lo que se muestra
+                    cmbAreaTrabajo.ValueMember = "Key";    // El valor interno
                 }
                 catch (Exception ex)
                 {
@@ -449,6 +489,16 @@ namespace AppOneCode.Vista
 
             ReportePDF.GenerarReporte();
             MessageBox.Show("Reporte generado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void btnBuscarPorAT_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbAreaTrabajo_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
