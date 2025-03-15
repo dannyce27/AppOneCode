@@ -66,7 +66,7 @@ namespace AppOneCode.Vista
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlDataReader reader = cmd.ExecuteReader();
 
-                    // Crea una lista para almacenar los datos
+                    
                     Dictionary<int, string> Proyectos = new Dictionary<int, string>();
 
                     while (reader.Read())
@@ -74,14 +74,14 @@ namespace AppOneCode.Vista
                         int id = reader.GetInt32(0);
                         string username = reader.GetString(1);
 
-                        // Agrega el id y el nombre a la lista
+                        
                         Proyectos.Add(id, username);
                     }
 
-                    // Asigna los datos al ComboBox
+
                     cmbProyectos.DataSource = new BindingSource(Proyectos, null);
-                    cmbProyectos.DisplayMember = "Value"; // Lo que se muestra
-                    cmbProyectos.ValueMember = "Key";    // El valor interno
+                    cmbProyectos.DisplayMember = "Value";
+                    cmbProyectos.ValueMember = "Key";   
                 }
                 catch (Exception ex)
                 {
@@ -104,7 +104,7 @@ namespace AppOneCode.Vista
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlDataReader reader = cmd.ExecuteReader();
 
-                    // Crea una lista para almacenar los datos
+                   
                     Dictionary<int, string> Proyectos = new Dictionary<int, string>();
 
                     while (reader.Read())
@@ -112,14 +112,14 @@ namespace AppOneCode.Vista
                         int id = reader.GetInt32(0);
                         string username = reader.GetString(1);
 
-                        // Agrega el id y el nombre a la lista
+                        
                         Proyectos.Add(id, username);
                     }
 
                     // Asigna los datos al ComboBox
                     cmbAreaTrabajo.DataSource = new BindingSource(Proyectos, null);
-                    cmbAreaTrabajo.DisplayMember = "Value"; // Lo que se muestra
-                    cmbAreaTrabajo.ValueMember = "Key";    // El valor interno
+                    cmbAreaTrabajo.DisplayMember = "Value";
+                    cmbAreaTrabajo.ValueMember = "Key";   
                 }
                 catch (Exception ex)
                 {
@@ -175,7 +175,7 @@ namespace AppOneCode.Vista
                     {
                         SqlDataReader reader = cmd.ExecuteReader();
 
-                        // Limpiar los datos existentes en el gráfico
+                        
                         ctEmpleadosEficientes.Series["Series1"].Points.Clear();
 
                         while (reader.Read())
@@ -183,10 +183,10 @@ namespace AppOneCode.Vista
                             string username = reader["Username"].ToString();
                             int cantidadCompletadas = Convert.ToInt32(reader["CantidadCompletadas"]);
 
-                            // Añadir los puntos al gráfico
+                           
                             var punto = ctEmpleadosEficientes.Series["Series1"].Points.AddXY(username, cantidadCompletadas);
 
-                            // Establecer el valor como etiqueta
+                          
                             ctEmpleadosEficientes.Series["Series1"].Points.Last().Label = $"{username} ({cantidadCompletadas})";
                         }
                     }
@@ -202,7 +202,7 @@ namespace AppOneCode.Vista
         {
             try
             {
-                // Crear la conexión con la base de datos
+                
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
@@ -217,7 +217,7 @@ namespace AppOneCode.Vista
                     {
                         SqlDataReader reader = cmd.ExecuteReader();
 
-                        // Limpiar los datos existentes en el gráfico
+                      
                         ctTareasCompletadas.Series["Series1"].Points.Clear();
 
                         while (reader.Read())
@@ -225,10 +225,10 @@ namespace AppOneCode.Vista
                             DateTime fecha = Convert.ToDateTime(reader["Fecha"]);
                             int cantidadCompletadas = Convert.ToInt32(reader["CantidadCompletadas"]);
 
-                            // Añadir los puntos al gráfico
+                         
                             var punto = ctTareasCompletadas.Series["Series1"].Points.AddXY(fecha.ToShortDateString(), cantidadCompletadas);
 
-                            // Establecer el valor como etiqueta
+                           
                             ctTareasCompletadas.Series["Series1"].Points.Last().Label = $"{cantidadCompletadas} ({fecha.ToShortDateString()})";
                         }
                     }
@@ -244,7 +244,7 @@ namespace AppOneCode.Vista
         {
             try
             {
-                // Crear la conexión con la base de datos
+               
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
@@ -257,7 +257,7 @@ namespace AppOneCode.Vista
                     {
                         int cantidadCompletadas = (int)cmd.ExecuteScalar();
 
-                        // Mostrar el número de tareas completadas en el label
+                      
                         lblTareasCompletadas.Text = $"{cantidadCompletadas}";
                     }
                 }
@@ -272,7 +272,6 @@ namespace AppOneCode.Vista
         {
             try
             {
-                // Crear la conexión con la base de datos
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
@@ -285,7 +284,7 @@ namespace AppOneCode.Vista
                     {
                         int cantidadPendientes = (int)cmd.ExecuteScalar();
 
-                        // Mostrar el número de tareas pendientes en el label
+                        
                         lblTareasPendientes.Text = $"{cantidadPendientes}";
                     }
                 }
@@ -300,12 +299,12 @@ namespace AppOneCode.Vista
         {
             try
             {
-                // Crear la conexión con la base de datos
+              
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
 
-                    // Consultar el número total de tareas del proyecto
+                  
                     string queryTotalTareas = @"
             SELECT COUNT(*) 
             FROM Tareas 
@@ -316,7 +315,7 @@ namespace AppOneCode.Vista
 
                     int totalTareas = (int)cmdTotalTareas.ExecuteScalar();
 
-                    // Consultar el número de tareas completadas del proyecto
+                  
                     string queryTareasCompletadas = @"
             SELECT COUNT(*) 
             FROM Tareas 
@@ -357,16 +356,66 @@ namespace AppOneCode.Vista
 
         private void ctPorcentajeProyectos_Click(object sender, EventArgs e)
         {
-            // Obtener el Id del proyecto seleccionado en el ComboBox
+            
             int idProyecto = (int)((KeyValuePair<int, string>)cmbProyectos.SelectedItem).Key;
 
-            // Llamar al método que carga el porcentaje de tareas del proyecto seleccionado
+           
             CargarPorcentajeProyectos(idProyecto);
         }
 
         private void btnBuscarProyectos_Click(object sender, EventArgs e)
         {
+            try
+            {
+               
+                int idProyecto = (int)((KeyValuePair<int, string>)cmbProyectos.SelectedItem).Key;
 
+                
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string queryTotalTareas = @"
+                SELECT COUNT(*) 
+                FROM Tareas 
+                WHERE idProyecto = @IdProyecto";
+
+                    SqlCommand cmdTotalTareas = new SqlCommand(queryTotalTareas, conn);
+                    cmdTotalTareas.Parameters.AddWithValue("@IdProyecto", idProyecto);
+
+                    int totalTareas = (int)cmdTotalTareas.ExecuteScalar();
+
+                   
+                    string queryTareasCompletadas = @"
+                SELECT COUNT(*) 
+                FROM Tareas 
+                WHERE idProyecto = @IdProyecto 
+                  AND EstadoId = (SELECT Id FROM Estado WHERE NombreEstado = 'Completada')";
+
+                    SqlCommand cmdTareasCompletadas = new SqlCommand(queryTareasCompletadas, conn);
+                    cmdTareasCompletadas.Parameters.AddWithValue("@IdProyecto", idProyecto);
+
+                    int tareasCompletadas = (int)cmdTareasCompletadas.ExecuteScalar();
+
+                   
+                    double porcentajeCompletado = totalTareas > 0 ? ((double)tareasCompletadas / totalTareas) * 100 : 0;
+
+                  
+                    ctPorcentajeProyectos.Series["Series1"].Points.Clear();
+
+                  
+                    ctPorcentajeProyectos.Series["Series1"].Points.AddXY("Completadas", porcentajeCompletado);
+                    ctPorcentajeProyectos.Series["Series1"].Points.AddXY("Pendientes", 100 - porcentajeCompletado);
+
+                 
+                    ctPorcentajeProyectos.Series["Series1"].Points[0].Label = $"{porcentajeCompletado:F1}% Completadas";
+                    ctPorcentajeProyectos.Series["Series1"].Points[1].Label = $"{100 - porcentajeCompletado:F1}% Pendientes";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al calcular el porcentaje de tareas completadas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void lblUserCount_Click(object sender, EventArgs e)
@@ -500,7 +549,54 @@ namespace AppOneCode.Vista
 
         private void btnBuscarPorAT_Click(object sender, EventArgs e)
         {
+            try
+            {
+                
+                int idAreaTrabajo = (int)((KeyValuePair<int, string>)cmbAreaTrabajo.SelectedItem).Key;
 
+                
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                
+                    string query = @"
+                SELECT u.Username, COUNT(t.Id) AS CantidadTareas
+                FROM Tareas t
+                INNER JOIN Trabajo tr ON t.idProyecto = tr.Id
+                INNER JOIN AreaTrabajo a ON tr.IdAreaTrabajo = a.Id
+                INNER JOIN Users u ON t.UsuarioId = u.Id
+                WHERE a.Id = @IdAreaTrabajo
+                GROUP BY u.Username
+                ORDER BY CantidadTareas DESC";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@IdAreaTrabajo", idAreaTrabajo);
+
+                       
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                      
+                        ctEmpleadosEficientes.Series["Series1"].Points.Clear();
+
+                        while (reader.Read())
+                        {
+                            string username = reader["Username"].ToString();
+                            int cantidadTareas = Convert.ToInt32(reader["CantidadTareas"]);
+
+                            var punto = ctEmpleadosEficientes.Series["Series1"].Points.AddXY(username, cantidadTareas);
+
+                           
+                            ctEmpleadosEficientes.Series["Series1"].Points.Last().Label = $"{username} ({cantidadTareas})";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al filtrar tareas por área de trabajo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cmbAreaTrabajo_SelectedIndexChanged(object sender, EventArgs e)

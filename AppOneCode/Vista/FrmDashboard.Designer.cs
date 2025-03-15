@@ -40,13 +40,9 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnBuscarPorAT = new AppOneCode.Modelo.BotonPersonalizado();
             this.cmbAreaTrabajo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnFiltroTrabajando = new AppOneCode.Modelo.BotonPersonalizado();
-            this.btnFiltroPendientes = new AppOneCode.Modelo.BotonPersonalizado();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnFiltroCompletadas = new AppOneCode.Modelo.BotonPersonalizado();
             this.sideBarContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -70,9 +66,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.btnBuscarProyectos = new AppOneCode.Modelo.BotonPersonalizado();
             this.cmbProyectos = new System.Windows.Forms.ComboBox();
-            this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
             this.ctTareasCompletadas = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -89,6 +83,12 @@
             this.lblproyectos = new System.Windows.Forms.Label();
             this.lbltareas = new System.Windows.Forms.Label();
             this.SidebarTime = new System.Windows.Forms.Timer(this.components);
+            this.btnBuscarPorAT = new AppOneCode.Modelo.BotonPersonalizado();
+            this.btnFiltroTrabajando = new AppOneCode.Modelo.BotonPersonalizado();
+            this.btnFiltroPendientes = new AppOneCode.Modelo.BotonPersonalizado();
+            this.btnFiltroCompletadas = new AppOneCode.Modelo.BotonPersonalizado();
+            this.btnBuscarProyectos = new AppOneCode.Modelo.BotonPersonalizado();
+            this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
             this.panel1.SuspendLayout();
             this.sideBarContainer.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -150,21 +150,6 @@
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // btnBuscarPorAT
-            // 
-            this.btnBuscarPorAT.BackColor = System.Drawing.Color.DarkBlue;
-            this.btnBuscarPorAT.FlatAppearance.BorderSize = 0;
-            this.btnBuscarPorAT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarPorAT.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarPorAT.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarPorAT.Location = new System.Drawing.Point(655, 533);
-            this.btnBuscarPorAT.Name = "btnBuscarPorAT";
-            this.btnBuscarPorAT.Size = new System.Drawing.Size(88, 40);
-            this.btnBuscarPorAT.TabIndex = 141;
-            this.btnBuscarPorAT.Text = "Buscar";
-            this.btnBuscarPorAT.UseVisualStyleBackColor = false;
-            this.btnBuscarPorAT.Click += new System.EventHandler(this.btnBuscarPorAT_Click);
-            // 
             // cmbAreaTrabajo
             // 
             this.cmbAreaTrabajo.FormattingEnabled = true;
@@ -186,34 +171,6 @@
             this.label4.TabIndex = 139;
             this.label4.Text = "Filtrar area de trabajo:";
             // 
-            // btnFiltroTrabajando
-            // 
-            this.btnFiltroTrabajando.BackColor = System.Drawing.Color.DarkBlue;
-            this.btnFiltroTrabajando.FlatAppearance.BorderSize = 0;
-            this.btnFiltroTrabajando.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltroTrabajando.ForeColor = System.Drawing.Color.White;
-            this.btnFiltroTrabajando.Location = new System.Drawing.Point(619, 405);
-            this.btnFiltroTrabajando.Name = "btnFiltroTrabajando";
-            this.btnFiltroTrabajando.Size = new System.Drawing.Size(150, 40);
-            this.btnFiltroTrabajando.TabIndex = 138;
-            this.btnFiltroTrabajando.Text = "Trabajando";
-            this.btnFiltroTrabajando.UseVisualStyleBackColor = false;
-            this.btnFiltroTrabajando.Click += new System.EventHandler(this.btnFiltroTrabajando_Click);
-            // 
-            // btnFiltroPendientes
-            // 
-            this.btnFiltroPendientes.BackColor = System.Drawing.Color.DarkBlue;
-            this.btnFiltroPendientes.FlatAppearance.BorderSize = 0;
-            this.btnFiltroPendientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltroPendientes.ForeColor = System.Drawing.Color.White;
-            this.btnFiltroPendientes.Location = new System.Drawing.Point(619, 343);
-            this.btnFiltroPendientes.Name = "btnFiltroPendientes";
-            this.btnFiltroPendientes.Size = new System.Drawing.Size(150, 40);
-            this.btnFiltroPendientes.TabIndex = 137;
-            this.btnFiltroPendientes.Text = "Pendientes";
-            this.btnFiltroPendientes.UseVisualStyleBackColor = false;
-            this.btnFiltroPendientes.Click += new System.EventHandler(this.btnFiltroPendientes_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -225,20 +182,6 @@
             this.label3.Size = new System.Drawing.Size(107, 24);
             this.label3.TabIndex = 136;
             this.label3.Text = "Filtrar Por:";
-            // 
-            // btnFiltroCompletadas
-            // 
-            this.btnFiltroCompletadas.BackColor = System.Drawing.Color.DarkBlue;
-            this.btnFiltroCompletadas.FlatAppearance.BorderSize = 0;
-            this.btnFiltroCompletadas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltroCompletadas.ForeColor = System.Drawing.Color.White;
-            this.btnFiltroCompletadas.Location = new System.Drawing.Point(619, 280);
-            this.btnFiltroCompletadas.Name = "btnFiltroCompletadas";
-            this.btnFiltroCompletadas.Size = new System.Drawing.Size(150, 40);
-            this.btnFiltroCompletadas.TabIndex = 134;
-            this.btnFiltroCompletadas.Text = "Completadas";
-            this.btnFiltroCompletadas.UseVisualStyleBackColor = false;
-            this.btnFiltroCompletadas.Click += new System.EventHandler(this.btnFiltroCompletadas_Click);
             // 
             // sideBarContainer
             // 
@@ -502,20 +445,6 @@
             this.pictureBox12.TabStop = false;
             this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
             // 
-            // btnBuscarProyectos
-            // 
-            this.btnBuscarProyectos.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnBuscarProyectos.FlatAppearance.BorderSize = 0;
-            this.btnBuscarProyectos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarProyectos.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarProyectos.Location = new System.Drawing.Point(1306, 527);
-            this.btnBuscarProyectos.Name = "btnBuscarProyectos";
-            this.btnBuscarProyectos.Size = new System.Drawing.Size(88, 40);
-            this.btnBuscarProyectos.TabIndex = 132;
-            this.btnBuscarProyectos.Text = "Buscar";
-            this.btnBuscarProyectos.UseVisualStyleBackColor = false;
-            this.btnBuscarProyectos.Click += new System.EventHandler(this.btnBuscarProyectos_Click);
-            // 
             // cmbProyectos
             // 
             this.cmbProyectos.FormattingEnabled = true;
@@ -524,20 +453,6 @@
             this.cmbProyectos.Size = new System.Drawing.Size(228, 21);
             this.cmbProyectos.TabIndex = 131;
             this.cmbProyectos.SelectedIndexChanged += new System.EventHandler(this.cmbProyectos_SelectedIndexChanged);
-            // 
-            // botonPersonalizado1
-            // 
-            this.botonPersonalizado1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
-            this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalizado1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonPersonalizado1.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalizado1.Location = new System.Drawing.Point(1240, 8);
-            this.botonPersonalizado1.Name = "botonPersonalizado1";
-            this.botonPersonalizado1.Size = new System.Drawing.Size(111, 40);
-            this.botonPersonalizado1.TabIndex = 130;
-            this.botonPersonalizado1.Text = "Chat";
-            this.botonPersonalizado1.UseVisualStyleBackColor = false;
             // 
             // ctTareasCompletadas
             // 
@@ -736,6 +651,91 @@
             // 
             this.SidebarTime.Interval = 10;
             this.SidebarTime.Tick += new System.EventHandler(this.s);
+            // 
+            // btnBuscarPorAT
+            // 
+            this.btnBuscarPorAT.BackColor = System.Drawing.Color.DarkBlue;
+            this.btnBuscarPorAT.FlatAppearance.BorderSize = 0;
+            this.btnBuscarPorAT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarPorAT.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarPorAT.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarPorAT.Location = new System.Drawing.Point(655, 533);
+            this.btnBuscarPorAT.Name = "btnBuscarPorAT";
+            this.btnBuscarPorAT.Size = new System.Drawing.Size(88, 40);
+            this.btnBuscarPorAT.TabIndex = 141;
+            this.btnBuscarPorAT.Text = "Buscar";
+            this.btnBuscarPorAT.UseVisualStyleBackColor = false;
+            this.btnBuscarPorAT.Click += new System.EventHandler(this.btnBuscarPorAT_Click);
+            // 
+            // btnFiltroTrabajando
+            // 
+            this.btnFiltroTrabajando.BackColor = System.Drawing.Color.DarkBlue;
+            this.btnFiltroTrabajando.FlatAppearance.BorderSize = 0;
+            this.btnFiltroTrabajando.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltroTrabajando.ForeColor = System.Drawing.Color.White;
+            this.btnFiltroTrabajando.Location = new System.Drawing.Point(619, 405);
+            this.btnFiltroTrabajando.Name = "btnFiltroTrabajando";
+            this.btnFiltroTrabajando.Size = new System.Drawing.Size(150, 40);
+            this.btnFiltroTrabajando.TabIndex = 138;
+            this.btnFiltroTrabajando.Text = "Trabajando";
+            this.btnFiltroTrabajando.UseVisualStyleBackColor = false;
+            this.btnFiltroTrabajando.Click += new System.EventHandler(this.btnFiltroTrabajando_Click);
+            // 
+            // btnFiltroPendientes
+            // 
+            this.btnFiltroPendientes.BackColor = System.Drawing.Color.DarkBlue;
+            this.btnFiltroPendientes.FlatAppearance.BorderSize = 0;
+            this.btnFiltroPendientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltroPendientes.ForeColor = System.Drawing.Color.White;
+            this.btnFiltroPendientes.Location = new System.Drawing.Point(619, 343);
+            this.btnFiltroPendientes.Name = "btnFiltroPendientes";
+            this.btnFiltroPendientes.Size = new System.Drawing.Size(150, 40);
+            this.btnFiltroPendientes.TabIndex = 137;
+            this.btnFiltroPendientes.Text = "Pendientes";
+            this.btnFiltroPendientes.UseVisualStyleBackColor = false;
+            this.btnFiltroPendientes.Click += new System.EventHandler(this.btnFiltroPendientes_Click);
+            // 
+            // btnFiltroCompletadas
+            // 
+            this.btnFiltroCompletadas.BackColor = System.Drawing.Color.DarkBlue;
+            this.btnFiltroCompletadas.FlatAppearance.BorderSize = 0;
+            this.btnFiltroCompletadas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltroCompletadas.ForeColor = System.Drawing.Color.White;
+            this.btnFiltroCompletadas.Location = new System.Drawing.Point(619, 280);
+            this.btnFiltroCompletadas.Name = "btnFiltroCompletadas";
+            this.btnFiltroCompletadas.Size = new System.Drawing.Size(150, 40);
+            this.btnFiltroCompletadas.TabIndex = 134;
+            this.btnFiltroCompletadas.Text = "Completadas";
+            this.btnFiltroCompletadas.UseVisualStyleBackColor = false;
+            this.btnFiltroCompletadas.Click += new System.EventHandler(this.btnFiltroCompletadas_Click);
+            // 
+            // btnBuscarProyectos
+            // 
+            this.btnBuscarProyectos.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnBuscarProyectos.FlatAppearance.BorderSize = 0;
+            this.btnBuscarProyectos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarProyectos.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarProyectos.Location = new System.Drawing.Point(1281, 527);
+            this.btnBuscarProyectos.Name = "btnBuscarProyectos";
+            this.btnBuscarProyectos.Size = new System.Drawing.Size(88, 40);
+            this.btnBuscarProyectos.TabIndex = 132;
+            this.btnBuscarProyectos.Text = "Buscar";
+            this.btnBuscarProyectos.UseVisualStyleBackColor = false;
+            this.btnBuscarProyectos.Click += new System.EventHandler(this.btnBuscarProyectos_Click);
+            // 
+            // botonPersonalizado1
+            // 
+            this.botonPersonalizado1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado1.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalizado1.Location = new System.Drawing.Point(1240, 8);
+            this.botonPersonalizado1.Name = "botonPersonalizado1";
+            this.botonPersonalizado1.Size = new System.Drawing.Size(111, 40);
+            this.botonPersonalizado1.TabIndex = 130;
+            this.botonPersonalizado1.Text = "Chat";
+            this.botonPersonalizado1.UseVisualStyleBackColor = false;
             // 
             // FrmDashboard
             // 

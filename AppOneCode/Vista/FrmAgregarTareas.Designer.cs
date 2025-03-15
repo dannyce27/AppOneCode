@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarTareas));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvMostrarProyectosI = new System.Windows.Forms.DataGridView();
@@ -65,6 +65,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cmbProyectos = new System.Windows.Forms.ComboBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.botonPersonalizado3 = new AppOneCode.Modelo.BotonPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarProyectosI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
@@ -92,25 +93,25 @@
             this.dgvMostrarProyectosI.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMostrarProyectosI.BackgroundColor = System.Drawing.Color.White;
             this.dgvMostrarProyectosI.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMostrarProyectosI.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMostrarProyectosI.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMostrarProyectosI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMostrarProyectosI.EnableHeadersVisualStyles = false;
             this.dgvMostrarProyectosI.GridColor = System.Drawing.SystemColors.Control;
             this.dgvMostrarProyectosI.Location = new System.Drawing.Point(81, 518);
             this.dgvMostrarProyectosI.Name = "dgvMostrarProyectosI";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvMostrarProyectosI.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvMostrarProyectosI.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMostrarProyectosI.Size = new System.Drawing.Size(587, 252);
             this.dgvMostrarProyectosI.TabIndex = 130;
             // 
@@ -446,12 +447,27 @@
             this.pictureBox12.TabIndex = 170;
             this.pictureBox12.TabStop = false;
             // 
+            // botonPersonalizado3
+            // 
+            this.botonPersonalizado3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.botonPersonalizado3.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado3.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalizado3.Location = new System.Drawing.Point(25, 430);
+            this.botonPersonalizado3.Name = "botonPersonalizado3";
+            this.botonPersonalizado3.Size = new System.Drawing.Size(150, 40);
+            this.botonPersonalizado3.TabIndex = 171;
+            this.botonPersonalizado3.Text = "Tareas repetitivas";
+            this.botonPersonalizado3.UseVisualStyleBackColor = false;
+            // 
             // FrmAgregarTareas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(1058, 797);
+            this.Controls.Add(this.botonPersonalizado3);
             this.Controls.Add(this.cmbProyectos);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.botonPersonalizado2);
@@ -540,5 +556,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbProyectos;
         private System.Windows.Forms.PictureBox pictureBox12;
+        private Modelo.BotonPersonalizado botonPersonalizado3;
     }
 }
