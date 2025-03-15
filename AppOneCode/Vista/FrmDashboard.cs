@@ -486,9 +486,15 @@ namespace AppOneCode.Vista
 
         private void pictureBox12_Click(object sender, EventArgs e)
         {
-
-            ReportePDF.GenerarReporte();
-            MessageBox.Show("Reporte generado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                ReportePDF.GenerarReporte();
+                MessageBox.Show("Reporte generado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar el reporte: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
