@@ -28,26 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProyectos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblfaq = new System.Windows.Forms.Label();
             this.lblrecursos = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbltareas = new System.Windows.Forms.Label();
             this.lblinicio = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbAreaTrabajo = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dtpFechaFinalizacion = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.cmbEncargado = new System.Windows.Forms.ComboBox();
             this.botonPersonalizado2 = new AppOneCode.Modelo.BotonPersonalizado();
-            this.pbBuscar = new System.Windows.Forms.PictureBox();
             this.dgvproyectos = new System.Windows.Forms.DataGridView();
-            this.txtSearchProyect = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbActualizarProyecto = new System.Windows.Forms.PictureBox();
             this.pbEliminarProyecto = new System.Windows.Forms.PictureBox();
@@ -62,9 +60,10 @@
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.cmbAreaTrabajo = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtSearchProyect = new System.Windows.Forms.TextBox();
+            this.pbBuscar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvproyectos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbActualizarProyecto)).BeginInit();
@@ -73,6 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).BeginInit();
             this.SuspendLayout();
             // 
             // lblfaq
@@ -177,6 +177,14 @@
             this.panel1.TabIndex = 103;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // cmbAreaTrabajo
+            // 
+            this.cmbAreaTrabajo.FormattingEnabled = true;
+            this.cmbAreaTrabajo.Location = new System.Drawing.Point(404, 251);
+            this.cmbAreaTrabajo.Name = "cmbAreaTrabajo";
+            this.cmbAreaTrabajo.Size = new System.Drawing.Size(365, 21);
+            this.cmbAreaTrabajo.TabIndex = 192;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -235,33 +243,20 @@
             this.botonPersonalizado2.Text = "Chat";
             this.botonPersonalizado2.UseVisualStyleBackColor = false;
             // 
-            // pbBuscar
-            // 
-            this.pbBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.pbBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("pbBuscar.Image")));
-            this.pbBuscar.Location = new System.Drawing.Point(1057, 595);
-            this.pbBuscar.Name = "pbBuscar";
-            this.pbBuscar.Size = new System.Drawing.Size(38, 32);
-            this.pbBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbBuscar.TabIndex = 118;
-            this.pbBuscar.TabStop = false;
-            this.pbBuscar.Click += new System.EventHandler(this.pbBuscar_Click);
-            // 
             // dgvproyectos
             // 
             this.dgvproyectos.AllowUserToOrderColumns = true;
             this.dgvproyectos.BackgroundColor = System.Drawing.Color.White;
             this.dgvproyectos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvproyectos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvproyectos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvproyectos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvproyectos.ColumnHeadersHeight = 30;
             this.dgvproyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvproyectos.EnableHeadersVisualStyles = false;
@@ -269,43 +264,24 @@
             this.dgvproyectos.Location = new System.Drawing.Point(83, 607);
             this.dgvproyectos.Name = "dgvproyectos";
             this.dgvproyectos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvproyectos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvproyectos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvproyectos.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvproyectos.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvproyectos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvproyectos.Size = new System.Drawing.Size(475, 235);
             this.dgvproyectos.TabIndex = 117;
             this.dgvproyectos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvproyectos_CellContentClick);
-            // 
-            // txtSearchProyect
-            // 
-            this.txtSearchProyect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchProyect.Location = new System.Drawing.Point(685, 607);
-            this.txtSearchProyect.Name = "txtSearchProyect";
-            this.txtSearchProyect.Size = new System.Drawing.Size(364, 20);
-            this.txtSearchProyect.TabIndex = 115;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(840, 574);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 20);
-            this.label7.TabIndex = 114;
-            this.label7.Text = "Buscar";
             // 
             // pictureBox1
             // 
@@ -472,13 +448,37 @@
             this.pictureBox12.TabIndex = 186;
             this.pictureBox12.TabStop = false;
             // 
-            // cmbAreaTrabajo
+            // label7
             // 
-            this.cmbAreaTrabajo.FormattingEnabled = true;
-            this.cmbAreaTrabajo.Location = new System.Drawing.Point(404, 251);
-            this.cmbAreaTrabajo.Name = "cmbAreaTrabajo";
-            this.cmbAreaTrabajo.Size = new System.Drawing.Size(365, 21);
-            this.cmbAreaTrabajo.TabIndex = 192;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(840, 574);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 20);
+            this.label7.TabIndex = 114;
+            this.label7.Text = "Buscar";
+            // 
+            // txtSearchProyect
+            // 
+            this.txtSearchProyect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchProyect.Location = new System.Drawing.Point(685, 607);
+            this.txtSearchProyect.Name = "txtSearchProyect";
+            this.txtSearchProyect.Size = new System.Drawing.Size(364, 20);
+            this.txtSearchProyect.TabIndex = 115;
+            // 
+            // pbBuscar
+            // 
+            this.pbBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.pbBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("pbBuscar.Image")));
+            this.pbBuscar.Location = new System.Drawing.Point(1057, 595);
+            this.pbBuscar.Name = "pbBuscar";
+            this.pbBuscar.Size = new System.Drawing.Size(38, 32);
+            this.pbBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbBuscar.TabIndex = 118;
+            this.pbBuscar.TabStop = false;
+            this.pbBuscar.Click += new System.EventHandler(this.pbBuscar_Click);
             // 
             // frmProyectos
             // 
@@ -492,9 +492,9 @@
             this.Name = "frmProyectos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tareas";
+            this.Load += new System.EventHandler(this.frmProyectos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvproyectos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbActualizarProyecto)).EndInit();
@@ -503,6 +503,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,14 +526,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pbActualizarProyecto;
         private System.Windows.Forms.PictureBox pbEliminarProyecto;
         private System.Windows.Forms.PictureBox pbAgregarProyecto;
-        private System.Windows.Forms.TextBox txtSearchProyect;
         private System.Windows.Forms.TextBox txtDescProyecto;
         private System.Windows.Forms.DataGridView dgvproyectos;
-        private System.Windows.Forms.PictureBox pbBuscar;
         private Modelo.BotonPersonalizado botonPersonalizado2;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Label label9;
@@ -541,5 +539,8 @@
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.ComboBox cmbEncargado;
         private System.Windows.Forms.ComboBox cmbAreaTrabajo;
+        private System.Windows.Forms.PictureBox pbBuscar;
+        private System.Windows.Forms.TextBox txtSearchProyect;
+        private System.Windows.Forms.Label label7;
     }
 }

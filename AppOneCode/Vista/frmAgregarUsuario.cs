@@ -21,6 +21,7 @@ namespace AppOneCode.Vista
             InitializeComponent();
             CargarImagenPerfil();
             CargarGraficoProyectosCompletados();
+            CargarRoles();
 
         }
 
@@ -37,6 +38,44 @@ namespace AppOneCode.Vista
         private void label12_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CargarRoles()
+        {
+
+
+            using (SqlConnection conn = new SqlConnection(@"Server=localhost\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+            {
+                string query = "SELECT idTipoUsuario, NombreTipoUsuario FROM TipoUsuario"; // Ajusta 'Nombre' según el nombre real de tu columna.
+
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    // Crea un diccionario para almacenar los datos
+                    Dictionary<int, string> estados = new Dictionary<int, string>();
+
+                    while (reader.Read())
+                    {
+                        int id = reader.GetInt32(0);        // Id del estado
+                        string nombreEstado = reader.GetString(1); // Nombre del estado
+
+                        // Agrega el id y el nombre al diccionario
+                        estados.Add(id, nombreEstado);
+                    }
+
+                    // Asigna los datos al ComboBox
+                    cmbRolUsuario.DataSource = new BindingSource(estados, null);
+                    cmbRolUsuario.DisplayMember = "Value"; 
+                    cmbRolUsuario.ValueMember = "Key";    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar estados: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void frmAgregarUsuario_Load(object sender, EventArgs e)
@@ -85,9 +124,10 @@ namespace AppOneCode.Vista
             {
                 string usuario = txtagregarNombreUsuario.Text; 
                 string email = txtagregarEmailUsuario.Text;
-                string password = txtagregarContrasenaUsuario.Text; 
+                string password = txtagregarContrasenaUsuario.Text;
+                int userType = Convert.ToInt32(cmbRolUsuario.SelectedValue);
 
-                bool resultado = AgregarUsuario.CrearCuentas(usuario, email, password, dgvListaUsuarios);
+                bool resultado = AgregarUsuario.CrearCuentas(usuario, email, password, userType, dgvListaUsuarios);
                 if (resultado)
                 {
                     MessageBox.Show("Cuenta creada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -107,7 +147,7 @@ namespace AppOneCode.Vista
                 {
                     txtagregarNombreUsuario.Text = dgvListaUsuarios.CurrentRow.Cells["Username"].Value.ToString();
                     txtagregarEmailUsuario.Text = dgvListaUsuarios.CurrentRow.Cells["Email"].Value.ToString();
-                    txtagregarContrasenaUsuario.Text = dgvListaUsuarios.CurrentRow.Cells["Contrasenaa"].Value.ToString();
+                    
 
                 }
             }
@@ -354,7 +394,7 @@ namespace AppOneCode.Vista
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                using (SqlConnection conn = new SqlConnection(@"Server=localhost\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
                 {
                     conn.Open();
 
@@ -401,6 +441,11 @@ GROUP BY tr.Nombre;";
             frmAuditoriaCambios frmAudi = new frmAuditoriaCambios();
             this.Hide();
             frmAudi.ShowDialog();
+
+        }
+
+        private void cmbRolUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -102,7 +102,7 @@ namespace AppOneCode.Vista
             {
                 int usuarioId = Usuario.UsuarioId;
 
-                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                using (SqlConnection conn = new SqlConnection(@"Server=localhost\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
                 {
                     conn.Open();
                     string query = @"
@@ -135,7 +135,7 @@ namespace AppOneCode.Vista
                             string nombreEstado = reader["NombreEstado"].ToString();
 
                             var punto = ctProgresoPerfil.Series["EstadoTareas"].Points.AddXY(descripcionTarea, 1);
-                            ctProgresoPerfil.Series["EstadoTareas"].Points.Last().Label = $"{descripcionTarea} ({nombreEstado})";
+                            ctProgresoPerfil.Series["EstadoTareas"].Points.Last().Label = $"{descripcionTarea}";
                         }
                     }
                 }

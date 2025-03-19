@@ -65,7 +65,7 @@ public class Usuario
                 {
                     int count = (int)comandoComprobar.ExecuteScalar();
                     // Si no hay registros, asignar tipo de usuario como 1 (Administrador)
-                    idTipoUsuario = (count == 0) ? 1 : 2; // 1 para Administrador, 2 para Empleado
+                    idTipoUsuario = (count == 0) ? 1 : 3; // 1 para Administrador, 2 para Empleado
                 }
 
                 // Ahora insertar el nuevo usuario con el idTipoUsuario correspondiente

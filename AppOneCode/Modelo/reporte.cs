@@ -33,8 +33,8 @@ public class ReportePDF
                 doc.Add(titulo);
                 doc.Add(new Paragraph("\n"));
 
-               
-                string conexionString = "Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+  
+    string conexionString = @"Server=localhost\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
                 using (SqlConnection conexion = new SqlConnection(conexionString))
                 {
                     conexion.Open();

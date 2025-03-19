@@ -94,7 +94,7 @@ namespace AppOneCode.Vista
                          JOIN Tareas T ON T.idProyecto = Tr.Id
                          WHERE T.Id = @idTarea";
 
-                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                using (SqlConnection conn = new SqlConnection(@"Server=localhost\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
                 {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -126,7 +126,7 @@ namespace AppOneCode.Vista
                          JOIN Tareas T ON T.idProyecto = Tr.Id
                          WHERE T.Id = @idTarea";
 
-                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                using (SqlConnection conn = new SqlConnection(@"Server=localhost\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
                 {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -242,11 +242,52 @@ namespace AppOneCode.Vista
         {
 
         }
+        private int ObtenerUsuarioAsignadoTarea(int idTarea)
+        {
+            int usuarioAsignadoId = 0;
+
+            try
+            {
+                // Consulta SQL para obtener el ID del usuario asignado a la tarea
+                string query = @"SELECT UsuarioId 
+                         FROM Tareas 
+                         WHERE Id = @idTarea";
+
+                using (SqlConnection conn = new SqlConnection(@"Server=localhost\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@idTarea", idTarea);
+                        usuarioAsignadoId = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener el usuario asignado a la tarea: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return usuarioAsignadoId;
+        }
 
         private void pbTaskComplete_Click(object sender, EventArgs e)
         {
             try
             {
+                // Obtener el ID del usuario asignado a la tarea
+                int usuarioAsignadoId = ObtenerUsuarioAsignadoTarea(this.Id);
+
+                // Obtener el ID del usuario actual
+                int usuarioActualId = Usuario.UsuarioId; // Asume que tienes una propiedad estática para el ID del usuario actual
+
+                // Verificar si el usuario actual es el asignado a la tarea
+                if (usuarioActualId != usuarioAsignadoId)
+                {
+                    MessageBox.Show("No eres el encargado de esta tarea. No puedes marcarla como completada.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Salir del método si no es el usuario asignado
+                }
+
                 // Crear modelo de tarea
                 Tareas2 tareaModel = new Tareas2
                 {
@@ -265,7 +306,7 @@ namespace AppOneCode.Vista
                     string correoEncargado = ObtenerCorreoEncargadoProyecto(this.Id);
                     string username = ObtenerNombreEncargadoProyecto(this.Id);
                     string nombreProyecto = ObtenerNombreProyecto(this.Id);
-                    string usernameCompleto = Usuario.ObtenerNombreUsuario(this.Id);
+                    string usernameCompleto = ObtenerNombreUsuarioAsignado(this.Id);
 
                     // Verificar si se obtuvo el correo
                     if (!string.IsNullOrEmpty(correoEncargado))
@@ -292,6 +333,36 @@ namespace AppOneCode.Vista
             }
         }
 
+        private string ObtenerNombreUsuarioAsignado(int idTarea)
+        {
+            string nombreUsuario = string.Empty;
+
+            try
+            {
+                // Consulta SQL para obtener el nombre del usuario asignado a la tarea
+                string query = @"SELECT U.Username 
+                         FROM Users U
+                         INNER JOIN Tareas T ON U.Id = T.UsuarioId
+                         WHERE T.Id = @idTarea";
+
+                using (SqlConnection conn = new SqlConnection(@"Server=localhost\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@idTarea", idTarea);
+                        nombreUsuario = cmd.ExecuteScalar() as string;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener el nombre del usuario asignado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return nombreUsuario;
+        }
+
         private string ObtenerNombreProyecto(int idTarea)
         {
             string nombreProyecto = string  .Empty;
@@ -304,7 +375,7 @@ namespace AppOneCode.Vista
                          JOIN Tareas T ON P.Id = T.idProyecto
                          WHERE T.Id = @idTarea";
 
-                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                using (SqlConnection conn = new SqlConnection(@"Server=localhost\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
                 {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(query, conn))

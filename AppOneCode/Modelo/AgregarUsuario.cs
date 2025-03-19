@@ -28,9 +28,8 @@ namespace AppOneCode.Modelo
             }
         }
 
-        // Método para crear cuentas
-
-        public static bool CrearCuentas(string usuario, string email, string password, DataGridView dgv)
+   
+        public static bool CrearCuentas(string usuario, string email, string password, int userType, DataGridView dgv)
         {
             // Validación de entrada
             if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
@@ -39,26 +38,27 @@ namespace AppOneCode.Modelo
                 return false;
             }
 
-            // Hash de la contraseña
+       
             string hashedPassword = HashPassword(password);
 
             using (SqlConnection conn = new Conexion().OpenConnection())
             {
-                string query = "INSERT INTO Users (Username, Email, Contrasenaa) VALUES (@Username, @Email, @Contrasenaa)";
+                string query = "INSERT INTO Users (Username, Email, Contrasenaa, idTipoUsuario ) VALUES (@Username, @Email, @Contrasenaa, @idTipoUsuario)";
                 using (SqlCommand comando = new SqlCommand(query, conn))
                 {
                     // Agregar parámetros
                     comando.Parameters.Add(new SqlParameter("@Username", SqlDbType.NVarChar) { Value = usuario });
                     comando.Parameters.Add(new SqlParameter("@Email", SqlDbType.NVarChar) { Value = email });
                     comando.Parameters.Add(new SqlParameter("@Contrasenaa", SqlDbType.NVarChar) { Value = hashedPassword });
+                    comando.Parameters.Add(new SqlParameter("@idTipoUsuario", SqlDbType.Int) { Value = userType });
 
                     try
                     {
-                        // Si `ExecuteNonQuery` devuelve más de 0 filas afectadas, la inserción fue exitosa
+                      
                         int filasAfectadas = comando.ExecuteNonQuery();
                         if (filasAfectadas > 0)
                         {
-                            // Cargar usuarios en el DataGridView
+                            
                             CargarUsuarios(dgv);
                             return true;
                         }
@@ -137,7 +137,7 @@ namespace AppOneCode.Modelo
                 return false;
             }
 
-            // Hash de la nueva contraseña
+          
             string hashedPassword = HashPassword(nuevaContraseña);
 
             using (SqlConnection conn = new Conexion().OpenConnection())

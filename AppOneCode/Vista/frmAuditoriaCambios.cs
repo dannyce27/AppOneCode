@@ -14,7 +14,8 @@ namespace AppOneCode.Vista
     public partial class frmAuditoriaCambios : Form
     {
 
-        private string connectionString = "Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+        private readonly string connectionString = @"Server=localhost\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+
         public frmAuditoriaCambios()
         {
             InitializeComponent();

@@ -16,7 +16,8 @@ namespace AppOneCode.Vista
 {
     public partial class frmProyectos : Form
     {
-        private readonly string connectionString = @"Server=DESKTOP-2I6K8G4\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+        private readonly string connectionString = @"Server=localhost\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+
         private ToolTip toolTip1;
 
         public frmProyectos()
@@ -27,12 +28,38 @@ namespace AppOneCode.Vista
             InitializeComponent();
             CargarTareas();
             CargarAreasTrabajo();
-            CargarEncargadosProyectos();    
+            CargarEncargadosProyectos();
 
 
             toolTip1 = new ToolTip();
 
 
+        }
+
+
+        public static int ObtenerIdRol(int usuarioId)
+        {
+            int idRol = 0;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(@"Server=localhost\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                {
+                    conn.Open();
+                    string query = "SELECT idTipoUsuario FROM Users WHERE Id = @usuarioId";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@usuarioId", usuarioId);
+                        idRol = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener el rol del usuario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return idRol;
         }
 
         private void CargarTareas()
@@ -298,6 +325,28 @@ namespace AppOneCode.Vista
         private void pictureBox12_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmProyectos_Load(object sender, EventArgs e)
+        {
+            // Obtener el ID del usuario actual
+            int usuarioId = Usuario.UsuarioId;
+
+            // Obtener el rol del usuario
+            int idRol = ObtenerIdRol(usuarioId);
+
+            // Ocultar el botón si el rol es 3 (Comentarista) o 4 (Cliente)
+            if (idRol == 3 || idRol == 4)
+            {
+                pbEliminarProyecto.Visible = false;
+            }
+
+            if (idRol == 4)
+            {
+                pbEliminarProyecto.Visible = false;
+                pbAgregarProyecto.Visible = false;
+                pbActualizarProyecto.Visible = false;
+            }
         }
     }
 }

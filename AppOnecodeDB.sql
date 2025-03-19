@@ -39,11 +39,12 @@ VALUES ('NuevoUsuario', 'nuevo.usuario@dominio.com', 'hashedPassword123', 1);
 INSERT INTO TipoUsuario (NombreTipoUsuario)
 VALUES 
     ('Administrador'), 
-    ('Empleado'), 
-    ('Comentarista');
+    ('Lider de Proyecto'), 
+    ('Colaborador');
 
+INSERT INTO TipoUsuario (NombreTipoUsuario) VALUES ('Cliente')
 
-
+select * from Users
 
 
 
@@ -143,12 +144,16 @@ CREATE TABLE Tareas (
 	FechaInicio DATE NOT NULL,
 	FechaFinalizacion DATE NOT NULL,
 	idProyecto INT NOT NULL,
+	frecuenciaRepeticion NVARCHAR(100) NULL,
 	CONSTRAINT FK_ID_Proyecto FOREIGN KEY (idProyecto) REFERENCES Trabajo(Id),
     CONSTRAINT FK_Tareas_Usuario FOREIGN KEY (UsuarioId) REFERENCES Users(Id),
     CONSTRAINT FK_Tareas_Prioridad FOREIGN KEY (PrioridadId) REFERENCES Prioridad(Id),
     CONSTRAINT FK_Tareas_Estado FOREIGN KEY (EstadoId) REFERENCES Estado(Id)
 );
+
+
 	
+	drop table Tareas;
 --TABLAS DE AUDITORIAS 
 
 CREATE TABLE AuditoriaCambiosTareas (

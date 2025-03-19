@@ -36,6 +36,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblUsername = new System.Windows.Forms.Label();
+            this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -52,12 +53,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblfaq = new System.Windows.Forms.Label();
             this.lblrecursos = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblDashboard = new System.Windows.Forms.Label();
             this.lblproyectos = new System.Windows.Forms.Label();
             this.lbltareas = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -128,7 +128,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lblfaq);
             this.panel1.Controls.Add(this.lblrecursos);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblDashboard);
             this.panel1.Controls.Add(this.lblproyectos);
             this.panel1.Controls.Add(this.lbltareas);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -151,6 +151,21 @@
             this.lblUsername.Size = new System.Drawing.Size(293, 84);
             this.lblUsername.TabIndex = 97;
             this.lblUsername.Text = "Username";
+            // 
+            // botonPersonalizado1
+            // 
+            this.botonPersonalizado1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado1.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalizado1.Location = new System.Drawing.Point(885, 22);
+            this.botonPersonalizado1.Name = "botonPersonalizado1";
+            this.botonPersonalizado1.Size = new System.Drawing.Size(111, 40);
+            this.botonPersonalizado1.TabIndex = 96;
+            this.botonPersonalizado1.Text = "Chat";
+            this.botonPersonalizado1.UseVisualStyleBackColor = false;
+            this.botonPersonalizado1.Click += new System.EventHandler(this.botonPersonalizado1_Click);
             // 
             // pictureBox9
             // 
@@ -346,18 +361,18 @@
             this.lblrecursos.Text = "Recursos";
             this.lblrecursos.Click += new System.EventHandler(this.lblrecursos_Click);
             // 
-            // label1
+            // lblDashboard
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(441, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 20);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Dashboard";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.lblDashboard.AutoSize = true;
+            this.lblDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.lblDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDashboard.ForeColor = System.Drawing.Color.White;
+            this.lblDashboard.Location = new System.Drawing.Point(441, 30);
+            this.lblDashboard.Name = "lblDashboard";
+            this.lblDashboard.Size = new System.Drawing.Size(88, 20);
+            this.lblDashboard.TabIndex = 24;
+            this.lblDashboard.Text = "Dashboard";
+            this.lblDashboard.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // lblproyectos
             // 
@@ -405,21 +420,6 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 36;
             this.pictureBox3.TabStop = false;
-            // 
-            // botonPersonalizado1
-            // 
-            this.botonPersonalizado1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.botonPersonalizado1.FlatAppearance.BorderSize = 0;
-            this.botonPersonalizado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalizado1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonPersonalizado1.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalizado1.Location = new System.Drawing.Point(885, 22);
-            this.botonPersonalizado1.Name = "botonPersonalizado1";
-            this.botonPersonalizado1.Size = new System.Drawing.Size(111, 40);
-            this.botonPersonalizado1.TabIndex = 96;
-            this.botonPersonalizado1.Text = "Chat";
-            this.botonPersonalizado1.UseVisualStyleBackColor = false;
-            this.botonPersonalizado1.Click += new System.EventHandler(this.botonPersonalizado1_Click);
             // 
             // FrmInicio
             // 
@@ -470,7 +470,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblfaq;
         private System.Windows.Forms.Label lblrecursos;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDashboard;
         private System.Windows.Forms.Label lblproyectos;
         private System.Windows.Forms.Label lbltareas;
         private System.Windows.Forms.PictureBox pictureBox1;

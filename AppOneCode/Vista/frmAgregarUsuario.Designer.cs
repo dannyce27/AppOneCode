@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarUsuario));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblfaq = new System.Windows.Forms.Label();
@@ -71,6 +71,8 @@
             this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
             this.botonPersonalizado2 = new AppOneCode.Modelo.BotonPersonalizado();
             this.botonPersonalizado3 = new AppOneCode.Modelo.BotonPersonalizado();
+            this.cmbRolUsuario = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -223,16 +225,16 @@
             // 
             // crtProyectosCompletados
             // 
-            chartArea4.Name = "ChartArea1";
-            this.crtProyectosCompletados.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.crtProyectosCompletados.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.crtProyectosCompletados.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.crtProyectosCompletados.Legends.Add(legend2);
             this.crtProyectosCompletados.Location = new System.Drawing.Point(117, 466);
             this.crtProyectosCompletados.Name = "crtProyectosCompletados";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.crtProyectosCompletados.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.crtProyectosCompletados.Series.Add(series2);
             this.crtProyectosCompletados.Size = new System.Drawing.Size(239, 273);
             this.crtProyectosCompletados.TabIndex = 156;
             this.crtProyectosCompletados.Text = "ct%Proyectos";
@@ -345,34 +347,34 @@
             this.dgvListaUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.dgvListaUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListaUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvListaUsuarios.ColumnHeadersHeight = 30;
             this.dgvListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvListaUsuarios.EnableHeadersVisualStyles = false;
             this.dgvListaUsuarios.GridColor = System.Drawing.Color.White;
             this.dgvListaUsuarios.Location = new System.Drawing.Point(610, 538);
             this.dgvListaUsuarios.Name = "dgvListaUsuarios";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.GhostWhite;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvListaUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(90)))), ((int)(((byte)(143)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.GhostWhite;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvListaUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvListaUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaUsuarios.Size = new System.Drawing.Size(487, 240);
             this.dgvListaUsuarios.TabIndex = 176;
@@ -459,7 +461,7 @@
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.White;
             this.pictureBox8.Image = global::AppOneCode.Properties.Resources.icons8_password_24;
-            this.pictureBox8.Location = new System.Drawing.Point(723, 271);
+            this.pictureBox8.Location = new System.Drawing.Point(547, 268);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(33, 30);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -481,7 +483,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.White;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(716, 259);
+            this.pictureBox6.Location = new System.Drawing.Point(540, 256);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(270, 50);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -493,7 +495,7 @@
             // 
             this.txtagregarContrasenaUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtagregarContrasenaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtagregarContrasenaUsuario.Location = new System.Drawing.Point(762, 275);
+            this.txtagregarContrasenaUsuario.Location = new System.Drawing.Point(586, 272);
             this.txtagregarContrasenaUsuario.Name = "txtagregarContrasenaUsuario";
             this.txtagregarContrasenaUsuario.Size = new System.Drawing.Size(194, 22);
             this.txtagregarContrasenaUsuario.TabIndex = 172;
@@ -543,12 +545,35 @@
             this.botonPersonalizado3.UseVisualStyleBackColor = false;
             this.botonPersonalizado3.Click += new System.EventHandler(this.botonPersonalizado3_Click);
             // 
+            // cmbRolUsuario
+            // 
+            this.cmbRolUsuario.FormattingEnabled = true;
+            this.cmbRolUsuario.Location = new System.Drawing.Point(889, 277);
+            this.cmbRolUsuario.Name = "cmbRolUsuario";
+            this.cmbRolUsuario.Size = new System.Drawing.Size(271, 21);
+            this.cmbRolUsuario.TabIndex = 186;
+            this.cmbRolUsuario.SelectedIndexChanged += new System.EventHandler(this.cmbRolUsuario_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
+            this.label2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(972, 251);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 23);
+            this.label2.TabIndex = 187;
+            this.label2.Text = "Rol de Usuario";
+            // 
             // frmAgregarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(1224, 903);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbRolUsuario);
             this.Controls.Add(this.botonPersonalizado3);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox9);
@@ -648,5 +673,7 @@
         private System.Windows.Forms.TextBox txtagregarContrasenaUsuario;
         private Modelo.BotonPersonalizado botonPersonalizado2;
         private Modelo.BotonPersonalizado botonPersonalizado3;
+        private System.Windows.Forms.ComboBox cmbRolUsuario;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -9,7 +9,8 @@ namespace AppOneCode.Modelo
 {
     public class Tareas2
     {
-        string connectionString = "Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+        private readonly string connectionString = @"Server=localhost\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+
 
         public int Id { get; set; }
         public string Descripcion { get; set; }
@@ -20,13 +21,15 @@ namespace AppOneCode.Modelo
         public DateTime FechaFinalizacion { get; set; }
         public string Trabajo { get; set; }
 
+        public string FrecuenciaRepeticion { get; set; } 
+
         // Método para insertar una nueva tarea
         public bool InsertarTarea()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"
-            INSERT INTO Tareas (Descripcion, UsuarioId, PrioridadId, EstadoId, FechaInicio, FechaFinalizacion, idProyecto)
+            INSERT INTO Tareas (Descripcion, UsuarioId, PrioridadId, EstadoId, FechaInicio, FechaFinalizacion, idProyecto, FrecuenciaRepeticion)
             VALUES (
                 @Descripcion, 
                 (SELECT Id FROM Users WHERE Username = @Usuario), 
@@ -34,7 +37,8 @@ namespace AppOneCode.Modelo
                 (SELECT Id FROM Estado WHERE NombreEstado = @Estado),
                 @FechaInicio,
                 @FechaFinalizacion, 
-                (SELECT Id FROM Trabajo WHERE Nombre = @Trabajo)
+                (SELECT Id FROM Trabajo WHERE Nombre = @Trabajo),
+                @FrencuenciaRepeticion
             )";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -44,7 +48,8 @@ namespace AppOneCode.Modelo
                 cmd.Parameters.AddWithValue("@Estado", Estado);
                 cmd.Parameters.AddWithValue("@FechaInicio", FechaInicio);
                 cmd.Parameters.AddWithValue("@FechaFinalizacion", FechaFinalizacion);
-                cmd.Parameters.AddWithValue("@Trabajo", Trabajo);  // Se utiliza la subconsulta para obtener el Id del proyecto
+                cmd.Parameters.AddWithValue("@Trabajo", Trabajo);
+                cmd.Parameters.AddWithValue("@FrencuenciaRepeticion", FrecuenciaRepeticion);
 
                 try
                 {

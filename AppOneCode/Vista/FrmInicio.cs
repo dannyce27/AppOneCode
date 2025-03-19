@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -34,9 +35,8 @@ namespace AppOneCode
 
             int usuarioId = Usuario.UsuarioId;
 
-            // Llamas al método para obtener el nombre de usuario
+            // Obtener el nombre de usuario
             string username = Usuario.ObtenerNombreUsuario(usuarioId);
-
 
             if (!string.IsNullOrEmpty(username))
             {
@@ -46,6 +46,22 @@ namespace AppOneCode
             {
                 MessageBox.Show("No se pudo cargar el nombre de usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+          
+            int idRol = ObtenerIdRol(usuarioId);
+
+            
+            if (idRol != 1)
+            {
+                lblDashboard.Visible = false;
+            }
+
+            if (idRol == 4)
+            {
+                lblproyectos.Visible = false;
+
+            }
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -146,6 +162,31 @@ namespace AppOneCode
                     break;
             }
 
+        }
+
+        public static int ObtenerIdRol(int usuarioId)
+        {
+            int idRol = 0;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(@"Server=localhost\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                {
+                    conn.Open();
+                    string query = "SELECT idTipoUsuario FROM Users WHERE Id = @usuarioId";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@usuarioId", usuarioId);
+                        idRol = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener el rol del usuario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return idRol;
         }
 
         private void botonPersonalizado1_Click(object sender, EventArgs e)

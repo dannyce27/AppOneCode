@@ -15,7 +15,8 @@ namespace AppOneCode.Vista
     public partial class FrmAgregarTareas : Form
     {
 
-        private readonly string connectionString = @"Server=DESKTOP-2I6K8G4\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+        private readonly string connectionString = @"Server=localhost\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;";
+
 
         public FrmAgregarTareas()
         {
@@ -37,10 +38,31 @@ namespace AppOneCode.Vista
 
             dateTimePicker2.Format = DateTimePickerFormat.Custom;
             dateTimePicker2.CustomFormat = "dd/MM/yyyy"; // Formato día/mes/año
+
+            cmbFrecuenciaRepeticion.Items.AddRange(new string[] { "Ninguna", "Diaria", "Semanal", "Mensual" });
+            cmbFrecuenciaRepeticion.SelectedIndex = 0;
+
+            // Obtener el ID del usuario actual
+            int usuarioId = Usuario.UsuarioId;
+
+            // Obtener el rol del usuario
+            int idRol = ObtenerIdRol(usuarioId);
+
+            // Ocultar el botón si el rol es 3 (Comentarista) o 4 (Cliente)
+            if (idRol == 3 || idRol == 4)
+            {
+                pbEliminarProyecto.Visible = false;
+            }
+
+            if (idRol == 4)
+            {
+                pbEliminarProyecto.Visible = false;
+                pbAgregarProyecto.Visible = false;
+            }
         }
         private void CargarEmpleados()
         {
-           
+
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -78,7 +100,7 @@ namespace AppOneCode.Vista
 
         private void CargaProyectos()
         {
-            
+
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -116,7 +138,7 @@ namespace AppOneCode.Vista
 
         private void CargarPrioridades()
         {
-            
+
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -155,7 +177,7 @@ namespace AppOneCode.Vista
 
         private void CargarEstados()
         {
-  
+
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -213,10 +235,11 @@ namespace AppOneCode.Vista
             DateTime fechaFinalizacion = dtpFechaFinalizacion.Value;
             string nombreProyecto = cmbProyectos.Text;
             int idProyecto = Convert.ToInt32(cmbProyectos.SelectedValue);
+            string frecuenciaRepeticion = cmbFrecuenciaRepeticion.SelectedItem.ToString();
 
             string emailUsuario = "";
 
-            using (SqlConnection con = new SqlConnection("Server=DESKTOP-2I6K8G4\\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("SELECT Email FROM Users WHERE Id = @UsuarioId", con);
@@ -225,19 +248,21 @@ namespace AppOneCode.Vista
                 if (reader.Read()) emailUsuario = reader["Email"].ToString();
             }
 
-            // Crea una nueva instancia de la clase Tareas2
+         
             Tareas2 nuevaTarea = new Tareas2
             {
                 Descripcion = txtDescP.Text,
                 Usuario = cmbEmpleadoAsignado.Text,
                 Prioridad = cmbPrioridad.Text,
                 Estado = cmbEstado.Text,
-                FechaInicio = dtpFechaInicio.Value,  // Obtiene la fecha del DateTimePicker
-                FechaFinalizacion = dtpFechaFinalizacion.Value, // Obtiene la fecha final
-                Trabajo = cmbProyectos.Text
+                FechaInicio = dtpFechaInicio.Value, 
+                FechaFinalizacion = dtpFechaFinalizacion.Value,
+                Trabajo = cmbProyectos.Text,
+                FrecuenciaRepeticion = cmbFrecuenciaRepeticion.Text
+
             };
 
-            // Llama al método InsertarTarea para agregar la tarea
+          
             bool resultado = nuevaTarea.InsertarTarea();
 
             // Verifica si la tarea fue agregada correctamente
@@ -249,6 +274,13 @@ namespace AppOneCode.Vista
                 EmailService emailService = new EmailService();
                 emailService.EnviarNotificacionTarea(emailUsuario, usuarioNombre, nombreProyecto, descripcion);
 
+
+                // Si la frecuencia de repetición no es "Ninguna", crear tareas repetitivas
+                if (cmbFrecuenciaRepeticion.SelectedItem.ToString() != "Ninguna")
+                {
+                    CrearTareasRepetitivas(nuevaTarea, cmbFrecuenciaRepeticion.SelectedItem.ToString());
+                }
+
                 // Limpia los campos del formulario
                 txtDescP.Clear();
                 cmbEmpleadoAsignado.SelectedIndex = -1;
@@ -257,6 +289,7 @@ namespace AppOneCode.Vista
                 dtpFechaInicio.Value = DateTime.Now;  // Reinicia la fecha al día actual
                 dtpFechaFinalizacion.Value = DateTime.Now; // Reinicia la fecha al día actual
                 cmbProyectos.SelectedIndex = -1;
+                cmbFrecuenciaRepeticion.SelectedIndex = -1;
                 CargarDatos();  // Recargar datos en la interfaz
             }
             else
@@ -267,22 +300,26 @@ namespace AppOneCode.Vista
 
         private void CargarDatos()
         {
-     
+
             Tareas2 tareaModelo = new Tareas2();
 
-            // Llamar al método CargarTareas para obtener las tareas
+
             List<Tareas2> tareasList = tareaModelo.CargarTareas();
 
             // Asignar la lista de tareas al DataGridView
             dgvMostrarProyectosI.DataSource = tareasList;
 
-            // Opcionalmente, configurar algunas propiedades del DataGridView
-            dgvMostrarProyectosI.Columns["Id"].Visible = false;  // Si no deseas mostrar la columna Id
+
+            dgvMostrarProyectosI.Columns["Id"].Visible = false;
             dgvMostrarProyectosI.Columns["Descripcion"].HeaderText = "Descripción";
             dgvMostrarProyectosI.Columns["Usuario"].HeaderText = "Empleado Asignado";
             dgvMostrarProyectosI.Columns["Prioridad"].HeaderText = "Prioridad";
-            dgvMostrarProyectosI.Columns["Estado"].HeaderText = "Estado";
-           
+            dgvMostrarProyectosI.Columns["FechaInicio"].HeaderText = "Fecha de Inicio";
+            dgvMostrarProyectosI.Columns["FechaFinalizacion"].HeaderText = "Fecha de Finalización";
+       
+            dgvMostrarProyectosI.Columns["frecuenciaRepeticion"].HeaderText = "Frecuencia de Repeticion";
+         
+
 
 
 
@@ -291,6 +328,30 @@ namespace AppOneCode.Vista
         private void txtEncargadoProyecto_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        public static int ObtenerIdRol(int usuarioId)
+        {
+            int idRol = 0;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(@"Server=localhost\SQLEXPRESS;Database=BDOneCode;Trusted_Connection=True;"))
+                {
+                    conn.Open();
+                    string query = "SELECT idTipoUsuario FROM Users WHERE Id = @usuarioId";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@usuarioId", usuarioId);
+                        idRol = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener el rol del usuario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return idRol;
         }
 
         private void pbEliminarProyecto_Click(object sender, EventArgs e)
@@ -328,23 +389,23 @@ namespace AppOneCode.Vista
 
         private void pbActualizarProyecto_Click(object sender, EventArgs e)
         {
-            // Verificar si se ha seleccionado una fila en el DataGridView
+
             if (dgvMostrarProyectosI.SelectedRows.Count > 0)
             {
-                // Obtener el Id de la tarea seleccionada (asumiendo que la columna Id está en la posición 0)
+
                 int tareaId = Convert.ToInt32(dgvMostrarProyectosI.SelectedRows[0].Cells["Id"].Value);
 
-                // Verificar que haya un empleado seleccionado en el ComboBox
+
                 if (cmbEmpleadoAsignado.SelectedItem == null || cmbEmpleadoAsignado.SelectedIndex == -1)
                 {
                     MessageBox.Show("Por favor, selecciona un empleado para la tarea.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return; // Detener la ejecución si no se seleccionó un empleado
+                    return;
                 }
 
-                // Crear una instancia del modelo de Tareas2
+
                 Tareas2 tareaModelo = new Tareas2();
-                tareaModelo.Id = tareaId; 
-                tareaModelo.Descripcion = txtDescP.Text;  
+                tareaModelo.Id = tareaId;
+                tareaModelo.Descripcion = txtDescP.Text;
                 tareaModelo.Usuario = cmbEmpleadoAsignado.SelectedItem.ToString();
                 tareaModelo.Prioridad = cmbPrioridad.SelectedItem.ToString();
                 tareaModelo.Estado = cmbEstado.SelectedItem.ToString();
@@ -352,7 +413,7 @@ namespace AppOneCode.Vista
                 tareaModelo.FechaFinalizacion = dtpFechaFinalizacion.Value;
                 tareaModelo.Trabajo = cmbProyectos.SelectedItem.ToString();
 
-                // Llamar al método de actualización
+
                 bool resultado = tareaModelo.ActualizarTarea();
 
                 if (resultado)
@@ -393,13 +454,13 @@ namespace AppOneCode.Vista
 
         private void botonPersonalizado1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
-            // Obtener fechas de los DateTimePicker
+
             DateTime fechaInicio = dtpFechaInicio.Value.Date;
             DateTime fechaFinalizacion = dtpFechaFinalizacion.Value.Date;
 
@@ -410,19 +471,19 @@ namespace AppOneCode.Vista
                 return;
             }
 
-            // Crear instancia del modelo y llamar al método de búsqueda
+
             Tareas2 tareaModelo = new Tareas2();
             List<Tareas2> tareasFiltradas = tareaModelo.BuscarTareasPorFecha(fechaInicio, fechaFinalizacion);
 
             // Verificar si la lista tiene datos
             if (tareasFiltradas.Count > 0)
             {
-                dgvMostrarProyectosI.DataSource = tareasFiltradas; // Mostrar en DataGridView
+                dgvMostrarProyectosI.DataSource = tareasFiltradas;
             }
             else
             {
                 MessageBox.Show("No se encontraron tareas en el rango de fechas seleccionado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dgvMostrarProyectosI.DataSource = null; // Limpiar DataGridView si no hay datos
+                dgvMostrarProyectosI.DataSource = null;
             }
         }
 
@@ -431,35 +492,35 @@ namespace AppOneCode.Vista
             Tareas2 tareaModelo = new Tareas2();
             string searchCriteria = txtSearchProyect.Text.Trim();
 
-            
+
             List<Tareas2> resultados = tareaModelo.BuscarTareas(searchCriteria);
 
-            
+
             dgvMostrarProyectosI.DataSource = resultados;
         }
 
         private void botonPersonalizado1_Click_1(object sender, EventArgs e)
         {
 
-            // Obtener fechas de los DateTimePicker
+
             DateTime fechaInicio = dtpFechaInicio.Value.Date;
             DateTime fechaFinalizacion = dtpFechaFinalizacion.Value.Date;
 
-            // Verificar que la fecha de inicio no sea mayor a la de finalización
+
             if (fechaInicio > fechaFinalizacion)
             {
                 MessageBox.Show("La fecha de inicio no puede ser mayor que la fecha de finalización.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Crear instancia del modelo y llamar al método de búsqueda
+
             Tareas2 tareaModelo = new Tareas2();
             List<Tareas2> tareasFiltradas = tareaModelo.BuscarTareasPorFecha(fechaInicio, fechaFinalizacion);
 
-            // Verificar si la lista tiene datos
+
             if (tareasFiltradas.Count > 0)
             {
-                dgvMostrarProyectosI.DataSource = tareasFiltradas; // Mostrar en DataGridView
+                dgvMostrarProyectosI.DataSource = tareasFiltradas;
                 MessageBox.Show($"Se encontraron {tareasFiltradas.Count} tareas.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -470,12 +531,12 @@ namespace AppOneCode.Vista
 
         private void botonPersonalizado2_Click(object sender, EventArgs e)
         {
-            Tareas2 tareaModelo = new Tareas2(); 
-            
-            string searchCriteria = txtSearchProyect.Text.Trim(); 
+            Tareas2 tareaModelo = new Tareas2();
 
-            List<Tareas2> resultados = tareaModelo.BuscarTareas(searchCriteria); 
-            
+            string searchCriteria = txtSearchProyect.Text.Trim();
+
+            List<Tareas2> resultados = tareaModelo.BuscarTareas(searchCriteria);
+
             dgvMostrarProyectosI.DataSource = resultados;
         }
 
@@ -487,6 +548,62 @@ namespace AppOneCode.Vista
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void CrearTareasRepetitivas(Tareas2 tareaPrincipal, string frecuenciaRepeticion)
+        {
+            DateTime fechaInicio = tareaPrincipal.FechaInicio;
+            DateTime fechaFinalizacion = tareaPrincipal.FechaFinalizacion;
+
+            switch (frecuenciaRepeticion)
+            {
+                case "Diaria":
+                    // Crear tareas diarias hasta la fecha de finalización
+                    for (DateTime fecha = fechaInicio.AddDays(1); fecha <= fechaFinalizacion; fecha = fecha.AddDays(1))
+                    {
+                        CrearTareaRepetitiva(tareaPrincipal, fecha);
+                    }
+                    break;
+
+                case "Semanal":
+                    // Crear tareas semanales (cada lunes) hasta la fecha de finalización
+                    for (DateTime fecha = fechaInicio.AddDays(7); fecha <= fechaFinalizacion; fecha = fecha.AddDays(7))
+                    {
+                        CrearTareaRepetitiva(tareaPrincipal, fecha);
+                    }
+                    break;
+
+                case "Mensual":
+                    // Crear tareas mensuales (el mismo día del mes) hasta la fecha de finalización
+                    for (DateTime fecha = fechaInicio.AddMonths(1); fecha <= fechaFinalizacion; fecha = fecha.AddMonths(1))
+                    {
+                        CrearTareaRepetitiva(tareaPrincipal, fecha);
+                    }
+                    break;
+            }
+        }
+
+        private void CrearTareaRepetitiva(Tareas2 tareaPrincipal, DateTime fecha)
+        {
+            Tareas2 tareaRepetitiva = new Tareas2
+            {
+                Descripcion = tareaPrincipal.Descripcion,
+                Usuario = tareaPrincipal.Usuario,
+                Prioridad = tareaPrincipal.Prioridad,
+                Estado = tareaPrincipal.Estado,
+                FechaInicio = fecha,
+                FechaFinalizacion = fecha,
+                Trabajo = tareaPrincipal.Trabajo,
+                FrecuenciaRepeticion = tareaPrincipal.FrecuenciaRepeticion
+            };
+
+          
+            bool resultado = tareaRepetitiva.InsertarTarea();
+
+            if (!resultado)
+            {
+                MessageBox.Show($"Error al crear la tarea repetitiva para la fecha {fecha.ToShortDateString()}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
