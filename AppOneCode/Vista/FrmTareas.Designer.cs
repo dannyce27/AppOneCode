@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTareas));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.botonPersonalizado4 = new AppOneCode.Modelo.BotonPersonalizado();
             this.botonPersonalizado3 = new AppOneCode.Modelo.BotonPersonalizado();
             this.botonPersonalizado2 = new AppOneCode.Modelo.BotonPersonalizado();
             this.botonPersonalizado1 = new AppOneCode.Modelo.BotonPersonalizado();
@@ -42,7 +43,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pbNotificaciones = new System.Windows.Forms.PictureBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
@@ -53,11 +53,9 @@
             this.lblproyectos = new System.Windows.Forms.Label();
             this.lblinicio = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.botonPersonalizado4 = new AppOneCode.Modelo.BotonPersonalizado();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNotificaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
@@ -79,7 +77,6 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.pbNotificaciones);
             this.panel1.Controls.Add(this.txtBuscar);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox19);
@@ -96,6 +93,20 @@
             this.panel1.Size = new System.Drawing.Size(1101, 910);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // botonPersonalizado4
+            // 
+            this.botonPersonalizado4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.botonPersonalizado4.FlatAppearance.BorderSize = 0;
+            this.botonPersonalizado4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalizado4.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalizado4.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalizado4.Location = new System.Drawing.Point(873, 19);
+            this.botonPersonalizado4.Name = "botonPersonalizado4";
+            this.botonPersonalizado4.Size = new System.Drawing.Size(111, 40);
+            this.botonPersonalizado4.TabIndex = 185;
+            this.botonPersonalizado4.Text = "Chat";
+            this.botonPersonalizado4.UseVisualStyleBackColor = false;
             // 
             // botonPersonalizado3
             // 
@@ -202,7 +213,7 @@
             this.lblNumeroTC.BackColor = System.Drawing.Color.White;
             this.lblNumeroTC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumeroTC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblNumeroTC.Location = new System.Drawing.Point(1023, 838);
+            this.lblNumeroTC.Location = new System.Drawing.Point(1023, 794);
             this.lblNumeroTC.Name = "lblNumeroTC";
             this.lblNumeroTC.Size = new System.Drawing.Size(32, 18);
             this.lblNumeroTC.TabIndex = 113;
@@ -213,7 +224,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(929, 840);
+            this.label2.Location = new System.Drawing.Point(929, 796);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 16);
             this.label2.TabIndex = 112;
@@ -223,7 +234,7 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.White;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(900, 838);
+            this.pictureBox7.Location = new System.Drawing.Point(900, 794);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(23, 18);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -233,23 +244,12 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(890, 825);
+            this.pictureBox6.Location = new System.Drawing.Point(890, 781);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(177, 44);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 110;
             this.pictureBox6.TabStop = false;
-            // 
-            // pbNotificaciones
-            // 
-            this.pbNotificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(37)))));
-            this.pbNotificaciones.Image = ((System.Drawing.Image)(resources.GetObject("pbNotificaciones.Image")));
-            this.pbNotificaciones.Location = new System.Drawing.Point(24, 854);
-            this.pbNotificaciones.Name = "pbNotificaciones";
-            this.pbNotificaciones.Size = new System.Drawing.Size(33, 43);
-            this.pbNotificaciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbNotificaciones.TabIndex = 109;
-            this.pbNotificaciones.TabStop = false;
             // 
             // txtBuscar
             // 
@@ -366,20 +366,6 @@
             this.pictureBox1.TabIndex = 92;
             this.pictureBox1.TabStop = false;
             // 
-            // botonPersonalizado4
-            // 
-            this.botonPersonalizado4.BackColor = System.Drawing.Color.RoyalBlue;
-            this.botonPersonalizado4.FlatAppearance.BorderSize = 0;
-            this.botonPersonalizado4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalizado4.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonPersonalizado4.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalizado4.Location = new System.Drawing.Point(873, 19);
-            this.botonPersonalizado4.Name = "botonPersonalizado4";
-            this.botonPersonalizado4.Size = new System.Drawing.Size(111, 40);
-            this.botonPersonalizado4.TabIndex = 185;
-            this.botonPersonalizado4.Text = "Chat";
-            this.botonPersonalizado4.UseVisualStyleBackColor = false;
-            // 
             // FrmTareas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,7 +383,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNotificaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
@@ -419,7 +404,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.PictureBox pbNotificaciones;
         private System.Windows.Forms.Label lblNumeroTC;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox7;

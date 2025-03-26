@@ -9,6 +9,7 @@
     using System.Threading.Tasks;
     using System.Windows.Forms;
     using AppOneCode.Vista;
+using System.Reactive.Disposables;
     using Firebase.Database;
     using Firebase.Database.Query;
     using Firebase.Database.Streaming;

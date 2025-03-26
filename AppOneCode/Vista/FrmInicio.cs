@@ -128,7 +128,18 @@ namespace AppOneCode
 
         private void lblfaq_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = "https://eclectic-elf-ac92ac.netlify.app/", 
+                    UseShellExecute = true 
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al abrir la página: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

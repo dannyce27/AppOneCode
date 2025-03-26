@@ -35,41 +35,16 @@ C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmPrimerUs
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmInicio.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.Frmregistro.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Modelo.SplashScreen.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\AppOneCode.exe.config
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\AppOneCode.exe
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\AppOneCode.pdb
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.AssemblyReference.cache
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Modelo.SplashScreen.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmCronometro.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmLogin.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmPrimerUso.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmInicio.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Properties.Resources.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.Frmregistro.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.GenerateResource.cache
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.CoreCompileInputs.cache
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.exe
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.pdb
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmCronometro.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmTareas.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmProyectos.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmTareas.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.UserControlTareas.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmAgregarTareas.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmDashboard.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmAgregarTareas.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmDashboard.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmPerfil.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.frmProyectos.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.UserControlTareas.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmRecuperacionC.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmPerfil.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmRecuperacionC.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmCambiarContraseña.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmChat.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmCambiarContraseña.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmChat.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.frmAgregarUsuario.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.frmAgregarUsuario.resources
 C:\Users\Estudiante\Desktop\AppOneCode\AppOneCode\bin\Debug\AppOneCode.exe.config
 C:\Users\Estudiante\Desktop\AppOneCode\AppOneCode\bin\Debug\AppOneCode.exe
@@ -97,9 +72,6 @@ C:\Users\Estudiante\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.Ge
 C:\Users\Estudiante\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.CoreCompileInputs.cache
 C:\Users\Estudiante\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.exe
 C:\Users\Estudiante\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.pdb
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.user.resources
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Firebase.Database.dll
-C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.Up2Date
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\bin\Debug\BouncyCastle.Cryptography.dll
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\bin\Debug\Firebase.Database.dll
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\bin\Debug\itextsharp.dll
@@ -107,8 +79,88 @@ C:\Users\German G\Desktop\AppOneCode\AppOneCode\bin\Debug\BouncyCastle.Cryptogra
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\bin\Debug\itextsharp.xml
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.user.resources
 C:\Users\German G\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.Up2Date
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\AppOneCode.exe.config
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\AppOneCode.exe
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\AppOneCode.pdb
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Firebase.Database.dll
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\itextsharp.dll
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\BouncyCastle.Cryptography.xml
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\itextsharp.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.AssemblyReference.cache
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmChat.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmAgregarTareas.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.frmAgregarUsuario.resources
 C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.frmAuditoriaCambios.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmDashboard.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmPerfil.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmRecuperacionC.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmCambiarContraseña.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmTareas.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Modelo.SplashScreen.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmCronometro.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.FrmLogin.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmPrimerUso.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.FrmInicio.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Properties.Resources.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.Frmregistro.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.frmProyectos.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.user.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.Vista.UserControlTareas.resources
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.GenerateResource.cache
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.CoreCompileInputs.cache
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.csproj.Up2Date
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.exe
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.pdb
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Google.Api.Gax.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Google.Api.Gax.Rest.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Google.Apis.Auth.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Google.Apis.Core.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Google.Apis.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Newtonsoft.Json.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.ValueTuple.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Google.Api.Gax.pdb
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Google.Api.Gax.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Google.Api.Gax.Rest.pdb
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Google.Api.Gax.Rest.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Google.Apis.pdb
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Google.Apis.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Google.Apis.Auth.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Google.Apis.Core.pdb
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Google.Apis.Core.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Newtonsoft.Json.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Buffers.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.CodeDom.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Collections.Immutable.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Memory.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Buffers.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.CodeDom.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Collections.Immutable.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Memory.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Reactive.Core.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Reactive.Interfaces.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Reactive.Core.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Reactive.Interfaces.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Reactive.PlatformServices.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Reactive.Windows.Threading.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Reactive.dll
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\System.Reactive.xml
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\AppOneCode.exe.manifest
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\bin\Debug\AppOneCode.application
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.exe.manifest
+C:\Users\danny\Desktop\AppOneCode\AppOneCode\obj\Debug\AppOneCode.application

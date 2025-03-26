@@ -101,8 +101,10 @@ CREATE TABLE Trabajo (
 
 );
 
+select * from Users;
 
 
+sele
 
 CREATE TABLE Prioridad (
     Id INT IDENTITY(1,1) PRIMARY KEY,
