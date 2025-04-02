@@ -1,22 +1,24 @@
-﻿    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Data;
-    using System.Drawing;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Windows.Forms;
-    using AppOneCode.Vista;
-using System.Reactive.Disposables;
-    using Firebase.Database;
-    using Firebase.Database.Query;
-    using Firebase.Database.Streaming;
-    using static AppOneCode.Vista.user;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+
+using System.Text;
+using System.Threading.Tasks;
 
 
-    namespace AppOneCode
+using System.Windows.Forms;
+using AppOneCode.Vista;
+using Firebase.Database;
+using Firebase.Database.Query;
+using Firebase.Database.Streaming;
+using static AppOneCode.Vista.user;
+
+
+namespace AppOneCode
     {
         public partial class FrmChat : Form
 
@@ -325,20 +327,22 @@ using System.Reactive.Disposables;
                 }
             }
 
-            private void EscucharMensajesEnTiempoReal()
-            {
-                if (string.IsNullOrEmpty(chatIdActual)) return;
 
-                var chatRef = firebaseClient
-                    .Child("chats")
-                    .Child(chatIdActual)
-                    .Child("messages");
 
-                // Escuchar actualizaciones en tiempo real
-                var observable = chatRef.AsObservable<FirebaseMessage>();
+        private void EscucharMensajesEnTiempoReal()
+        {
+            if (string.IsNullOrEmpty(chatIdActual)) return;
 
-                // Crear un observador personalizado
-                var observer = new FirebaseObserver(
+            var chatRef = firebaseClient
+                .Child("chats")
+                .Child(chatIdActual)
+                .Child("messages");
+
+            // Escuchar actualizaciones en tiempo real
+            var observable = chatRef.AsObservable<FirebaseMessage>();
+
+            // Crear un observador personalizado
+            var observer = new FirebaseObserver(
                     onNext: messageEvent =>
                     {
                         if (messageEvent.Object != null)
@@ -363,11 +367,13 @@ using System.Reactive.Disposables;
                     }
                 );
 
-          
-                observable.Subscribe(observer);
-            }
 
-            private async void btnEnviarMensaje_Click(object sender, EventArgs e)
+            observable.Subscribe(observer);
+        }
+
+
+
+        private async void btnEnviarMensaje_Click(object sender, EventArgs e)
             {
                 string mensaje = txtMensaje.Text.Trim();
 
